@@ -1,7 +1,39 @@
 [![Build Status](https://travis-ci.com/sankarvijay/myNanterre.svg?branch=master)](https://travis-ci.org/sankarvijay/myNanterre)
 [![License](https://img.shields.io/github/license/sankarvijay/myNanterre.svg?style=flat-square)](LICENSE)
 
-myNanterre
+# MyNanterre
 
-Un projet pour mettre en relations les étudiants de Paris-Nanterre à travers différentes fonctionnalités
+**MyNanterre**, l'application avec laquelle tu vas reussir tes études tout en te divertissant. 
 
+## Qu'est ce que c'est ?
+
+Une application pour mettre en relation les étudiants de Nanterre en proposant des activités intra et extra-scolaires.
+Développé sur mobile, et plus spécialement sur la plateforme **Android**, MyNanterre est donc une application sur smartphone.
+
+## Système de Build
+* [Gradle](https://gradle.org/)
+
+## Installation
+
+### Prérequis
+
+Avant de pouvoir utiliser notre projet, il faut installer certains outils.
+
+#### Installer Android Studio et le SDK
+
+- Télécharger Android studio et l'installer : [Télécharger Android Studio](https://developer.android.com/studio/index.html)
+
+- Télécharger le SDK : 
+
+Depuis la fenêtres de bienvenue : 
+Configure > SDK Manager > SDK TOOLS > Cocher Android SDK Tools > OK
+  
+#### Installer Git
+
+- Télécharger et installer Git : [Télécharger Git](https://gitforwindows.org/)
+
+
+## Auteurs
+* **SANKAR Vijay** - [Github](https://github.com/sankarvijay)
+* **VIEIRA Dorian** - [Github](https://github.com/dorianvieira)
+* **KARIM Fatima Zahrae** - [Github](https://github.com/KarimFatimazahrae)
