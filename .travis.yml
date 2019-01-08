@@ -1,2 +1,4 @@
 language: android
 jdk: oraclejdk8
+# Download SDK
+
