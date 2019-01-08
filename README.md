@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/sankarvijay/myNanterre.png?branch=master)](https://travis-ci.org/sankarvijay/myNanterre)
+[![Build Status](https://travis-ci.com/sankarvijay/myNanterre.svg?branch=master)](https://travis-ci.org/sankarvijay/myNanterre)
 [![License](https://img.shields.io/github/license/sankarvijay/myNanterre.svg?style=flat-square)](LICENSE)
 
 myNanterre
