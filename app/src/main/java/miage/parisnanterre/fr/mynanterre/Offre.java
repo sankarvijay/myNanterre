@@ -9,7 +9,7 @@ public class Offre {
     private int logo;
     public Offre() {
     }
-    //constructeur avec parametres
+    //constructeur
     public Offre(int logo, String titre, String contrat, String localisation, String descriptif, String datePublication,String entreprise) {
         this.logo = logo;
         this.titre = titre;
