@@ -1,6 +1,10 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 
+plugins {
+	id "org.sonarqube" version "2.7"
+}
+
 android {
     compileSdkVersion 28
     defaultConfig {
