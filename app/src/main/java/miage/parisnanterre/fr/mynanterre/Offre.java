@@ -3,6 +3,7 @@ package miage.parisnanterre.fr.mynanterre;
 /**
  * Created by Sankar Vijay on 09/01/2019.
  */
+
 public class Offre {
     private String titre,contrat,localisation,descriptif,datePublication,entreprise;
     private int logo;
