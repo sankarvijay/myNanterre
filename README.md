@@ -42,9 +42,9 @@ Configure > SDK Manager > SDK TOOLS > Cocher Android SDK Tools > OK
 #### Nos outils et langages
 - Android studio : pour la création de l'application mobile
 - Espresso : effectuer des tests unitaires sur notre application Android
-- SonarCloud : analyser la qualité du code, doublons, bugs etc...
+- SonarCloud : analyser la qualité du code, redondance, bugs etc...
 - Waffle : Répartitions des tâches, TODO, workflow etc...
-- Kotlin et java sous Andoid studio : langages de dev
+- Java sous Andoid studio : langages de développement
 - Méthode Kanban ?
 
 ## Auteurs
