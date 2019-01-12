@@ -24,6 +24,8 @@ Développé sur mobile, et plus spécialement sur la plateforme **Android**, MyN
 
 Avant de pouvoir utiliser notre projet, il faut installer certains outils.
 
+Nous travaillons en Pull Request
+
 #### Installer Android Studio et le SDK correspondant
 
 - Télécharger Android studio et l'installer : [Télécharger Android Studio](https://developer.android.com/studio/index.html)
@@ -37,8 +39,16 @@ Configure > SDK Manager > SDK TOOLS > Cocher Android SDK Tools > OK
 
 - Télécharger et installer Git : [Télécharger Git](https://gitforwindows.org/)
 
+#### Nos outils et langages
+- Android studio : pour la création de l'application mobile
+- Espresso : effectuer des tests unitaires sur notre application Android
+- SonarCloud : analyser la qualité du code, doublons, bugs etc...
+- Waffle : Répartitions des tâches, TODO, workflow etc...
+- Kotlin et java sous Andoid studio : langages de dev
+- Méthode Kanban ?
 
 ## Auteurs
 * **SANKAR Vijay** - [Github](https://github.com/sankarvijay)
 * **VIEIRA Dorian** - [Github](https://github.com/dorianvieira)
+* **VOUILLOT Marie** - [Github](https://github.com/marievllt)
 * **KARIM Fatima Zahrae** - [Github](https://github.com/KarimFatimazahrae)
