@@ -55,7 +55,7 @@ public class Accueil extends AppCompatActivity {
 
         offre = new Offre(R.drawable.thales,"Développeur J2EE H/F","Stage","Genevilliers","\n" +
                 "Pour réaliser une nouvelle solution, Thalès recherche de nombreux stagiaires dans le ...\n"
-                ,"06/01/2019","Thalès");
+                ,"06/01/2019","Thales");
         listeOffre.add(offre);
 
         offre = new Offre(R.drawable.dassault,"Refonte d'un outil de gestion H/F","Stage","Paris","\n" +
