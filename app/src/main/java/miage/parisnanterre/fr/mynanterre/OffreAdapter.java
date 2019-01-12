@@ -1,7 +1,7 @@
 package miage.parisnanterre.fr.mynanterre;
 
 /**
- * Created by Sankar Vijay on 11/01/2019.
+ *  Created by Sankar Vijay on 11/01/2019.
  */
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
