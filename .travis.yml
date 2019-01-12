@@ -20,11 +20,11 @@ addons:
   sonarcloud:
     organization: sankarvijay-github
     token:
-      secure: 8f2f1c61ca3f2cce9b83a2e9a5beec28d7d54c4a
+      secure: a1f747a6e51a6f24fc493fbf02bff10bda1b9622
 before_script:
   - chmod +x gradlew
 script:
-  ./gradlew sonarqube
+  - chmod +x gradlew
 cache:
   directories:
     $HOME/.m2/repository
