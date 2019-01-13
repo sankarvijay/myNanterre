@@ -1,7 +1,7 @@
 package miage.parisnanterre.fr.mynanterre;
 
 /**
- *  Created by Sankar Vijay on 11/01/2019.
+ * Created by Sankar Vijay on 11/01/2019.
  */
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -39,7 +39,7 @@ public class OffreAdapter extends RecyclerView.Adapter<OffreAdapter.MyViewHolder
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.liste_offres, parent, false);
+                .inflate(R.layout.ligne_offres, parent, false);
 
         return new MyViewHolder(itemView);
     }
