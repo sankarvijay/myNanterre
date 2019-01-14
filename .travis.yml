@@ -18,7 +18,6 @@ addons:
       secure: "651beff8ccbbb9026e8df5f6a5fb2e97536f131d"
 
 sudo: false
-sudo: required
 
 jdk:
   - oraclejdk8
@@ -28,7 +27,7 @@ install: true
 before_script:
   - chmod +x gradlew
 script:
-  - ./gradlew coveralls sendCoverageToCodacy
+  - chmod +x gradlew
   - bash <(curl -s https://codecov.io/bash)
   - sonar-scanner
 cache:
@@ -39,4 +38,3 @@ cache:
     .gradle
 
 after_success:
-  - bash <(curl -s https://codecov.io/bash)
