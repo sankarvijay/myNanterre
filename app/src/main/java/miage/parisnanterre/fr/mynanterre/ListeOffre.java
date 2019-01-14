@@ -16,13 +16,12 @@ import java.util.List;
  */
 public class ListeOffre extends AppCompatActivity {
 
-    private static  final  String url = "jdbc:mysql://localhost/my_nanterre";
-    private static  final String user = "root";
-    private static final String psw = "root";
-    private static Connection conn;
+   // private static  final  String url = "jdbc:mysql://localhost/my_nanterre";
+   // private static  final String user = "root";
+   // private static final String psw = "root";
+    //private static Connection conn;
 
-    private List<Offre> listeOffre = new ArrayList<>();
-    private RecyclerView recyclerView;
+    private List<Offre> liste = new ArrayList<>();
     private OffreAdapter oAdapter;
 
     @Override
@@ -30,9 +29,9 @@ public class ListeOffre extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.liste_offre);
 
-        recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
+        RecyclerView recyclerView = findViewById(R.id.recycler_view);
 
-        oAdapter = new OffreAdapter(listeOffre);
+        oAdapter = new OffreAdapter(liste);
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
         recyclerView.setLayoutManager(mLayoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
@@ -78,27 +77,27 @@ public class ListeOffre extends AppCompatActivity {
         Offre offre = new Offre(R.drawable.sopra,"Développeur Web H/F","Stage","Paris","\n" +
                 "Dans le cadre de son évolution et pour répondre à des besoins techniques la société recherche un développeur ..."
                 ,"10/01/2019","Sopra Steria");
-        listeOffre.add(offre);
+        liste.add(offre);
 
         offre = new Offre(R.drawable.total,"Ingénieur d'études et développement Java J2EE H/F","CDI","Paris La Défense","\n" +
                 "Dans le cadre du développement des activités de la branche Gas & Power, la société recherche un ...\n"
                 ,"05/01/2019","Total");
-        listeOffre.add(offre);
+        liste.add(offre);
 
         offre = new Offre(R.drawable.sopra,"Ingénieur d'études et développement .Net H/F","Stage","Paris","\n" +
                 "Dans le cadre du développement des activités de la branche Gas & Power, la société recherche ...\n"
                 ,"08/01/2019","Sopra Steria");
-        listeOffre.add(offre);
+        liste.add(offre);
 
         offre = new Offre(R.drawable.thales,"Développeur J2EE H/F","Stage","Genevilliers","\n" +
                 "Pour réaliser une nouvelle solution, Thalès recherche de nombreux stagiaires dans le ...\n"
                 ,"06/01/2019","Thales");
-        listeOffre.add(offre);
+        liste.add(offre);
 
         offre = new Offre(R.drawable.dassault,"Refonte d'un outil de gestion H/F","Stage","Paris","\n" +
                 "Dans le cadre du projet de refonte de l'outil de gestion des demandes d'accès au système d'information, il est envisagé de mettre en place une gestion ...\n"
                 ,"01/01/2019","Dassault Aviation");
-        listeOffre.add(offre);
+        liste.add(offre);
 
         oAdapter.notifyDataSetChanged();
     }
