@@ -1,13 +1,11 @@
 package miage.parisnanterre.fr.mynanterre;
 
 import android.os.Bundle;
-import android.support.v4.app.FragmentActivity;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-
-import java.sql.Connection;
+//import java.sql.Connection;
 import java.util.ArrayList;
 import java.util.List;
 
