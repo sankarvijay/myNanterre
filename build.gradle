@@ -15,6 +15,9 @@ buildscript {
         // in the individual module build.gradle files
     }
 }
+plugins {
+  id "org.sonarqube" version "2.6"
+}
 apply plugin: 'com.vanniktech.android.junit.jacoco'
 apply plugin: "org.sonarqube"
 
