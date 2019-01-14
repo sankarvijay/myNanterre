@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 
 public class Accueil extends AppCompatActivity{
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
