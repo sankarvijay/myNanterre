@@ -29,7 +29,7 @@ before_script:
 script:
   - chmod +x gradlew
   - bash <(curl -s https://codecov.io/bash)
-  - sonar-scanner
+  - ./gradlew sonarqube   -Dsonar.projectKey=sankarvijay_myNanterre   -Dsonar.organization=sankarvijay-github   -Dsonar.host.url=https://sonarcloud.io   -Dsonar.login=651beff8ccbbb9026e8df5f6a5fb2e97536f131d
 cache:
   directories:
     $HOME/.m2/repository
