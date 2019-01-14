@@ -3,6 +3,10 @@ apply plugin: 'jacoco'
 apply plugin: 'com.vanniktech.android.junit.jacoco'
 apply plugin: "org.sonarqube"
 
+plugins {
+	id "org.sonarqube" version "2.6"
+}
+
 buildscript {   
     repositories {
         google()
@@ -10,7 +14,7 @@ buildscript {
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.2.1'
-        classpath "org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:2.7"
+        classpath "org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:2.6"
          classpath 'com.vanniktech:gradle-android-junit-jacoco-plugin:0.6.0'
     
         // NOTE: Do not place your application dependencies here; they belong
