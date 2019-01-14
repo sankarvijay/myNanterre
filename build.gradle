@@ -3,10 +3,6 @@ apply plugin: 'jacoco'
 apply plugin: 'com.vanniktech.android.junit.jacoco'
 apply plugin: "org.sonarqube"
 
-plugins {
-	id "org.sonarqube" version "2.6"
-}
-
 buildscript {   
     repositories {
         google()
