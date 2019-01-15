@@ -26,15 +26,6 @@ Développé sur mobile, et plus spécialement sur la plateforme **Android**, MyN
 Avant de pouvoir utiliser notre projet, il faut installer certains outils.
 
 Nous travaillons en Pull Request
-
-#### Installer Android Studio et le SDK correspondant
-
-- Télécharger Android studio et l'installer : [Télécharger Android Studio](https://developer.android.com/studio/index.html)
-
-- Télécharger le SDK : 
-
-Depuis la fenêtres de bienvenue : 
-Configure > SDK Manager > SDK TOOLS > Cocher Android SDK Tools > OK
   
 #### Installer Git
 
