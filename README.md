@@ -25,11 +25,7 @@ Développé sur mobile, et plus spécialement sur la plateforme **Android**, MyN
 
 Avant de pouvoir utiliser notre projet, il faut installer certains outils.
 
-Nous travaillons en Pull Request
-  
-#### Installer Git
-
-- Télécharger et installer Git : [Télécharger Git](https://gitforwindows.org/)
+Nous travaillons tous en tant que collaborateur
 
 #### Nos outils et langages
 - Android studio : pour la création de l'application mobile
