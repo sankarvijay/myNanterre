@@ -24,6 +24,7 @@ allprojects {
         jcenter()
     }
 }
+group 'fr.uparis10.myNanterre'
 
 task clean(type: Delete) {
     delete rootProject.buildDir
