@@ -18,7 +18,7 @@ public class OffreAdapter extends RecyclerView.Adapter<OffreAdapter.MyViewHolder
     private List<Offre> listeOffres;
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
-        public TextView titre, entreprise, datePublication,localisation,descriptif;
+        public TextView titre, entreprise, datePublication, localisation, descriptif;
         private ImageView logo;
 
         public MyViewHolder(View view) {
