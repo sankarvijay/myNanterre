@@ -1,6 +1,5 @@
 package miage.parisnanterre.fr.mynanterre;
 
-import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
@@ -11,8 +10,6 @@ import android.os.Bundle;
 import android.view.MenuItem;
 
 public class Accueil extends AppCompatActivity {
-    private static final String TAG = Accueil.class.getSimpleName();
-    private BottomNavigationView bottomNavigation;
     private Fragment fragment;
     private FragmentManager fragmentManager;
 
@@ -20,6 +17,7 @@ public class Accueil extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.accueil);
+        BottomNavigationView bottomNavigation;
 
         bottomNavigation = findViewById(R.id.navigationView);
         fragmentManager = getSupportFragmentManager();

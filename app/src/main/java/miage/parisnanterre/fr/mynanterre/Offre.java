@@ -4,13 +4,18 @@ package miage.parisnanterre.fr.mynanterre;
  * Created by Sankar Vijay on 09/01/2019.
  */
 public class Offre {
-    private String titre, contrat, localisation, descriptif, datePublication, entreprise;
+    private String titre;
+    private String contrat;
+    private String localisation;
+    private String descriptif;
+    private String datePublication;
+    private String entreprise;
     private int logo;
 
     public Offre() {
     }
 
-    public Offre(int logo, String titre, String contrat, String localisation, String descriptif, String datePublication, String entreprise) {
+    Offre(int logo, String titre, String contrat, String localisation, String descriptif, String datePublication, String entreprise) {
         this.logo = logo;
         this.titre = titre;
         this.contrat = contrat;

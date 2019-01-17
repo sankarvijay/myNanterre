@@ -4,6 +4,7 @@ package miage.parisnanterre.fr.mynanterre;
  * Created by Sankar Vijay on 11/01/2019.
  */
 
+import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,10 +19,14 @@ public class OffreAdapter extends RecyclerView.Adapter<OffreAdapter.MyViewHolder
     private List<Offre> listeOffres;
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
-        public TextView titre, entreprise, datePublication, localisation, descriptif;
+        public TextView titre;
+        public TextView entreprise;
+        public TextView datePublication;
+        public TextView localisation;
+        public TextView descriptif;
         private ImageView logo;
 
-        public MyViewHolder(View view) {
+        MyViewHolder(View view) {
             super(view);
             titre = (TextView) view.findViewById(R.id.titre);
             entreprise = (TextView) view.findViewById(R.id.entreprise);
@@ -33,12 +38,12 @@ public class OffreAdapter extends RecyclerView.Adapter<OffreAdapter.MyViewHolder
     }
 
 
-    public OffreAdapter(List<Offre> listeOffres) {
+    OffreAdapter(List<Offre> listeOffres) {
         this.listeOffres = listeOffres;
     }
 
-    @Override
-    public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    @Override @NonNull
+    public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.ligne_offres, parent, false);
 
@@ -46,7 +51,7 @@ public class OffreAdapter extends RecyclerView.Adapter<OffreAdapter.MyViewHolder
     }
 
     @Override
-    public void onBindViewHolder(MyViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         Offre offre = listeOffres.get(position);
         holder.titre.setText(offre.getTitre());
         holder.entreprise.setText(offre.getEntreprise());
