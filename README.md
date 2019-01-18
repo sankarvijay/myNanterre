@@ -6,6 +6,8 @@
 [![Waffle.io - Columns and their card count](https://badge.waffle.io/sankarvijay/myNanterre.svg?columns=all)](https://waffle.io/sankarvijay/myNanterre)
 [![GitHub issues](https://img.shields.io/github/issues/sankarvijay/myNanterre.svg)](https://github.com/sankarvijay/myNanterre/issues)
 [![License](https://img.shields.io/github/license/sankarvijay/myNanterre.svg?style=flat-square)](LICENSE)
+[![Version](https://img.shields.io/github/tag/sankarvijay/MyNanterre.svg?label=version&style=flat-square)](build.gradle)<br/>
+
 
 # MyNanterre
 
