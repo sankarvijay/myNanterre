@@ -1,6 +1,6 @@
 package miage.parisnanterre.fr.mynanterre;
 
-public class BonPlan {
+ class BonPlan {
     private String titre,dateFin,enseigne,codePromo;
     private int logo;
     public BonPlan() {

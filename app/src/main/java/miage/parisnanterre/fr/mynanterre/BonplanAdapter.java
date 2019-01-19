@@ -9,7 +9,8 @@ import android.widget.TextView;
 
 import java.util.List;
 
-public class BonPlanAdapter extends RecyclerView.Adapter<BonPlanAdapter.MyViewHolder> {
+  class BonPlanAdapter extends RecyclerView.Adapter<BonPlanAdapter.MyViewHolder> {
+
 
     private List<BonPlan> listeBonPlans;
 

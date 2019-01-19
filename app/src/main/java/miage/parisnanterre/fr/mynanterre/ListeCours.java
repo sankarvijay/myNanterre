@@ -1,44 +1,34 @@
 package miage.parisnanterre.fr.mynanterre;
 
-/*
- * Created by Sankar Vijay on 18/01/2019.
- */
-
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
 
 import java.util.ArrayList;
 import java.util.List;
 
+public class ListeCours  extends AppCompatActivity {
 
-public class CoursFragment extends Fragment {
+
     private List<Cours> listec = new ArrayList<>();
     private CoursAdapter cAdapter;
 
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.liste_cours, container, false);
-    }
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.liste_cours);
 
-    @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        RecyclerView recyclerView = getView().findViewById(R.id.recycler_view);
+        RecyclerView recyclerView = findViewById(R.id.recycler_view);
 
         cAdapter = new CoursAdapter(listec);
-        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getActivity());
+        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
         recyclerView.setLayoutManager(mLayoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setAdapter(cAdapter);
 
-         /*try {
+        /*try {
             Class.forName("com.mysql.jdbc.Driver");
         }catch (Exception e){
             Toast.makeText(getApplicationContext(), "Problème au niveau du driver", Toast.LENGTH_SHORT).show();
@@ -47,8 +37,6 @@ public class CoursFragment extends Fragment {
         StrictMode.setThreadPolicy(policy);
 */
         prepareCoursData();
-
-
     }
 
     private void prepareCoursData() {
@@ -90,7 +78,7 @@ public class CoursFragment extends Fragment {
         listec.add(cours);
 
         cours = new Cours("Rappels marketing Mix", "Le marketing mix ou mix marketing ou mix est, en marketing management opérationnel, l'ensemble des domaines opérationnels dans lesquels il faut élaborer des stratégies.",
-                "Marketing","M2");
+                 "Marketing","M2");
         listec.add(cours);
 
         cours = new Cours("Le past simple Anglais", "Notions simple de l'utilisation du past simple en anglais avec différents exemple.",

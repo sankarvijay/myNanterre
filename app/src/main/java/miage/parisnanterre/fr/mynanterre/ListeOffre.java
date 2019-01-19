@@ -93,7 +93,7 @@ public class ListeOffre extends AppCompatActivity {
         liste.add(offre);
 
         offre = new Offre(R.drawable.dassault,"Refonte d'un outil de gestion H/F","Stage","Paris","\n" +
-                "Dans le cadre du projet de refonte de l'outil de gestion des demandes d'accès au système d'information, il est envisagé de mettre en place une gestion ...\n"
+                "Dans le cadre du projet de refonte de l'outil de gestion des demandes d'accès au système d'inniveau, il est envisagé de mettre en place une gestion ...\n"
                 ,"01/01/2019","Dassault Aviation");
         liste.add(offre);
 
