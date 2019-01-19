@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/navigation_accueil"
+        android:icon="@drawable/home"
+        android:title="Accueil"/>
+    <item
+        android:id="@+id/navigation_cours"
+        android:icon="@drawable/book"
+        android:title="Cours"/>
+
+    <item
+        android:id="@+id/navigation_jobs"
+        android:icon="@drawable/job"
+        android:title="Jobs"/>
+
+    <item
+        android:id="@+id/navigation_event"
+        android:icon="@drawable/events"
+        android:title="Evenements"/>
+
+    <item
+        android:id="@+id/navigation_bonsplans"
+        android:icon="@drawable/deals"
+        android:title="Bons Plans"/>
+
+</menu>
