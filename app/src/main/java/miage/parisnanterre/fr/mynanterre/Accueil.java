@@ -16,7 +16,7 @@ public class Accueil extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.accueil);
+        setContentView(R.layout.navbar);
         BottomNavigationView bottomNavigation;
 
         bottomNavigation = findViewById(R.id.navigationView);
@@ -26,6 +26,9 @@ public class Accueil extends AppCompatActivity {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
                 switch (menuItem.getItemId()) {
+                    case R.id.navigation_accueil:
+                        fragment = new AccueilFragment();
+                        break;
                     case R.id.navigation_cours:
                         fragment = new CoursFragment();
                         break;
