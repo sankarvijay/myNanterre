@@ -1,12 +1,12 @@
 package miage.parisnanterre.fr.mynanterre;
 
-public class Bonplan {
+public class BonPlan {
     private String titre,dateFin,enseigne,codePromo;
     private int logo;
-    public Bonplan() {
+    public BonPlan() {
     }
     //constructeur
-    public Bonplan(int logo, String titre,String dateFin, String enseigne, String codePromo) {
+    public BonPlan(int logo, String titre, String dateFin, String enseigne, String codePromo) {
         this.logo = logo;
         this.titre = titre;
 
@@ -17,7 +17,7 @@ public class Bonplan {
 
     }
     //constructeur
-    public Bonplan(int logo, String titre,String dateFin) {
+    public BonPlan(int logo, String titre, String dateFin) {
         this.logo = logo;
         this.titre = titre;
 

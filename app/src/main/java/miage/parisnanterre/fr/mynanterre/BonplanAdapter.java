@@ -9,9 +9,9 @@ import android.widget.TextView;
 
 import java.util.List;
 
-public class BonplanAdapter extends RecyclerView.Adapter<BonplanAdapter.MyViewHolder> {
+public class BonPlanAdapter extends RecyclerView.Adapter<BonPlanAdapter.MyViewHolder> {
 
-    private List<Bonplan> listeBonplans;
+    private List<BonPlan> listeBonPlans;
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
         public TextView titre ,dateFin , enseigne,codePromo;
@@ -29,21 +29,21 @@ public class BonplanAdapter extends RecyclerView.Adapter<BonplanAdapter.MyViewHo
     }
 
 
-    public BonplanAdapter(List<Bonplan> listeBonplans) {
-        this.listeBonplans = listeBonplans;
+    public BonPlanAdapter(List<BonPlan> listeBonPlans) {
+        this.listeBonPlans = listeBonPlans;
     }
 
     @Override
-    public BonplanAdapter.MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public BonPlanAdapter.MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.ligne_bonplans, parent, false);
 
-        return new BonplanAdapter.MyViewHolder(itemView);
+        return new BonPlanAdapter.MyViewHolder(itemView);
     }
 
     @Override
-    public void onBindViewHolder(BonplanAdapter.MyViewHolder holder, int position) {
-        Bonplan bonplan = listeBonplans.get(position);
+    public void onBindViewHolder(BonPlanAdapter.MyViewHolder holder, int position) {
+        BonPlan bonplan = listeBonPlans.get(position);
         holder.titre.setText(bonplan.getTitre());
 
         holder.dateFin.setText(bonplan.getDateFin());
@@ -54,6 +54,6 @@ public class BonplanAdapter extends RecyclerView.Adapter<BonplanAdapter.MyViewHo
 
     @Override
     public int getItemCount() {
-        return listeBonplans.size();
+        return listeBonPlans.size();
     }
 }

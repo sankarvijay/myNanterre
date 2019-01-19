@@ -14,8 +14,8 @@ import java.util.List;
 public class ListeBonplan  extends AppCompatActivity {
 
 
-    private List<Bonplan> listeb = new ArrayList<>();
-    private BonplanAdapter bAdapter;
+    private List<BonPlan> listeb = new ArrayList<>();
+    private BonPlanAdapter bAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,7 +24,7 @@ public class ListeBonplan  extends AppCompatActivity {
 
         RecyclerView recyclerView = findViewById(R.id.recycler_view);
 
-        bAdapter = new BonplanAdapter(listeb);
+        bAdapter = new BonPlanAdapter(listeb);
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
         recyclerView.setLayoutManager(mLayoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
@@ -67,21 +67,21 @@ public class ListeBonplan  extends AppCompatActivity {
         }catch (SQLException e){
             e.printStackTrace();
         }*/
-        Bonplan  bonplan = new Bonplan(R.drawable.boursorama,"Vente privée Boursorama : jusqu'à 130€ offerts pour une ouverture de compte","jusqu'au"+"20/01/2019");
+        BonPlan bonplan = new BonPlan(R.drawable.boursorama,"Vente privée Boursorama : jusqu'à 130€ offerts pour une ouverture de compte","jusqu'au"+"20/01/2019");
         listeb.add(bonplan);
-        bonplan = new Bonplan(R.drawable.apple,"Sur l’Apple Store Éducation et économisez jusqu’à 330 € sur un nouveau Mac, et jusqu’à 105 € sur un nouvel iPad","illimité");
-        listeb.add(bonplan);
-
-        bonplan = new Bonplan(R.drawable.uber,"Votre première course gratuite à hauteur de 15€ sur l'application UBER","jusqu'au"+"17/09/2019");
+        bonplan = new BonPlan(R.drawable.apple,"Sur l’Apple Store Éducation et économisez jusqu’à 330 € sur un nouveau Mac, et jusqu’à 105 € sur un nouvel iPad","illimité");
         listeb.add(bonplan);
 
-        bonplan = new Bonplan(R.drawable.newlook,"-10% sur tous les articles sur présentation de la carte étudiante - NEWLOOK","jusqu'au"+"12/11/2019");
+        bonplan = new BonPlan(R.drawable.uber,"Votre première course gratuite à hauteur de 15€ sur l'application UBER","jusqu'au"+"17/09/2019");
         listeb.add(bonplan);
 
-        bonplan = new Bonplan(R.drawable.otacos,"Le Menu taille M + boisson à 5€ pour les étudiants chez Otacos","jusqu'au"+"15/03/2019");
+        bonplan = new BonPlan(R.drawable.newlook,"-10% sur tous les articles sur présentation de la carte étudiante - NEWLOOK","jusqu'au"+"12/11/2019");
         listeb.add(bonplan);
 
-        bonplan = new Bonplan(R.drawable.spotify,"Coupez les distractions, pas la musique. Spotify Premium à 4,99€/mois pour les étudiants", "illimité");
+        bonplan = new BonPlan(R.drawable.otacos,"Le Menu taille M + boisson à 5€ pour les étudiants chez Otacos","jusqu'au"+"15/03/2019");
+        listeb.add(bonplan);
+
+        bonplan = new BonPlan(R.drawable.spotify,"Coupez les distractions, pas la musique. Spotify Premium à 4,99€/mois pour les étudiants", "illimité");
         listeb.add(bonplan);
 
 
