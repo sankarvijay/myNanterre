@@ -1,5 +1,9 @@
 package miage.parisnanterre.fr.mynanterre;
 
+/**
+ * Created by Sankar Vijay on 19/01/2019.
+ */
+
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,13 +13,13 @@ import android.widget.TextView;
 
 import java.util.List;
 
-  class BonPlanAdapter extends RecyclerView.Adapter<BonPlanAdapter.MyViewHolder> {
+public class BonPlanAdapter extends RecyclerView.Adapter<BonPlanAdapter.MyViewHolder> {
 
 
     private List<BonPlan> listeBonPlans;
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
-        public TextView titre ,dateFin , enseigne,codePromo;
+        public TextView titre, dateFin, enseigne, codePromo;
         private ImageView logo;
 
         public MyViewHolder(View view) {

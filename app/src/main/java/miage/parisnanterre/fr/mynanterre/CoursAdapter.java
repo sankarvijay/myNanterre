@@ -24,7 +24,6 @@ public class CoursAdapter extends RecyclerView.Adapter<CoursAdapter.MyViewHolder
         }
     }
 
-
     public CoursAdapter(List<Cours> listeCours) {
         this.listeCours = listeCours;
     }

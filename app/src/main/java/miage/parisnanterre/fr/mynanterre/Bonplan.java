@@ -1,10 +1,16 @@
 package miage.parisnanterre.fr.mynanterre;
 
- class BonPlan {
-    private String titre,dateFin,enseigne,codePromo;
+/**
+ * Created by Sankar Vijay on 19/01/2019.
+ */
+
+public class BonPlan {
+    private String titre, dateFin, enseigne, codePromo;
     private int logo;
+
     public BonPlan() {
     }
+
     //constructeur
     public BonPlan(int logo, String titre, String dateFin, String enseigne, String codePromo) {
         this.logo = logo;
@@ -13,18 +19,20 @@ package miage.parisnanterre.fr.mynanterre;
         this.enseigne = enseigne;
         this.codePromo = codePromo;
 
-        this.dateFin=dateFin;
+        this.dateFin = dateFin;
 
     }
+
     //constructeur
     public BonPlan(int logo, String titre, String dateFin) {
         this.logo = logo;
         this.titre = titre;
 
-        this.dateFin=dateFin;
+        this.dateFin = dateFin;
 
 
     }
+
     public String getTitre() {
         return titre;
     }
@@ -32,7 +40,6 @@ package miage.parisnanterre.fr.mynanterre;
     public void setTitre(String titre) {
         this.titre = titre;
     }
-
 
 
     public String getDateFin() {
