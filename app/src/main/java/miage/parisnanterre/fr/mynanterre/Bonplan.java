@@ -4,7 +4,7 @@ package miage.parisnanterre.fr.mynanterre;
  * Created by Sankar Vijay on 19/01/2019.
  */
 
-public class BonPlan {
+ class BonPlan {
     private String titre, dateFin, enseigne, codePromo;
     private int logo;
 
