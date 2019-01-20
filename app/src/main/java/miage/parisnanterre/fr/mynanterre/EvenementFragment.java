@@ -21,7 +21,7 @@ public class EvenementFragment extends Fragment {
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.liste_event, container, false);
+        return inflater.inflate(R.layout.liste_evenements, container, false);
 
     }
 

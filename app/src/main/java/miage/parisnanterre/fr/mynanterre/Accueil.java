@@ -36,7 +36,7 @@ public class Accueil extends AppCompatActivity {
                         fragment = new JobsFragment();
                         break;
                     case R.id.navigation_event:
-                        fragment = new EventFragment();
+                        fragment = new EvenementFragment();
                         break;
                     case R.id.navigation_bonsplans:
                         fragment = new BonsPlansFragment();
