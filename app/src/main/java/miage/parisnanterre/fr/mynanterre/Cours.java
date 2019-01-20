@@ -5,6 +5,7 @@ public class Cours {
 
     public Cours() {
     }
+
     //constructeur
     public Cours(String titre, String description, String matiere, String niveau) {
         this.titre = titre;

@@ -1,9 +1,5 @@
 package miage.parisnanterre.fr.mynanterre;
 
-/*
- * Created by Sankar Vijay on 18/01/2019.
- */
-
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -18,25 +14,26 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 import java.util.List;
 
+public class EvenementFragment extends Fragment {
 
-public class CoursFragment extends Fragment {
-    private List<Cours> listec = new ArrayList<>();
-    private CoursAdapter cAdapter;
+    private List<Evenement> listeEv = new ArrayList<>();
+    private EvenementAdapter evAdapter;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.liste_cours, container, false);
+        return inflater.inflate(R.layout.liste_event, container, false);
+
     }
+
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         RecyclerView recyclerView = getView().findViewById(R.id.recycler_view);
 
-        cAdapter = new CoursAdapter(listec);
+        evAdapter = new EvenementAdapter(listeEv);
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(mLayoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
-        recyclerView.setAdapter(cAdapter);
-
+        recyclerView.setAdapter(evAdapter);
          /*try {
             Class.forName("com.mysql.jdbc.Driver");
         }catch (Exception e){
@@ -45,14 +42,13 @@ public class CoursFragment extends Fragment {
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
 */
-        prepareCoursData();
-
+        prepareEvenementData();
 
     }
 
-    private void prepareCoursData() {
+    private void prepareEvenementData() {
 
-      /*  try{
+        /*  try{
 
             conn = DriverManager.getConnection(url, user, psw);
             String sqliD = "SELECT * FROM jobs ";
@@ -76,31 +72,23 @@ public class CoursFragment extends Fragment {
         }catch (SQLException e){
             e.printStackTrace();
         }*/
-        Cours cours = new Cours("Triggers partie 1", "Les triggers (ou déclencheurs) sont des objets de la base de données. Attachés à une table, ils vont déclencher l'exécution d'une instruction, ou d'un bloc d'instructions, lorsqu'une ou plusieurs lignes sont insérées, supprimées ou modifiées dans la table à laquelle ils sont attachés.",
-                "SGBD" ,"L3");
-        listec.add(cours);
+        Evenement evenement = new Evenement(R.drawable.bass,"BASS CULTURE: DERRICK MAY & D'JULZ" , "pas de description \n" ,"01/01/2019" );
+        listeEv.add(evenement);
 
-        cours = new Cours("Sockets et threads", "Une socket est une interface logicielle avec les services du système d’exploitation, grâce à laquelle un développeur exploitera facilement et de manière uniforme les services d’un protocole réseau.",
-                "Système et réseaux" ,"M1");
-        listec.add(cours);
+        evenement = new Evenement(R.drawable.eblouissanre, "EBLOUISSANTE VENISE !","Héritière d’une tradition multiséculaire, la civilisation vénitienne brille de tous ses feux à l’aube du XVIIIe siècle... \n" , "17/12/2018" );
+        listeEv.add(evenement);
 
-        cours = new Cours("Code de procédure pénal", "L'infraction est une violation d'une loi de l'État, résultant d'un acte externe de l'homme, positif ou négatif, socialement imputable, ne se justifiant pas par l'accomplissement d'un devoir ou l'exercice d'un droit et qui est frappé d'une peine prévue par la loi ",
-                "Economie-Droit" ,"L2");
-        listec.add(cours);
+        evenement = new Evenement(R.drawable.michael, "MICHAEL JACKSON : ON THE WALL", "Cette exposition explore l’impact culturel de la personnalité et de l’œuvre de Michael Jackson dans le champ de l’art contemporain des années 1980 à aujourd’hui ... \n" , "04/01/2019");
+        listeEv.add(evenement);
 
-        cours = new Cours("Rappels marketing Mix", "Le marketing mix ou mix marketing ou mix est, en marketing management opérationnel, l'ensemble des domaines opérationnels dans lesquels il faut élaborer des stratégies.",
-                "Marketing","M2");
-        listec.add(cours);
-
-        cours = new Cours("Le past simple Anglais", "Notions simple de l'utilisation du past simple en anglais avec différents exemple.",
-                "LV-Anglais","L1");
-        listec.add(cours);
-
-        cours = new Cours("Espagnol et sa culture", "Petit cours sur la culture espagnol, ses valeurs, sa pilitique, son regime éco et social.",
-                "LV Culture1","L2");
-        listec.add(cours);
+        evenement = new Evenement(R.drawable.lecompte, "LE COMTE DE BOUDERBALA", "Impossible de ne pas connaître Le Comte de Bouderbala alias Sami Ameziane, qui fait partie de l ... \n", "15/01/2019");
+        listeEv.add(evenement);
 
 
-        cAdapter.notifyDataSetChanged();
+        evAdapter.notifyDataSetChanged();
+
     }
+
+
 }
+

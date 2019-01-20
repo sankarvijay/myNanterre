@@ -89,7 +89,6 @@ public class ListeCours  extends AppCompatActivity {
                 "LV Culture1","L2");
         listec.add(cours);
 
-
         cAdapter.notifyDataSetChanged();
     }
 }

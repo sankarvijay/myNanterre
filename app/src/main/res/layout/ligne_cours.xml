@@ -27,8 +27,8 @@
 
     <TextView
         android:id="@+id/matiere"
-        android:layout_width="wrap_content"
-        android:layout_height="41dp"
+        android:layout_width="85dp"
+        android:layout_height="47dp"
         android:layout_alignStart="@+id/titre"
         android:layout_alignTop="@+id/description"
         android:layout_alignParentBottom="false"
@@ -46,7 +46,6 @@
         android:layout_marginStart="100dp"
         android:text="Titre du cours "
         android:textStyle="bold" />
-
 
     <TextView
         android:id="@+id/description"
