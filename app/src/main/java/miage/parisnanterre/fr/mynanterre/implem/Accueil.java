@@ -1,4 +1,4 @@
-package miage.parisnanterre.fr.mynanterre;
+package miage.parisnanterre.fr.mynanterre.implem;
 
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -8,6 +8,13 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
+
+import miage.parisnanterre.fr.mynanterre.R;
+import miage.parisnanterre.fr.mynanterre.fragment.AccueilFragment;
+import miage.parisnanterre.fr.mynanterre.fragment.BonsPlansFragment;
+import miage.parisnanterre.fr.mynanterre.fragment.CoursFragment;
+import miage.parisnanterre.fr.mynanterre.fragment.EvenementFragment;
+import miage.parisnanterre.fr.mynanterre.fragment.OffreFragment;
 
 public class Accueil extends AppCompatActivity {
     private Fragment fragment;
@@ -33,7 +40,7 @@ public class Accueil extends AppCompatActivity {
                         fragment = new CoursFragment();
                         break;
                     case R.id.navigation_jobs:
-                        fragment = new JobsFragment();
+                        fragment = new OffreFragment();
                         break;
                     case R.id.navigation_event:
                         fragment = new EvenementFragment();

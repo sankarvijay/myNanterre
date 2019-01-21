@@ -1,10 +1,10 @@
-package miage.parisnanterre.fr.mynanterre;
+package miage.parisnanterre.fr.mynanterre.implem;
 
 /**
- * Created by Sankar Vijay on 19/01/2019.
+ * Created by Sankar Vijay on 20/01/2019.
  */
 
- class BonPlan {
+public class BonPlan {
     private String titre, dateFin, enseigne, codePromo;
     private int logo;
 
@@ -74,3 +74,4 @@ package miage.parisnanterre.fr.mynanterre;
         this.logo = logo;
     }
 }
+

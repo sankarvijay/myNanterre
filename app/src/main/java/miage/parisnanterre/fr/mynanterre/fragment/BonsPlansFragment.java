@@ -1,4 +1,8 @@
-package miage.parisnanterre.fr.mynanterre;
+package miage.parisnanterre.fr.mynanterre.fragment;
+
+/*
+ * Created by Sankar Vijay on 18/01/2019.
+ */
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -14,26 +18,30 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 import java.util.List;
 
-public class EvenementFragment extends Fragment {
+import miage.parisnanterre.fr.mynanterre.implem.BonPlan;
+import miage.parisnanterre.fr.mynanterre.R;
+import miage.parisnanterre.fr.mynanterre.adapter.BonPlanAdapter;
 
-    private List<Evenement> listeEv = new ArrayList<>();
-    private EvenementAdapter evAdapter;
+
+public class BonsPlansFragment extends Fragment {
+    private List<BonPlan> listeb = new ArrayList<>();
+    private BonPlanAdapter bAdapter;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.liste_evenements, container, false);
-
+        return inflater.inflate(R.layout.liste_bonplan, container, false);
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         RecyclerView recyclerView = getView().findViewById(R.id.recycler_view);
 
-        evAdapter = new EvenementAdapter(listeEv);
+        bAdapter = new BonPlanAdapter(listeb);
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(mLayoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
-        recyclerView.setAdapter(evAdapter);
+        recyclerView.setAdapter(bAdapter);
+
          /*try {
             Class.forName("com.mysql.jdbc.Driver");
         }catch (Exception e){
@@ -42,13 +50,14 @@ public class EvenementFragment extends Fragment {
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
 */
-        prepareEvenementData();
+        prepareBonplanData();
+
 
     }
 
-    private void prepareEvenementData() {
+    private void prepareBonplanData() {
 
-        /*  try{
+      /*  try{
 
             conn = DriverManager.getConnection(url, user, psw);
             String sqliD = "SELECT * FROM jobs ";
@@ -72,23 +81,24 @@ public class EvenementFragment extends Fragment {
         }catch (SQLException e){
             e.printStackTrace();
         }*/
-        Evenement evenement = new Evenement(R.drawable.bass,"BASS CULTURE: DERRICK MAY & D'JULZ" , "pas de description \n" ,"01/01/2019" );
-        listeEv.add(evenement);
+        BonPlan bonplan = new BonPlan(R.drawable.boursorama, "Vente privée Boursorama : jusqu'à 130€ offerts pour une ouverture de compte", "jusqu'au" + "20/01/2019");
+        listeb.add(bonplan);
+        bonplan = new BonPlan(R.drawable.apple, "Sur l’Apple Store Éducation et économisez jusqu’à 330 € sur un nouveau Mac, et jusqu’à 105 € sur un nouvel iPad", "illimité");
+        listeb.add(bonplan);
 
-        evenement = new Evenement(R.drawable.eblouissanre, "EBLOUISSANTE VENISE !","Héritière d’une tradition multiséculaire, la civilisation vénitienne brille de tous ses feux à l’aube du XVIIIe siècle... \n" , "17/12/2018" );
-        listeEv.add(evenement);
+        bonplan = new BonPlan(R.drawable.uber, "Votre première course gratuite à hauteur de 15€ sur l'application UBER", "jusqu'au" + "17/09/2019");
+        listeb.add(bonplan);
 
-        evenement = new Evenement(R.drawable.michael, "MICHAEL JACKSON : ON THE WALL", "Cette exposition explore l’impact culturel de la personnalité et de l’œuvre de Michael Jackson dans le champ de l’art contemporain des années 1980 à aujourd’hui ... \n" , "04/01/2019");
-        listeEv.add(evenement);
+        bonplan = new BonPlan(R.drawable.newlook, "-10% sur tous les articles sur présentation de la carte étudiante - NEWLOOK", "jusqu'au" + "12/11/2019");
+        listeb.add(bonplan);
 
-        evenement = new Evenement(R.drawable.lecompte, "LE COMTE DE BOUDERBALA", "Impossible de ne pas connaître Le Comte de Bouderbala alias Sami Ameziane, qui fait partie de l ... \n", "15/01/2019");
-        listeEv.add(evenement);
+        bonplan = new BonPlan(R.drawable.otacos, "Le Menu taille M + boisson à 5€ pour les étudiants chez Otacos", "jusqu'au" + "15/03/2019");
+        listeb.add(bonplan);
+
+        bonplan = new BonPlan(R.drawable.spotify, "Coupez les distractions, pas la musique. Spotify Premium à 4,99€/mois pour les étudiants", "illimité");
+        listeb.add(bonplan);
 
 
-        evAdapter.notifyDataSetChanged();
-
+        bAdapter.notifyDataSetChanged();
     }
-
-
 }
-

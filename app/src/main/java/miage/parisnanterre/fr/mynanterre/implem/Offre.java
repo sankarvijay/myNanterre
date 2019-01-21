@@ -1,4 +1,4 @@
-package miage.parisnanterre.fr.mynanterre;
+package miage.parisnanterre.fr.mynanterre.implem;
 
 /**
  * Created by Sankar Vijay on 09/01/2019.
@@ -10,12 +10,12 @@ public class Offre {
     private String descriptif;
     private String datePublication;
     private String entreprise;
-    private int logo;
+    private String logo;
 
     public Offre() {
     }
 
-    Offre(int logo, String titre, String contrat, String localisation, String descriptif, String datePublication, String entreprise) {
+    public Offre(String logo, String titre, String contrat, String localisation, String descriptif, String datePublication, String entreprise) {
         this.logo = logo;
         this.titre = titre;
         this.contrat = contrat;
@@ -33,11 +33,11 @@ public class Offre {
         this.entreprise = entreprise;
     }
 
-    public int getLogo() {
+    public String getLogo() {
         return logo;
     }
 
-    public void setLogo(int logo) {
+    public void setLogo(String logo) {
         this.logo = logo;
     }
 

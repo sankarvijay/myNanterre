@@ -66,7 +66,8 @@
         android:layout_alignStart="@+id/titre"
         android:layout_alignParentBottom="false"
         android:layout_marginTop="80dp"
+        android:ellipsize="end"
+        android:maxLines="4"
         android:text="Descriptif" />
-
 
 </RelativeLayout>

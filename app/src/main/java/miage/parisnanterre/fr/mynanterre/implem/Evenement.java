@@ -1,4 +1,4 @@
-package miage.parisnanterre.fr.mynanterre;
+package miage.parisnanterre.fr.mynanterre.implem;
 
 public class Evenement {
 
