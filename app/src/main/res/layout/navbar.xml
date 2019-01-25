@@ -4,7 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+<<<<<<< HEAD
     tools:context=".implem.Accueil">
+=======
+    tools:context=".Accueil">
+>>>>>>> b58030a641f5f2e43134f2cba5eb5ed22ed03d3d
 
     <FrameLayout
         android:id="@+id/container"

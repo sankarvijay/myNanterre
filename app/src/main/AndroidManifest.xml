@@ -11,7 +11,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
+<<<<<<< HEAD
         <activity android:name=".implem.Accueil">
+=======
+        <activity android:name=".Accueil">
+>>>>>>> b58030a641f5f2e43134f2cba5eb5ed22ed03d3d
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

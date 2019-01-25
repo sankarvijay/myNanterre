@@ -3,15 +3,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-<<<<<<< HEAD
-    tools:context=".fragment.BonsPlansFragment">
-=======
-    tools:context=".BonsPlansFragment">
->>>>>>> b58030a641f5f2e43134f2cba5eb5ed22ed03d3d
+    tools:context=".EventFragment">
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:textStyle="bold"
-        android:text="Bons Plans" />
+        android:text="Evenements" />
 </FrameLayout>
