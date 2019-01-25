@@ -1,4 +1,4 @@
-package miage.parisnanterre.fr.mynanterre;
+package miage.parisnanterre.fr.mynanterre.fragment;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -11,6 +11,8 @@ import android.widget.ImageView;
 
 import com.synnapps.carouselview.CarouselView;
 import com.synnapps.carouselview.ImageListener;
+
+import miage.parisnanterre.fr.mynanterre.R;
 
 /**
  * Created by Sankar Vijay on 18/01/2019.

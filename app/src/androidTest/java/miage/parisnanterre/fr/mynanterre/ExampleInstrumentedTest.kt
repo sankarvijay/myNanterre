@@ -1,4 +1,4 @@
-package fr.parisnanterre.miage.mynanterre
+package miage.parisnanterre.fr.mynanterre
 
 import android.support.test.InstrumentationRegistry
 import android.support.test.runner.AndroidJUnit4
@@ -19,6 +19,6 @@ class ExampleInstrumentedTest {
     fun useAppContext() {
         // Context of the app under test.
         val appContext = InstrumentationRegistry.getTargetContext()
-        assertEquals("fr.parisnanterre.miage.mynanterre", appContext.packageName)
+        assertEquals("miage.parisnanterre.fr.mynanterre", appContext.packageName)
     }
 }

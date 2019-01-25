@@ -1,7 +1,7 @@
-package miage.parisnanterre.fr.mynanterre;
+package miage.parisnanterre.fr.mynanterre.fragment;
 
 /*
- * Created by Sankar Vijay on 17/01/2019.
+ * Created by Sankar Vijay on 18/01/2019.
  */
 
 import android.os.Bundle;
@@ -18,30 +18,30 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 import java.util.List;
 
-public class JobsFragment extends Fragment {
+import miage.parisnanterre.fr.mynanterre.implem.BonPlan;
+import miage.parisnanterre.fr.mynanterre.R;
+import miage.parisnanterre.fr.mynanterre.adapter.BonPlanAdapter;
 
-    // private static  final  String url = "jdbc:mysql://localhost/my_nanterre";
-    // private static  final String user = "root";
-    // private static final String psw = "root";
-    //private static Connection conn;
-    private List<Offre> liste = new ArrayList<>();
-    private OffreAdapter oAdapter;
+
+public class BonsPlansFragment extends Fragment {
+    private List<BonPlan> listeb = new ArrayList<>();
+    private BonPlanAdapter bAdapter;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.liste_offre, container, false);
-
+        return inflater.inflate(R.layout.liste_bonplan, container, false);
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         RecyclerView recyclerView = getView().findViewById(R.id.recycler_view);
 
-        oAdapter = new OffreAdapter(liste);
+        bAdapter = new BonPlanAdapter(listeb);
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(mLayoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
-        recyclerView.setAdapter(oAdapter);
+        recyclerView.setAdapter(bAdapter);
+
          /*try {
             Class.forName("com.mysql.jdbc.Driver");
         }catch (Exception e){
@@ -50,12 +50,12 @@ public class JobsFragment extends Fragment {
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
 */
-        prepareOffreData();
+        prepareBonplanData();
 
 
     }
 
-    private void prepareOffreData() {
+    private void prepareBonplanData() {
 
       /*  try{
 
@@ -81,31 +81,24 @@ public class JobsFragment extends Fragment {
         }catch (SQLException e){
             e.printStackTrace();
         }*/
-        Offre offre = new Offre(R.drawable.sopra, "Développeur Web H/F", "Stage", "Paris", "\n" +
-                "Dans le cadre de son évolution et pour répondre à des besoins techniques la société recherche un développeur ..."
-                , "10/01/2019", "Sopra Steria");
-        liste.add(offre);
+        BonPlan bonplan = new BonPlan(R.drawable.boursorama, "Vente privée Boursorama : jusqu'à 130€ offerts pour une ouverture de compte", "jusqu'au" + "20/01/2019");
+        listeb.add(bonplan);
+        bonplan = new BonPlan(R.drawable.apple, "Sur l’Apple Store Éducation et économisez jusqu’à 330 € sur un nouveau Mac, et jusqu’à 105 € sur un nouvel iPad", "illimité");
+        listeb.add(bonplan);
 
-        offre = new Offre(R.drawable.total, "Ingénieur d'études et développement Java J2EE H/F", "CDI", "Paris La Défense", "\n" +
-                "Dans le cadre du développement des activités de la branche Gas & Power, la société recherche un ...\n"
-                , "05/01/2019", "Total");
-        liste.add(offre);
+        bonplan = new BonPlan(R.drawable.uber, "Votre première course gratuite à hauteur de 15€ sur l'application UBER", "jusqu'au" + "17/09/2019");
+        listeb.add(bonplan);
 
-        offre = new Offre(R.drawable.sopra, "Ingénieur d'études et développement .Net H/F", "Stage", "Paris", "\n" +
-                "Dans le cadre du développement des activités de la branche Gas & Power, la société recherche ...\n"
-                , "08/01/2019", "Sopra Steria");
-        liste.add(offre);
+        bonplan = new BonPlan(R.drawable.newlook, "-10% sur tous les articles sur présentation de la carte étudiante - NEWLOOK", "jusqu'au" + "12/11/2019");
+        listeb.add(bonplan);
 
-        offre = new Offre(R.drawable.thales, "Développeur J2EE H/F", "Stage", "Genevilliers", "\n" +
-                "Pour réaliser une nouvelle solution, Thalès recherche de nombreux stagiaires dans le ...\n"
-                , "06/01/2019", "Thales");
-        liste.add(offre);
+        bonplan = new BonPlan(R.drawable.otacos, "Le Menu taille M + boisson à 5€ pour les étudiants chez Otacos", "jusqu'au" + "15/03/2019");
+        listeb.add(bonplan);
 
-        offre = new Offre(R.drawable.dassault, "Refonte d'un outil de gestion H/F", "Stage", "Paris", "\n" +
-                "Dans le cadre du projet de refonte de l'outil de gestion des demandes d'accès au système d'inniveau, il est envisagé de mettre en place une gestion ...\n"
-                , "01/01/2019", "Dassault Aviation");
-        liste.add(offre);
+        bonplan = new BonPlan(R.drawable.spotify, "Coupez les distractions, pas la musique. Spotify Premium à 4,99€/mois pour les étudiants", "illimité");
+        listeb.add(bonplan);
 
-        oAdapter.notifyDataSetChanged();
+
+        bAdapter.notifyDataSetChanged();
     }
 }

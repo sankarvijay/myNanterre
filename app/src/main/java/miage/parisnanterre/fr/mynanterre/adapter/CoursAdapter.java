@@ -1,5 +1,6 @@
-package miage.parisnanterre.fr.mynanterre;
+package miage.parisnanterre.fr.mynanterre.adapter;
 
+import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,12 +9,15 @@ import android.widget.TextView;
 
 import java.util.List;
 
+import miage.parisnanterre.fr.mynanterre.implem.Cours;
+import miage.parisnanterre.fr.mynanterre.R;
+
 public class CoursAdapter extends RecyclerView.Adapter<CoursAdapter.MyViewHolder> {
 
     private List<Cours> listeCours;
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
-        public TextView titre ,description,matiere,niveau;
+        public TextView titre, description, matiere, niveau;
 
         public MyViewHolder(View view) {
             super(view);
@@ -29,15 +33,15 @@ public class CoursAdapter extends RecyclerView.Adapter<CoursAdapter.MyViewHolder
     }
 
     @Override
-    public CoursAdapter.MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.ligne_cours, parent, false);
 
-        return new CoursAdapter.MyViewHolder(itemView);
+        return new MyViewHolder(itemView);
     }
 
     @Override
-    public void onBindViewHolder(CoursAdapter.MyViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         Cours cours = listeCours.get(position);
 
         holder.titre.setText(cours.getTitre());

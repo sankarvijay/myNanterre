@@ -1,4 +1,4 @@
-package fr.parisnanterre.miage.mynanterre
+package miage.parisnanterre.fr.mynanterre
 
 import org.junit.Test
 

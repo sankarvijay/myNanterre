@@ -1,7 +1,7 @@
-package miage.parisnanterre.fr.mynanterre;
+package miage.parisnanterre.fr.mynanterre.implem;
 
 /**
- * Created by Sankar Vijay on 19/01/2019.
+ * Created by Sankar Vijay on 20/01/2019.
  */
 
 public class BonPlan {
@@ -74,3 +74,4 @@ public class BonPlan {
         this.logo = logo;
     }
 }
+

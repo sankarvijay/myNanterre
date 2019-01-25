@@ -1,11 +1,8 @@
-package miage.parisnanterre.fr.mynanterre;
+package miage.parisnanterre.fr.mynanterre.adapter;
 
-/**
- * Created by Sankar Vijay on 11/01/2019.
- */
 
-import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
+import android.support.annotation.NonNull;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,55 +11,54 @@ import android.widget.TextView;
 
 import java.util.List;
 
-public class OffreAdapter extends RecyclerView.Adapter<OffreAdapter.MyViewHolder> {
+import miage.parisnanterre.fr.mynanterre.implem.Evenement;
+import miage.parisnanterre.fr.mynanterre.R;
 
-    private List<Offre> listeOffres;
+public class EvenementAdapter extends RecyclerView.Adapter<EvenementAdapter.MyViewHolder> {
+
+    private List<Evenement> listeEvenements;
+
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
         public TextView titre;
-        public TextView entreprise;
         public TextView datePublication;
-        public TextView localisation;
         public TextView descriptif;
         private ImageView logo;
 
         MyViewHolder(View view) {
             super(view);
             titre = (TextView) view.findViewById(R.id.titre);
-            entreprise = (TextView) view.findViewById(R.id.entreprise);
             datePublication = (TextView) view.findViewById(R.id.datePublication);
-            localisation = (TextView) view.findViewById(R.id.localisation);
             descriptif = (TextView) view.findViewById(R.id.descriptif);
             logo = (ImageView) view.findViewById(R.id.logo);
         }
     }
 
-
-    OffreAdapter(List<Offre> listeOffres) {
-        this.listeOffres = listeOffres;
+    public EvenementAdapter(List<Evenement> listeEvenements) {
+        this.listeEvenements = listeEvenements;
     }
 
-    @Override @NonNull
+    @NonNull
+    @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.ligne_offres, parent, false);
+                .inflate(R.layout.ligne_evenement, parent, false);
 
         return new MyViewHolder(itemView);
     }
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        Offre offre = listeOffres.get(position);
-        holder.titre.setText(offre.getTitre());
-        holder.entreprise.setText(offre.getEntreprise());
-        holder.datePublication.setText(offre.getDatePublication());
-        holder.localisation.setText(offre.getLocalisation());
-        holder.descriptif.setText(offre.getDescriptif());
-        holder.logo.setImageResource(offre.getLogo());
+        Evenement evenement = listeEvenements.get(position);
+        holder.titre.setText(evenement.getTitre());
+        holder.datePublication.setText(evenement.getDatePublication());
+        holder.descriptif.setText(evenement.getDescriptif());
+        holder.logo.setImageResource(evenement.getLogo());
     }
 
     @Override
     public int getItemCount() {
-        return listeOffres.size();
+        return listeEvenements.size();
     }
+
 }
