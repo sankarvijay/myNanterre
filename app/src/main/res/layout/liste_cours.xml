@@ -14,13 +14,5 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:scrollbars="vertical" />
-<<<<<<< HEAD
 
-=======
-<<<<<<< HEAD
-
-=======
-    
->>>>>>> b58030a641f5f2e43134f2cba5eb5ed22ed03d3d
->>>>>>> afd0aaa276c2d9ae556977bd47997a4c6d20762e
 </RelativeLayout>
