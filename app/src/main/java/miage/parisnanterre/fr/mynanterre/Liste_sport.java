@@ -45,11 +45,13 @@ public class Liste_sport extends ActionBarActivity {
      */
     private ArrayList<ImageItem> getData() {
         final ArrayList<ImageItem> imageItems = new ArrayList<>();
-        TypedArray imgs = getResources().obtainTypedArray(R.array.image_ids);
-        for (int i = 0; i < imgs.length(); i++) {
-            Bitmap bitmap = BitmapFactory.decodeResource(getResources(), imgs.getResourceId(i, -1));
-            imageItems.add(new ImageItem(bitmap, "Image#" + i));
-        }
+        ImageItem i = new ImageItem(R.drawable.judo,"judo");
+        imageItems.add(i);
+         i = new ImageItem(R.drawable.fitness,"fitness");
+        imageItems.add(i);
+         i = new ImageItem(R.drawable.muscu,"musculation");
+        imageItems.add(i);
+
         return imageItems;
     }
 }
