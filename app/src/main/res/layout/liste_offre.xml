@@ -3,7 +3,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+<<<<<<< HEAD
     tools:context=".fragment.OffreFragment"
+=======
+<<<<<<< HEAD
+    tools:context=".fragment.OffreFragment"
+=======
+    tools:context=".JobsFragment"
+>>>>>>> b58030a641f5f2e43134f2cba5eb5ed22ed03d3d
+>>>>>>> afd0aaa276c2d9ae556977bd47997a4c6d20762e
     tools:showIn="@layout/liste_offre">
 
     <android.support.v7.widget.RecyclerView

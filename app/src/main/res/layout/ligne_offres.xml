@@ -66,8 +66,21 @@
         android:layout_alignStart="@+id/titre"
         android:layout_alignParentBottom="false"
         android:layout_marginTop="80dp"
+<<<<<<< HEAD
         android:ellipsize="end"
         android:maxLines="4"
         android:text="Descriptif" />
 
+=======
+<<<<<<< HEAD
+        android:ellipsize="end"
+        android:maxLines="4"
+        android:text="Descriptif" />
+
+=======
+        android:text="Descriptif" />
+
+
+>>>>>>> b58030a641f5f2e43134f2cba5eb5ed22ed03d3d
+>>>>>>> afd0aaa276c2d9ae556977bd47997a4c6d20762e
 </RelativeLayout>

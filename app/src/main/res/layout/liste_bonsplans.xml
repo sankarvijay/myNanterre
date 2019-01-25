@@ -3,7 +3,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+<<<<<<< HEAD
     tools:context=".fragment.BonsPlansFragment">
+=======
+<<<<<<< HEAD
+    tools:context=".fragment.BonsPlansFragment">
+=======
+    tools:context=".BonsPlansFragment">
+>>>>>>> b58030a641f5f2e43134f2cba5eb5ed22ed03d3d
+>>>>>>> afd0aaa276c2d9ae556977bd47997a4c6d20762e
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

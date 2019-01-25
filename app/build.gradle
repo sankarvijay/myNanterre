@@ -19,19 +19,51 @@ android {
 }
 
 dependencies {
+<<<<<<< HEAD
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    //noinspection GradleCompatible
+=======
+<<<<<<< HEAD
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     //noinspection GradleCompatible
     implementation 'com.android.support:appcompat-v7:28.0'
     implementation 'com.android.support.constraint:constraint-layout:1.1.3'
     implementation 'com.android.support:design:28.0.0'
     testImplementation 'junit:junit:4.12'
+=======
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+>>>>>>> afd0aaa276c2d9ae556977bd47997a4c6d20762e
+    implementation 'com.android.support:appcompat-v7:28.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    implementation 'com.android.support:design:28.0.0'
+    testImplementation 'junit:junit:4.12'
+<<<<<<< HEAD
+=======
+
+>>>>>>> b58030a641f5f2e43134f2cba5eb5ed22ed03d3d
+>>>>>>> afd0aaa276c2d9ae556977bd47997a4c6d20762e
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     // RecyclerView
     implementation 'com.android.support:recyclerview-v7:28+'
     implementation 'com.google.android.gms:play-services-maps:16.0.0'
     implementation 'com.synnapps:carouselview:0.1.4'
+<<<<<<< HEAD
 }
 repositories {
     mavenCentral()
 }
+=======
+<<<<<<< HEAD
+}
+repositories {
+    mavenCentral()
+}
+=======
+
+}
+repositories {
+    mavenCentral()
+}
+>>>>>>> b58030a641f5f2e43134f2cba5eb5ed22ed03d3d
+>>>>>>> afd0aaa276c2d9ae556977bd47997a4c6d20762e
