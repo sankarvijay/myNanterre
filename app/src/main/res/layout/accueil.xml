@@ -4,15 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-<<<<<<< HEAD
     tools:context=".fragment.AccueilFragment">
-=======
-<<<<<<< HEAD
-    tools:context=".fragment.AccueilFragment">
-=======
-    tools:context=".AccueilFragment">
->>>>>>> b58030a641f5f2e43134f2cba5eb5ed22ed03d3d
->>>>>>> afd0aaa276c2d9ae556977bd47997a4c6d20762e
 
     <TextView
         android:id="@+id/textView"
