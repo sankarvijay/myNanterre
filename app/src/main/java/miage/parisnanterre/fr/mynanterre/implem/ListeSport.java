@@ -27,6 +27,9 @@ public class ListeSport extends AppCompatActivity {
         final GridView gridView = (GridView) findViewById(R.id.gridview);
         gridView.setAdapter(new SportGridAdapter(this, image_details));
 
+
+
+
         // When the user clicks on the GridItem
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
@@ -34,10 +37,27 @@ public class ListeSport extends AppCompatActivity {
             public void onItemClick(AdapterView<?> a, View v, int position, long id) {
                 Object o = gridView.getItemAtPosition(position);
                 Sport sport = (Sport) o;
+                String nom= o.getTexte();
+                String horaire = null;
+
+                try {
+                    conn = DriverManager.getConnection(url, user, psw);
+
+                    Statement st = conn.createStatement();
+
+                    String sqliD = "SELECT * FROM Sports WHERE //sport='nom'// "
+                    Statement st = conn.createStatement();
+                    ResultSet rst = st.executeQuery(sqliD);
+                    { String horaire = rst.getString("horaire");
+                        String lieu = rst.getString("lieu"); }
+                    } catch (SQLException e) {
+                        e.printStackTrace(); }
+
+                customDialog("Horaires",horaire,lieu);
 
 
-                Toast.makeText(ListeSport.this, "Du lundi au vendredi :" + "\n" + "08h00-21h00"
-                        , Toast.LENGTH_LONG).show();
+                //Toast.makeText(ListeSport.this, "Du lundi au vendredi :" + "\n" + "08h00-21h00"
+                       // , Toast.LENGTH_LONG).show();
             }
         });
     }
@@ -54,5 +74,19 @@ public class ListeSport extends AppCompatActivity {
 
 
         return list;
+    }
+
+
+
+    public void customDialog(String title, String message){
+        final android.support.v7.app.AlertDialog.Builder builderSingle = new android.support.v7.app.AlertDialog.Builder(this);
+        builderSingle.setIcon(R.mipmap.ic_notification);
+        builderSingle.setTitle(title);
+        builderSingle.setMessage(message);
+
+
+
+
+        builderSingle.show();
     }
 }
