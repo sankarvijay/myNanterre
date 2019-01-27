@@ -34,9 +34,9 @@ import miage.parisnanterre.fr.mynanterre.implem.Entreprise;
 public class EntrepriseFragement  extends Fragment{
 
     // à modifier en fonction de votre localhost
-    private static final String url = "jdbc:mysql://10.0.2.2:3306/my_nanterre";
+    private static final String url = "jdbc:mysql://10.0.2.2:8889/my_nanterre";
     private static final String user = "root";
-    private static final String psw = "";
+    private static final String psw = "root";
     private static Connection conn;
     private List<Entreprise> liste = new ArrayList<>();
     private EntrepriseAdapter enAdapter;

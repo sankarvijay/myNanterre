@@ -5,10 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".implem.Accueil">
-<<<<<<< HEAD
-=======
 
->>>>>>> 64a6baba541e6fc12f82f5ccdff905d436b680cb
     <FrameLayout
         android:id="@+id/container"
         android:layout_width="match_parent"

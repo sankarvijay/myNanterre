@@ -1,5 +1,11 @@
 package miage.parisnanterre.fr.mynanterre.implem;
 
+import java.sql.Connection;
+import java.sql.Date;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,6 +22,10 @@ import miage.parisnanterre.fr.mynanterre.adapter.SportGridAdapter;
 
 
 public class ListeSport extends AppCompatActivity {
+    private static final String url = "jdbc:mysql://10.0.2.2:8889/my_nanterre";
+    private static final String user = "root";
+    private static final String psw = "root";
+    private static Connection conn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,36 +38,44 @@ public class ListeSport extends AppCompatActivity {
         gridView.setAdapter(new SportGridAdapter(this, image_details));
 
 
-
-
         // When the user clicks on the GridItem
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
             @Override
             public void onItemClick(AdapterView<?> a, View v, int position, long id) {
                 Object o = gridView.getItemAtPosition(position);
-                Sport sport = (Sport) o;
-                String nom= o.getTexte();
-                String horaire = null;
+                String nom = ((Sport) o).getTexte();
 
                 try {
                     conn = DriverManager.getConnection(url, user, psw);
-
-                    Statement st = conn.createStatement();
-
-                    String sqliD = "SELECT * FROM Sports WHERE //sport='nom'// "
+                    String sqliD = "SELECT jour_semaine,horaire,lieu FROM sports where sport='"+nom+"' order by categorie ASC;";
+                    System.out.println(sqliD);
                     Statement st = conn.createStatement();
                     ResultSet rst = st.executeQuery(sqliD);
-                    { String horaire = rst.getString("horaire");
-                        String lieu = rst.getString("lieu"); }
-                    } catch (SQLException e) {
-                        e.printStackTrace(); }
 
-                customDialog("Horaires",horaire,lieu);
+                    while (rst.next()) {
+                        String jour = rst.getString("jour_semaine");
+                        String horaire = rst.getString("horaire");
+                        String lieu = rst.getString("lieu");
+
+                        //StringBuilder sb = new StringBuilder();
+                       // sb.append(jour).append(" de ").append(horaire).append(" au ").append(lieu).toString();
+
+
+                        ArrayList<String> liste = new ArrayList<>();
+                        liste.add(jour);
+                        liste.add(horaire);
+                        liste.add(lieu);
+
+                        customDialog("Horaires", liste.toString());
+                    }
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
 
 
                 //Toast.makeText(ListeSport.this, "Du lundi au vendredi :" + "\n" + "08h00-21h00"
-                       // , Toast.LENGTH_LONG).show();
+                // , Toast.LENGTH_LONG).show();
             }
         });
     }
@@ -77,14 +95,11 @@ public class ListeSport extends AppCompatActivity {
     }
 
 
-
-    public void customDialog(String title, String message){
+    public void customDialog(String title, String message) {
         final android.support.v7.app.AlertDialog.Builder builderSingle = new android.support.v7.app.AlertDialog.Builder(this);
-        builderSingle.setIcon(R.mipmap.ic_notification);
+        builderSingle.setIcon(R.drawable.common_google_signin_btn_icon_light);
         builderSingle.setTitle(title);
         builderSingle.setMessage(message);
-
-
 
 
         builderSingle.show();

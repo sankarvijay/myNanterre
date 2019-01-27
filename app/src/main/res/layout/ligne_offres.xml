@@ -69,8 +69,5 @@
         android:ellipsize="end"
         android:maxLines="4"
         android:text="Descriptif" />
-<<<<<<< HEAD
-=======
 
->>>>>>> 64a6baba541e6fc12f82f5ccdff905d436b680cb
 </RelativeLayout>
