@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".implem.ListeSport">
+    tools:context=".implem.ListeJobs">
+
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -17,7 +18,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
-            android:text="Catégories"
+            android:text="Catégories jobs"
             android:textColor="@android:color/black"
             android:textSize="18sp" />
 
@@ -34,4 +35,5 @@
         android:horizontalSpacing="0dp"
         android:stretchMode="spacingWidthUniform"
         />
+
 </android.support.constraint.ConstraintLayout>

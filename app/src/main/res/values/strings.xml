@@ -5,12 +5,16 @@
 
     <string-array name="CatSport">
         <item>EDUCATION CORPORELLE DE BASE ET REMISE EN FORME</item>
-        <!--><item>ARTS DU MOUVEMENT</item>
+        <item>ARTS DU MOUVEMENT</item>
         <item>SPORTS DE COMBATS</item>
         <item>SPORTS INDIVIDUELS</item>
         <item>ACTIVITES DETENTES</item>
         <item>SPORTS COLLECTIFS</item>
         <item>ACTIVITES AQUATIQUES</item>
-        <item>SPORTS DE RAQUETTES</item><!-->
+        <item>SPORTS DE RAQUETTES</item>
+    </string-array>
+
+    <string-array name="CatJobs">
+        <item>Clique here to Access Jobs Menu</item>
     </string-array>
 </resources>
