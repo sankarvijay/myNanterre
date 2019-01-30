@@ -48,34 +48,21 @@ public class ListeSport extends AppCompatActivity {
 
                 try {
                     conn = DriverManager.getConnection(url, user, psw);
-                    String sqliD = "SELECT jour_semaine,horaire,lieu FROM sports where sport='"+nom+"' order by categorie ASC;";
-                    System.out.println(sqliD);
+                    String sqliD = "SELECT horaire FROM sports where sport='" + nom + "' order by categorie ASC;";
                     Statement st = conn.createStatement();
                     ResultSet rst = st.executeQuery(sqliD);
 
                     while (rst.next()) {
-                        String jour = rst.getString("jour_semaine");
                         String horaire = rst.getString("horaire");
-                        String lieu = rst.getString("lieu");
-
-                        //StringBuilder sb = new StringBuilder();
-                       // sb.append(jour).append(" de ").append(horaire).append(" au ").append(lieu).toString();
-
 
                         ArrayList<String> liste = new ArrayList<>();
-                        liste.add(jour);
                         liste.add(horaire);
-                        liste.add(lieu);
 
                         customDialog("Horaires", liste.toString());
                     }
                 } catch (SQLException e) {
                     e.printStackTrace();
                 }
-
-
-                //Toast.makeText(ListeSport.this, "Du lundi au vendredi :" + "\n" + "08h00-21h00"
-                // , Toast.LENGTH_LONG).show();
             }
         });
     }
