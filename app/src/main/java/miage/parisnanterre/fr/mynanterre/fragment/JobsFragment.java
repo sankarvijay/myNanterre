@@ -59,7 +59,7 @@ public class JobsFragment extends ListFragment implements  AdapterView.OnItemCli
                     @Override
                     public void onClick(View view) {
 
-                        Intent intent = new Intent(view.getContext(), Offre.class);
+                        Intent intent = new Intent(view.getContext(), OffreFragment.class);
                         intent.putExtra("info", "This is activity from card item index  " + finalI);
                         startActivity(intent);
 

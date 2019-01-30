@@ -13,6 +13,7 @@ import miage.parisnanterre.fr.mynanterre.R;
 import miage.parisnanterre.fr.mynanterre.fragment.AccueilFragment;
 import miage.parisnanterre.fr.mynanterre.fragment.BonsPlansFragment;
 import miage.parisnanterre.fr.mynanterre.fragment.EvenementFragment;
+import miage.parisnanterre.fr.mynanterre.fragment.JobsFragment;
 import miage.parisnanterre.fr.mynanterre.fragment.OffreFragment;
 import miage.parisnanterre.fr.mynanterre.fragment.SportFragment;
 
@@ -40,7 +41,7 @@ public class Accueil extends AppCompatActivity {
                         fragment = new SportFragment();
                         break;
                     case R.id.navigation_jobs:
-                        fragment = new OffreFragment();
+                        fragment = new JobsFragment();
                         break;
                     case R.id.navigation_event:
                         fragment = new EvenementFragment();
