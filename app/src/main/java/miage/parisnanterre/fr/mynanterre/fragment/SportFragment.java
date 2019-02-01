@@ -11,6 +11,14 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Toast;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+
 import miage.parisnanterre.fr.mynanterre.R;
 import miage.parisnanterre.fr.mynanterre.implem.ListeSport;
 
@@ -18,6 +26,12 @@ import miage.parisnanterre.fr.mynanterre.implem.ListeSport;
  * Created by Sankar Vijay on 26/01/2019.
  */
 public class SportFragment extends ListFragment implements AdapterView.OnItemClickListener {
+    private static final String url = "jdbc:mysql://10.0.2.2:8889/my_nanterre";
+    private static final String user = "root";
+    private static final String psw = "root";
+    private static Connection conn;
+    private ArrayList<String> sports = new ArrayList<String>();
+
     @Override
     public View onCreateView(LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -28,8 +42,27 @@ public class SportFragment extends ListFragment implements AdapterView.OnItemCli
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        ArrayAdapter adapter = ArrayAdapter.createFromResource(getActivity(),
-                R.array.CatSport, android.R.layout.simple_list_item_1);
+       /* try {
+            conn = DriverManager.getConnection(url, user, psw);
+            String sqliD = "SELECT categorie FROM categorie_sport;";
+            Statement st = conn.createStatement();
+            ResultSet rst = st.executeQuery(sqliD);
+
+            while (rst.next()) {
+                String categorie = rst.getString("categorie");
+                sports.add(categorie);
+
+            }
+
+            ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+                    android.R.layout.simple_list_item_1, sports);
+            //ArrayAdapter adapter = ArrayAdapter.createFromResource(getActivity(), R.array.CatSport, android.R.layout.simple_list_item_1) ;
+            setListAdapter(adapter);
+            getListView().setOnItemClickListener(this);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }*/
+        ArrayAdapter adapter = ArrayAdapter.createFromResource(getActivity(), R.array.CatSport, android.R.layout.simple_list_item_1) ;
         setListAdapter(adapter);
         getListView().setOnItemClickListener(this);
     }

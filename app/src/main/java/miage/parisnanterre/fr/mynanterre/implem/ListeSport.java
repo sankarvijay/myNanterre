@@ -9,11 +9,13 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.GridView;
 import android.widget.Toast;
 
@@ -64,6 +66,15 @@ public class ListeSport extends AppCompatActivity {
                     e.printStackTrace();
                 }
             }
+        });
+
+        Button btnRdv = (Button) findViewById(R.id.buttonRdv);
+        btnRdv.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                Intent myIntent = new Intent(view.getContext(), Plannification.class);
+                startActivityForResult(myIntent, 0);
+            }
+
         });
     }
 

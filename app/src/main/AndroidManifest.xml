@@ -20,6 +20,8 @@
         </activity>
         <activity android:name=".implem.ListeSport"></activity>
         <activity android:name=".implem.ListeJobs"></activity>
+        <activity android:name=".implem.Plannification"></activity>
+
     </application>
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission."/>
