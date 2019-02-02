@@ -1,7 +1,14 @@
 package miage.parisnanterre.fr.mynanterre.implem;
 
+import android.content.Intent;
+import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.Button;
+import android.widget.GridView;
+
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -9,23 +16,12 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import android.content.Intent;
-import android.os.Bundle;
-
-import android.support.v7.app.AppCompatActivity;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.Button;
-import android.widget.GridView;
-import android.widget.Toast;
-
 import miage.parisnanterre.fr.mynanterre.R;
-import miage.parisnanterre.fr.mynanterre.adapter.SeanceAdapter;
 import miage.parisnanterre.fr.mynanterre.adapter.SportGridAdapter;
 
+public class ListSeance extends AppCompatActivity {
 
-public class ListeSport extends AppCompatActivity {
-    private static final String url = "jdbc:mysql://10.0.2.2:8889/my_nanterre";
+    private static final String url = "jdbc:mysql://10.0.2.2:3306/my_nanterre";
     private static final String user = "root";
     private static final String psw = "root";
     private static Connection conn;
@@ -112,4 +108,5 @@ public class ListeSport extends AppCompatActivity {
 
         builderSingle.show();
     }
+
 }

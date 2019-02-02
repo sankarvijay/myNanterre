@@ -14,45 +14,59 @@
     android:paddingBottom="20dp">
 
     <TextView
+        android:id="@+id/heuref"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="false"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="60dp"
+        android:layout_toEndOf="@+id/heured"
+        android:text="Heure fin" />
+
+    <TextView
         android:id="@+id/titre"
-        android:layout_width="246dp"
+        android:layout_width="244dp"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="false"
-        android:layout_marginStart="116dp"
-        android:text="Titre de l'offre"
+        android:layout_marginStart="19dp"
+        android:text="Sport"
         android:textStyle="bold" />
 
     <TextView
-        android:id="@+id/entreprise"
+        android:id="@+id/nom"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/titre"
-        android:layout_alignStart="@+id/titre"
-        android:layout_marginTop="5dp"
-        android:text="Nom entreprise" />
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="14dp"
+        android:text="Nom " />
 
     <TextView
-        android:id="@+id/datePublication"
+        android:id="@+id/heured"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/titre"
+        android:layout_alignParentStart="true"
         android:layout_alignParentBottom="false"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="60dp"
-        android:text="Date pulication" />
+        android:text="Heure début" />
 
     <TextView
-        android:id="@+id/localisation"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/prenom"
+        android:layout_width="83dp"
+        android:layout_height="23dp"
         android:layout_below="@+id/titre"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="30dp"
-        android:text="Localisation" />
+        android:layout_marginStart="23dp"
+        android:layout_marginTop="14dp"
+        android:layout_marginEnd="219dp"
+        android:layout_toEndOf="@+id/nom"
+        android:text="prenom" />
 
     <TextView
-        android:id="@+id/descriptif"
+        android:id="@+id/lieu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignStart="@+id/titre"
@@ -60,6 +74,6 @@
         android:layout_marginTop="80dp"
         android:ellipsize="end"
         android:maxLines="4"
-        android:text="Descriptif" />
+        android:text="Lieu" />
 
 </RelativeLayout>

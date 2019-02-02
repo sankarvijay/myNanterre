@@ -1,9 +1,17 @@
 package miage.parisnanterre.fr.mynanterre.implem;
 
-public class Inscription_sport extends Activity implements OnItemSelectedListener{
+import android.app.Activity;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
 
-    private Spinner spinner;
-    private static final String[]paths = {"débutant", "intermédiaire", "avancé"};
+import miage.parisnanterre.fr.mynanterre.R;
+
+public class Inscription_sport extends Activity  {
+    //private Spinner spinner;
+    //private static final String[]paths = {"débutant", "intermédiaire", "avancé"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
@@ -12,9 +20,10 @@ public class Inscription_sport extends Activity implements OnItemSelectedListene
 
 
         }
+/*
 
         spinner = (Spinner)findViewById(R.id.liste_niveau);
-        ArrayAdapter<String>adapter = new ArrayAdapter<String>(Inscription_sport.this,
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(Inscription_sport.this,
                 android.R.layout.simple_spinner_item,paths);
 
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -38,5 +47,5 @@ public class Inscription_sport extends Activity implements OnItemSelectedListene
 
         }
     }
-
+*/
 }
