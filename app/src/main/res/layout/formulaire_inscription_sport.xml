@@ -7,6 +7,9 @@
     tools:layout_editor_absoluteY="81dp">
 
 
+
+
+
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
@@ -60,6 +63,17 @@
         android:text="Quel est votre niveau de pratique  ?"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText2" />
+
+    <Spinner
+        android:id="@+id/liste_niveau"
+        android:layout_width="266dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="32dp"
+        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintTop_toBottomOf="@+id/editText3"
+        tools:layout_editor_absoluteX="8dp" />
+
 
     <Button
         android:id="@+id/button"
