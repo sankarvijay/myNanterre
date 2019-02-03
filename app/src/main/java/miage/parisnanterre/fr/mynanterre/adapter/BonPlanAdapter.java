@@ -1,6 +1,6 @@
 package miage.parisnanterre.fr.mynanterre.adapter;
 
-/**
+/*
  * Created by Sankar Vijay on 20/01/2019.
  */
 

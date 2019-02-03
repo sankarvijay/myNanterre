@@ -11,12 +11,14 @@ import java.util.List;
 import android.content.Intent;
 import android.os.Bundle;
 
+import android.os.StrictMode;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.GridView;
 import android.support.v4.app.Fragment;
+import android.widget.Toast;
 
 import miage.parisnanterre.fr.mynanterre.R;
 import miage.parisnanterre.fr.mynanterre.adapter.SportGridAdapter;
@@ -34,6 +36,13 @@ public class ListeSport extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+        } catch (Exception e) {
+            Toast.makeText(getApplicationContext(), "Problème au niveau du driver", Toast.LENGTH_SHORT).show();
+        }
+        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+        StrictMode.setThreadPolicy(policy);
 
         List<Sport> image_details = getListData();
         final GridView gridView = (GridView) findViewById(R.id.gridview);
