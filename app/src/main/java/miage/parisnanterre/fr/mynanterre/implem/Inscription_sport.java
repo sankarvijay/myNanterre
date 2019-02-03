@@ -9,17 +9,16 @@ import android.widget.Spinner;
 
 import miage.parisnanterre.fr.mynanterre.R;
 
-public class Inscription_sport extends Activity  {
+public class Inscription_sport extends Activity {
     //private Spinner spinner;
     //private static final String[]paths = {"débutant", "intermédiaire", "avancé"};
 
     @Override
-    protected void onCreate(Bundle savedInstanceState){
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.formulaire_inscription_sport);
 
-
-        }
+    }
 /*
 
         spinner = (Spinner)findViewById(R.id.liste_niveau);

@@ -22,6 +22,8 @@
         <activity android:name=".implem.ListeJobs"></activity>
         <activity android:name=".implem.Plannification"></activity>
         <activity android:name=".implem.Seance"></activity>
+        <activity android:name=".implem.Inscription_sport"></activity>
+
 
 
 

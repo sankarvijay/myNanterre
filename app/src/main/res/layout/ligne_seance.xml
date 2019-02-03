@@ -4,12 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginLeft="200dp"
-    android:layout_marginTop="150dp"
-    android:background="?android:attr/selectableItemBackground"
+    android:layout_gravity="top|center_horizontal"
+    android:background="@color/black"
     android:clickable="true"
     android:focusable="true"
-    android:orientation="vertical">
+    android:foregroundGravity="top|center"
+    android:gravity="top|center_vertical|center"
+    android:orientation="vertical"
+    android:theme="@android:style/Theme.Dialog">
 
     <TextView
         android:id="@+id/nom"
@@ -17,19 +19,22 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="false"
         android:layout_marginTop="14dp"
-        android:text="Nom " />
+        android:text="Nom "
+        android:textColor="@color/white" />
 
     <TextView
         android:id="@+id/prenom"
-        android:layout_width="74dp"
-        android:layout_height="21dp"
+        android:layout_width="66dp"
+        android:layout_height="25dp"
         android:layout_below="@+id/titre"
+
         android:layout_alignParentEnd="true"
         android:layout_marginStart="23dp"
         android:layout_marginTop="14dp"
-        android:layout_marginEnd="180dp"
+        android:layout_marginEnd="13dp"
         android:layout_toEndOf="@+id/nom"
-        android:text="prenom" />
+        android:text="prenom"
+        android:textColor="@color/white" />
 
     <TextView
         android:id="@+id/heured"
@@ -39,7 +44,9 @@
         android:layout_alignParentBottom="false"
         android:layout_marginStart="0dp"
         android:layout_marginTop="40dp"
-        android:text="Heure début" />
+
+        android:text="Heure début"
+        android:textColor="@color/white" />
 
     <TextView
         android:id="@+id/heuref"
@@ -48,7 +55,9 @@
         android:layout_alignParentBottom="false"
         android:layout_marginStart="100dp"
         android:layout_marginTop="40dp"
-        android:text="Heure fin" />
+        android:text="Heure fin"
+
+        android:textColor="@color/white" />
 
     <TextView
         android:id="@+id/sport"
@@ -57,6 +66,8 @@
         android:layout_alignParentStart="false"
         android:layout_alignParentTop="false"
         android:text="Sport"
+        android:textColor="@color/white"
+
         android:textStyle="bold" />
 
     <TextView
@@ -67,7 +78,32 @@
         android:layout_alignParentBottom="false"
         android:layout_marginTop="80dp"
         android:ellipsize="end"
+
         android:maxLines="4"
-        android:text="Lieu" />
+        android:text="Lieu"
+        android:textColor="@color/white" />
+
+    <Button
+        android:id="@+id/inscription"
+        android:layout_width="wrap_content"
+        android:layout_height="36dp"
+        android:layout_alignTop="@+id/heured"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="60dp"
+        android:shadowColor="@android:color/holo_green_dark"
+        android:text="S'inscrire"
+        android:textColor="@android:color/holo_green_dark" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="false"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginBottom="0dp"
+        android:text="Button" />
 
 </RelativeLayout>

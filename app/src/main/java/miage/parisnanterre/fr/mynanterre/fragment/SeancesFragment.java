@@ -47,7 +47,7 @@ public class SeancesFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         RecyclerView recyclerView = getView().findViewById(R.id.recycler_view);
 
-        sAdapter = new SeanceAdapter(liste);
+        sAdapter = new SeanceAdapter(liste,getContext());
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(mLayoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
@@ -85,9 +85,7 @@ public class SeancesFragment extends Fragment {
                 Seance seance = new Seance(nom, prenom,heured,heuref,sport,lieu);
                 liste.add(seance);
 
-                customDialog("Seances", seance.toString());
-
-
+                //customDialog("Seances", seance.toString());
 
             }
             sAdapter.notifyDataSetChanged();

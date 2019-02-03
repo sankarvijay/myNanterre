@@ -15,7 +15,6 @@
         android:id="@+id/texte"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
         android:gravity="center"
         android:textSize="12sp" />
 
