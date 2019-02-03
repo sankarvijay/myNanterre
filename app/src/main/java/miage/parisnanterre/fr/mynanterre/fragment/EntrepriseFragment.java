@@ -30,8 +30,8 @@ import miage.parisnanterre.fr.mynanterre.implem.Entreprise;
 
 
 
-
-public class EntrepriseFragement  extends Fragment{
+//class inutile jamais utilisé
+public class EntrepriseFragment extends Fragment{
 
 
     private List<Entreprise> liste = new ArrayList<>();

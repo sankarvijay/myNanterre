@@ -1,33 +1,73 @@
 package miage.parisnanterre.fr.mynanterre.implem;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.GridLayout;
 import android.widget.GridView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import miage.parisnanterre.fr.mynanterre.R;
 import miage.parisnanterre.fr.mynanterre.adapter.JobsGridAdapter;
+import miage.parisnanterre.fr.mynanterre.fragment.EntrepriseFragment;
 
 
 public class ListeJobs extends AppCompatActivity {
+
+    Context context;
+    private Intent intent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
 
-
         List<Jobs> image_details = getListData();
         final GridView gridView = (GridView) findViewById(R.id.gridview);
         gridView.setAdapter(new JobsGridAdapter(this, image_details));
 
-        //getElementClicked(gridView);
+
+        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
+            //Lorsqu'on souhaite rediriger/afficher/faire qq chose apres un clique sur un element du gridView
+                switch(position)
+                {
+                    case 0: //Stage
+                        intent = new Intent(v.getContext(), ListeJobs.class);
+                        break;
+                    case 1: //Alternance
+                        intent = new Intent(v.getContext(), ListeJobs.class);
+                        break;
+                    case 2: //CDI
+                        intent = new Intent(v.getContext(), ListeJobs.class);
+                        break;
+                    case 3: //CDD
+                        intent = new Intent(v.getContext(), ListeJobs.class);
+                        break;
+                    case 4: // INTERIM
+                        intent = new Intent(v.getContext(), ListeJobs.class);
+                        break;
+                    case 5: // ENTREPRISES //si on clique sur le bouton entreprises
+                        //intent =  new Intent(context, EntrepriseFragment.class);
+                        intent = new Intent(v.getContext(), ListeEntreprise.class);
+                        break;
+                    default:
+                        Toast.makeText(ListeJobs.this, "Vous êtes devez choisir une catégorie " + position, Toast.LENGTH_SHORT).show();
+                        break;
+                }
+                //startActivity(intent);
+                startActivityForResult(intent, 0);
+
+            }
+        });
 
         //quand on clique sur le bouton ajouter une offre dans la vue activty_main2 (categories des jobs)
         Button btnAddOffre = (Button) findViewById(R.id.buttonAjoutOffres);
@@ -40,48 +80,6 @@ public class ListeJobs extends AppCompatActivity {
         });
 
         }
-
-        //quand on clique sur un element du grid view
-        private void getElementClicked(GridView gridView) {
-            for (int i =0; i<gridView.getChildCount();i++) {
-
-            }
-        }
-
-        // When the user clicks on the GridItem
-       /* gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-
-            @Override
-            public void onItemClick(AdapterView<?> a, View v, int position, long id) {
-                Object o = gridView.getItemAtPosition(position);
-                Sport sport = (Sport) o;
-                String nom= ((Sport) o).getTexte();
-                String horaire = null;
-
-                try {
-                    conn = DriverManager.getConnection(url, user, psw);
-
-                    Statement st = conn.createStatement();
-
-                    String sqliD = "SELECT * FROM Sports WHERE //sport='nom'// ";
-                    Statement st = conn.createStatement();
-                    ResultSet rst = st.executeQuery(sqliD);
-                    { String horaire = rst.getString("horaire");
-                        String lieu = rst.getString("lieu"); }
-                    } catch (SQLException e) {
-                        e.printStackTrace(); }
-
-                customDialog("Horaires",horaire,lieu);
-
-
-                //Toast.makeText(ListeSport.this, "Du lundi au vendredi :" + "\n" + "08h00-21h00"
-                       // , Toast.LENGTH_LONG).show();
-            }
-        });
-    }*/
-
-
-
 
     private List<Jobs> getListData() {
         List<Jobs> list = new ArrayList<Jobs>();
@@ -99,19 +97,7 @@ public class ListeJobs extends AppCompatActivity {
         list.add(interim);
         list.add(entreprise);
 
-
         return list;
     }
 
-
-
-    public void customDialog(String title, String message){
-        final android.support.v7.app.AlertDialog.Builder builderSingle = new android.support.v7.app.AlertDialog.Builder(this);
-        builderSingle.setIcon(R.mipmap.ic_launcher);
-        builderSingle.setTitle(title);
-        builderSingle.setMessage(message);
-
-
-        builderSingle.show();
-    }
 }
