@@ -7,72 +7,57 @@
     tools:layout_editor_absoluteY="81dp">
 
 
-
-
-
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="163dp"
-        android:layout_marginLeft="163dp"
+        android:layout_marginStart="46dp"
         android:layout_marginTop="57dp"
-        android:layout_marginEnd="190dp"
-        android:layout_marginRight="190dp"
+        android:layout_marginBottom="24dp"
         android:text="S'inscrire à la séance"
         android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/nom"
+        app:layout_constraintStart_toStartOf="@+id/nom"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/nom"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginBottom="24dp"
         android:ems="10"
-        android:inputType="numberSigned|textPersonName"
+        android:inputType="textPersonName"
         android:text="Nom"
+        app:layout_constraintBottom_toTopOf="@+id/prenom"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/prenom"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginBottom="24dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="prenom"
+        app:layout_constraintBottom_toTopOf="@+id/niveau"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText" />
+        app:layout_constraintTop_toBottomOf="@+id/nom" />
 
     <EditText
-        android:id="@+id/editText3"
+        android:id="@+id/niveau"
         android:layout_width="434dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="24dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="71dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Quel est votre niveau de pratique  ?"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText2" />
-
-    <Spinner
-        android:id="@+id/liste_niveau"
-        android:layout_width="266dp"
-        android:layout_height="37dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="32dp"
         app:layout_constraintBottom_toTopOf="@+id/button"
-        app:layout_constraintTop_toBottomOf="@+id/editText3"
-        tools:layout_editor_absoluteX="8dp" />
+        app:layout_constraintEnd_toEndOf="@+id/prenom"
+        app:layout_constraintStart_toEndOf="@+id/prenom"
+        app:layout_constraintTop_toBottomOf="@+id/prenom" />
 
 
     <Button
@@ -80,10 +65,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="71dp"
+        android:layout_marginBottom="91dp"
         android:text="S'inscrire"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText3" />
+        app:layout_constraintTop_toBottomOf="@+id/niveau" />
 
 </android.support.constraint.ConstraintLayout>
