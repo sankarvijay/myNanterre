@@ -1,22 +1,26 @@
 package miage.parisnanterre.fr.mynanterre.adapter;
 
+import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import java.util.List;
 
 import miage.parisnanterre.fr.mynanterre.R;
 
+import miage.parisnanterre.fr.mynanterre.implem.Inscription_sport;
 import miage.parisnanterre.fr.mynanterre.implem.Seance;
 
 public class SeanceAdapter extends RecyclerView.Adapter<SeanceAdapter.MyViewHolder> {
 
     private List<Seance> listeSeances;
-
+    private Context mcon;
     public class MyViewHolder extends RecyclerView.ViewHolder {
         public TextView nom;
         public TextView prenom;
@@ -37,8 +41,9 @@ public class SeanceAdapter extends RecyclerView.Adapter<SeanceAdapter.MyViewHold
         }
     }
 
-    public SeanceAdapter(List<Seance> listeSeances) {
+    public SeanceAdapter(List<Seance> listeSeances,Context context) {
         this.listeSeances = listeSeances;
+        this.mcon=context;
     }
 
 
@@ -48,7 +53,17 @@ public class SeanceAdapter extends RecyclerView.Adapter<SeanceAdapter.MyViewHold
         View itemView = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.ligne_seance, parent, false);
 
+        Button insciption = (Button) itemView.findViewById(R.id.inscription);
 
+        insciption.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+               //  Intent intent = new Intent(get, Inscription_sport.class);
+                 //startActivity(intent);
+                mcon.startActivity(new Intent(mcon, Inscription_sport.class));
+
+            }
+        });
         return new MyViewHolder(itemView);
     }
 
