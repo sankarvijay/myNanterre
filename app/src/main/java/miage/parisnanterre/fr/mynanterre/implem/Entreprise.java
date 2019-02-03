@@ -2,20 +2,36 @@ package miage.parisnanterre.fr.mynanterre.implem;
 
 public class Entreprise {
 
-    String logo , nom;
+    String nom , commentaire ;
+    int logo;
+    float note;
 
     public Entreprise(){}
-
-    public Entreprise(String logo, String nom) {
+    //entreprise mais on a  pas encore les avis
+    public Entreprise(int logo, String nom , String commentaire) {
         this.logo = logo;
         this.nom = nom;
+        this.commentaire=commentaire;
     }
 
-    public String getLogo() {
-        return logo;
+    public Entreprise(int logo, String nom , String commentaire , float note) {
+        this.logo = logo;
+        this.nom = nom;
+        this.commentaire=commentaire;
+        this.note = note;
     }
 
-    public void setLogo(String logo) {
+    public String getCommentaire() { return commentaire; }
+
+    public void setCommentaire(String commentaire) { this.commentaire = commentaire; }
+
+    public void setNote(float note) {this.note = note; }
+
+    public float getNote(){ return note ; }
+
+    public int getLogo() { return logo; }
+
+    public void setLogo(int logo) {
         this.logo = logo;
     }
 
@@ -26,4 +42,5 @@ public class Entreprise {
     public void setNom(String nom) {
         this.nom = nom;
     }
+
 }

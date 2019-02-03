@@ -33,13 +33,10 @@ import miage.parisnanterre.fr.mynanterre.implem.Entreprise;
 
 public class EntrepriseFragement  extends Fragment{
 
-    // à modifier en fonction de votre localhost
-    private static final String url = "jdbc:mysql://10.0.2.2:8889/my_nanterre";
-    private static final String user = "root";
-    private static final String psw = "root";
-    private static Connection conn;
+
     private List<Entreprise> liste = new ArrayList<>();
     private EntrepriseAdapter enAdapter;
+
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -49,26 +46,27 @@ public class EntrepriseFragement  extends Fragment{
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         RecyclerView recyclerView = getView().findViewById(R.id.recycler_view);
+
         enAdapter = new EntrepriseAdapter(liste);
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(mLayoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setAdapter(enAdapter);
 
-        try {
+      /*  try {
             Class.forName("com.mysql.jdbc.Driver");
         } catch (Exception e) {
             Toast.makeText(getContext(), "Problème au niveau du driver", Toast.LENGTH_SHORT).show();
         }
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
-
+*/
         prepareEntrepriseData();
     }
 
     private void prepareEntrepriseData() {
 
-        try {
+      /*  try {
 
             conn = DriverManager.getConnection(url, user, psw);
             String sqliD = "SELECT * FROM entreprise ";
@@ -88,8 +86,21 @@ public class EntrepriseFragement  extends Fragment{
 
         } catch (SQLException e) {
             e.printStackTrace();
-        }
+        }*/
+
+      Entreprise entreprise =new Entreprise(R.drawable.orange,"Orange", "Bonne entreprise,un sujet pas assez important", 3);
+      liste.add(entreprise);
+
+      entreprise =new Entreprise(R.drawable.aviva,"AVIVA", "Bonne entreprise, j'ai pas trop aimé l'ambiance", 4);
+      liste.add(entreprise);
+
+      entreprise =new Entreprise(R.drawable.edf,"EDF", "Bonne entreprise", 5);
+        liste.add(entreprise);
+
+        entreprise =new Entreprise(R.drawable.societegenerale,"Societé Générale", "Trés bonne entreprise.Des sujets importants", 4);
+        liste.add(entreprise);
+
 
         enAdapter.notifyDataSetChanged();
     }
-}
+    }

@@ -12,6 +12,7 @@ import android.view.MenuItem;
 import miage.parisnanterre.fr.mynanterre.R;
 import miage.parisnanterre.fr.mynanterre.fragment.AccueilFragment;
 import miage.parisnanterre.fr.mynanterre.fragment.BonsPlansFragment;
+import miage.parisnanterre.fr.mynanterre.fragment.EntrepriseFragement;
 import miage.parisnanterre.fr.mynanterre.fragment.EvenementFragment;
 import miage.parisnanterre.fr.mynanterre.fragment.JobsFragment;
 import miage.parisnanterre.fr.mynanterre.fragment.OffreFragment;
@@ -43,12 +44,17 @@ public class Accueil extends AppCompatActivity {
                     case R.id.navigation_jobs:
                         fragment = new JobsFragment();
                         break;
+
                     case R.id.navigation_event:
                         fragment = new EvenementFragment();
                         break;
                     case R.id.navigation_bonsplans:
                         fragment = new BonsPlansFragment();
                         break;
+                        /*
+                    case R.id.navigation_entreprise:
+                        fragment = new EntrepriseFragement();
+                        break;*/
                     default:
                         break;
                 }
