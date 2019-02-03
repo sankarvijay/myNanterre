@@ -31,7 +31,7 @@ import miage.parisnanterre.fr.mynanterre.implem.Seance;
 
 public class SeancesFragment extends Fragment {
     // à modifier en fonction de votre localhost
-    private static final String url = "jdbc:mysql://localhost:3306/my_nanterre";
+    private static final String url = "jdbc:mysql://10.0.2.2:8889/my_nanterre";
     private static final String user = "root";
     private static final String psw = "root";
     private static Connection conn;
@@ -76,16 +76,17 @@ public class SeancesFragment extends Fragment {
             while (rst.next()) {
                 String nom = rst.getString("nom");
                 String prenom = rst.getString("prenom");
-                Time heure_d = rst.getTime("heure_d");
-                Time heure_f = rst.getTime("heure_f");
+                Time heured = rst.getTime("heure_d");
+                Time heuref = rst.getTime("heure_f");
                 String sport = rst.getString("sport");
                 String lieu = rst.getString("lieu");
 
 
-
-
-                Seance seance = new Seance(nom, prenom,heure_d,heure_f,sport,lieu);
+                Seance seance = new Seance(nom, prenom,heured,heuref,sport,lieu);
                 liste.add(seance);
+
+                customDialog("Seances", seance.toString());
+
 
 
             }
@@ -96,6 +97,16 @@ public class SeancesFragment extends Fragment {
         }
 
         sAdapter.notifyDataSetChanged();
+    }
+
+    public void customDialog(String title, String message) {
+        final android.support.v7.app.AlertDialog.Builder builderSingle = new android.support.v7.app.AlertDialog.Builder(getContext());
+        builderSingle.setIcon(R.drawable.common_google_signin_btn_icon_light);
+        builderSingle.setTitle(title);
+        builderSingle.setMessage(message);
+
+
+        builderSingle.show();
     }
 
 }

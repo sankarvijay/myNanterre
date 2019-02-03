@@ -31,10 +31,12 @@ public class SeanceAdapter extends RecyclerView.Adapter<SeanceAdapter.MyViewHold
             prenom = (TextView) view.findViewById(R.id.prenom);
             heure_d = (TextView) view.findViewById(R.id.heured);
             heure_f = (TextView) view.findViewById(R.id.heuref);
+            sport = (TextView) view.findViewById(R.id.sport);
             lieu = (TextView) view.findViewById(R.id.lieu);
 
         }
     }
+
     public SeanceAdapter(List<Seance> listeSeances) {
         this.listeSeances = listeSeances;
     }
@@ -42,23 +44,27 @@ public class SeanceAdapter extends RecyclerView.Adapter<SeanceAdapter.MyViewHold
 
     @Override
     @NonNull
-    public SeanceAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.ligne_seance, parent, false);
 
 
-        return new SeanceAdapter.MyViewHolder(itemView);
+        return new MyViewHolder(itemView);
     }
+
     @Override
-    public void onBindViewHolder(@NonNull SeanceAdapter.MyViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         Seance seance = listeSeances.get(position);
+        //System.out.println(seance.toString());
         holder.nom.setText(seance.getNom());
         holder.prenom.setText(seance.getPrenom());
-        //holder.heure_d.setText('12:00');
-        //holder.heure_f.setText('13:00');
         holder.sport.setText(seance.getSport());
         holder.lieu.setText(seance.getLieu());
+        holder.heure_d.setText(seance.getHeure_d().toString());
+        holder.heure_f.setText(seance.getHeure_f().toString());
+
     }
+
     @Override
     public int getItemCount() {
         return listeSeances.size();

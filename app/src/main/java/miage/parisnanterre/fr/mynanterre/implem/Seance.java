@@ -10,8 +10,8 @@ import miage.parisnanterre.fr.mynanterre.R;
 
 public class Seance extends Activity {
 
-    String nom,prenom ,sport,lieu;
-    Time heure_d ,heure_f;
+    String nom, prenom, sport, lieu;
+    Time heure_d, heure_f;
 
 
     public Seance() {
@@ -27,7 +27,6 @@ public class Seance extends Activity {
         this.lieu = lieu;
 
     }
-
 
 
     public String getNom() {
@@ -85,6 +84,15 @@ public class Seance extends Activity {
 
     }
 
-
-
+    @Override
+    public String toString() {
+        return "Seance{" +
+                "nom='" + nom + '\'' +
+                ", prenom='" + prenom + '\'' +
+                ", sport='" + sport + '\'' +
+                ", lieu='" + lieu + '\'' +
+                ", heure_d=" + heure_d +
+                ", heure_f=" + heure_f +
+                '}';
+    }
 }

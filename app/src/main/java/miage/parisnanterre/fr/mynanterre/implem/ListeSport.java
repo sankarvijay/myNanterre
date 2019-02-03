@@ -1,7 +1,6 @@
 package miage.parisnanterre.fr.mynanterre.implem;
 
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -17,11 +16,11 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.GridView;
-import android.widget.Toast;
+import android.support.v4.app.Fragment;
 
 import miage.parisnanterre.fr.mynanterre.R;
-import miage.parisnanterre.fr.mynanterre.adapter.SeanceAdapter;
 import miage.parisnanterre.fr.mynanterre.adapter.SportGridAdapter;
+import miage.parisnanterre.fr.mynanterre.fragment.SeancesFragment;
 
 
 public class ListeSport extends AppCompatActivity {
@@ -81,8 +80,10 @@ public class ListeSport extends AppCompatActivity {
         Button btnSeance = (Button) findViewById(R.id.btnSeances);
         btnSeance.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                Intent myIntent = new Intent(view.getContext(), Seance.class);
-                startActivityForResult(myIntent, 0);
+                // Intent intent = new Intent(ListeSport.this, SeancesFragment.class);
+                //
+                //startActivity(intent);
+                getSupportFragmentManager().beginTransaction().add(R.id.myFrame, new SeancesFragment()).commit();
             }
 
         });
