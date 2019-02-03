@@ -22,18 +22,13 @@
         <activity android:name=".implem.ListeJobs"></activity>
         <activity android:name=".implem.Plannification"></activity>
         <activity android:name=".implem.Seance"></activity>
-<<<<<<< HEAD
         <activity android:name=".implem.Inscription_sport"></activity>
-
-=======
         <activity android:name=".implem.AjoutOffre"></activity>
->>>>>>> fcc13bf6059101cb92f90a7e67a01a1a665d246f
-
-
 
     </application>
+
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission."/>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission." />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 </manifest>
