@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.Button;
 import android.widget.GridLayout;
 import android.widget.GridView;
 
@@ -12,9 +13,7 @@ import java.util.List;
 
 import miage.parisnanterre.fr.mynanterre.R;
 import miage.parisnanterre.fr.mynanterre.adapter.JobsGridAdapter;
-import miage.parisnanterre.fr.mynanterre.adapter.OffreAdapter;
-import miage.parisnanterre.fr.mynanterre.adapter.SportGridAdapter;
-import miage.parisnanterre.fr.mynanterre.fragment.OffreFragment;
+
 
 public class ListeJobs extends AppCompatActivity {
 
@@ -28,32 +27,26 @@ public class ListeJobs extends AppCompatActivity {
         final GridView gridView = (GridView) findViewById(R.id.gridview);
         gridView.setAdapter(new JobsGridAdapter(this, image_details));
 
-        //inclure ici la redirection vers liste des entreprises apres clqiue sur le bouton ou dans Jobs fragment ?
-        //pour le clique sur un carré en fonction du carré cliqué
-        for (int i = 0; i < gridView.getChildCount(); i++) {
-            //You can see , all child item is CardView , so we just cast object to CardView
-            GridLayout gridLayout = (GridLayout) gridView.getChildAt(i);
-            final int finalI = i;
-            //si bouton entreprise car c'est le 6e alors on redirige vers les entreprises
+        //getElementClicked(gridView);
 
-            if(i==6) {
-                gridLayout.setOnClickListener(new View.OnClickListener() {
-
-                    @Override
-                    public void onClick(View view) {
-
-                        Intent intent = new Intent(ListeJobs.this, OffreFragment.class);
-                        intent.putExtra("info", "This is activity from card item index  " + finalI);
-                        startActivity(intent);
-
-                    }
-                });
+        //quand on clique sur le bouton ajouter une offre dans la vue activty_main2 (categories des jobs)
+        Button btnAddOffre = (Button) findViewById(R.id.buttonAjoutOffres);
+        btnAddOffre.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                Intent myIntent = new Intent(view.getContext(), AjoutOffre.class);
+                startActivityForResult(myIntent, 0);
             }
+
+        });
+
         }
 
+        //quand on clique sur un element du grid view
+        private void getElementClicked(GridView gridView) {
+            for (int i =0; i<gridView.getChildCount();i++) {
 
-
-
+            }
+        }
 
         // When the user clicks on the GridItem
        /* gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -84,8 +77,9 @@ public class ListeJobs extends AppCompatActivity {
                 //Toast.makeText(ListeSport.this, "Du lundi au vendredi :" + "\n" + "08h00-21h00"
                        // , Toast.LENGTH_LONG).show();
             }
-        });*/
-    }
+        });
+    }*/
+
 
 
 
