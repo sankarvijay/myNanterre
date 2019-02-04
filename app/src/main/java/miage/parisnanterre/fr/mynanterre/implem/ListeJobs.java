@@ -7,7 +7,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
-import android.widget.GridLayout;
 import android.widget.GridView;
 import android.widget.Toast;
 
@@ -16,7 +15,6 @@ import java.util.List;
 
 import miage.parisnanterre.fr.mynanterre.R;
 import miage.parisnanterre.fr.mynanterre.adapter.JobsGridAdapter;
-import miage.parisnanterre.fr.mynanterre.fragment.EntrepriseFragment;
 
 
 public class ListeJobs extends AppCompatActivity {

@@ -17,7 +17,6 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.GridView;
-import android.support.v4.app.Fragment;
 import android.widget.Toast;
 
 import miage.parisnanterre.fr.mynanterre.R;
@@ -89,9 +88,6 @@ public class ListeSport extends AppCompatActivity {
         Button btnSeance = (Button) findViewById(R.id.btnSeances);
         btnSeance.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                // Intent intent = new Intent(ListeSport.this, SeancesFragment.class);
-                //
-                //startActivity(intent);
                 getSupportFragmentManager().beginTransaction().add(R.id.myFrame, new SeancesFragment()).commit();
             }
 

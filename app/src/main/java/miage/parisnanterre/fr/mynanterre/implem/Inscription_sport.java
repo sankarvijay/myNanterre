@@ -7,7 +7,6 @@ import android.os.StrictMode;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Spinner;
 import android.widget.Toast;
 
 import java.sql.Connection;
@@ -18,7 +17,6 @@ import java.sql.SQLException;
 import miage.parisnanterre.fr.mynanterre.R;
 
 public class Inscription_sport extends Activity {
-    //private static final String url = "jdbc:mysql://localhost:3306/my_nanterre";
     private static final String url = "jdbc:mysql://10.0.2.2:8889/my_nanterre";
     private static final String user = "root";
     private static final String psw = "root";
