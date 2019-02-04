@@ -2,14 +2,12 @@ package miage.parisnanterre.fr.mynanterre.fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.support.v4.app.ListFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Toast;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -26,11 +24,11 @@ import miage.parisnanterre.fr.mynanterre.implem.ListeSport;
  * Created by Sankar Vijay on 26/01/2019.
  */
 public class SportFragment extends ListFragment implements AdapterView.OnItemClickListener {
-    private static final String url = "jdbc:mysql://10.0.2.2:8889/my_nanterre";
-    private static final String user = "root";
-    private static final String psw = "root";
-    private static Connection conn;
-    private ArrayList<String> sports = new ArrayList<String>();
+    //private static final String url = "jdbc:mysql://10.0.2.2:8889/my_nanterre";
+    //private static final String user = "root";
+    //private static final String psw = "root";
+    //private static Connection conn;
+    //private ArrayList<String> sports = new ArrayList<String>();
 
     @Override
     public View onCreateView(LayoutInflater inflater,

@@ -61,19 +61,19 @@ public class Seance extends Activity {
         this.lieu = lieu;
     }
 
-    public Time getHeure_d() {
+    public Time getHeured() {
         return heure_d;
     }
 
-    public void setHeure_d(Time heure_d) {
+    public void setHeured(Time heure_d) {
         this.heure_d = heure_d;
     }
 
-    public Time getHeure_f() {
+    public Time getHeuref() {
         return heure_f;
     }
 
-    public void setHeure_f(Time heure_f) {
+    public void setHeuref(Time heure_f) {
         this.heure_f = heure_f;
     }
 

@@ -78,8 +78,8 @@ public class JobsGridAdapter extends BaseAdapter {
     }
 
     static class ViewHolder {
-        ImageView logo;
-        TextView jobsName;
+        private ImageView logo;
+        private TextView jobsName;
     }
 
 }

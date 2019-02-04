@@ -2,9 +2,9 @@ package miage.parisnanterre.fr.mynanterre.implem;
 
 public class Entreprise {
 
-    String nom , commentaire ;
-    int logo;
-    float note;
+    private String nom , commentaire ;
+    private int logo;
+    private float note;
 
     public Entreprise(){}
     //entreprise mais on a  pas encore les avis

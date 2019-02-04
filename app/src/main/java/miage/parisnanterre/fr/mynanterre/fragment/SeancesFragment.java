@@ -14,7 +14,6 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -84,8 +83,6 @@ public class SeancesFragment extends Fragment {
 
                 Seance seance = new Seance(nom, prenom,heured,heuref,sport,lieu);
                 liste.add(seance);
-
-                //customDialog("Seances", seance.toString());
 
             }
             sAdapter.notifyDataSetChanged();

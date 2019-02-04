@@ -2,7 +2,6 @@ package miage.parisnanterre.fr.mynanterre.fragment;
 
 
 import android.os.Bundle;
-import android.os.StrictMode;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -12,13 +11,10 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -53,14 +49,6 @@ public class EntrepriseFragment extends Fragment{
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setAdapter(enAdapter);
 
-      /*  try {
-            Class.forName("com.mysql.jdbc.Driver");
-        } catch (Exception e) {
-            Toast.makeText(getContext(), "Problème au niveau du driver", Toast.LENGTH_SHORT).show();
-        }
-        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
-        StrictMode.setThreadPolicy(policy);
-*/
         prepareEntrepriseData();
     }
 

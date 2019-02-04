@@ -5,8 +5,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
@@ -20,8 +18,6 @@ import java.sql.SQLException;
 import miage.parisnanterre.fr.mynanterre.R;
 
 public class Inscription_sport extends Activity {
-    //private Spinner spinner;
-    //private static final String[]paths = {"débutant", "intermédiaire", "avancé"};
     //private static final String url = "jdbc:mysql://localhost:3306/my_nanterre";
     private static final String url = "jdbc:mysql://10.0.2.2:8889/my_nanterre";
     private static final String user = "root";
@@ -76,7 +72,6 @@ public class Inscription_sport extends Activity {
 }
 /*
 
-        spinner = (Spinner)findViewById(R.id.liste_niveau);
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(Inscription_sport.this,
                 android.R.layout.simple_spinner_item,paths);
 
