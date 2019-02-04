@@ -1,7 +1,7 @@
 [![Build Status](https://travis-ci.com/sankarvijay/myNanterre.svg?branch=master)](https://travis-ci.org/sankarvijay/myNanterre)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/86d12dbdeda94a9193f592d34d71574f)](https://app.codacy.com/app/sankarvijay/myNanterre?utm_source=github.com&utm_medium=referral&utm_content=sankarvijay/myNanterre&utm_campaign=Badge_Grade_Dashboard)
 [![SonarCloud Quality Gate](https://sonarcloud.io/api/project_badges/measure?project=sankarvijay_myNanterre&metric=alert_status)](https://sonarcloud.io/dashboard?id=sankarvijay_myNanterre)
-[![SonarCloud Coverage](https://sonarcloud.io/api/project_badges/measure?project=sankarvijay_myNanterre&metric=coverage)](https://sonarcloud.io/dashboard?id=sankarvijay_myNanterre)
+/*[![SonarCloud Coverage](https://sonarcloud.io/api/project_badges/measure?project=sankarvijay_myNanterre&metric=coverage)](https://sonarcloud.io/dashboard?id=sankarvijay_myNanterre)*/
 [![SonarCloud Security Rating](https://sonarcloud.io/api/project_badges/measure?project=sankarvijay_myNanterre&metric=security_rating)](https://sonarcloud.io/dashboard?id=sankarvijay_myNanterre)
 [![Waffle.io - Columns and their card count](https://badge.waffle.io/sankarvijay/myNanterre.svg?columns=all)](https://waffle.io/sankarvijay/myNanterre)
 [![GitHub issues](https://img.shields.io/github/issues/sankarvijay/myNanterre.svg)](https://github.com/sankarvijay/myNanterre/issues)
