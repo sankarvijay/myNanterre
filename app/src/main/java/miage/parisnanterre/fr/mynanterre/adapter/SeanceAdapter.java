@@ -75,8 +75,8 @@ public class SeanceAdapter extends RecyclerView.Adapter<SeanceAdapter.MyViewHold
         holder.prenom.setText(seance.getPrenom());
         holder.sport.setText(seance.getSport());
         holder.lieu.setText(seance.getLieu());
-        holder.heure_d.setText(seance.getHeure_d().toString());
-        holder.heure_f.setText(seance.getHeure_f().toString());
+        holder.heure_d.setText(seance.getHeured().toString());
+        holder.heure_f.setText(seance.getHeuref().toString());
 
     }
 
