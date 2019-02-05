@@ -7,21 +7,21 @@
     <item
         android:id="@+id/navigation_sports"
         android:icon="@drawable/sport"
-        android:title="Sports"/>
+        android:title="Sport"/>
 
     <item
         android:id="@+id/navigation_jobs"
-        android:icon="@drawable/job"
+        android:icon="@drawable/jobs"
         android:title="Jobs"/>
 
     <item
         android:id="@+id/navigation_event"
-        android:icon="@drawable/events"
-        android:title="Evenements"/>
+        android:icon="@drawable/crous"
+        android:title="Crous"/>
 
     <item
         android:id="@+id/navigation_bonsplans"
-        android:icon="@drawable/deals"
-        android:title="Bons Plans"/>
+        android:icon="@drawable/train"
+        android:title="Train"/>
 
 </menu>
