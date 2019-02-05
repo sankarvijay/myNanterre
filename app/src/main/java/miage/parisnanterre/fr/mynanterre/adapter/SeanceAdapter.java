@@ -21,6 +21,7 @@ public class SeanceAdapter extends RecyclerView.Adapter<SeanceAdapter.MyViewHold
 
     private List<Seance> listeSeances;
     private Context mcon;
+
     public class MyViewHolder extends RecyclerView.ViewHolder {
         public TextView nom;
         public TextView prenom;
@@ -41,9 +42,9 @@ public class SeanceAdapter extends RecyclerView.Adapter<SeanceAdapter.MyViewHold
         }
     }
 
-    public SeanceAdapter(List<Seance> listeSeances,Context context) {
+    public SeanceAdapter(List<Seance> listeSeances, Context context) {
         this.listeSeances = listeSeances;
-        this.mcon=context;
+        this.mcon = context;
     }
 
 
@@ -58,8 +59,8 @@ public class SeanceAdapter extends RecyclerView.Adapter<SeanceAdapter.MyViewHold
         insciption.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               //  Intent intent = new Intent(get, Inscription_sport.class);
-                 //startActivity(intent);
+                //  Intent intent = new Intent(get, Inscription_sport.class);
+                //startActivity(intent);
                 mcon.startActivity(new Intent(mcon, Inscription_sport.class));
 
             }

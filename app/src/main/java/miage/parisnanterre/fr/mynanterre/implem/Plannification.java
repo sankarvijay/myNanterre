@@ -20,9 +20,9 @@ import miage.parisnanterre.fr.mynanterre.R;
  * Created by Sankar Vijay on 01/02/2019.
  */
 public class Plannification extends Activity {
-    private static final String url = "jdbc:mysql://10.0.2.2:8889/my_nanterre";
-    private static final String user = "root";
-    private static final String psw = "root";
+    private static final String url = "jdbc:mysql://sql171.main-hosting.eu/u749839367_m1";
+    private static final String user = "u749839367_vijay";
+    private static final String psw = "9IDCqTm8Lig2";
     private static Connection conn;
     private EditText nom, prenom, heureD, heureF, sport, lieu;
     private Button planifier;

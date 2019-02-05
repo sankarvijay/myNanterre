@@ -78,8 +78,8 @@ public class SportGridAdapter extends BaseAdapter {
     }
 
     static class ViewHolder {
-        private ImageView logo;
-        private TextView sportsName;
+        ImageView logo;
+        TextView sportsName;
     }
 
 }

@@ -49,10 +49,6 @@ public class Accueil extends AppCompatActivity {
                     case R.id.navigation_bonsplans:
                         fragment = new BonsPlansFragment();
                         break;
-                        /*
-                    case R.id.navigation_entreprise:
-                        fragment = new EntrepriseFragement();
-                        break;*/
                     default:
                         break;
                 }

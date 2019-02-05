@@ -25,9 +25,9 @@ import miage.parisnanterre.fr.mynanterre.fragment.SeancesFragment;
 
 
 public class ListeSport extends AppCompatActivity {
-    private static final String url = "jdbc:mysql://10.0.2.2:8889/my_nanterre";
-    private static final String user = "root";
-    private static final String psw = "root";
+    private static final String url = "jdbc:mysql://sql171.main-hosting.eu/u749839367_m1";
+    private static final String user = "u749839367_vijay";
+    private static final String psw = "9IDCqTm8Lig2";
     private static Connection conn;
 
     @Override
@@ -82,7 +82,6 @@ public class ListeSport extends AppCompatActivity {
                 Intent myIntent = new Intent(view.getContext(), Plannification.class);
                 startActivityForResult(myIntent, 0);
             }
-
         });
 
         Button btnSeance = (Button) findViewById(R.id.btnSeances);

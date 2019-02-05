@@ -35,9 +35,9 @@ import miage.parisnanterre.fr.mynanterre.implem.Offre;
 
 public class OffreFragment extends Fragment {
     // à modifier en fonction de votre localhost
-    private static final String url = "jdbc:mysql://10.0.2.2:8889/my_nanterre";
-    private static final String user = "root";
-    private static final String psw = "root";
+    private static final String url = "jdbc:mysql://sql171.main-hosting.eu/u749839367_m1";
+    private static final String user = "u749839367_vijay";
+    private static final String psw = "9IDCqTm8Lig2";
     private static Connection conn;
     private List<Offre> liste = new ArrayList<>();
     private OffreAdapter oAdapter;
