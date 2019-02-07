@@ -30,32 +30,34 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 import miage.parisnanterre.fr.mynanterre.R;
-import miage.parisnanterre.fr.mynanterre.adapter.OffreAdapter;
-import miage.parisnanterre.fr.mynanterre.implem.Offre;
+import miage.parisnanterre.fr.mynanterre.adapter.CrousAdapter;
 
-public class OffreFragment extends Fragment {
+import miage.parisnanterre.fr.mynanterre.implem.Crous;
+
+
+public class CrousFragment extends Fragment {
     // à modifier en fonction de votre localhost
     private static final String url = "jdbc:mysql://sql171.main-hosting.eu/u749839367_m1";
     private static final String user = "u749839367_vijay";
     private static final String psw = "9IDCqTm8Lig2";
     private static Connection conn;
-    private List<Offre> liste = new ArrayList<>();
-    private OffreAdapter oAdapter;
+    private List<Crous> liste = new ArrayList<>();
+    private CrousAdapter crAdapter;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.liste_offre, container, false);
+        return inflater.inflate(R.layout.liste_batiments, container, false);
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         RecyclerView recyclerView = getView().findViewById(R.id.recycler_view);
 
-        oAdapter = new OffreAdapter(liste);
+        crAdapter = new CrousAdapter(liste);
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(mLayoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
-        recyclerView.setAdapter(oAdapter);
+        recyclerView.setAdapter(crAdapter);
 
         try {
             Class.forName("com.mysql.jdbc.Driver");
@@ -73,34 +75,28 @@ public class OffreFragment extends Fragment {
         try {
 
             conn = DriverManager.getConnection(url, user, psw);
-            String sqliD = "SELECT * FROM jobs ";
+            String sqliD = "SELECT batiment,lieu FROM Crous ORDER BY batiment";
             Statement st = conn.createStatement();
             ResultSet rst = st.executeQuery(sqliD);
 
             while (rst.next()) {
-                String logo = rst.getString("image");
-                String titre = rst.getString("titre");
-                String entreprise = rst.getString("entreprise");
-                String localisation = rst.getString("localisation");
-                Date datePublicaton = rst.getDate("date_publication");
-                String descriptif = rst.getString("descriptif");
-                final String siteWeb = rst.getString("site_web");
+                String batiment = rst.getString("batiment");
+                String lieu = rst.getString("lieu");
 
-                logo = logo.substring(0, logo.lastIndexOf("."));
-                String image = "R.drawable." + logo;
 
-                Offre offre = new Offre(image, titre, "Stage", localisation, descriptif
-                        , "10/01/2019", entreprise);
-                liste.add(offre);
+
+
+                Crous crous = new Crous(batiment,lieu);
+                liste.add(crous);
 
 
             }
-            oAdapter.notifyDataSetChanged();
+            crAdapter.notifyDataSetChanged();
 
         } catch (SQLException e) {
             e.printStackTrace();
         }
 
-        oAdapter.notifyDataSetChanged();
+        crAdapter.notifyDataSetChanged();
     }
 }

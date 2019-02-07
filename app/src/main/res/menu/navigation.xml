@@ -15,7 +15,7 @@
         android:title="Jobs"/>
 
     <item
-        android:id="@+id/navigation_event"
+        android:id="@+id/navigation_crous"
         android:icon="@drawable/crous"
         android:title="Crous"/>
 
