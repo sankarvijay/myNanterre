@@ -1,40 +1,24 @@
-package miage.parisnanterre.fr.mynanterre.fragment;
+package miage.parisnanterre.fr.mynanterre.implem;
 
-
-import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
-import android.os.StrictMode;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.Toast;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 
 import miage.parisnanterre.fr.mynanterre.R;
 import miage.parisnanterre.fr.mynanterre.adapter.CrousAdapter;
 
-import miage.parisnanterre.fr.mynanterre.adapter.EntrepriseAdapter;
-import miage.parisnanterre.fr.mynanterre.implem.Crous;
-import miage.parisnanterre.fr.mynanterre.implem.Entreprise;
 
-
-public class CrousFragment extends Fragment{
+public class ListeCrous  extends AppCompatActivity {
 
     private static final String url = "jdbc:mysql://sql171.main-hosting.eu/u749839367_m1";
     private static final String user = "u749839367_vijay";
@@ -46,26 +30,34 @@ public class CrousFragment extends Fragment{
 
 
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.liste_batiments, container, false);
-    }
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.liste_batiments);
 
-    @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        RecyclerView recyclerView = getView().findViewById(R.id.recycler_view);
+
+        RecyclerView recyclerView = findViewById(R.id.recycler_view);
 
         cAdapter = new CrousAdapter(liste);
-        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getActivity());
+        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
         recyclerView.setLayoutManager(mLayoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setAdapter(cAdapter);
+
+         /*  try {
+            Class.forName("com.mysql.jdbc.Driver");
+        } catch (Exception e) {
+            Toast.makeText(getContext(), "Problème au niveau du driver", Toast.LENGTH_SHORT).show();
+        }
+        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+        StrictMode.setThreadPolicy(policy);
+*/
 
         prepareCrousData();
     }
 
     private void prepareCrousData() {
 
-        try {
+          try {
 
             conn = DriverManager.getConnection(url, user, psw);
             String sqliD = "SELECT * FROM Crous ";
@@ -82,15 +74,16 @@ public class CrousFragment extends Fragment{
 
 
             }
+            cAdapter.notifyDataSetChanged();
 
 
         } catch (SQLException e) {
-            e.printStackTrace();
-        }
+              e.printStackTrace();
+          }
 
 
 
 
-        cAdapter.notifyDataSetChanged();
+
     }
 }

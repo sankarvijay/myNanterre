@@ -6,11 +6,12 @@ public class Crous {
     private String lieu;
     private String horaire;
     private String ventes;
-    private String frequentation;
+    private int frequentation;
 
-    public Crous(String batiment, String lieu) {
+    public Crous(String batiment, String lieu,int frequentation) {
         this.batiment = batiment;
         this.lieu = lieu;
+        this.frequentation=frequentation;
     }
 
     public String getBatiment() {
@@ -45,11 +46,11 @@ public class Crous {
         this.ventes = ventes;
     }
 
-    public String getFrequentation() {
+    public int getFrequentation() {
         return frequentation;
     }
 
-    public void setFrequentation(String frequentation) {
+    public void setFrequentation(int frequentation) {
         this.frequentation = frequentation;
     }
 }
