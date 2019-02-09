@@ -15,12 +15,12 @@
         android:title="Jobs"/>
 
     <item
-        android:id="@+id/navigation_crous"
+        android:id="@+id/navigation_event"
         android:icon="@drawable/crous"
         android:title="Crous"/>
 
     <item
-        android:id="@+id/navigation_bonsplans"
+        android:id="@+id/navigation_train"
         android:icon="@drawable/train"
         android:title="Train"/>
 

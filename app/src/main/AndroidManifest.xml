@@ -25,12 +25,13 @@
         <activity android:name=".implem.Inscription_sport"></activity>
         <activity android:name=".implem.AjoutOffre"></activity>
         <activity android:name=".implem.ListeEntreprise"></activity>
-
+        <activity android:name=".implem.Train"></activity>
 
 
     </application>
+
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission."/>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission." />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 </manifest>

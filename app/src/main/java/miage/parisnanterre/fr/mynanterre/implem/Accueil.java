@@ -12,10 +12,10 @@ import android.view.MenuItem;
 import miage.parisnanterre.fr.mynanterre.R;
 import miage.parisnanterre.fr.mynanterre.fragment.AccueilFragment;
 import miage.parisnanterre.fr.mynanterre.fragment.BonsPlansFragment;
-
-import miage.parisnanterre.fr.mynanterre.fragment.CrousFragment;
+import miage.parisnanterre.fr.mynanterre.fragment.EvenementFragment;
 import miage.parisnanterre.fr.mynanterre.fragment.JobsFragment;
 import miage.parisnanterre.fr.mynanterre.fragment.SportFragment;
+import miage.parisnanterre.fr.mynanterre.fragment.TrainFragment;
 
 public class Accueil extends AppCompatActivity {
     private Fragment fragment;
@@ -44,10 +44,12 @@ public class Accueil extends AppCompatActivity {
                         fragment = new JobsFragment();
                         break;
 
-                    case R.id.navigation_crous:
-                        fragment = new CrousFragment();
+                    case R.id.navigation_event:
+                        fragment = new EvenementFragment();
                         break;
-
+                    case R.id.navigation_train:
+                        fragment = new TrainFragment();
+                        break;
                     default:
                         break;
                 }

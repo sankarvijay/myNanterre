@@ -1,5 +1,8 @@
 package miage.parisnanterre.fr.mynanterre.fragment;
 
+/*
+ * Created by Sankar Vijay on 17/01/2019.
+ */
 
 import android.content.Intent;
 import android.net.Uri;
@@ -27,70 +30,77 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 import miage.parisnanterre.fr.mynanterre.R;
-import miage.parisnanterre.fr.mynanterre.adapter.CrousAdapter;
+import miage.parisnanterre.fr.mynanterre.adapter.OffreAdapter;
+import miage.parisnanterre.fr.mynanterre.implem.Offre;
 
-import miage.parisnanterre.fr.mynanterre.adapter.EntrepriseAdapter;
-import miage.parisnanterre.fr.mynanterre.implem.Crous;
-import miage.parisnanterre.fr.mynanterre.implem.Entreprise;
-
-
-public class CrousFragment extends Fragment{
-
+public class OffreFragment extends Fragment {
+    // à modifier en fonction de votre localhost
     private static final String url = "jdbc:mysql://sql171.main-hosting.eu/u749839367_m1";
     private static final String user = "u749839367_vijay";
     private static final String psw = "9IDCqTm8Lig2";
     private static Connection conn;
-
-    private List<Crous> liste = new ArrayList<>();
-    private CrousAdapter cAdapter;
-
+    private List<Offre> liste = new ArrayList<>();
+    private OffreAdapter oAdapter;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.liste_batiments, container, false);
+        return inflater.inflate(R.layout.liste_offre, container, false);
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         RecyclerView recyclerView = getView().findViewById(R.id.recycler_view);
 
-        cAdapter = new CrousAdapter(liste);
+        oAdapter = new OffreAdapter(liste);
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(mLayoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
-        recyclerView.setAdapter(cAdapter);
+        recyclerView.setAdapter(oAdapter);
 
-        prepareCrousData();
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+        } catch (Exception e) {
+            Toast.makeText(getContext(), "Problème au niveau du driver", Toast.LENGTH_SHORT).show();
+        }
+        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+        StrictMode.setThreadPolicy(policy);
+
+        prepareOffreData();
     }
 
-    private void prepareCrousData() {
+    private void prepareOffreData() {
 
         try {
 
             conn = DriverManager.getConnection(url, user, psw);
-            String sqliD = "SELECT * FROM Crous ";
+            String sqliD = "SELECT * FROM jobs ";
             Statement st = conn.createStatement();
             ResultSet rst = st.executeQuery(sqliD);
 
             while (rst.next()) {
-                String batiment = rst.getString("batiment");
-                String lieu = rst.getString("lieu");
-                int frequentation=rst.getInt("frequentation");
+                String logo = rst.getString("image");
+                String titre = rst.getString("titre");
+                String entreprise = rst.getString("entreprise");
+                String localisation = rst.getString("localisation");
+                Date datePublicaton = rst.getDate("date_publication");
+                String descriptif = rst.getString("descriptif");
+                final String siteWeb = rst.getString("site_web");
 
-                Crous crous = new Crous(batiment, lieu,frequentation);
-                liste.add(crous);
+                logo = logo.substring(0, logo.lastIndexOf("."));
+                String image = "R.drawable." + logo;
+
+                Offre offre = new Offre(image, titre, "Stage", localisation, descriptif
+                        , "10/01/2019", entreprise);
+                liste.add(offre);
 
 
             }
-
+            oAdapter.notifyDataSetChanged();
 
         } catch (SQLException e) {
             e.printStackTrace();
         }
 
-
-
-
-        cAdapter.notifyDataSetChanged();
+        oAdapter.notifyDataSetChanged();
     }
 }
