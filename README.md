@@ -32,10 +32,14 @@ Nous travaillons tous en tant que collaborateur
 #### Nos outils et langages
 - Android studio : pour la création de l'application mobile
 - Espresso : effectuer des tests unitaires sur notre application Android
+- Commitizen: norme de messages pout commit
+- Taiga : Répartition des tâches et priorisation 
 - SonarCloud : analyser la qualité du code, redondance, bugs etc...
-- Waffle : Répartitions des tâches, TODO, workflow etc...
+- Waffle : Répartition des tâches, TODO, workflow etc...
 - Java sous Andoid studio : langages de développement
-- Méthode Kanban ?
+- Codacy analyse de code statique, dynamique, sécurité, couverture du code, test de regression
+- APIs
+- Méthodes agile SCRUM
 
 ## Auteurs
 * **SANKAR Vijay** - [Github](https://github.com/sankarvijay)
