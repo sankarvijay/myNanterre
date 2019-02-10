@@ -44,16 +44,10 @@ public class ListeJobs extends AppCompatActivity {
                     case 1: //Alternance
                         intent = new Intent(v.getContext(), ListeJobs.class);
                         break;
-                    case 2: //CDI
+                    case 2: //Contrat Pro
                         intent = new Intent(v.getContext(), ListeJobs.class);
                         break;
-                    case 3: //CDD
-                        intent = new Intent(v.getContext(), ListeJobs.class);
-                        break;
-                    case 4: // INTERIM
-                        intent = new Intent(v.getContext(), ListeJobs.class);
-                        break;
-                    case 5: // ENTREPRISES //si on clique sur le bouton entreprises
+                    case 3: // ENTREPRISES //si on clique sur le bouton entreprises
                         //intent =  new Intent(context, EntrepriseFragment.class);
                         intent = new Intent(v.getContext(), ListeEntreprise.class);
                         break;
@@ -83,16 +77,12 @@ public class ListeJobs extends AppCompatActivity {
         List<Jobs> list = new ArrayList<Jobs>();
         Jobs stage = new Jobs(R.drawable.stage, "Stage");
         Jobs alternance = new Jobs(R.drawable.alternance, "Alternance");
-        Jobs cdi = new Jobs(R.drawable.cdi, "CDI");
-        Jobs cdd = new Jobs(R.drawable.cdd, "CDD");
-        Jobs interim = new Jobs(R.drawable.interim, "Interim");
+        Jobs contratpro = new Jobs(R.drawable.cpro, "Contrat Pro");
         Jobs entreprise = new Jobs(R.drawable.entreprise, "Entreprises");
 
         list.add(stage);
         list.add(alternance);
-        list.add(cdi);
-        list.add(cdd);
-        list.add(interim);
+        list.add(contratpro);
         list.add(entreprise);
 
         return list;
