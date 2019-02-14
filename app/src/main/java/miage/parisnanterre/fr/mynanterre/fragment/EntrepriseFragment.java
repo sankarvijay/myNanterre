@@ -71,7 +71,7 @@ public class EntrepriseFragment extends Fragment{
             e.printStackTrace();
         }*/
 
-      Entreprise entreprise =new Entreprise(R.drawable.orange,"Orange", "Bonne entreprise,un sujet pas assez important", 3);
+      /*Entreprise entreprise =new Entreprise(R.drawable.orange,"Orange", "Bonne entreprise,un sujet pas assez important", 3);
       liste.add(entreprise);
 
       entreprise =new Entreprise(R.drawable.aviva,"AVIVA", "Bonne entreprise, j'ai pas trop aimé l'ambiance", 4);
@@ -82,7 +82,7 @@ public class EntrepriseFragment extends Fragment{
 
         entreprise =new Entreprise(R.drawable.societegenerale,"Societé Générale", "Trés bonne entreprise.Des sujets importants", 4);
         liste.add(entreprise);
-
+        */
 
         enAdapter.notifyDataSetChanged();
     }

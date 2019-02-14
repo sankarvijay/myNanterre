@@ -77,12 +77,12 @@ public class ListeJobs extends AppCompatActivity {
         List<Jobs> list = new ArrayList<Jobs>();
         Jobs stage = new Jobs(R.drawable.stage, "Stage");
         Jobs alternance = new Jobs(R.drawable.alternance, "Alternance");
-        Jobs contratpro = new Jobs(R.drawable.cpro, "Contrat Pro");
+        //Jobs contratpro = new Jobs(R.drawable.cpro, "Contrat Pro");
         Jobs entreprise = new Jobs(R.drawable.entreprise, "Entreprises");
 
         list.add(stage);
         list.add(alternance);
-        list.add(contratpro);
+        //list.add(contratpro);
         list.add(entreprise);
 
         return list;

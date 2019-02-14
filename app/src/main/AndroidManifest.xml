@@ -26,7 +26,7 @@
         <activity android:name=".implem.AjoutOffre"></activity>
         <activity android:name=".implem.ListeEntreprise"></activity>
         <activity android:name=".implem.Train"></activity>
-
+        <activity android:name=".implem.ListeCrous"></activity>
 
     </application>
 
