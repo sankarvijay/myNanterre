@@ -10,6 +10,11 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.List;
 
 import miage.parisnanterre.fr.mynanterre.R;
@@ -29,6 +34,7 @@ public class SeanceAdapter extends RecyclerView.Adapter<SeanceAdapter.MyViewHold
         public TextView heure_f;
         public TextView sport;
         public TextView lieu;
+
 
         public MyViewHolder(View view) {
             super(view);
@@ -51,6 +57,11 @@ public class SeanceAdapter extends RecyclerView.Adapter<SeanceAdapter.MyViewHold
     @Override
     @NonNull
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        final String url = "jdbc:mysql://sql171.main-hosting.eu/u749839367_m1";
+        final String user = "u749839367_vijay";
+        final String psw = "9IDCqTm8Lig2";
+        Connection conn;
+
         View itemView = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.ligne_seance, parent, false);
 
@@ -65,6 +76,23 @@ public class SeanceAdapter extends RecyclerView.Adapter<SeanceAdapter.MyViewHold
 
             }
         });
+
+        TextView nbInscrit = (TextView) itemView.findViewById(R.id.inscrit);
+        nbInscrit.setText("ok ");
+        try {
+
+            conn = DriverManager.getConnection(url, user, psw);
+            String sqliD = "SELECT count(*) AS rowcount FROM plannification_sport ";
+            Statement st = conn.createStatement();
+            ResultSet rst = st.executeQuery(sqliD);
+            rst.next();
+            int count = rst.getInt("rowcount");
+            System.out.println("Nb Inscrits : "+count);
+            nbInscrit.setText(String.valueOf(count));
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
         return new MyViewHolder(itemView);
     }
 

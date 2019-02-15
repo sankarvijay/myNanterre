@@ -11,6 +11,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.sql.Connection;
@@ -39,14 +40,20 @@ public class SeancesFragment extends Fragment {
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.liste_seances, container, false);
+        //return inflater.inflate(R.layout.liste_seances, container, false);
+        super.onCreateView(inflater, container, savedInstanceState);
+        View view = inflater.inflate(R.layout.liste_seances, container, false);
+
+
+        return view;
+
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         RecyclerView recyclerView = getView().findViewById(R.id.recycler_view);
 
-        sAdapter = new SeanceAdapter(liste,getContext());
+        sAdapter = new SeanceAdapter(liste, getContext());
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(mLayoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
@@ -61,6 +68,8 @@ public class SeancesFragment extends Fragment {
         StrictMode.setThreadPolicy(policy);
 
         prepareSeanceData();
+
+
     }
 
     private void prepareSeanceData() {
@@ -68,7 +77,7 @@ public class SeancesFragment extends Fragment {
         try {
 
             conn = DriverManager.getConnection(url, user, psw);
-            String sqliD = "SELECT * FROM Plannification_sport ";
+            String sqliD = "SELECT * FROM plannification_sport ";
             Statement st = conn.createStatement();
             ResultSet rst = st.executeQuery(sqliD);
 
@@ -81,10 +90,12 @@ public class SeancesFragment extends Fragment {
                 String lieu = rst.getString("lieu");
 
 
-                Seance seance = new Seance(nom, prenom,heured,heuref,sport,lieu);
+                Seance seance = new Seance(nom, prenom, heured, heuref, sport, lieu);
                 liste.add(seance);
 
             }
+
+
             sAdapter.notifyDataSetChanged();
 
         } catch (SQLException e) {

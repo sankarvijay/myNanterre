@@ -19,7 +19,15 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 import org.json.JSONException;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.ProtocolException;
+import java.net.URL;
 import java.util.Iterator;
+import java.util.Scanner;
 
 import miage.parisnanterre.fr.mynanterre.R;
 
@@ -44,7 +52,7 @@ public class Train extends AppCompatActivity {
         requestQueue = Volley.newRequestQueue(this);  // This setups up a new request queue which we will need to make HTTP requests.
 
         JSONObject obj = null;
-        try {
+        /*try {
             obj = new JSONObject(baseUrl);
             String schedules = obj.getJSONObject("result").getJSONArray("schedules").toString();
 
@@ -57,9 +65,45 @@ public class Train extends AppCompatActivity {
             }
         } catch (JSONException e) {
             e.printStackTrace();
+        }*/
+
+        //  getHoraireList();
+        try {
+            String inline = "";
+            URL url = new URL("http://maps.googleapis.com/maps/api/geocode/json?address=chicago&sensor=false&#8221");
+            //Parse URL into HttpURLConnection in order to open the connection in order to get the JSON data
+            HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+            //Set the request to GET or POST as per the requirements
+            conn.setRequestMethod("GET");
+            //Use the connect method to create the connection bridge
+            conn.connect();
+            //Get the response status of the Rest API
+            int responsecode = conn.getResponseCode();
+            System.out.println("Response code is: " + responsecode);
+
+            //Iterating condition to if response code is not 200 then throw a runtime exception
+            //else continue the actual process of getting the JSON data
+            if (responsecode != 200)
+                throw new RuntimeException("HttpResponseCode: " + responsecode);
+            else {
+                //Scanner functionality will read the JSON data from the stream
+                Scanner sc = new Scanner(url.openStream());
+                while (sc.hasNext()) {
+                    inline += sc.nextLine();
+                }
+                System.out.println("\nJSON Response in String format");
+                System.out.println(inline);
+                //Close the stream when reading the data has been finished
+                sc.close();
+            }
+        } catch (ProtocolException e) {
+            e.printStackTrace();
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
 
-         getHoraireList();
 
     }
 
@@ -78,7 +122,7 @@ public class Train extends AppCompatActivity {
         this.horaires.setText(str);
     }
 
-    private void getHoraireList() {
+   /* private void getHoraireList() {
         this.url = this.baseUrl;
 
         JsonArrayRequest arrReq = new JsonArrayRequest(Request.Method.GET, url,
@@ -95,6 +139,7 @@ public class Train extends AppCompatActivity {
                                 obj = new JSONObject(baseUrl);
 
                                 JSONArray arr = (JSONArray) obj.getJSONObject("object").getJSONObject("result").getJSONArray("schedules");
+
                                 for (int i = 0; i < arr.length(); i++) {
                                     String message = arr.getJSONObject(i).getString("message");
                                     String destination = arr.getJSONObject(i).getString("destination");
@@ -134,5 +179,5 @@ public class Train extends AppCompatActivity {
         // Add the request we just defined to our request queue.
         // The request queue will automatically handle the request as soon as it can.
         requestQueue.add(arrReq);
-    }
+    }*/
 }

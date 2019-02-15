@@ -79,14 +79,14 @@ public class CrousFragment extends ListFragment implements AdapterView.OnItemCli
             while (rst.next()) {
                 String batiment = rst.getString("batiment");
                 String lieu = rst.getString("lieu");
-                int frequentation=rst.getInt("frequentation");
+                int frequentation = rst.getInt("frequentation");
 
-                Crous crous = new Crous(batiment, lieu,frequentation);
+                Crous crous = new Crous(batiment, lieu, frequentation);
                 liste.add(crous);
 
             }
 
-            cAdapter = new CrousAdapter(getContext(),liste);
+            cAdapter = new CrousAdapter(getContext(), liste);
 
             setListAdapter(cAdapter);
             getListView().setOnItemClickListener(this);
@@ -94,8 +94,6 @@ public class CrousFragment extends ListFragment implements AdapterView.OnItemCli
             e.printStackTrace();
         }
     }
-
-
 
 
     @Override
