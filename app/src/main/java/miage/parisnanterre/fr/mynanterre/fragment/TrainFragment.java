@@ -36,9 +36,7 @@ public class TrainFragment extends ListFragment implements AdapterView.OnItemCli
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        //Create intent
         Intent intent = new Intent(view.getContext(), Train.class);
-        //Start details activity
         startActivity(intent);
     }
 
