@@ -38,8 +38,8 @@ public class ListeJobs extends AppCompatActivity {
             //Lorsqu'on souhaite rediriger/afficher/faire qq chose apres un clique sur un element du gridView
                 switch(position)
                 {
-                    case 0: //Stage
-                        intent = new Intent(v.getContext(), ListeJobs.class);
+                    case 0: //Stage (api)
+                        intent = new Intent(v.getContext(), JobsData.class);
                         break;
                     case 1: //Alternance
                         intent = new Intent(v.getContext(), ListeJobs.class);
