@@ -23,7 +23,9 @@ public class EntrepriseAdapter extends RecyclerView.Adapter<EntrepriseAdapter.My
             R.drawable.orange,
             R.drawable.aviva,
             R.drawable.edf,
-            R.drawable.societegenerale
+            R.drawable.societegenerale,
+            R.drawable.cgi
+
     };
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
@@ -36,8 +38,8 @@ public class EntrepriseAdapter extends RecyclerView.Adapter<EntrepriseAdapter.My
             super(view);
             nom = (TextView) view.findViewById(R.id.nom);
             logo = (ImageView) view.findViewById(R.id.logo);
-            commentaire=(TextView) view.findViewById(R.id.commentaire);
-            note =(RatingBar) view.findViewById(R.id.note);
+            /*commentaire=(TextView) view.findViewById(R.id.commentaire);
+            note =(RatingBar) view.findViewById(R.id.note);*/
         }
     }
 
@@ -61,8 +63,8 @@ public class EntrepriseAdapter extends RecyclerView.Adapter<EntrepriseAdapter.My
         Entreprise entreprise = listeEntreprises.get(position);
         holder.nom.setText(entreprise.getNom());
         holder.logo.setImageResource(tab_images_pour_la_liste[position]);
-        holder.commentaire.setText(entreprise.getCommentaire());
-        holder.note.setRating(entreprise.getNote());
+        //holder.commentaire.setText(entreprise.getCommentaire());
+        //holder.note.setRating(entreprise.getNote());
     }
 
     @Override
