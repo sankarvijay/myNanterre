@@ -24,15 +24,15 @@ public class Plannification extends Activity {
     private static final String user = "u749839367_vijay";
     private static final String psw = "9IDCqTm8Lig2";
     private static Connection conn;
-    private EditText nom, prenom, heureD, heureF, sport, lieu;
+    private EditText numero, heureD, heureF, sport, lieu;
     private Button planifier;
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.formrdv);
 
-        nom = (EditText) findViewById(R.id.nom);
-        prenom = (EditText) findViewById(R.id.prenom);
+        numero = (EditText) findViewById(R.id.numero);
+
         heureD = (EditText) findViewById(R.id.heureD);
         heureF = (EditText) findViewById(R.id.heureF);
         sport = (EditText) findViewById(R.id.sport);
@@ -54,15 +54,15 @@ public class Plannification extends Activity {
                     conn = DriverManager.getConnection(url, user, psw);
                     String sqliD = "insert into plannification_sport (nom,prenom,heure_d,heure_f,sport,lieu) values (?,?,?,?,?,?) ;";
                     PreparedStatement preparedStatement = conn.prepareStatement(sqliD);
-                    System.out.println("Nom " + nom.getText().toString());
+                    System.out.println("Nom " + numero.getText().toString());
                     System.out.println("Heure D " + heureD.getText().toString());
 
-                    preparedStatement.setString(1, nom.getText().toString());
-                    preparedStatement.setString(2, prenom.getText().toString());
-                    preparedStatement.setString(3, heureD.getText().toString());
-                    preparedStatement.setString(4, heureF.getText().toString());
-                    preparedStatement.setString(5, sport.getText().toString());
-                    preparedStatement.setString(6, lieu.getText().toString());
+                    preparedStatement.setString(1, numero.getText().toString());
+
+                    preparedStatement.setString(2, heureD.getText().toString());
+                    preparedStatement.setString(3, heureF.getText().toString());
+                    preparedStatement.setString(4, sport.getText().toString());
+                    preparedStatement.setString(5, lieu.getText().toString());
                     preparedStatement.executeUpdate();
                     Toast.makeText(getApplicationContext(), "Votre séance a bien été planifié !", Toast.LENGTH_SHORT).show();
 

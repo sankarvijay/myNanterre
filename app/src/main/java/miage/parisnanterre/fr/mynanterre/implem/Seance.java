@@ -10,17 +10,16 @@ import miage.parisnanterre.fr.mynanterre.R;
 
 public class Seance extends Activity {
 
-    String nom, prenom, sport, lieu;
+    String  sport, lieu;
     Time heure_d, heure_f;
-
+    int numero;
 
     public Seance() {
 
     }
 
-    public Seance(String nom, String prenom, Time heure_d, Time heure_f, String sport, String lieu) {
-        this.nom = nom;
-        this.prenom = prenom;
+    public Seance(Integer numero, Time heure_d, Time heure_f, String sport, String lieu) {
+        this.numero=numero;
         this.heure_d = heure_d;
         this.heure_f = heure_f;
         this.sport = sport;
@@ -29,20 +28,12 @@ public class Seance extends Activity {
     }
 
 
-    public String getNom() {
-        return nom;
+    public int getNumero() {
+        return numero;
     }
 
-    public void setNom(String nom) {
-        this.nom = nom;
-    }
-
-    public String getPrenom() {
-        return prenom;
-    }
-
-    public void setPrenom(String prenom) {
-        this.prenom = prenom;
+    public void setNumero(int numero) {
+        this.numero = numero;
     }
 
     public String getSport() {
@@ -87,8 +78,7 @@ public class Seance extends Activity {
     @Override
     public String toString() {
         return "Seance{" +
-                "nom='" + nom + '\'' +
-                ", prenom='" + prenom + '\'' +
+                "numero='" + numero + '\'' +
                 ", sport='" + sport + '\'' +
                 ", lieu='" + lieu + '\'' +
                 ", heure_d=" + heure_d +

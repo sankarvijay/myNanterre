@@ -28,8 +28,7 @@ public class SeanceAdapter extends RecyclerView.Adapter<SeanceAdapter.MyViewHold
     private Context mcon;
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
-        public TextView nom;
-        public TextView prenom;
+        public TextView numero;
         public TextView heure_d;
         public TextView heure_f;
         public TextView sport;
@@ -38,8 +37,7 @@ public class SeanceAdapter extends RecyclerView.Adapter<SeanceAdapter.MyViewHold
 
         public MyViewHolder(View view) {
             super(view);
-            nom = (TextView) view.findViewById(R.id.nom);
-            prenom = (TextView) view.findViewById(R.id.prenom);
+            numero = (TextView) view.findViewById(R.id.numero);
             heure_d = (TextView) view.findViewById(R.id.heured);
             heure_f = (TextView) view.findViewById(R.id.heuref);
             sport = (TextView) view.findViewById(R.id.sport);
@@ -100,8 +98,8 @@ public class SeanceAdapter extends RecyclerView.Adapter<SeanceAdapter.MyViewHold
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         Seance seance = listeSeances.get(position);
         //System.out.println(seance.toString());
-        holder.nom.setText(seance.getNom());
-        holder.prenom.setText(seance.getPrenom());
+        holder.numero.setText(seance.getNumero());
+
         holder.sport.setText(seance.getSport());
         holder.lieu.setText(seance.getLieu());
         holder.heure_d.setText(seance.getHeured().toString());
