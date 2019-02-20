@@ -30,7 +30,7 @@ import miage.parisnanterre.fr.mynanterre.adapter.SeanceAdapter;
 import miage.parisnanterre.fr.mynanterre.implem.Seance;
 
 public class SeancesFragment extends Fragment {
-    // à modifier en fonction de votre localhost
+
     private static final String url = "jdbc:mysql://sql171.main-hosting.eu/u749839367_m1";
     private static final String user = "u749839367_vijay";
     private static final String psw = "9IDCqTm8Lig2";
@@ -82,15 +82,15 @@ public class SeancesFragment extends Fragment {
             ResultSet rst = st.executeQuery(sqliD);
 
             while (rst.next()) {
-                String nom = rst.getString("nom");
-                String prenom = rst.getString("prenom");
+
+                Integer numero = rst.getInt("numero");
                 Time heured = rst.getTime("heure_d");
                 Time heuref = rst.getTime("heure_f");
                 String sport = rst.getString("sport");
                 String lieu = rst.getString("lieu");
 
 
-                Seance seance = new Seance(nom, prenom, heured, heuref, sport, lieu);
+                Seance seance = new Seance(numero, heured, heuref, sport, lieu);
                 liste.add(seance);
 
             }
