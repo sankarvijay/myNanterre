@@ -59,7 +59,7 @@ public class CrousGridAdapter extends BaseAdapter {
         Crous crous = this.listData.get(position);
         holder.batiment.setText(crous.getBatiment());
         holder.lieu.setText(crous.getLieu());
-
+        /*
         if (crous.getFrequentation() == 1) {
             convertView.setBackgroundColor(Color.rgb(147, 194, 6));
         } else if (crous.getFrequentation() == 2)  {
@@ -69,7 +69,7 @@ public class CrousGridAdapter extends BaseAdapter {
             convertView.setBackgroundColor(Color.rgb(191,10,1));
         }
 
-
+            */
         return convertView;
     }
 

@@ -4,13 +4,19 @@ import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+
+import android.os.StrictMode;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.GridView;
+import android.widget.Toast;
+
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -39,9 +45,18 @@ public class ListeCrous   extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.liste_batiments);
 
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+        } catch (Exception e) {
+            Toast.makeText(getApplicationContext(), "Problème au niveau du driver", Toast.LENGTH_SHORT).show();
+        }
+        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+        StrictMode.setThreadPolicy(policy);
+
         List<Crous> donnees = getListData();
         final GridView gridView = (GridView) findViewById(R.id.gridview);
         gridView.setAdapter(new CrousGridAdapter(this, donnees));
+
 
 
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -49,13 +64,24 @@ public class ListeCrous   extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
                 Object o = gridView.getItemAtPosition(position);
                 String batiment = ((Crous) o).getBatiment();
-                showDialog(IDENTIFIANT_BOITE_UN);
+                try {
+                    conn = DriverManager.getConnection(url, user, psw);
+                    String sqliD = "SELECT ventes FROM Crous where batiment='" + batiment + "';";
+                    Statement st = conn.createStatement();
+                    ResultSet rst = st.executeQuery(sqliD);
 
+                    while (rst.next()) {
+                        String ventes = rst.getString("ventes");
 
+                        ArrayList<String> liste = new ArrayList<>();
+                        liste.add(ventes);
 
+                        customDialog("Ventes dans ce point de restauration", liste.toString());
+                    }
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
             }
-
-
         });
 
 
@@ -73,11 +99,12 @@ public class ListeCrous   extends AppCompatActivity {
             ResultSet rst = st.executeQuery(sqliD);
 
             while (rst.next()) {
+                int id=rst.getInt("id_bat");
                 String batiment = rst.getString("batiment");
                 String lieu = rst.getString("lieu");
                 int frequentation=rst.getInt("frequentation");
 
-                Crous crous = new Crous(batiment, lieu,frequentation);
+                Crous crous = new Crous(id,batiment, lieu,frequentation);
                 liste.add(crous);
 
             }
@@ -103,17 +130,85 @@ public class ListeCrous   extends AppCompatActivity {
     }
 
 
-    @Override
-    public Dialog onCreateDialog(int identifiant) {
+
+    public Dialog onCreateDialog(int identifiant,int i) {
         Dialog box = null;
+
         //En fonction de l'identifiant de la boîte qu'on veut créer
         switch(identifiant) {
             case IDENTIFIANT_BOITE_UN :
                 // On construit la première boîte de dialogue, que l'on insère dans « box »
-               box=new Dialog(this);
-
+                box=new Dialog(this);
                 box.setContentView(R.layout.dialog_box_frequentation);
-                box.setTitle("DIALOG BOX");
+                box.setTitle("hello");
+
+
+
+                Button btnFa= (Button) findViewById(R.id.buttonfaible);
+                btnFa.setOnClickListener(new View.OnClickListener() {
+                    public void onClick(View view) {
+                        try {
+                            conn = DriverManager.getConnection(url, user, psw);
+                            String sqliD = "UPDATE Crous SET frequentation=1 WHERE id_bat=(id) values (?) ;";
+                            PreparedStatement preparedStatement = conn.prepareStatement(sqliD);
+
+
+                            preparedStatement.setInt(1, i);
+
+                            preparedStatement.executeUpdate();
+
+
+                        } catch (SQLException e) {
+                            e.printStackTrace();
+                        }
+                    }
+
+                });
+
+
+                Button btnM= (Button) findViewById(R.id.buttonmoyenne);
+                btnM.setOnClickListener(new View.OnClickListener() {
+                    public void onClick(View view) {
+                        try {
+                            conn = DriverManager.getConnection(url, user, psw);
+                            String sqliD = "UPDATE Crous SET frequentation=2 WHERE id_bat=(id) values (?) ;";
+                            PreparedStatement preparedStatement = conn.prepareStatement(sqliD);
+
+
+                            preparedStatement.setInt(1, i);
+
+                            preparedStatement.executeUpdate();
+
+
+                        } catch (SQLException e) {
+                            e.printStackTrace();
+                        }
+                    }
+
+                });
+
+                Button btnFo= (Button) findViewById(R.id.buttonforte);
+                btnFo.setOnClickListener(new View.OnClickListener() {
+                    public void onClick(View view) {
+                        try {
+                            conn = DriverManager.getConnection(url, user, psw);
+                            String sqliD = "UPDATE Crous SET frequentation=3 WHERE id_bat=(id) values (?) ;";
+                            PreparedStatement preparedStatement = conn.prepareStatement(sqliD);
+
+
+                            preparedStatement.setInt(1, i);
+
+                            preparedStatement.executeUpdate();
+
+
+                        } catch (SQLException e) {
+                            e.printStackTrace();
+                        }
+                    }
+
+                });
+
+
                 break;
 
         }
