@@ -1,27 +1,28 @@
-buildscript {   
+buildscript {
     repositories {
         google()
         jcenter()
+        mavenCentral()
+        maven {
+          url "https://plugins.gradle.org/m2/"
+        }
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.2.1'
         classpath "org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:2.7"
-         classpath 'com.vanniktech:gradle-android-junit-jacoco-plugin:0.6.0'
+        classpath 'com.vanniktech:gradle-android-junit-jacoco-plugin:0.6.0'
+        classpath "org.kt3k.gradle.plugin:coveralls-gradle-plugin:2.8.2"
     
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }
 }
-apply plugin: 'jacoco'
 apply plugin: 'com.vanniktech.android.junit.jacoco'
 apply plugin: "org.sonarqube"
+apply plugin: "com.github.kt3k.coveralls"
+apply plugin: 'java'
 
-plugins {
-    id 'net.saliman.cobertura' version '2.3.1'
-    id 'com.github.kt3k.coveralls' version '2.8.2'
-}
 
-cobertura.coverageFormats = ['html', 'xml'] // coveralls plugin depends on xml format report
 
 allprojects {
     repositories {
@@ -30,3 +31,6 @@ allprojects {
     }
 }
 group 'fr.uparis10.myNanterre'
+
+
+
