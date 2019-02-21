@@ -7,15 +7,25 @@ public class Crous {
     private String horaire;
     private String ventes;
     private int frequentation;
+    private int id;
 
-    public Crous(String batiment, String lieu,int frequentation) {
+    public Crous(int id,String batiment, String lieu,int frequentation) {
         this.batiment = batiment;
+        this.id=id;
         this.lieu = lieu;
         this.frequentation=frequentation;
     }
 
     public String getBatiment() {
         return batiment;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public void setBatiment(String batiment) {

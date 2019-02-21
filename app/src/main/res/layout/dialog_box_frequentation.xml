@@ -24,7 +24,7 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/button13"
+            android:id="@+id/buttonfaible"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"
@@ -35,7 +35,7 @@
             android:text="Faible" />
 
         <Button
-            android:id="@+id/button12"
+            android:id="@+id/buttonmoyenne"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
@@ -45,7 +45,7 @@
             android:text="Moyenne" />
 
         <Button
-            android:id="@+id/button11"
+            android:id="@+id/buttonforte"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
