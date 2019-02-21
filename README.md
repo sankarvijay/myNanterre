@@ -7,6 +7,7 @@
 [![License](https://img.shields.io/github/license/sankarvijay/myNanterre.svg?style=flat-square)](LICENSE)
 [![Version](https://img.shields.io/github/tag/sankarvijay/MyNanterre.svg?label=version&style=flat-square)](build.gradle)
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
+[![Coverage Status](https://coveralls.io/repos/github/sankarvijay/myNanterre/badge.svg?branch=master)](https://coveralls.io/github/sankarvijay/myNanterre?branch=master)
 
 
 # MyNanterre
