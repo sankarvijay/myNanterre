@@ -17,8 +17,6 @@ public class JobsData extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.liste_offre);
 
-        this.horaires = (TextView) findViewById(R.id.horaire);
-
                 FetchDataA process = new FetchDataA();
                 process.execute();
             }

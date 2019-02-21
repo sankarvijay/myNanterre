@@ -22,7 +22,7 @@ public class Train extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.train_horaires);
 
-        this.horaires = (TextView) findViewById(R.id.horaire);
+       // this.horaires = (TextView) findViewById(R.id.horaire);
         this.direction = (TextView) findViewById(R.id.direction);
         this.code = (TextView) findViewById(R.id.code);
         this.heureT = (TextView) findViewById(R.id.heureT);
