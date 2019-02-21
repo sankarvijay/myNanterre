@@ -16,15 +16,19 @@ import java.net.*;
 /**
  * Created by Sankar Vijay on 17/02/2019.
  */
-public class FetchData extends AsyncTask<Void, Void, Void> {
+public class FetchDataR extends AsyncTask<Void, Void, Void> {
     String data = "";
     String dataParsed = "";
+    String dataParsed2 = "";
+    String dataParsed3 = "";
     String singleParsed = "";
+    String singleParsed2 = "";
+    String singleParsed3 = "";
 
     @Override
     protected Void doInBackground(Void... voids) {
         try {
-            URL url = new URL("https://api-ratp.pierre-grimaud.fr/v3/schedules/rers/A/nanterre+universite/A+R");
+            URL url = new URL("https://api-ratp.pierre-grimaud.fr/v3/schedules/rers/A/nanterre+universite/R");
 
             HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
             InputStream inputStream = httpURLConnection.getInputStream();
@@ -36,14 +40,19 @@ public class FetchData extends AsyncTask<Void, Void, Void> {
             }
 
             JSONObject jo = new JSONObject(data);
-            for (int i = 0; i < data.length(); i++) {
+
+            for (int i = 0; i <= data.length(); i++) {
                 JSONArray arr = (JSONArray) jo.getJSONObject("result").getJSONArray("schedules");
 
-                singleParsed = "Code : " + arr.getJSONObject(i).get("code") + "\n" +
-                        "Message : " + arr.getJSONObject(i).get("message") + "\n" +
-                        "Destination : " + arr.getJSONObject(i).get("destination") + "\n";
+                singleParsed = arr.getJSONObject(i).get("message") + "\n";
 
-                dataParsed = dataParsed + singleParsed + "\n";
+                dataParsed = dataParsed + singleParsed;
+
+                singleParsed2 = arr.getJSONObject(i).get("code") + "\n";
+                dataParsed2 = dataParsed2 + singleParsed2;
+
+                singleParsed3 = arr.getJSONObject(i).get("destination") + "\n";
+                dataParsed3 = dataParsed3 + singleParsed3;
 
             }
 
@@ -63,6 +72,10 @@ public class FetchData extends AsyncTask<Void, Void, Void> {
     protected void onPostExecute(Void aVoid) {
         super.onPostExecute(aVoid);
 
-        Train.horaires.setText(this.dataParsed);
+        Train.code.setText(this.dataParsed2);
+        Train.heureT.setText(this.dataParsed);
+        Train.destination.setText(this.dataParsed3);
+        Train.direction.setText("Marne-la-Vallee Chessy / Boissy-Saint-Leger");
+
     }
 }
