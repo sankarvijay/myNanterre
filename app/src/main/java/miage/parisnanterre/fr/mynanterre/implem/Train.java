@@ -14,8 +14,14 @@ import miage.parisnanterre.fr.mynanterre.R;
  * Created by Sankar Vijay on 09/02/2019.
  */
 public class Train extends AppCompatActivity {
-    public static TextView horaires, direction, theure, code, destination, heureT;
-    Button click, clickP;
+    public static TextView horaires;
+    public static TextView direction;
+    public static TextView theure;
+    public static TextView code;
+    public static TextView destination;
+    public static TextView heureT;
+    Button click;
+    Button clickP;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

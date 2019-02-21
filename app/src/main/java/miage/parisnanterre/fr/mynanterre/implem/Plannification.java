@@ -52,10 +52,8 @@ public class Plannification extends Activity {
             public void onClick(View v) {
                 try {
                     conn = DriverManager.getConnection(url, user, psw);
-                    String sqliD = "insert into plannification_sport (nom,prenom,heure_d,heure_f,sport,lieu) values (?,?,?,?,?,?) ;";
+                    String sqliD = "insert into plannification_sport (nom,prenom,heured,heuref,sport,lieu) values (?,?,?,?,?,?) ;";
                     PreparedStatement preparedStatement = conn.prepareStatement(sqliD);
-                    System.out.println("Nom " + numero.getText().toString());
-                    System.out.println("Heure D " + heureD.getText().toString());
 
                     preparedStatement.setString(1, numero.getText().toString());
 

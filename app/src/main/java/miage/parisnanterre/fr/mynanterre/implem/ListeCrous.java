@@ -27,7 +27,7 @@ import miage.parisnanterre.fr.mynanterre.R;
 import miage.parisnanterre.fr.mynanterre.adapter.CrousGridAdapter;
 
 
-public class ListeCrous   extends AppCompatActivity {
+public class ListeCrous extends AppCompatActivity {
 
     Context context;
     private Intent intent;
@@ -38,7 +38,7 @@ public class ListeCrous   extends AppCompatActivity {
     private static Connection conn;
     private List<Crous> liste = new ArrayList<>();
 
-    private final static int IDENTIFIANT_BOITE_UN  = 0;
+    private final static int IDENTIFIANT_BOITE_UN = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,7 +56,6 @@ public class ListeCrous   extends AppCompatActivity {
         List<Crous> donnees = getListData();
         final GridView gridView = (GridView) findViewById(R.id.gridview);
         gridView.setAdapter(new CrousGridAdapter(this, donnees));
-
 
 
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -85,8 +84,6 @@ public class ListeCrous   extends AppCompatActivity {
         });
 
 
-
-
     }
 
     private List<Crous> getListData() {
@@ -99,12 +96,12 @@ public class ListeCrous   extends AppCompatActivity {
             ResultSet rst = st.executeQuery(sqliD);
 
             while (rst.next()) {
-                int id=rst.getInt("id_bat");
+                int id = rst.getInt("id_bat");
                 String batiment = rst.getString("batiment");
                 String lieu = rst.getString("lieu");
-                int frequentation=rst.getInt("frequentation");
+                int frequentation = rst.getInt("frequentation");
 
-                Crous crous = new Crous(id,batiment, lieu,frequentation);
+                Crous crous = new Crous(id, batiment, lieu, frequentation);
                 liste.add(crous);
 
             }
@@ -112,7 +109,6 @@ public class ListeCrous   extends AppCompatActivity {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
 
 
         return liste;
@@ -130,21 +126,19 @@ public class ListeCrous   extends AppCompatActivity {
     }
 
 
-
-    public Dialog onCreateDialog(int identifiant,int i) {
+    public Dialog onCreateDialog(int identifiant, int i) {
         Dialog box = null;
 
         //En fonction de l'identifiant de la boîte qu'on veut créer
-        switch(identifiant) {
-            case IDENTIFIANT_BOITE_UN :
+        switch (identifiant) {
+            case IDENTIFIANT_BOITE_UN:
                 // On construit la première boîte de dialogue, que l'on insère dans « box »
-                box=new Dialog(this);
+                box = new Dialog(this);
                 box.setContentView(R.layout.dialog_box_frequentation);
                 box.setTitle("hello");
 
 
-
-                Button btnFa= (Button) findViewById(R.id.buttonfaible);
+                Button btnFa = (Button) findViewById(R.id.buttonfaible);
                 btnFa.setOnClickListener(new View.OnClickListener() {
                     public void onClick(View view) {
                         try {
@@ -166,7 +160,7 @@ public class ListeCrous   extends AppCompatActivity {
                 });
 
 
-                Button btnM= (Button) findViewById(R.id.buttonmoyenne);
+                Button btnM = (Button) findViewById(R.id.buttonmoyenne);
                 btnM.setOnClickListener(new View.OnClickListener() {
                     public void onClick(View view) {
                         try {
@@ -187,7 +181,7 @@ public class ListeCrous   extends AppCompatActivity {
 
                 });
 
-                Button btnFo= (Button) findViewById(R.id.buttonforte);
+                Button btnFo = (Button) findViewById(R.id.buttonforte);
                 btnFo.setOnClickListener(new View.OnClickListener() {
                     public void onClick(View view) {
                         try {

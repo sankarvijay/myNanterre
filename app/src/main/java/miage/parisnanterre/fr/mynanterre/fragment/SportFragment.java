@@ -62,7 +62,6 @@ public class SportFragment extends ListFragment implements AdapterView.OnItemCli
             ResultSet rst = st.executeQuery(sqliD);
 
             while (rst.next()) {
-                int idCat = rst.getInt("id_categorie");
                 String categorie = rst.getString("categorie");
                 sports.add(categorie);
             }
@@ -79,7 +78,6 @@ public class SportFragment extends ListFragment implements AdapterView.OnItemCli
         //Create intent
         id = (int) id + 1;
         Intent intent = new Intent(view.getContext(), ListeSport.class);
-        System.out.println("Id okkkk : " + id);
         Bundle extras = new Bundle();
         extras.putString(EXTRA_MESSAGE, id + "");
         intent.putExtras(extras);

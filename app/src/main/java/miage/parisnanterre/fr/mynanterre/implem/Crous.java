@@ -9,11 +9,11 @@ public class Crous {
     private int frequentation;
     private int id;
 
-    public Crous(int id,String batiment, String lieu,int frequentation) {
+    Crous(int id, String batiment, String lieu, int frequentation) {
         this.batiment = batiment;
-        this.id=id;
+        this.id = id;
         this.lieu = lieu;
-        this.frequentation=frequentation;
+        this.frequentation = frequentation;
     }
 
     public String getBatiment() {

@@ -10,18 +10,18 @@ import miage.parisnanterre.fr.mynanterre.R;
 
 public class Seance extends Activity {
 
-    String  sport, lieu;
-    Time heure_d, heure_f;
+    String sport, lieu;
+    Time heured, heuref;
     int numero;
 
     public Seance() {
 
     }
 
-    public Seance(Integer numero, Time heure_d, Time heure_f, String sport, String lieu) {
-        this.numero=numero;
-        this.heure_d = heure_d;
-        this.heure_f = heure_f;
+    public Seance(Integer numero, Time heured, Time heuref, String sport, String lieu) {
+        this.numero = numero;
+        this.heured = this.heured;
+        this.heuref = heuref;
         this.sport = sport;
         this.lieu = lieu;
 
@@ -53,19 +53,19 @@ public class Seance extends Activity {
     }
 
     public Time getHeured() {
-        return heure_d;
+        return heured;
     }
 
-    public void setHeured(Time heure_d) {
-        this.heure_d = heure_d;
+    public void setHeured(Time heured) {
+        this.heured = heured;
     }
 
     public Time getHeuref() {
-        return heure_f;
+        return heuref;
     }
 
-    public void setHeuref(Time heure_f) {
-        this.heure_f = heure_f;
+    public void setHeuref(Time heuref) {
+        this.heuref = heuref;
     }
 
     public void onCreate(Bundle savedInstanceState) {
@@ -81,8 +81,8 @@ public class Seance extends Activity {
                 "numero='" + numero + '\'' +
                 ", sport='" + sport + '\'' +
                 ", lieu='" + lieu + '\'' +
-                ", heure_d=" + heure_d +
-                ", heure_f=" + heure_f +
+                ", heured=" + heured +
+                ", heuref=" + heuref +
                 '}';
     }
 }

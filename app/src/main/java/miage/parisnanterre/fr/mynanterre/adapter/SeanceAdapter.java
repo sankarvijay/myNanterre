@@ -29,8 +29,8 @@ public class SeanceAdapter extends RecyclerView.Adapter<SeanceAdapter.MyViewHold
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
         public TextView numero;
-        public TextView heure_d;
-        public TextView heure_f;
+        private TextView heure_d;
+        private TextView heure_f;
         public TextView sport;
         public TextView lieu;
 
@@ -68,8 +68,6 @@ public class SeanceAdapter extends RecyclerView.Adapter<SeanceAdapter.MyViewHold
         insciption.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //  Intent intent = new Intent(get, Inscription_sport.class);
-                //startActivity(intent);
                 mcon.startActivity(new Intent(mcon, Inscription_sport.class));
 
             }
@@ -85,7 +83,7 @@ public class SeanceAdapter extends RecyclerView.Adapter<SeanceAdapter.MyViewHold
             ResultSet rst = st.executeQuery(sqliD);
             rst.next();
             int count = rst.getInt("rowcount");
-            System.out.println("Nb Inscrits : "+count);
+            System.out.println("Nb Inscrits : " + count);
             nbInscrit.setText(String.valueOf(count));
 
         } catch (SQLException e) {
@@ -97,7 +95,6 @@ public class SeanceAdapter extends RecyclerView.Adapter<SeanceAdapter.MyViewHold
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         Seance seance = listeSeances.get(position);
-        //System.out.println(seance.toString());
         holder.numero.setText(seance.getNumero());
 
         holder.sport.setText(seance.getSport());

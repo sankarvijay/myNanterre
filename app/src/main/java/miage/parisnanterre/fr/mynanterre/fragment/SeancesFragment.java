@@ -11,7 +11,6 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import java.sql.Connection;
@@ -40,11 +39,8 @@ public class SeancesFragment extends Fragment {
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        //return inflater.inflate(R.layout.liste_seances, container, false);
         super.onCreateView(inflater, container, savedInstanceState);
         View view = inflater.inflate(R.layout.liste_seances, container, false);
-
-
         return view;
 
     }
@@ -104,15 +100,4 @@ public class SeancesFragment extends Fragment {
 
         sAdapter.notifyDataSetChanged();
     }
-
-    public void customDialog(String title, String message) {
-        final android.support.v7.app.AlertDialog.Builder builderSingle = new android.support.v7.app.AlertDialog.Builder(getContext());
-        builderSingle.setIcon(R.drawable.common_google_signin_btn_icon_light);
-        builderSingle.setTitle(title);
-        builderSingle.setMessage(message);
-
-
-        builderSingle.show();
-    }
-
 }
