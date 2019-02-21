@@ -19,12 +19,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".implem.ListeSport"></activity>
-        <activity android:name=".implem.ListeJobs"></activity>
         <activity android:name=".implem.Plannification"></activity>
         <activity android:name=".implem.Seance"></activity>
         <activity android:name=".implem.Inscription_sport"></activity>
-        <activity android:name=".implem.AjoutOffre"></activity>
-        <activity android:name=".implem.ListeEntreprise"></activity>
         <activity android:name=".implem.Train"></activity>
         <activity android:name=".implem.ListeCrous"></activity>
 

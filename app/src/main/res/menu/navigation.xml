@@ -3,25 +3,20 @@
     <item
         android:id="@+id/navigation_accueil"
         android:icon="@drawable/home"
-        android:title="Accueil"/>
+        android:title="Accueil" />
     <item
         android:id="@+id/navigation_sports"
         android:icon="@drawable/sport"
-        android:title="Sport"/>
-
-    <item
-        android:id="@+id/navigation_jobs"
-        android:icon="@drawable/jobs"
-        android:title="Jobs"/>
+        android:title="Sport" />
 
     <item
         android:id="@+id/navigation_crous"
         android:icon="@drawable/crous"
-        android:title="Crous"/>
+        android:title="Crous" />
 
     <item
         android:id="@+id/navigation_train"
         android:icon="@drawable/train"
-        android:title="Train"/>
+        android:title="Train" />
 
 </menu>

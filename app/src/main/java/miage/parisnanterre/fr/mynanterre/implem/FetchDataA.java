@@ -14,17 +14,23 @@ import java.net.MalformedURLException;
 import java.net.*;
 
 /**
- * Created by Dorian Vieira on 17/02/2019.
+ * Created by Sankar Vijay on 17/02/2019.
  */
-public class FetchDataJobs extends AsyncTask<Void, Void, Void> {
+public class FetchDataA extends AsyncTask<Void, Void, Void> {
     String data = "";
     String dataParsed = "";
+    String dataParsed2 = "";
+    String dataParsed3 = "";
+
     String singleParsed = "";
+    String singleParsed2 = "";
+    String singleParsed3 = "";
+
 
     @Override
     protected Void doInBackground(Void... voids) {
         try {
-            URL url = new URL("https://api-?????");
+            URL url = new URL("https://api-ratp.pierre-grimaud.fr/v3/schedules/rers/A/nanterre+universite/A");
 
             HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
             InputStream inputStream = httpURLConnection.getInputStream();
@@ -36,14 +42,19 @@ public class FetchDataJobs extends AsyncTask<Void, Void, Void> {
             }
 
             JSONObject jo = new JSONObject(data);
-            for (int i = 0; i < data.length(); i++) {
-                /*JSONArray arr = (JSONArray) jo.getJSONObject("result").getJSONArray("schedules");
 
-                singleParsed = "Code : " + arr.getJSONObject(i).get("code") + "\n" +
-                        "Message : " + arr.getJSONObject(i).get("message") + "\n" +
-                        "Destination : " + arr.getJSONObject(i).get("destination") + "\n";
+            for (int i = 0; i <= data.length(); i++) {
+                JSONArray arr = (JSONArray) jo.getJSONObject("result").getJSONArray("schedules");
 
-                dataParsed = dataParsed + singleParsed + "\n";*/
+                singleParsed = arr.getJSONObject(i).get("message") + "\n";
+
+                dataParsed = dataParsed + singleParsed;
+
+                singleParsed2 = arr.getJSONObject(i).get("code") + "\n";
+                dataParsed2 = dataParsed2 + singleParsed2;
+
+                singleParsed3 = arr.getJSONObject(i).get("destination") + "\n";
+                dataParsed3 = dataParsed3 + singleParsed3;
 
             }
 
@@ -63,6 +74,10 @@ public class FetchDataJobs extends AsyncTask<Void, Void, Void> {
     protected void onPostExecute(Void aVoid) {
         super.onPostExecute(aVoid);
 
-        //ListeJobs.horaires.setText(this.dataParsed);
+        Train.direction.setText("Saint-Germain-en-Laye");
+        Train.code.setText(this.dataParsed2);
+        Train.heureT.setText(this.dataParsed);
+        Train.destination.setText(this.dataParsed3);
+
     }
 }
