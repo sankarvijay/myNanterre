@@ -22,6 +22,7 @@ import android.widget.Toast;
 import miage.parisnanterre.fr.mynanterre.R;
 import miage.parisnanterre.fr.mynanterre.adapter.SportGridAdapter;
 import miage.parisnanterre.fr.mynanterre.fragment.SeancesFragment;
+import miage.parisnanterre.fr.mynanterre.fragment.SportFragment;
 
 
 public class ListeSport extends AppCompatActivity {
@@ -42,6 +43,12 @@ public class ListeSport extends AppCompatActivity {
         }
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
+
+
+        Bundle extras = getIntent().getExtras();
+        String stringVariableName = extras.getString(SportFragment.EXTRA_MESSAGE);
+        int idCategorie = Integer.parseInt(stringVariableName);
+        System.out.println(" j'ai recupereeee " + idCategorie);
 
         List<Sport> image_details = getListData();
         final GridView gridView = (GridView) findViewById(R.id.gridview);
@@ -91,6 +98,7 @@ public class ListeSport extends AppCompatActivity {
             }
 
         });
+
     }
 
     private List<Sport> getListData() {

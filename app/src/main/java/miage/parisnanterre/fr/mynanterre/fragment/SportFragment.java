@@ -33,6 +33,7 @@ public class SportFragment extends ListFragment implements AdapterView.OnItemCli
     private static Connection conn;
     private List<String> sports = new ArrayList<>();
     private ListView lv;
+    public static final String EXTRA_MESSAGE = "com.example.myfirstapp.MESSAGE";
 
     @Override
     public View onCreateView(LayoutInflater inflater,
@@ -56,11 +57,12 @@ public class SportFragment extends ListFragment implements AdapterView.OnItemCli
         try {
             conn = DriverManager.getConnection(url, user, psw);
 
-            String sqliD = "SELECT categorie FROM categorie_sport;";
+            String sqliD = "SELECT * FROM categorie_sport;";
             Statement st = conn.createStatement();
             ResultSet rst = st.executeQuery(sqliD);
 
             while (rst.next()) {
+                int idCat = rst.getInt("id_categorie");
                 String categorie = rst.getString("categorie");
                 sports.add(categorie);
             }
@@ -75,7 +77,12 @@ public class SportFragment extends ListFragment implements AdapterView.OnItemCli
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         //Create intent
+        id = (int) id + 1;
         Intent intent = new Intent(view.getContext(), ListeSport.class);
+        System.out.println("Id okkkk : " + id);
+        Bundle extras = new Bundle();
+        extras.putString(EXTRA_MESSAGE, id + "");
+        intent.putExtras(extras);
         //Start details activity
         startActivity(intent);
     }
