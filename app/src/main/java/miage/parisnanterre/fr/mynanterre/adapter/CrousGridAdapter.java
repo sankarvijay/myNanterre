@@ -60,13 +60,13 @@ public class CrousGridAdapter extends BaseAdapter {
         holder.batiment.setText(crous.getBatiment());
         holder.lieu.setText(crous.getLieu());
 
-        if (crous.getFrequentation() == 3) {
-            convertView.setBackgroundColor(Color.rgb(255, 99, 85));
+        if (crous.getFrequentation() == 1) {
+            convertView.setBackgroundColor(Color.rgb(147, 194, 6));
         } else if (crous.getFrequentation() == 2)  {
-            convertView.setBackgroundColor(Color.rgb(255,255,110));
+            convertView.setBackgroundColor(Color.rgb(242,178,55));
         }
         else{
-            convertView.setBackgroundColor(Color.rgb(140,255,110));
+            convertView.setBackgroundColor(Color.rgb(191,10,1));
         }
 
 

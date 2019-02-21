@@ -11,7 +11,9 @@ import android.view.MenuItem;
 
 import miage.parisnanterre.fr.mynanterre.R;
 import miage.parisnanterre.fr.mynanterre.fragment.AccueilFragment;
+import miage.parisnanterre.fr.mynanterre.fragment.BonsPlansFragment;
 import miage.parisnanterre.fr.mynanterre.fragment.CrousFragment;
+import miage.parisnanterre.fr.mynanterre.fragment.EvenementFragment;
 import miage.parisnanterre.fr.mynanterre.fragment.JobsFragment;
 import miage.parisnanterre.fr.mynanterre.fragment.SportFragment;
 import miage.parisnanterre.fr.mynanterre.fragment.TrainFragment;
