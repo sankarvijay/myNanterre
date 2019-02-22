@@ -40,6 +40,8 @@ cache:
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
+  - ./gradlew build jacocoTestReport coveralls
+
 
 notifications:
 email: sankar.vijay@hotmail.com
