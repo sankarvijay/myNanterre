@@ -36,6 +36,7 @@ allprojects {
 }
 group 'fr.uparis10.myNanterre'
 
+<<<<<<< HEAD
 // Added to send coverage information to codacy
 // see https://github.com/codacy/codacy-coverage-reporter
 configurations { codacy }
@@ -47,6 +48,8 @@ dependencies {
     codacy 'com.github.codacy:codacy-coverage-reporter:-SNAPSHOT'
 }
 
+=======
+>>>>>>> 3c98630edfba70536e6aa7e13c81b9d811e656cd
 jacocoTestReport {
     reports {
         xml.enabled = true // coveralls plugin depends on xml format report
