@@ -2,7 +2,6 @@ package miage.parisnanterre.fr.mynanterre.implem;
 
 import android.app.Dialog;
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 
 import android.os.StrictMode;
@@ -30,7 +29,6 @@ import miage.parisnanterre.fr.mynanterre.adapter.CrousGridAdapter;
 public class ListeCrous extends AppCompatActivity {
 
     Context context;
-    private Intent intent;
 
     private static final String url = "jdbc:mysql://sql171.main-hosting.eu/u749839367_m1";
     private static final String user = "u749839367_vijay";
