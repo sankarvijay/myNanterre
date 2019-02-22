@@ -4,7 +4,7 @@ buildscript {
         jcenter()
         mavenCentral()
         maven {
-          url "https://plugins.gradle.org/m2/"
+          url "https://oss.sonatype.org/content/repositories/snapshots"
         }
     }
     dependencies {
@@ -12,15 +12,20 @@ buildscript {
         classpath "org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:2.7"
         classpath 'com.vanniktech:gradle-android-junit-jacoco-plugin:0.6.0'
         classpath "org.kt3k.gradle.plugin:coveralls-gradle-plugin:2.8.2"
-    
+        classpath 'net.saliman:gradle-cobertura-plugin:2.6.0'
+
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }
+
 }
+
+
 apply plugin: 'com.vanniktech.android.junit.jacoco'
 apply plugin: "org.sonarqube"
 apply plugin: "com.github.kt3k.coveralls"
 apply plugin: 'java'
+apply plugin: 'net.saliman.cobertura'
 
 
 allprojects {
@@ -30,6 +35,4 @@ allprojects {
     }
 }
 group 'fr.uparis10.myNanterre'
-
-
 
