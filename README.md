@@ -46,7 +46,3 @@ Nous travaillons tous en tant que collaborateur
 * **SANKAR Vijay** - [Github](https://github.com/sankarvijay)
 * **VIEIRA Dorian** - [Github](https://github.com/dorianvieira)
 * **VOUILLOT Marie** - [Github](https://github.com/marievllt)
-
-coveralls {
-    jacocoReportPath 'build/reports/jacoco/jacocoTestReport/jacocoTestReport.xml'
-}
