@@ -20,7 +20,7 @@ public class Seance extends Activity {
 
     public Seance(Integer numero, Time heured, Time heuref, String sport, String lieu) {
         this.numero = numero;
-        this.heured = this.heured;
+        this.heured = heured;
         this.heuref = heuref;
         this.sport = sport;
         this.lieu = lieu;
