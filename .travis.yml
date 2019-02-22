@@ -27,6 +27,7 @@ install: true
 before_script:
   - chmod +x gradlew
 script:
+  - chmod +x gradlew
   - ./gradlew build check
   - ./gradlew build jacocoTestReport coveralls
 
