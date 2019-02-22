@@ -32,7 +32,6 @@ before_script:
 
 script:
   - ./gradlew build check
-  - ./gradlew build jacocoTestReport coveralls
 cache:
   directories:
     $HOME/.m2/repository
@@ -42,7 +41,7 @@ cache:
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
-  - ./gradlew build app:jacocoTestReport app:coveralls
+  - ./gradlew build jacocoTestReport coveralls
 
 notifications:
 email: sankar.vijay@hotmail.com
