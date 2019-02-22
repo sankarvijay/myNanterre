@@ -22,16 +22,14 @@ apply plugin: "org.sonarqube"
 apply plugin: "com.github.kt3k.coveralls"
 apply plugin: 'java'
 
+
 allprojects {
     repositories {
         google()
         jcenter()
-        maven { url 'https://jitpack.io' }
     }
 }
+group 'fr.uparis10.myNanterre'
 
-task clean(type: Delete) {
-    delete rootProject.buildDir
-}
 
 
