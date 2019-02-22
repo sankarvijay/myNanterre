@@ -1,38 +1,51 @@
-buildscript {
+    apply plugin: 'java'
+    apply plugin: 'maven'
+    apply plugin: 'jacoco'
+
+allprojects {
+
+
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
+
     repositories {
-        google()
-        jcenter()
+                google()
+
+        mavenLocal()
         mavenCentral()
-        maven {
-          url "https://oss.sonatype.org/content/repositories/snapshots"
-        }
+        jcenter()
+
+        maven { url "http://repo1.maven.org/maven2/" }
     }
+}
+
+subprojects {
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.2.1'
+         classpath 'com.android.tools.build:gradle:3.2.1'
         classpath "org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:2.7"
         classpath 'com.vanniktech:gradle-android-junit-jacoco-plugin:0.6.0'
         classpath "org.kt3k.gradle.plugin:coveralls-gradle-plugin:2.8.2"
-        classpath 'net.saliman:gradle-cobertura-plugin:2.6.0'
-
-        // NOTE: Do not place your application dependencies here; they belong
-        // in the individual module build.gradle files
+        classpath 'net.saliman:gradle-cobertura-plugin:2.6.0'       
     }
 
+    test.useTestNG()
 }
 
+task codeCoverageReport(type: JacocoReport) {
+    executionData fileTree(project.rootDir.absolutePath).include("**/build/jacoco/*.exec")
 
-apply plugin: 'com.vanniktech.android.junit.jacoco'
-apply plugin: "org.sonarqube"
-apply plugin: "com.github.kt3k.coveralls"
-apply plugin: 'java'
-apply plugin: 'net.saliman.cobertura'
+    subprojects.each {
+        sourceSets it.sourceSets.main
+    }
 
-
-allprojects {
-    repositories {
-        google()
-        jcenter()
+    reports {
+        xml.enabled true
+        xml.destination "${buildDir}/reports/jacoco/report.xml"
+        html.enabled false
+        csv.enabled false
     }
 }
-group 'fr.uparis10.myNanterre'
 
+codeCoverageReport.dependsOn {
+    subprojects*.test
+}
