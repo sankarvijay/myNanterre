@@ -2,6 +2,7 @@ language: android
 env:
   global:
     - COVERALLS_REPO_TOKEN=G9z0eVAj79N9vFqPEJGS3XBeStsTrWzqG
+    - CODECOV_TOKEN="8942fd6b-2782-45b7-8842-aa97ca17d230"
 android:
   components:
     - tools
