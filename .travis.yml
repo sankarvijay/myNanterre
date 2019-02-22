@@ -33,7 +33,7 @@ before_script:
 
 script:
   - ./gradlew check
-  - ./gradlew build jacocoTestReport coveralls cobertura sendCoverageToCodacy
+  - ./gradlew build jacocoTestReport coveralls cobertura
 
 cache:
   directories:
