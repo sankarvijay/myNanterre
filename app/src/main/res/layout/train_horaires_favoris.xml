@@ -7,8 +7,17 @@
     tools:context=".implem.Train"
     tools:layout_editor_absoluteY="81dp">
 
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="5dp"
+        android:text="Prochain départ" />
+
     <TextView
-        android:id="@+id/direction"
+        android:id="@+id/direction2"
         android:layout_width="272dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView9"
@@ -28,7 +37,7 @@
         android:textStyle="bold" />
 
     <TextView
-        android:id="@+id/code"
+        android:id="@+id/code2"
         android:layout_width="61dp"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="false"
@@ -40,7 +49,7 @@
         android:textStyle="bold" />
 
     <TextView
-        android:id="@+id/heureT"
+        android:id="@+id/heureT2"
         android:layout_width="131dp"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="false"
@@ -53,7 +62,7 @@
         android:textStyle="bold" />
 
     <TextView
-        android:id="@+id/destination"
+        android:id="@+id/destination2"
         android:layout_width="203dp"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="false"
@@ -65,7 +74,7 @@
         android:textStyle="bold" />
 
     <TextView
-        android:id="@+id/heure"
+        android:id="@+id/heure2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
@@ -74,28 +83,9 @@
         android:textColor="@color/black"
         android:textStyle="bold" />
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/button2"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="14dp"
-        android:layout_marginTop="0dp"
-        android:text="Vers Saint-Germain" />
-
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="218dp"
-        android:layout_marginTop="5dp"
-        android:text="Vers Paris" />
 
     <TextView
-        android:id="@+id/horaire"
+        android:id="@+id/horaire2"
         android:layout_width="match_parent"
         android:layout_height="176dp"
         android:layout_alignParentStart="false"
@@ -128,8 +118,7 @@
         android:layout_height="6dp"
         android:layout_below="@+id/direction"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="0dp"
-        android:layout_marginTop="9dp"
+        android:layout_marginTop="130dp"
         android:background="@color/red"
         android:ems="10" />
 
@@ -177,7 +166,7 @@
     </LinearLayout>
 
     <ImageView
-        android:id="@+id/refresh"
+        android:id="@+id/refresh2"
         android:layout_width="92dp"
         android:layout_height="36dp"
         android:layout_alignParentBottom="true"
@@ -187,34 +176,14 @@
         app:srcCompat="@drawable/refresh" />
 
     <ImageView
-        android:id="@+id/echange"
-        android:layout_width="48dp"
-        android:layout_height="43dp"
-        android:layout_alignTop="@+id/button"
-        android:layout_alignEnd="@+id/direction"
+        android:id="@+id/echange2"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_marginLeft="315dp"
         android:rotation="90"
         app:srcCompat="@drawable/echange" />
 
-    <Spinner
-        android:id="@+id/gare"
-        android:layout_width="227dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/editText"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="116dp"
-        android:layout_marginTop="14dp" />
 
-    <TextView
-        android:id="@+id/textView12"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="143dp"
-        android:text="Gare favorite"
-        android:textColor="@color/black"
-        android:textSize="16sp"
-        android:textStyle="bold" />
+
 
 </RelativeLayout>

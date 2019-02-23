@@ -23,6 +23,7 @@
         <activity android:name=".implem.Seance"></activity>
         <activity android:name=".implem.Inscription_sport"></activity>
         <activity android:name=".implem.Train"></activity>
+        <activity android:name=".implem.GareFavorite"></activity>
         <activity android:name=".implem.ListeCrous"></activity>
 
     </application>
