@@ -2,6 +2,7 @@ language: android
 env:
   global:
     - COVERALLS_REPO_TOKEN=G9z0eVAj79N9vFqPEJGS3XBeStsTrWzqG
+    - CODECOV_TOKEN="8942fd6b-2782-45b7-8842-aa97ca17d230"
 android:
   components:
     - tools
@@ -31,7 +32,9 @@ before_script:
     - chmod +x ./gradlew
 
 script:
-  - ./gradlew build check
+  - ./gradlew check
+  - ./gradlew build jacocoTestReport coveralls cobertura
+
 cache:
   directories:
     $HOME/.m2/repository
@@ -41,7 +44,6 @@ cache:
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
-  - ./gradlew build jacocoTestReport coveralls cobertura
 
 notifications:
 email: sankar.vijay@hotmail.com
