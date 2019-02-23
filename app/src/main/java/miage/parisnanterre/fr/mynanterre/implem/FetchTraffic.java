@@ -10,21 +10,25 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
-import java.net.*;
+import java.net.URL;
 
 /**
- * Created by Sankar Vijay on 17/02/2019.
+ * Created by Sankar Vijay on 23/02/2019.
  */
-public class FetchData extends AsyncTask<Void, Void, Void> {
+public class FetchTraffic extends AsyncTask<Void, Void, Void> {
     String data = "";
     String dataParsed = "";
+    String dataParsed2 = "";
     String singleParsed = "";
+    String singleParsed2 = "";
+
 
     @Override
     protected Void doInBackground(Void... voids) {
         try {
-            URL url = new URL("https://api-ratp.pierre-grimaud.fr/v3/schedules/rers/A/nanterre+universite/A+R");
+            URL url = new URL("https://api-ratp.pierre-grimaud.fr/v3/traffic/rers/A");
 
             HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
             InputStream inputStream = httpURLConnection.getInputStream();
@@ -36,17 +40,13 @@ public class FetchData extends AsyncTask<Void, Void, Void> {
             }
 
             JSONObject jo = new JSONObject(data);
-            for (int i = 0; i < data.length(); i++) {
-                JSONArray arr = (JSONArray) jo.getJSONObject("result").getJSONArray("schedules");
+            JSONObject jo2 = jo.getJSONObject("result");
 
-                singleParsed = "Code : " + arr.getJSONObject(i).get("code") + "\n" +
-                        "Message : " + arr.getJSONObject(i).get("message") + "\n" +
-                        "Destination : " + arr.getJSONObject(i).get("destination") + "\n";
+            singleParsed = jo2.get("title") + "\n";
+            dataParsed = dataParsed + singleParsed;
 
-                dataParsed = dataParsed + singleParsed + "\n";
-
-            }
-
+            singleParsed2 = jo2.get("message") + "\n";
+            dataParsed2 = dataParsed2 + singleParsed2;
 
         } catch (MalformedURLException e) {
             e.printStackTrace();
@@ -62,7 +62,9 @@ public class FetchData extends AsyncTask<Void, Void, Void> {
     @Override
     protected void onPostExecute(Void aVoid) {
         super.onPostExecute(aVoid);
+        Train.title.setText(this.dataParsed);
+        Train.info.setText(this.dataParsed2);
 
-        Train.horaires.setText(this.dataParsed);
     }
+
 }

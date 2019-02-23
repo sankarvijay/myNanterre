@@ -2,6 +2,8 @@ package miage.parisnanterre.fr.mynanterre.implem;
 
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.os.Bundle;
 import android.view.View;
@@ -20,8 +22,13 @@ public class Train extends AppCompatActivity {
     public static TextView code;
     public static TextView destination;
     public static TextView heureT;
+    public static TextView info;
+    public static TextView title;
+
     Button click;
     Button clickP;
+    ImageView refresh;
+    Spinner gare;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +40,10 @@ public class Train extends AppCompatActivity {
         this.code = (TextView) findViewById(R.id.code);
         this.heureT = (TextView) findViewById(R.id.heureT);
         this.destination = (TextView) findViewById(R.id.destination);
+        this.info = (TextView) findViewById(R.id.info_message);
+        this.title = (TextView) findViewById(R.id.info_titre);
+        this.refresh = (ImageView) findViewById(R.id.refresh);
+        this.gare = (Spinner) findViewById(R.id.gare);
 
 
         click = (Button) findViewById(R.id.button);
@@ -75,5 +86,13 @@ public class Train extends AppCompatActivity {
             }
         };
         t.start();
+
+        refresh.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FetchTraffic process = new FetchTraffic();
+                process.execute();
+            }
+        });
     }
 }

@@ -80,7 +80,8 @@
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/button2"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="23dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="0dp"
         android:text="Vers Saint-Germain" />
 
     <Button
@@ -89,14 +90,14 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="239dp"
-        android:layout_marginTop="3dp"
+        android:layout_marginStart="218dp"
+        android:layout_marginTop="5dp"
         android:text="Vers Paris" />
 
     <TextView
         android:id="@+id/horaire"
         android:layout_width="match_parent"
-        android:layout_height="324dp"
+        android:layout_height="176dp"
         android:layout_alignParentStart="false"
         android:layout_alignParentTop="false"
         android:layout_marginTop="170dp"
@@ -114,7 +115,7 @@
         android:orientation="vertical">
 
         <ImageView
-            android:id="@+id/imageView3"
+            android:id="@+id/rerA"
             android:layout_width="73dp"
             android:layout_height="match_parent"
             app:srcCompat="@drawable/rera" />
@@ -131,5 +132,89 @@
         android:layout_marginTop="9dp"
         android:background="@color/red"
         android:ems="10" />
+
+    <LinearLayout
+        android:layout_width="400dp"
+        android:layout_height="113dp"
+        android:layout_alignEnd="@+id/button"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="398dp"
+        android:layout_marginEnd="-209dp"
+        android:background="#FF8FABE6"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/infos"
+            android:layout_width="43dp"
+            android:layout_height="52dp"
+            android:layout_margin="10dp"
+            app:srcCompat="@drawable/infos" />
+
+        <TextView
+            android:id="@+id/info_titre"
+            android:layout_width="291dp"
+            android:layout_height="22dp"
+            android:layout_alignParentBottom="false"
+            android:layout_marginStart="61dp"
+            android:layout_marginTop="-65dp"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/info_message"
+            android:layout_width="303dp"
+            android:layout_height="82dp"
+            android:layout_alignParentBottom="false"
+            android:layout_marginStart="61dp"
+            android:layout_marginBottom="7dp"
+            android:text="Infos sur le traffic"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/refresh"
+        android:layout_width="92dp"
+        android:layout_height="36dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="-55dp"
+        android:layout_marginBottom="126dp"
+        android:layout_toStartOf="@+id/destination"
+        app:srcCompat="@drawable/refresh" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="48dp"
+        android:layout_height="43dp"
+        android:layout_alignTop="@+id/button"
+        android:layout_alignEnd="@+id/direction"
+        android:rotation="90"
+        app:srcCompat="@drawable/switch" />
+
+    <Spinner
+        android:id="@+id/gare"
+        android:layout_width="161dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editText"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="116dp"
+        android:layout_marginTop="14dp" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="143dp"
+        android:text="Gare favorite"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold" />
 
 </RelativeLayout>

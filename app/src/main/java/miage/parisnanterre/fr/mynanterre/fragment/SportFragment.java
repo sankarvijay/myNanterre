@@ -32,6 +32,7 @@ public class SportFragment extends ListFragment implements AdapterView.OnItemCli
     private static final String psw = "9IDCqTm8Lig2";
     private static Connection conn;
     private List<String> sports = new ArrayList<>();
+    private ListView lv;
     public static final String EXTRA_MESSAGE = "com.example.myfirstapp.MESSAGE";
 
     @Override
