@@ -95,7 +95,7 @@ public class ListeCrous   extends AppCompatActivity {
                         try {
                             conn = DriverManager.getConnection(url, user, psw);
                             String sqliD = "UPDATE Crous SET frequentation = 1 WHERE batiment='"+batiment+"';";
-                            System.out.println(sqliD);
+
                             PreparedStatement preparedStatement = conn.prepareStatement(sqliD);
 
                             preparedStatement.executeUpdate();
@@ -104,8 +104,8 @@ public class ListeCrous   extends AppCompatActivity {
                         } catch (SQLException e) {
                             e.printStackTrace();
                         }
-
-                        startActivity(new Intent(ListeCrous.this, ListeCrous.class));
+                        Toast.makeText(getApplicationContext(), "c'est noté!", Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(ListeCrous.this, Accueil.class));
 
                     }
                 });
@@ -120,7 +120,7 @@ public class ListeCrous   extends AppCompatActivity {
 
                             PreparedStatement preparedStatement = conn.prepareStatement(sqliD);
 
-                            System.out.println(sqliD);
+
 
                             preparedStatement.executeUpdate();
                             //startActivity(new Intent(ListeCrous.this, ListeCrous.class));
@@ -128,8 +128,8 @@ public class ListeCrous   extends AppCompatActivity {
                         } catch (SQLException e) {
                             e.printStackTrace();
                         }
-
-                        startActivity(new Intent(ListeCrous.this, ListeCrous.class));
+                        Toast.makeText(getApplicationContext(), "c'est noté!", Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(ListeCrous.this, Accueil.class));
 
                     }
                 });
@@ -144,7 +144,7 @@ public class ListeCrous   extends AppCompatActivity {
 
                             PreparedStatement preparedStatement = conn.prepareStatement(sqliD);
 
-                            System.out.println(sqliD);
+
 
                             preparedStatement.executeUpdate();
                             //startActivity(new Intent(ListeCrous.this, ListeCrous.class));
@@ -153,7 +153,9 @@ public class ListeCrous   extends AppCompatActivity {
                             e.printStackTrace();
                         }
 
-                        startActivity(new Intent(ListeCrous.this, ListeCrous.class));
+                        Toast.makeText(getApplicationContext(), "c'est noté!", Toast.LENGTH_SHORT).show();
+
+                        startActivity(new Intent(ListeCrous.this, Accueil.class));
 
                     }
                 });
