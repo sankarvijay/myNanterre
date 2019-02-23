@@ -1,12 +1,16 @@
 package miage.parisnanterre.fr.mynanterre.implem;
 
+import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 
 import android.os.StrictMode;
+import android.support.v4.app.DialogFragment;
 import android.support.v7.app.AppCompatActivity;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
@@ -27,7 +31,7 @@ import miage.parisnanterre.fr.mynanterre.R;
 import miage.parisnanterre.fr.mynanterre.adapter.CrousGridAdapter;
 
 
-public class ListeCrous extends AppCompatActivity {
+public class ListeCrous   extends AppCompatActivity {
 
     Context context;
     private Intent intent;
@@ -38,12 +42,13 @@ public class ListeCrous extends AppCompatActivity {
     private static Connection conn;
     private List<Crous> liste = new ArrayList<>();
 
-    private final static int IDENTIFIANT_BOITE_UN = 0;
+    private final static int IDENTIFIANT_BOITE_UN  = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.liste_batiments);
+
 
         try {
             Class.forName("com.mysql.jdbc.Driver");
@@ -52,6 +57,7 @@ public class ListeCrous extends AppCompatActivity {
         }
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
+
 
         List<Crous> donnees = getListData();
         final GridView gridView = (GridView) findViewById(R.id.gridview);
@@ -62,26 +68,103 @@ public class ListeCrous extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
                 Object o = gridView.getItemAtPosition(position);
+
+
                 String batiment = ((Crous) o).getBatiment();
-                try {
-                    conn = DriverManager.getConnection(url, user, psw);
-                    String sqliD = "SELECT ventes FROM Crous where batiment='" + batiment + "';";
-                    Statement st = conn.createStatement();
-                    ResultSet rst = st.executeQuery(sqliD);
+                CharSequence ventes=(CharSequence)((Crous) o).getVentes();
 
-                    while (rst.next()) {
-                        String ventes = rst.getString("ventes");
+                //On instancie notre layout en tant que View
+                LayoutInflater factory = LayoutInflater.from(ListeCrous.this);
+                final View alertDialogView = factory.inflate(R.layout.dialog_box_frequentation, null);
 
-                        ArrayList<String> liste = new ArrayList<>();
-                        liste.add(ventes);
 
-                        customDialog("Ventes dans ce point de restauration", liste.toString());
+                AlertDialog.Builder alertDialogBuilder;
+                alertDialogBuilder = new AlertDialog.Builder(ListeCrous.this);
+                alertDialogBuilder.setView(alertDialogView);
+
+
+                Button btn1 = (Button) alertDialogView.findViewById(R.id.buttonfaible);
+
+                Button btn2 = (Button) alertDialogView.findViewById(R.id.buttonmoyenne);
+                Button btn3 = (Button) alertDialogView.findViewById(R.id.buttonforte);
+
+                btn1.setOnClickListener(new View.OnClickListener() {
+                    public void onClick(View v) {
+
+                        // btnAdd1 has been clicked
+                        try {
+                            conn = DriverManager.getConnection(url, user, psw);
+                            String sqliD = "UPDATE Crous SET frequentation = 1 WHERE batiment='"+batiment+"';";
+                            System.out.println(sqliD);
+                            PreparedStatement preparedStatement = conn.prepareStatement(sqliD);
+
+                            preparedStatement.executeUpdate();
+
+
+                        } catch (SQLException e) {
+                            e.printStackTrace();
+                        }
+
+                        startActivity(new Intent(ListeCrous.this, ListeCrous.class));
+
                     }
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
+                });
+
+                btn2.setOnClickListener(new View.OnClickListener() {
+                    public void onClick(View v) {
+
+                        // btnAdd2 has been clicked
+                        try {
+                            conn = DriverManager.getConnection(url, user, psw);
+                            String sqliD = "UPDATE Crous SET frequentation = 2 WHERE batiment='"+batiment+"';";
+
+                            PreparedStatement preparedStatement = conn.prepareStatement(sqliD);
+
+                            System.out.println(sqliD);
+
+                            preparedStatement.executeUpdate();
+                            //startActivity(new Intent(ListeCrous.this, ListeCrous.class));
+
+                        } catch (SQLException e) {
+                            e.printStackTrace();
+                        }
+
+                        startActivity(new Intent(ListeCrous.this, ListeCrous.class));
+
+                    }
+                });
+
+                btn3.setOnClickListener(new View.OnClickListener() {
+                    public void onClick(View v) {
+
+                        // btnAdd3 has been clicked
+                        try {
+                            conn = DriverManager.getConnection(url, user, psw);
+                            String sqliD = "UPDATE Crous SET frequentation = 3 WHERE batiment='"+batiment+"';";
+
+                            PreparedStatement preparedStatement = conn.prepareStatement(sqliD);
+
+                            System.out.println(sqliD);
+
+                            preparedStatement.executeUpdate();
+                            //startActivity(new Intent(ListeCrous.this, ListeCrous.class));
+
+                        } catch (SQLException e) {
+                            e.printStackTrace();
+                        }
+
+                        startActivity(new Intent(ListeCrous.this, ListeCrous.class));
+
+                    }
+                });
+
+                alertDialogBuilder.create().show();
             }
+
+
         });
+
+
 
 
     }
@@ -96,12 +179,11 @@ public class ListeCrous extends AppCompatActivity {
             ResultSet rst = st.executeQuery(sqliD);
 
             while (rst.next()) {
-                int id = rst.getInt("id_bat");
                 String batiment = rst.getString("batiment");
                 String lieu = rst.getString("lieu");
-                int frequentation = rst.getInt("frequentation");
-
-                Crous crous = new Crous(id, batiment, lieu, frequentation);
+                int frequentation=rst.getInt("frequentation");
+                int id=rst.getInt("id_bat");
+                Crous crous = new Crous(id,batiment, lieu,frequentation);
                 liste.add(crous);
 
             }
@@ -109,6 +191,7 @@ public class ListeCrous extends AppCompatActivity {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+
 
 
         return liste;
@@ -126,88 +209,6 @@ public class ListeCrous extends AppCompatActivity {
     }
 
 
-    public Dialog onCreateDialog(int identifiant, int i) {
-        Dialog box = null;
-
-        //En fonction de l'identifiant de la boîte qu'on veut créer
-        switch (identifiant) {
-            case IDENTIFIANT_BOITE_UN:
-                // On construit la première boîte de dialogue, que l'on insère dans « box »
-                box = new Dialog(this);
-                box.setContentView(R.layout.dialog_box_frequentation);
-                box.setTitle("hello");
-
-
-                Button btnFa = (Button) findViewById(R.id.buttonfaible);
-                btnFa.setOnClickListener(new View.OnClickListener() {
-                    public void onClick(View view) {
-                        try {
-                            conn = DriverManager.getConnection(url, user, psw);
-                            String sqliD = "UPDATE Crous SET frequentation=1 WHERE id_bat=(id) values (?) ;";
-                            PreparedStatement preparedStatement = conn.prepareStatement(sqliD);
-
-
-                            preparedStatement.setInt(1, i);
-
-                            preparedStatement.executeUpdate();
-
-
-                        } catch (SQLException e) {
-                            e.printStackTrace();
-                        }
-                    }
-
-                });
-
-
-                Button btnM = (Button) findViewById(R.id.buttonmoyenne);
-                btnM.setOnClickListener(new View.OnClickListener() {
-                    public void onClick(View view) {
-                        try {
-                            conn = DriverManager.getConnection(url, user, psw);
-                            String sqliD = "UPDATE Crous SET frequentation=2 WHERE id_bat=(id) values (?) ;";
-                            PreparedStatement preparedStatement = conn.prepareStatement(sqliD);
-
-
-                            preparedStatement.setInt(1, i);
-
-                            preparedStatement.executeUpdate();
-
-
-                        } catch (SQLException e) {
-                            e.printStackTrace();
-                        }
-                    }
-
-                });
-
-                Button btnFo = (Button) findViewById(R.id.buttonforte);
-                btnFo.setOnClickListener(new View.OnClickListener() {
-                    public void onClick(View view) {
-                        try {
-                            conn = DriverManager.getConnection(url, user, psw);
-                            String sqliD = "UPDATE Crous SET frequentation=3 WHERE id_bat=(id) values (?) ;";
-                            PreparedStatement preparedStatement = conn.prepareStatement(sqliD);
-
-
-                            preparedStatement.setInt(1, i);
-
-                            preparedStatement.executeUpdate();
-
-
-                        } catch (SQLException e) {
-                            e.printStackTrace();
-                        }
-                    }
-
-                });
-
-
-                break;
-
-        }
-        return box;
-    }
 
 
 }

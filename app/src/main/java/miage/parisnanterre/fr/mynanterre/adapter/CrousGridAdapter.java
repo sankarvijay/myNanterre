@@ -1,6 +1,7 @@
 package miage.parisnanterre.fr.mynanterre.adapter;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -58,6 +59,16 @@ public class CrousGridAdapter extends BaseAdapter {
         Crous crous = this.listData.get(position);
         holder.batiment.setText(crous.getBatiment());
         holder.lieu.setText(crous.getLieu());
+
+        if (crous.getFrequentation() == 1) {
+            convertView.setBackgroundColor(Color.rgb(147, 194, 6));
+        } else if (crous.getFrequentation() == 2)  {
+            convertView.setBackgroundColor(Color.rgb(242,178,55));
+        }
+        else{
+            convertView.setBackgroundColor(Color.rgb(191,10,1));
+        }
+
 
         return convertView;
     }
