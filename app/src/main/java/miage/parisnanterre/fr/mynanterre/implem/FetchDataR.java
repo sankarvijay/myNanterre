@@ -76,7 +76,7 @@ public class FetchDataR extends AsyncTask<Void, Void, Void> {
         Train.code.setText(this.dataParsed2);
         Train.heureT.setText(this.dataParsed);
         Train.destination.setText(this.dataParsed3);
-        Train.direction.setText("Marne-la-Vallee Chessy / Boissy-Saint-Leger");
+        Train.direction.setText("vers Marne-la-Vallee Chessy / Boissy-Saint-Leger");
 
     }
 }

@@ -74,7 +74,7 @@ public class FetchDataA extends AsyncTask<Void, Void, Void> {
     protected void onPostExecute(Void aVoid) {
         super.onPostExecute(aVoid);
 
-        Train.direction.setText("Saint-Germain-en-Laye");
+        Train.direction.setText("vers Saint-Germain-en-Laye");
         Train.code.setText(this.dataParsed2);
         Train.heureT.setText(this.dataParsed);
         Train.destination.setText(this.dataParsed3);

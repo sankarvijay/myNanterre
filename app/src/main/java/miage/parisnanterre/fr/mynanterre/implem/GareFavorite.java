@@ -4,15 +4,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.Spinner;
 import android.widget.TextView;
-
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.List;
+import java.text.DateFormat;
+import java.util.Locale;
 
 import miage.parisnanterre.fr.mynanterre.R;
 
@@ -22,6 +18,7 @@ import miage.parisnanterre.fr.mynanterre.R;
 public class GareFavorite extends AppCompatActivity {
     public static TextView horaires;
     public static TextView direction;
+    public static TextView direction2;
     public static TextView theure;
     public static TextView code;
     public static TextView destination;
@@ -40,11 +37,12 @@ public class GareFavorite extends AppCompatActivity {
 
         this.horaires = (TextView) findViewById(R.id.horaire2);
         this.direction = (TextView) findViewById(R.id.direction2);
+        this.direction2 = (TextView) findViewById(R.id.direction3);
         this.code = (TextView) findViewById(R.id.code2);
         this.heureT = (TextView) findViewById(R.id.heureT2);
         this.destination = (TextView) findViewById(R.id.destination2);
-        this.info = (TextView) findViewById(R.id.info_message);
-        this.title = (TextView) findViewById(R.id.info_titre);
+        this.info = (TextView) findViewById(R.id.info_message2);
+        this.title = (TextView) findViewById(R.id.info_titre2);
         this.refresh = (ImageView) findViewById(R.id.refresh2);
         this.exchange = (ImageView) findViewById(R.id.echange2);
         this.click = (Button) findViewById(R.id.button2);
@@ -89,9 +87,10 @@ public class GareFavorite extends AppCompatActivity {
                             public void run() {
                                 theure = (TextView) findViewById(R.id.heure2);
                                 long date = System.currentTimeMillis();
-                                SimpleDateFormat sdf = new SimpleDateFormat("hh:mm:ss a");
-                                String dateString = sdf.format(date);
-                                theure.setText(dateString);
+                                DateFormat df = DateFormat.getTimeInstance(DateFormat.LONG, Locale.FRANCE);
+                                String dateString = df.format(date);
+                                String[] dateS = dateString.split("G");
+                                theure.setText(dateS[0]);
                             }
                         });
                     }

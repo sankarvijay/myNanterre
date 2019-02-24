@@ -107,7 +107,8 @@ public class FetchDataFav extends AsyncTask<Void, Void, Void> {
         GareFavorite.code.setText(this.dataParsed2);
         GareFavorite.heureT.setText(this.dataParsed);
         GareFavorite.destination.setText(this.dataParsed3);
-        GareFavorite.direction.setText("vers Nanterre-Université");
+        GareFavorite.direction.setText(gareFavori);
+        GareFavorite.direction2.setText("vers Nanterre-Université");
 
     }
 }

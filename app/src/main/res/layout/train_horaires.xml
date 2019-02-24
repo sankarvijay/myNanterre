@@ -23,7 +23,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="100dp"
         android:layout_marginTop="70dp"
-        android:text="Nanterre-Universite"
+        android:text="De Nanterre-Universite"
         android:textColor="@color/black"
         android:textStyle="bold" />
 
@@ -69,7 +69,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="250dp"
+        android:layout_marginStart="260dp"
         android:layout_marginTop="70dp"
         android:textColor="@color/black"
         android:textStyle="bold" />
@@ -188,30 +188,32 @@
 
     <ImageView
         android:id="@+id/echange"
-        android:layout_width="48dp"
-        android:layout_height="43dp"
-        android:layout_alignTop="@+id/button"
-        android:layout_alignEnd="@+id/direction"
-        android:rotation="90"
-        app:srcCompat="@drawable/echange" />
+        android:layout_width="34dp"
+        android:layout_height="33dp"
+        android:layout_below="@+id/editText"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="303dp"
+        android:layout_marginTop="8dp"
+        app:srcCompat="@mipmap/star" />
 
     <Spinner
         android:id="@+id/gare"
-        android:layout_width="227dp"
+        android:layout_width="194dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/editText"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="116dp"
+        android:layout_marginStart="101dp"
         android:layout_marginTop="14dp" />
 
     <TextView
         android:id="@+id/textView12"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/editText"
         android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="143dp"
+        android:layout_alignParentTop="false"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="16dp"
         android:text="Gare favorite"
         android:textColor="@color/black"
         android:textSize="16sp"

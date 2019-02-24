@@ -62,10 +62,10 @@ public class FetchTraffic extends AsyncTask<Void, Void, Void> {
     @Override
     protected void onPostExecute(Void aVoid) {
         super.onPostExecute(aVoid);
-        Train.title.setText(this.dataParsed);
-        Train.info.setText(this.dataParsed2);
         GareFavorite.title.setText(this.dataParsed);
         GareFavorite.info.setText(this.dataParsed2);
+        Train.title.setText(this.dataParsed);
+        Train.info.setText(this.dataParsed2);
 
 
     }

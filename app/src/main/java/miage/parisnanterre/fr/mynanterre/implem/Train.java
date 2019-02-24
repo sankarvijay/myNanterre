@@ -12,9 +12,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
+import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 import miage.parisnanterre.fr.mynanterre.R;
 
@@ -83,9 +85,10 @@ public class Train extends AppCompatActivity {
                             public void run() {
                                 theure = (TextView) findViewById(R.id.heure);
                                 long date = System.currentTimeMillis();
-                                SimpleDateFormat sdf = new SimpleDateFormat("hh:mm:ss a");
-                                String dateString = sdf.format(date);
-                                theure.setText(dateString);
+                                DateFormat df = DateFormat.getTimeInstance(DateFormat.LONG, Locale.FRANCE);
+                                String dateString = df.format(date);
+                                String[] dateS = dateString.split("G");
+                                theure.setText(dateS[0]);
                             }
                         });
                     }
