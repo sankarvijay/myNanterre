@@ -1,5 +1,5 @@
-
-
-"scripts": {
-    "commit": "npx git-cz"
+"config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
   }

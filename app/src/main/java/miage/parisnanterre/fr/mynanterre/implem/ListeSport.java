@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Pattern;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -30,6 +31,8 @@ public class ListeSport extends AppCompatActivity {
     private static final String user = "u749839367_vijay";
     private static final String psw = "9IDCqTm8Lig2";
     private static Connection conn;
+    private List<Sport> liste = new ArrayList<>();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -102,17 +105,33 @@ public class ListeSport extends AppCompatActivity {
     }
 
     private List<Sport> getListData() {
-        List<Sport> list = new ArrayList<Sport>();
-        Sport fitness = new Sport(R.drawable.fitness, "Fitness");
-        Sport muscu = new Sport(R.drawable.muscu, "Musculation");
-        Sport cardio = new Sport(R.drawable.salle_cardio, "Salle Cardio");
+        try {
 
-        list.add(fitness);
-        list.add(muscu);
-        list.add(cardio);
+            conn = DriverManager.getConnection(url, user, psw);
+            Bundle extras = getIntent().getExtras();
+            String stringVariableName = extras.getString(SportFragment.EXTRA_MESSAGE);
+            int idCategorie = Integer.parseInt(stringVariableName);
 
+            String sqliD = "SELECT * FROM sports where categorie ='" + idCategorie + "';";
+            Statement st = conn.createStatement();
+            ResultSet rst = st.executeQuery(sqliD);
 
-        return list;
+            while (rst.next()) {
+                String nomSport = rst.getString("sport");
+                String image = rst.getString("image");
+                String[] imgSansType = image.split(Pattern.quote("."));
+                int resID = getResources().getIdentifier(imgSansType[0], "drawable", getPackageName());
+                Sport sport = new Sport(resID, nomSport);
+                liste.add(sport);
+
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return liste;
+
     }
 
 
@@ -121,8 +140,6 @@ public class ListeSport extends AppCompatActivity {
         builderSingle.setIcon(R.drawable.common_google_signin_btn_icon_light);
         builderSingle.setTitle(title);
         builderSingle.setMessage(message);
-
-
         builderSingle.show();
     }
 }

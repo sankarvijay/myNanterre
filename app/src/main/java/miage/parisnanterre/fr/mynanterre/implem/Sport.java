@@ -28,5 +28,13 @@ public class Sport {
     public void setTexte(String texte) {
         this.texte = texte;
     }
+
+    @Override
+    public String toString() {
+        return "Sport{" +
+                "image=" + image +
+                ", texte='" + texte + '\'' +
+                '}';
+    }
 }
 
