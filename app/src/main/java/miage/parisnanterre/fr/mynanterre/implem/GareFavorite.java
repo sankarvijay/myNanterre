@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+
 import java.text.DateFormat;
 import java.util.Locale;
 
@@ -23,8 +24,8 @@ public class GareFavorite extends AppCompatActivity {
     public static TextView code;
     public static TextView destination;
     public static TextView heureT;
-    public static TextView info;
-    public static TextView title;
+    public static TextView info2;
+    public static TextView title2;
     ImageView refresh;
     ImageView exchange;
     String gareFavori = "";
@@ -41,8 +42,8 @@ public class GareFavorite extends AppCompatActivity {
         this.code = (TextView) findViewById(R.id.code2);
         this.heureT = (TextView) findViewById(R.id.heureT2);
         this.destination = (TextView) findViewById(R.id.destination2);
-        this.info = (TextView) findViewById(R.id.info_message2);
-        this.title = (TextView) findViewById(R.id.info_titre2);
+        this.info2 = (TextView) findViewById(R.id.info_message2);
+        this.title2 = (TextView) findViewById(R.id.info_titre2);
         this.refresh = (ImageView) findViewById(R.id.refresh2);
         this.exchange = (ImageView) findViewById(R.id.echange2);
         this.click = (Button) findViewById(R.id.button2);
@@ -71,7 +72,7 @@ public class GareFavorite extends AppCompatActivity {
         refresh.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                FetchTraffic process = new FetchTraffic();
+                FetchTrafficFav process = new FetchTrafficFav();
                 process.execute();
             }
         });

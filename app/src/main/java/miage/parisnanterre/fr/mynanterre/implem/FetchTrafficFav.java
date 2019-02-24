@@ -2,7 +2,6 @@ package miage.parisnanterre.fr.mynanterre.implem;
 
 import android.os.AsyncTask;
 
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -15,18 +14,16 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 /**
- * Created by Sankar Vijay on 23/02/2019.
+ * Created by Sankar Vijay on 24/02/2019.
  */
-public class FetchTraffic extends AsyncTask<Void, Void, Void> {
+public class FetchTrafficFav extends AsyncTask<Void, Void, Void> {
     String data = "";
     String dataParsed = "";
     String dataParsed2 = "";
-    String dataParsed3 = "";
-    String dataParsed4 = "";
+
     String singleParsed = "";
     String singleParsed2 = "";
-    String singleParsed3 = "";
-    String singleParsed4 = "";
+
 
 
     @Override
@@ -52,12 +49,6 @@ public class FetchTraffic extends AsyncTask<Void, Void, Void> {
             singleParsed2 = jo2.get("message") + "\n";
             dataParsed2 = dataParsed2 + singleParsed2;
 
-            singleParsed3 = jo2.get("title") + "\n";
-            dataParsed3 = dataParsed3 + singleParsed3;
-
-            singleParsed4 = jo2.get("message") + "\n";
-            dataParsed4 = dataParsed4 + singleParsed4;
-
         } catch (MalformedURLException e) {
             e.printStackTrace();
         } catch (IOException e) {
@@ -72,8 +63,8 @@ public class FetchTraffic extends AsyncTask<Void, Void, Void> {
     @Override
     protected void onPostExecute(Void aVoid) {
         super.onPostExecute(aVoid);
-        Train.title.setText(this.dataParsed);
-        Train.info.setText(this.dataParsed2);
+        GareFavorite.title2.setText(this.dataParsed);
+        GareFavorite.info2.setText(this.dataParsed2);
 
 
     }

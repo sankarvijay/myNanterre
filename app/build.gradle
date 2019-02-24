@@ -1,4 +1,5 @@
 apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
 
 android {
     compileSdkVersion 28
@@ -48,7 +49,18 @@ dependencies {
     implementation 'com.android.support:recyclerview-v7:28+'
     implementation 'com.google.android.gms:play-services-maps:16.0.0'
     implementation 'com.synnapps:carouselview:0.1.4'
+    androidTestImplementation 'com.android.support.test:rules:1.0.2'
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 }
 repositories {
     mavenCentral()
+}
+buildscript {
+    ext.kotlin_version = '1.2.71'
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
 }
