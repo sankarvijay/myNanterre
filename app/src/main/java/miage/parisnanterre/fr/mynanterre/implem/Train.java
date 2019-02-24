@@ -126,6 +126,48 @@ public class Train extends AppCompatActivity {
         listeGare.add("Saint-Germain-en-Laye");
         listeGare.add("Le Vesinet-Le Pecq");
         listeGare.add("Le Vesinet-Centre");
+        listeGare.add("Chatou-Croissy");
+        listeGare.add("Rueil-Malmaison");
+        listeGare.add("Nanterre-Ville");
+        listeGare.add("Cergy-Le-Haut");
+        listeGare.add("Cergy-Saint-Christophe");
+        listeGare.add("Cergy-Prefecture");
+        listeGare.add("Neuville-Universite");
+        listeGare.add("Conflans-Fin d'Oise");
+        listeGare.add("Acheres-Ville");
+        listeGare.add("Poissy");
+        listeGare.add("Acheres Grand Cormier");
+        listeGare.add("Maisons-Laffitte");
+        listeGare.add("Sartrouville");
+        listeGare.add("Houilles Carrieres-sur-Seine");
+        listeGare.add("Nanterre-Prefecture");
+        listeGare.add("La Defense (Grande Arche)");
+        listeGare.add("Charles de Gaulle-Etoile");
+        listeGare.add("Auber");
+        listeGare.add("Chatelet-Les-Halles");
+        listeGare.add("Gare de Lyon");
+        listeGare.add("Nation");
+        listeGare.add("Vincennes");
+        listeGare.add("Val de Fontenay");
+        listeGare.add("Neuilly-Plaisance");
+        listeGare.add("Bry-sur-Marne");
+        listeGare.add("Noisy-le-Grand (Mont d'Est)");
+        listeGare.add("Noisy-Champs");
+        listeGare.add("Noisiel");
+        listeGare.add("Lognes");
+        listeGare.add("Torcy");
+        listeGare.add("Bussy-Saint-Georges");
+        listeGare.add("Val d'Europe");
+        listeGare.add("Marne-la-Vallee Chessy");
+        listeGare.add("Fontenay-sous-Bois");
+        listeGare.add("Nogent-sur-Marne");
+        listeGare.add("Joinville-le-Pont");
+        listeGare.add("Saint-Maur Creteil");
+        listeGare.add("Le Parc de Saint-Maur");
+        listeGare.add("Champigny");
+        listeGare.add("La Varenne-Chennevieres");
+        listeGare.add("Sucy Bonneuil");
+        listeGare.add("Boissy-Saint-Leger");
 
 		/*Le Spinner a besoin d'un adapter pour sa presentation alors on lui passe le context(this) et
                 un fichier de presentation par défaut( android.R.layout.simple_spinner_item)
