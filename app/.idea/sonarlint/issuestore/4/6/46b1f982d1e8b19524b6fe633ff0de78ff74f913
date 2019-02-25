@@ -1,0 +1,19 @@
+
+[squid:UselessImportCheck"3Remove this unused import 'android.content.Intent'.(³ğ‹G8Ãû¤ü‘-
+Dsquid:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8áÔ·ü‘-
+\squid:UselessImportCheck".Remove this unused import 'android.os.Bundle'.(°şÊóøÿÿÿÿ8Ãû¤ü‘-
+T
+squid:S106"9Replace this use of System.out or System.err by a logger.(Ã¨Œ8áÔ·ü‘-
+fsquid:S2147"ECombine this catch with the one at line 219, which has the same body.(÷¿­¹ÿÿÿÿÿ8áÔ·ü‘-
+Y
+squid:S106"9Replace this use of System.out or System.err by a logger.(¥ú‡Îúÿÿÿÿ8Ãû¤ü‘-
+Zsquid:UselessImportCheck"1Remove this unused import 'android.app.Activity'.(‡ÊÍÆ8Ãû¤ü‘-
+=squid:S1643"Use a StringBuilder instead.(ÑĞ§Úşÿÿÿÿ8áÔ·ü‘-
+=squid:S1643"Use a StringBuilder instead.(º„¸Úúÿÿÿÿ8áÔ·ü‘-
+]squid:S1479"BReduce the number of non-empty switch cases from 46 to at most 30.(ş¥à8¬ºü‘-
+nsquid:UselessImportCheck"@Remove this unused import 'miage.parisnanterre.fr.mynanterre.R'.(æ§¾¶şÿÿÿÿ8Ãû¤ü‘-
+Dsquid:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8áÔ·ü‘-
+[squid:UselessImportCheck"2Remove this unused import 'android.os.StrictMode'.(Ä§Ì„8Ãû¤ü‘-
+7squid:S1643"Use a StringBuilder instead.(î±òm8áÔ·ü‘-
+=squid:S1643"Use a StringBuilder instead.(áÚ©ıÿÿÿÿ8áÔ·ü‘-
+asquid:S2147"ECombine this catch with the one at line 219, which has the same body.(ï­£Ä8áÔ·ü‘-

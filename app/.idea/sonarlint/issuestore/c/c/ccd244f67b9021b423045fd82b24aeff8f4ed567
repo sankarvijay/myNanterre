@@ -1,0 +1,18 @@
+
+Rsquid:S2696"6Make the enclosing method "static" or remove this set.(ϊΪÿ½8πυ›ƒ’-
+`squid:HiddenFieldCheck"9Rename "liste" which hides the field declared at line 34.(Ω‚φθ8πυ›ƒ’-
+csquid:S2095"GUse try-with-resources or close this "Statement" in a "finally" clause.(πΧ8πυ›ƒ’-
+Dsquid:S1148"#Use a logger to log this exception.(€ΙΤ…ύÿÿÿÿ8πυ›ƒ’-
+Rsquid:S2696"6Make the enclosing method "static" or remove this set.(ϊΪÿ½8πυ›ƒ’-
+|squid:S00115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(λ«ύψÿÿÿÿ8πυ›ƒ’-
+wsquid:S00115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(‚»ά8πυ›ƒ’-
+Y
+squid:S106"9Replace this use of System.out or System.err by a logger.(±ΒΣαώÿÿÿÿ8πυ›ƒ’-
+<squid:S2068" Remove this hard-coded password.(ϊΪÿ½8πυ›ƒ’-
+csquid:S2095"GUse try-with-resources or close this "Statement" in a "finally" clause.(πΧ8πυ›ƒ’-
+ssquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ί’“όÿÿÿÿ8πυ›ƒ’-
+Dsquid:S1148"#Use a logger to log this exception.(€ΙΤ…ύÿÿÿÿ8πυ›ƒ’-
+hsquid:S2095"GUse try-with-resources or close this "ResultSet" in a "finally" clause.(µδΩκωÿÿÿÿ8πυ›ƒ’-
+<squid:S2068" Remove this hard-coded password.(ϊΪÿ½8πυ›ƒ’-
+wsquid:S00115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(™Λ‰Α8πυ›ƒ’-
+hsquid:S2095"GUse try-with-resources or close this "ResultSet" in a "finally" clause.(µδΩκωÿÿÿÿ8πυ›ƒ’-

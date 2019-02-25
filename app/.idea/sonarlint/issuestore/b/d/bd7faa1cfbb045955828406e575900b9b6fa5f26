@@ -1,0 +1,11 @@
+
+msquid:S1450"SRemove the "conn" field and declare it as a local variable in the relevant methods.(ÎœÈ³ÿÿÿÿÿ
+asquid:S2095"GUse try-with-resources or close this "ResultSet" in a "finally" clause.(µäÙêùÿÿÿÿ
+=squid:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
+vsquid:S1488"\Immediately return this expression instead of assigning it to the temporary variable "view".(¾°‘¿øÿÿÿÿ
+5squid:S2068" Remove this hard-coded password.(úÚÿ½
+\squid:S2095"GUse try-with-resources or close this "Statement" in a "finally" clause.(˜ğ×
+Ksquid:S2696"6Make the enclosing method "static" or remove this set.(úÚÿ½
+psquid:S00115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(‚»Ü
+psquid:S00115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(™Ë‰Á
+usquid:S00115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(Šë«ıøÿÿÿÿ

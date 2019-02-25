@@ -1,0 +1,13 @@
+
+|squid:S00115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(Šë«ıøÿÿÿÿ8÷‡Ò‘-
+@squid:S1659"$Declare "heureF" on a separate line.(½ƒê¢8÷‡Ò‘-
+Rsquid:S2696"6Make the enclosing method "static" or remove this set.(úÚÿ½8÷‡Ò‘-
+@squid:S1659"$Declare "heureD" on a separate line.(½ƒê¢8÷‡Ò‘-
+<squid:S2068" Remove this hard-coded password.(úÚÿ½8÷‡Ò‘-
+wsquid:S00115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(‚»Ü8÷‡Ò‘-
+>squid:S1659""Declare "lieu" on a separate line.(½ƒê¢8÷‡Ò‘-
+ysquid:S1450"XRemove the "planifier" field and declare it as a local variable in the relevant methods.(íÊ‹¸øÿÿÿÿ8÷‡Ò‘-
+?squid:S1659"#Declare "sport" on a separate line.(½ƒê¢8÷‡Ò‘-
+ksquid:S2095"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ú€­8÷‡Ò‘-
+wsquid:S00115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(™Ë‰Á8÷‡Ò‘-
+Dsquid:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8÷‡Ò‘-

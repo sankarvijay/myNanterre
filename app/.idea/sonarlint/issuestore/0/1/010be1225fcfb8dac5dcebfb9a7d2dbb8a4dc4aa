@@ -1,0 +1,38 @@
+
+Vsquid:S2209"5Change this instance-reference to a static reference.(éú«ÿÿÿÿÿ8œˆ†ü‘-
+Hsquid:S1444",Make this "public static theure" field final(‹¬Ğ8œˆ†ü‘-
+…"squid:ClassVariableVisibilityCheck"RMake theure a static final constant or non-public and provide accessors if needed.(‹¬Ğ8œˆ†ü‘-
+Jsquid:S1444".Make this "public static horaires" field final(’™¥™8œˆ†ü‘-
+Hsquid:S1444",Make this "public static heureT" field final(á¤àñ8œˆ†ü‘-
+Rsquid:S2696"6Make the enclosing method "static" or remove this set.(çÈíú8œˆ†ü‘-
+`squid:UselessImportCheck"7Remove this unused import 'java.text.SimpleDateFormat'.(ú¡ÙÛ8œˆ†ü‘-
+Wsquid:S2696"6Make the enclosing method "static" or remove this set.(éú«ÿÿÿÿÿ8œˆ†ü‘-
+Qsquid:S2209"5Change this instance-reference to a static reference.(çÈíú8œˆ†ü‘-
+Ksquid:S1444"/Make this "public static direction" field final(ŸßŞà8œˆ†ü‘-
+Rsquid:S1444"1Make this "public static destination" field final(ƒˆ‰Ùıÿÿÿÿ8œˆ†ü‘-
+Lsquid:S1444"+Make this "public static title" field final(ı¸”¼ûÿÿÿÿ8œˆ†ü‘-
+Rsquid:S2696"6Make the enclosing method "static" or remove this set.(Øÿ¨8œˆ†ü‘-
+Qsquid:S2209"5Change this instance-reference to a static reference.(–€²´8œˆ†ü‘-
+Qsquid:S2209"5Change this instance-reference to a static reference.(È¡‚ş8œˆ†ü‘-
+Wsquid:S2696"6Make the enclosing method "static" or remove this set.(³¸––ıÿÿÿÿ8œˆ†ü‘-
+Isquid:S1604"(Make this anonymous inner class a lambda(˜ã¯şÿÿÿÿ8œˆ†ü‘-
+Vsquid:S2209"5Change this instance-reference to a static reference.(¢õõµıÿÿÿÿ8œˆ†ü‘-
+‡"squid:ClassVariableVisibilityCheck"TMake horaires a static final constant or non-public and provide accessors if needed.(’™¥™8œˆ†ü‘-
+Rsquid:S2696"6Make the enclosing method "static" or remove this set.(–€²´8œˆ†ü‘-
+Ksquid:S1444"*Make this "public static info" field final(àé‰øÿÿÿÿ8œˆ†ü‘-
+ˆ"squid:ClassVariableVisibilityCheck"UMake direction a static final constant or non-public and provide accessors if needed.(ŸßŞà8œˆ†ü‘-
+ˆ"squid:ClassVariableVisibilityCheck"PMake info a static final constant or non-public and provide accessors if needed.(àé‰øÿÿÿÿ8œˆ†ü‘-
+bsquid:S2142"FEither re-interrupt this method or rethrow the "InterruptedException".(ä ¹€8œˆ†ü‘-
+"squid:ClassVariableVisibilityCheck"WMake destination a static final constant or non-public and provide accessors if needed.(ƒˆ‰Ùıÿÿÿÿ8œˆ†ü‘-
+Wsquid:S2696"6Make the enclosing method "static" or remove this set.(€Â¢‰ıÿÿÿÿ8œˆ†ü‘-
+…"squid:ClassVariableVisibilityCheck"RMake heureT a static final constant or non-public and provide accessors if needed.(á¤àñ8œˆ†ü‘-
+Vsquid:S2209"5Change this instance-reference to a static reference.(€Â¢‰ıÿÿÿÿ8œˆ†ü‘-
+Vsquid:S2209"5Change this instance-reference to a static reference.(³¸––ıÿÿÿÿ8œˆ†ü‘-
+‰"squid:ClassVariableVisibilityCheck"QMake title a static final constant or non-public and provide accessors if needed.(ı¸”¼ûÿÿÿÿ8œˆ†ü‘-
+Rsquid:S2696"6Make the enclosing method "static" or remove this set.(È¡‚ş8œˆ†ü‘-
+ƒ"squid:ClassVariableVisibilityCheck"PMake code a static final constant or non-public and provide accessors if needed.(»†œÈ8œˆ†ü‘-
+Fsquid:S00108")Either remove or fill this block of code.(ä ¹€8œˆ†ü‘-
+_squid:UselessImportCheck"1Remove this unused import 'android.widget.Toast'.(©›ïÍúÿÿÿÿ8œˆ†ü‘-
+`squid:UselessImportCheck"7Remove this unused import 'android.widget.AdapterView'.(¶¾éæ8œˆ†ü‘-
+Fsquid:S1444"*Make this "public static code" field final(»†œÈ8œˆ†ü‘-
+Wsquid:S2696"6Make the enclosing method "static" or remove this set.(¢õõµıÿÿÿÿ8œˆ†ü‘-

@@ -1,0 +1,4 @@
+
+[squid:UselessImportCheck"2Remove this unused import 'android.os.StrictMode'.(Ä§Ì„8ËøØ’-
+Zsquid:UselessImportCheck",Remove this unused import 'android.net.Uri'.(òêû‘ıÿÿÿÿ8ËøØ’-
+jsquid:UselessImportCheck"<Remove this unused import 'android.support.v4.app.Fragment'.(îñ«úÿÿÿÿ8ËøØ’-

@@ -76,7 +76,7 @@ a {
 a:focus, 
 a:hover {
     text-decoration: none;
-    color: #00ceb8;
+    color: #d64b45;
 }
 
 .img_res{
@@ -167,7 +167,7 @@ a:hover {
     height: 100%;
     margin-right: -260px;
     overflow-y: auto;
-    background: #00967f;
+    background: #d64b45;
     z-index: 99999999;
     -webkit-transition: all 0.4s ease 0s;
     -moz-transition: all 0.4s ease 0s;
@@ -200,7 +200,7 @@ a:hover {
 
 .sidebar-nav li a:hover {
     text-decoration: none;
-    color: #81F89D;
+    color: #fff;
 }
 
 .sidebar-nav li a:active,
@@ -285,7 +285,7 @@ a:hover {
     top:0; 
     left:0;
     width: 100%; 
-    background-color: #00967f;
+    background-color: #d64b45;
     padding: 0px;
 }
 .logo {
@@ -311,8 +311,8 @@ a:hover {
     padding-top: 15px;
 }
 .store-btn:hover,#menu-toggle:hover {
-    background: #00ceb8;
-    border-color: #00ceb8;
+    background: #d64b45;
+    border-color: #d64b45;
     color: #fff;
 }
 
@@ -330,7 +330,7 @@ a:hover {
 
 .headings {
     padding: 25% 0 30% 0;
-    color: #fff;
+    color: #ea2020;
 }
 .headings h1 {
     font-size: 40px;
@@ -437,7 +437,7 @@ a:hover {
 
 .gallery-nav:hover,.gallery-nav:focus,.gallery-nav:active {
     color: #fff;
-    background:#6ecba9;
+    background:#d64b45;
 }
 
 
