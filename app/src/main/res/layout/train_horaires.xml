@@ -219,4 +219,14 @@
         android:textSize="16sp"
         android:textStyle="bold" />
 
+    <ImageView
+        android:id="@+id/plan"
+        android:layout_width="50dp"
+        android:layout_height="38dp"
+        android:layout_alignBottom="@+id/refresh"
+        android:layout_marginStart="-7dp"
+        android:layout_marginBottom="-2dp"
+        android:layout_toEndOf="@+id/button2"
+        app:srcCompat="@drawable/map" />
+
 </RelativeLayout>

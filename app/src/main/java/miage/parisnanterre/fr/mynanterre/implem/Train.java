@@ -37,6 +37,7 @@ public class Train extends AppCompatActivity {
     Button clickP;
     ImageView refresh;
     ImageView exchange;
+    ImageView plans;
     Spinner gare;
 
     @Override
@@ -53,11 +54,20 @@ public class Train extends AppCompatActivity {
         this.title = (TextView) findViewById(R.id.info_titre);
         this.refresh = (ImageView) findViewById(R.id.refresh);
         this.exchange = (ImageView) findViewById(R.id.echange);
+        this.plans = (ImageView) findViewById(R.id.plan);
         this.gare = (Spinner) findViewById(R.id.gare);
 
 
         click = (Button) findViewById(R.id.button);
         clickP = (Button) findViewById(R.id.button2);
+
+        plans.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent myIntent = new Intent(getApplicationContext(), TrainPlan.class);
+                startActivity(myIntent);
+            }
+        });
 
         click.setOnClickListener(new View.OnClickListener() {
             @Override
