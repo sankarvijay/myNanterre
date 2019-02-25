@@ -19,7 +19,7 @@ import miage.parisnanterre.fr.mynanterre.R;
  */
 public class AccueilFragment extends Fragment {
     CarouselView carouselView;
-    int[] sampleImages = {R.drawable.event1, R.drawable.event2, R.drawable.event3, R.drawable.event4, R.drawable.event5, R.drawable.event6};
+    int[] sampleImages = {R.drawable.photo3, R.drawable.photo1, R.drawable.photo2, R.drawable.photo4};
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
