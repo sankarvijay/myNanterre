@@ -9,7 +9,7 @@
     <com.synnapps.carouselview.CarouselView
         android:id="@+id/carouselView"
         android:layout_width="match_parent"
-        android:layout_height="201dp"
+        android:layout_height="195dp"
         android:layout_marginTop="60dp"
         app:fillColor="#FFFFFFFF"
         app:pageColor="#00000000"
@@ -47,5 +47,15 @@
         android:text="Bonne visite !"
         android:textColor="@android:color/black"
         android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="MyNanterre"
+        android:textAlignment="center"
+        android:textColor="@android:color/holo_red_dark"
+        android:textSize="30sp"
+        android:textStyle="bold" />
 
 </FrameLayout>
