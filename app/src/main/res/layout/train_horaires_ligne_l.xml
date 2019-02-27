@@ -8,7 +8,7 @@
     tools:layout_editor_absoluteY="81dp">
 
     <ImageView
-        android:id="@+id/plan"
+        android:id="@+id/plan2"
         android:layout_width="50dp"
         android:layout_height="38dp"
         android:layout_alignBottom="@+id/refresh"

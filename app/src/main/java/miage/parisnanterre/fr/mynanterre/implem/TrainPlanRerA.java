@@ -20,17 +20,17 @@ public class TrainPlanRerA extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.train_map_ligne_l);
+        setContentView(R.layout.train_map_rer_a);
 
         PhotoView photoView = (PhotoView) findViewById(R.id.photo_view);
-        photoView.setImageResource(R.drawable.planlignel);
+        photoView.setImageResource(R.drawable.plana);
 
         retour = (ImageView) findViewById(R.id.back);
 
         retour.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent myIntent = new Intent(getApplicationContext(), TrainLigneL.class);
+                Intent myIntent = new Intent(getApplicationContext(), TrainRerA.class);
                 startActivity(myIntent);
             }
         });

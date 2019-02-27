@@ -36,7 +36,7 @@ public class TrainLigneL extends AppCompatActivity {
         this.direction = (TextView) findViewById(R.id.direction);
         this.heureT = (TextView) findViewById(R.id.heureT);
         this.destination = (TextView) findViewById(R.id.destination);
-        this.plans = (ImageView) findViewById(R.id.plan);
+        this.plans = (ImageView) findViewById(R.id.plan2);
 
         clickP = (Button) findViewById(R.id.button2);
         clickP.setOnClickListener(new View.OnClickListener() {
@@ -49,7 +49,7 @@ public class TrainLigneL extends AppCompatActivity {
         plans.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent myIntent = new Intent(getApplicationContext(), TrainPlanRerA.class);
+                Intent myIntent = new Intent(getApplicationContext(), TrainPlanLigneL.class);
                 startActivity(myIntent);
             }
         });
