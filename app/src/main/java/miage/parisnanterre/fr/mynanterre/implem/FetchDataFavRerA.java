@@ -1,8 +1,6 @@
 package miage.parisnanterre.fr.mynanterre.implem;
 
-import android.app.Activity;
 import android.os.AsyncTask;
-import android.os.Bundle;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -16,16 +14,11 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-import android.content.Intent;
-import android.os.StrictMode;
-
-import miage.parisnanterre.fr.mynanterre.R;
-
 /**
  * Created by Sankar Vijay on 23/02/2019.
  */
 
-public class FetchDataFav extends AsyncTask<Void, Void, Void> {
+public class FetchDataFavRerA extends AsyncTask<Void, Void, Void> {
     String data = "";
     String dataParsed = "";
     String dataParsed2 = "";
@@ -36,7 +29,7 @@ public class FetchDataFav extends AsyncTask<Void, Void, Void> {
     String gareFavori = "";
     String lien = "";
 
-    public FetchDataFav(String gare) {
+    public FetchDataFavRerA(String gare) {
         this.gareFavori = gare;
     }
 
@@ -231,11 +224,11 @@ public class FetchDataFav extends AsyncTask<Void, Void, Void> {
     protected void onPostExecute(Void aVoid) {
         super.onPostExecute(aVoid);
 
-        GareFavorite.code.setText(this.dataParsed2);
-        GareFavorite.heureT.setText(this.dataParsed);
-        GareFavorite.destination.setText(this.dataParsed3);
-        GareFavorite.direction.setText(gareFavori);
-        GareFavorite.direction2.setText("vers Nanterre-Université");
+        GareFavoriteRerA.code.setText(this.dataParsed2);
+        GareFavoriteRerA.heureT.setText(this.dataParsed);
+        GareFavoriteRerA.destination.setText(this.dataParsed3);
+        GareFavoriteRerA.direction.setText(gareFavori);
+        GareFavoriteRerA.direction2.setText("vers Nanterre-Université");
 
     }
 }

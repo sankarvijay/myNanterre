@@ -16,7 +16,7 @@ import java.net.*;
 /**
  * Created by Sankar Vijay on 17/02/2019.
  */
-public class FetchDataA extends AsyncTask<Void, Void, Void> {
+public class FetchDataAllerRerA extends AsyncTask<Void, Void, Void> {
     String data = "";
     String dataParsed = "";
     String dataParsed2 = "";
@@ -74,10 +74,10 @@ public class FetchDataA extends AsyncTask<Void, Void, Void> {
     protected void onPostExecute(Void aVoid) {
         super.onPostExecute(aVoid);
 
-        Train.direction.setText("vers Saint-Germain-en-Laye");
-        Train.code.setText(this.dataParsed2);
-        Train.heureT.setText(this.dataParsed);
-        Train.destination.setText(this.dataParsed3);
+        TrainRerA.direction.setText("vers Saint-Germain-en-Laye");
+        TrainRerA.code.setText(this.dataParsed2);
+        TrainRerA.heureT.setText(this.dataParsed);
+        TrainRerA.destination.setText(this.dataParsed3);
 
     }
 }

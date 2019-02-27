@@ -1,3 +1,4 @@
+
 package miage.parisnanterre.fr.mynanterre.implem;
 
 import android.os.AsyncTask;
@@ -10,29 +11,25 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
-import java.net.URL;
+import java.net.*;
 
 /**
- * Created by Sankar Vijay on 23/02/2019.
+ * Created by Sankar Vijay on 17/02/2019.
  */
-public class FetchTraffic extends AsyncTask<Void, Void, Void> {
+public class FetchDataRetourRerA extends AsyncTask<Void, Void, Void> {
     String data = "";
     String dataParsed = "";
     String dataParsed2 = "";
     String dataParsed3 = "";
-    String dataParsed4 = "";
     String singleParsed = "";
     String singleParsed2 = "";
     String singleParsed3 = "";
-    String singleParsed4 = "";
-
 
     @Override
     protected Void doInBackground(Void... voids) {
         try {
-            URL url = new URL("https://api-ratp.pierre-grimaud.fr/v3/traffic/rers/A");
+            URL url = new URL("https://api-ratp.pierre-grimaud.fr/v3/schedules/rers/A/nanterre+universite/R");
 
             HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
             InputStream inputStream = httpURLConnection.getInputStream();
@@ -44,19 +41,22 @@ public class FetchTraffic extends AsyncTask<Void, Void, Void> {
             }
 
             JSONObject jo = new JSONObject(data);
-            JSONObject jo2 = jo.getJSONObject("result");
 
-            singleParsed = jo2.get("title") + "\n";
-            dataParsed = dataParsed + singleParsed;
+            for (int i = 0; i <= data.length(); i++) {
+                JSONArray arr = (JSONArray) jo.getJSONObject("result").getJSONArray("schedules");
 
-            singleParsed2 = jo2.get("message") + "\n";
-            dataParsed2 = dataParsed2 + singleParsed2;
+                singleParsed = arr.getJSONObject(i).get("message") + "\n";
 
-            singleParsed3 = jo2.get("title") + "\n";
-            dataParsed3 = dataParsed3 + singleParsed3;
+                dataParsed = dataParsed + singleParsed;
 
-            singleParsed4 = jo2.get("message") + "\n";
-            dataParsed4 = dataParsed4 + singleParsed4;
+                singleParsed2 = arr.getJSONObject(i).get("code") + "\n";
+                dataParsed2 = dataParsed2 + singleParsed2;
+
+                singleParsed3 = arr.getJSONObject(i).get("destination") + "\n";
+                dataParsed3 = dataParsed3 + singleParsed3;
+
+            }
+
 
         } catch (MalformedURLException e) {
             e.printStackTrace();
@@ -72,10 +72,11 @@ public class FetchTraffic extends AsyncTask<Void, Void, Void> {
     @Override
     protected void onPostExecute(Void aVoid) {
         super.onPostExecute(aVoid);
-        Train.title.setText(this.dataParsed);
-        Train.info.setText(this.dataParsed2);
 
+        TrainRerA.code.setText(this.dataParsed2);
+        TrainRerA.heureT.setText(this.dataParsed);
+        TrainRerA.destination.setText(this.dataParsed3);
+        TrainRerA.direction.setText("vers Marne-la-Vallee Chessy / Boissy-Saint-Leger");
 
     }
-
 }

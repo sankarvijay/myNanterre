@@ -11,7 +11,8 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 
 import miage.parisnanterre.fr.mynanterre.R;
-import miage.parisnanterre.fr.mynanterre.implem.Train;
+import miage.parisnanterre.fr.mynanterre.implem.TrainLigneL;
+import miage.parisnanterre.fr.mynanterre.implem.TrainRerA;
 
 
 /**
@@ -36,8 +37,24 @@ public class TrainFragment extends ListFragment implements AdapterView.OnItemCli
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        Intent intent = new Intent(view.getContext(), Train.class);
-        startActivity(intent);
+        CallFunc(position);
     }
+
+    private void CallFunc(int position) {
+        Intent intent = null;
+        switch (position) {
+            case 0:
+                intent = new Intent(getView().getContext(), TrainRerA.class);
+                break;
+            case 1:
+                intent = new Intent(getView().getContext(), TrainLigneL.class);
+                break;
+        }
+// pour éviter le if tu peux faire un return sur default du switch
+        if (intent != null) {
+            startActivity(intent);
+        }
+    }
+
 
 }

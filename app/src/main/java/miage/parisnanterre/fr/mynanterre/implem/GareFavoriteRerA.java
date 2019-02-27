@@ -16,7 +16,7 @@ import miage.parisnanterre.fr.mynanterre.R;
 /**
  * Created by Sankar Vijay on 23/02/2019.
  */
-public class GareFavorite extends AppCompatActivity {
+public class GareFavoriteRerA extends AppCompatActivity {
     public static TextView horaires;
     public static TextView direction;
     public static TextView direction2;
@@ -34,7 +34,7 @@ public class GareFavorite extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.train_horaires_favoris);
+        setContentView(R.layout.train_horaires_favoris_rer_a);
 
         this.horaires = (TextView) findViewById(R.id.horaire2);
         this.direction = (TextView) findViewById(R.id.direction2);
@@ -55,7 +55,7 @@ public class GareFavorite extends AppCompatActivity {
         click.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                FetchDataFav process = new FetchDataFav(gareFavori);
+                FetchDataFavRerA process = new FetchDataFavRerA(gareFavori);
                 process.execute();
             }
         });
@@ -63,7 +63,7 @@ public class GareFavorite extends AppCompatActivity {
         exchange.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent myIntent = new Intent(getApplicationContext(), Train.class);
+                Intent myIntent = new Intent(getApplicationContext(), TrainRerA.class);
                 startActivity(myIntent);
             }
         });
@@ -72,7 +72,7 @@ public class GareFavorite extends AppCompatActivity {
         refresh.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                FetchTrafficFav process = new FetchTrafficFav();
+                FetchTrafficFavRerA process = new FetchTrafficFavRerA();
                 process.execute();
             }
         });

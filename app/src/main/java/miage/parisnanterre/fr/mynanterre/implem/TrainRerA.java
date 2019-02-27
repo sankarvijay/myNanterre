@@ -2,7 +2,6 @@ package miage.parisnanterre.fr.mynanterre.implem;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -10,10 +9,8 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Toast;
 
 import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
@@ -23,7 +20,7 @@ import miage.parisnanterre.fr.mynanterre.R;
 /**
  * Created by Sankar Vijay on 09/02/2019.
  */
-public class Train extends AppCompatActivity {
+public class TrainRerA extends AppCompatActivity {
     public static TextView horaires;
     public static TextView direction;
     public static TextView theure;
@@ -43,7 +40,7 @@ public class Train extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.train_horaires);
+        setContentView(R.layout.train_horaires_rer_a);
 
         this.horaires = (TextView) findViewById(R.id.horaire);
         this.direction = (TextView) findViewById(R.id.direction);
@@ -64,7 +61,7 @@ public class Train extends AppCompatActivity {
         plans.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent myIntent = new Intent(getApplicationContext(), TrainPlan.class);
+                Intent myIntent = new Intent(getApplicationContext(), TrainPlanRerA.class);
                 startActivity(myIntent);
             }
         });
@@ -72,7 +69,7 @@ public class Train extends AppCompatActivity {
         click.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                FetchDataA process = new FetchDataA();
+                FetchDataAllerRerA process = new FetchDataAllerRerA();
                 process.execute();
             }
         });
@@ -80,7 +77,7 @@ public class Train extends AppCompatActivity {
         clickP.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                FetchDataR process = new FetchDataR();
+                FetchDataRetourRerA process = new FetchDataRetourRerA();
                 process.execute();
             }
         });
@@ -111,7 +108,7 @@ public class Train extends AppCompatActivity {
         refresh.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                FetchTraffic process = new FetchTraffic();
+                FetchTrafficRerA process = new FetchTrafficRerA();
                 process.execute();
             }
         });
@@ -119,7 +116,7 @@ public class Train extends AppCompatActivity {
         exchange.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent myIntent = new Intent(getApplicationContext(), GareFavorite.class);
+                Intent myIntent = new Intent(getApplicationContext(), GareFavoriteRerA.class);
                 Bundle extras = new Bundle();
                 extras.putString("favori", gare.getSelectedItem().toString() + "");
 

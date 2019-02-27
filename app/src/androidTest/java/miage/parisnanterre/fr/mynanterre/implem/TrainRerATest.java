@@ -35,7 +35,7 @@ import static org.hamcrest.Matchers.is;
 
 @LargeTest
 @RunWith(AndroidJUnit4.class)
-public class TrainTest {
+public class TrainRerATest {
 
     @Rule
     public ActivityTestRule<Accueil> mActivityTestRule = new ActivityTestRule<>(Accueil.class);
@@ -43,7 +43,7 @@ public class TrainTest {
     @Test
     public void trainTest() {
         ViewInteraction bottomNavigationItemView = onView(
-                allOf(withId(R.id.navigation_train), withContentDescription("Train"),
+                allOf(withId(R.id.navigation_train), withContentDescription("TrainRerA"),
                         childAtPosition(
                                 childAtPosition(
                                         withId(R.id.navigationView),

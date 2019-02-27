@@ -4,5 +4,6 @@
     <string name="appbar_scrolling_view_behavior" />
     <string-array name="Trains">
         <item>RER A</item>
+        <item>Ligne L</item>
     </string-array>
 </resources>

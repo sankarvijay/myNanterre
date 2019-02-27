@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".implem.TrainRerA"
+    tools:layout_editor_absoluteY="81dp">
+
+    <TextView
+        android:id="@+id/direction"
+        android:layout_width="272dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView9"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="6dp"
+        android:textColor="@color/design_default_color_primary_dark" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="70dp"
+        android:text="De Nanterre-Universite"
+        android:textColor="@color/black"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/heureT"
+        android:layout_width="54dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="false"
+        android:layout_marginStart="310dp"
+        android:layout_marginTop="187dp"
+        android:background="@color/black"
+        android:text="heure"
+        android:textColor="@color/white"
+        android:textSize="13sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/destination"
+        android:layout_width="285dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="false"
+        android:layout_marginTop="187dp"
+        android:text="Destination"
+        android:textColor="@color/black"
+        android:textSize="13sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/heure"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="260dp"
+        android:layout_marginTop="70dp"
+        android:textColor="@color/black"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="5dp"
+        android:text="Prochains Départs" />
+
+    <TextView
+        android:id="@+id/horaire"
+        android:layout_width="match_parent"
+        android:layout_height="176dp"
+        android:layout_alignParentStart="false"
+        android:layout_alignParentTop="false"
+        android:layout_marginTop="170dp"
+        android:padding="5dp"
+        android:textColor="@android:color/black"
+        android:textSize="18dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="68dp"
+        android:layout_alignEnd="@+id/button"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="59dp"
+        android:layout_marginEnd="-213dp"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/ligneL"
+            android:layout_width="73dp"
+            android:layout_height="match_parent"
+            app:srcCompat="@drawable/lignel" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/editText"
+        android:layout_width="match_parent"
+        android:layout_height="6dp"
+        android:layout_below="@+id/direction"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="9dp"
+        android:background="@color/design_default_color_primary"
+        android:ems="10" />
+
+</RelativeLayout>

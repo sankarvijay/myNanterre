@@ -14,16 +14,18 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 /**
- * Created by Sankar Vijay on 24/02/2019.
+ * Created by Sankar Vijay on 23/02/2019.
  */
-public class FetchTrafficFav extends AsyncTask<Void, Void, Void> {
+public class FetchTrafficRerA extends AsyncTask<Void, Void, Void> {
     String data = "";
     String dataParsed = "";
     String dataParsed2 = "";
-
+    String dataParsed3 = "";
+    String dataParsed4 = "";
     String singleParsed = "";
     String singleParsed2 = "";
-
+    String singleParsed3 = "";
+    String singleParsed4 = "";
 
 
     @Override
@@ -49,6 +51,12 @@ public class FetchTrafficFav extends AsyncTask<Void, Void, Void> {
             singleParsed2 = jo2.get("message") + "\n";
             dataParsed2 = dataParsed2 + singleParsed2;
 
+            singleParsed3 = jo2.get("title") + "\n";
+            dataParsed3 = dataParsed3 + singleParsed3;
+
+            singleParsed4 = jo2.get("message") + "\n";
+            dataParsed4 = dataParsed4 + singleParsed4;
+
         } catch (MalformedURLException e) {
             e.printStackTrace();
         } catch (IOException e) {
@@ -63,8 +71,8 @@ public class FetchTrafficFav extends AsyncTask<Void, Void, Void> {
     @Override
     protected void onPostExecute(Void aVoid) {
         super.onPostExecute(aVoid);
-        GareFavorite.title2.setText(this.dataParsed);
-        GareFavorite.info2.setText(this.dataParsed2);
+        TrainRerA.title.setText(this.dataParsed);
+        TrainRerA.info.setText(this.dataParsed2);
 
 
     }
