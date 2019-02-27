@@ -7,6 +7,7 @@ import android.os.StrictMode;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import java.sql.Connection;
@@ -24,8 +25,9 @@ public class Plannification extends Activity {
     private static final String user = "u749839367_vijay";
     private static final String psw = "9IDCqTm8Lig2";
     private static Connection conn;
-    private EditText numero, heureD, heureF, sport, lieu;
+    private EditText numero, heureD, heureF;
     private Button planifier;
+    private Spinner sport, lieu;
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,8 +37,9 @@ public class Plannification extends Activity {
 
         heureD = (EditText) findViewById(R.id.heureD);
         heureF = (EditText) findViewById(R.id.heureF);
-        sport = (EditText) findViewById(R.id.sport);
-        lieu = (EditText) findViewById(R.id.lieu);
+        sport = (Spinner) findViewById(R.id.sport);
+
+        lieu = (Spinner) findViewById(R.id.lieu);
         planifier = (Button) findViewById(R.id.planifier);
 
         try {
@@ -50,6 +53,7 @@ public class Plannification extends Activity {
         planifier.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //faire un select pour le sport selon la categorie ou on est et un select * le lieu pour les 2 spinners
                 try {
                     conn = DriverManager.getConnection(url, user, psw);
                     String sqliD = "insert into plannification_sport (nom,prenom,heured,heuref,sport,lieu) values (?,?,?,?,?,?) ;";
@@ -59,8 +63,10 @@ public class Plannification extends Activity {
 
                     preparedStatement.setString(2, heureD.getText().toString());
                     preparedStatement.setString(3, heureF.getText().toString());
-                    preparedStatement.setString(4, sport.getText().toString());
-                    preparedStatement.setString(5, lieu.getText().toString());
+
+                    //a changer ici genre getvalue pour avoir id du text choisi
+                    //preparedStatement.setString(4, sport.getText().toString());
+                    //preparedStatement.setString(5, lieu.getText().toString());
                     preparedStatement.executeUpdate();
                     Toast.makeText(getApplicationContext(), "Votre séance a bien été planifié !", Toast.LENGTH_SHORT).show();
 
