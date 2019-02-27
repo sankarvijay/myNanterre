@@ -1,5 +1,6 @@
 package miage.parisnanterre.fr.mynanterre.implem;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -24,6 +25,7 @@ public class TrainLigneL extends AppCompatActivity {
     public static TextView heureT;
 
     Button clickP;
+    ImageView plans;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +36,7 @@ public class TrainLigneL extends AppCompatActivity {
         this.direction = (TextView) findViewById(R.id.direction);
         this.heureT = (TextView) findViewById(R.id.heureT);
         this.destination = (TextView) findViewById(R.id.destination);
+        this.plans = (ImageView) findViewById(R.id.plan);
 
         clickP = (Button) findViewById(R.id.button2);
         clickP.setOnClickListener(new View.OnClickListener() {
@@ -41,6 +44,13 @@ public class TrainLigneL extends AppCompatActivity {
             public void onClick(View v) {
                 FetchDataRetourLigneL process = new FetchDataRetourLigneL();
                 process.execute();
+            }
+        });
+        plans.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent myIntent = new Intent(getApplicationContext(), TrainPlanRerA.class);
+                startActivity(myIntent);
             }
         });
         Thread t = new Thread() {

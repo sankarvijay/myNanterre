@@ -11,26 +11,26 @@ import com.github.chrisbanes.photoview.PhotoView;
 import miage.parisnanterre.fr.mynanterre.R;
 
 /**
- * Created by Sankar Vijay on 25/02/2019.
+ * Created by Sankar Vijay on 27/02/2019.
  */
-public class TrainPlanRerA extends AppCompatActivity {
+public class TrainPlanLigneL extends AppCompatActivity {
 
     ImageView retour;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.train_map_ligne_l);
+        setContentView(R.layout.train_map_rer_a);
 
         PhotoView photoView = (PhotoView) findViewById(R.id.photo_view);
-        photoView.setImageResource(R.drawable.planlignel);
+        photoView.setImageResource(R.drawable.plana);
 
         retour = (ImageView) findViewById(R.id.back);
 
         retour.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent myIntent = new Intent(getApplicationContext(), TrainLigneL.class);
+                Intent myIntent = new Intent(getApplicationContext(), TrainRerA.class);
                 startActivity(myIntent);
             }
         });
