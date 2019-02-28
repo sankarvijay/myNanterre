@@ -321,11 +321,12 @@ a:hover {
 /////////////////////////////////////////////////////////////////////*/
 
 #banner {
-    background: url(../img/bg.jpg);
+    background: #000;
     background-size: cover;
     padding-top: 80px;
     background-attachment: fixed;
     position: relative;
+   
 }
 
 .headings {
