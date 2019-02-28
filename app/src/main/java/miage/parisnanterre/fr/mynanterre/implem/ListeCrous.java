@@ -24,7 +24,11 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.sql.Time;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 import miage.parisnanterre.fr.mynanterre.R;
@@ -62,6 +66,9 @@ public class ListeCrous   extends AppCompatActivity {
         List<Crous> donnees = getListData();
         final GridView gridView = (GridView) findViewById(R.id.gridview);
         gridView.setAdapter(new CrousGridAdapter(this, donnees));
+
+
+
 
 
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -105,6 +112,8 @@ public class ListeCrous   extends AppCompatActivity {
                             e.printStackTrace();
                         }
                         Toast.makeText(getApplicationContext(), "c'est noté!", Toast.LENGTH_SHORT).show();
+
+
                         startActivity(new Intent(ListeCrous.this, Accueil.class));
 
                     }
@@ -172,11 +181,18 @@ public class ListeCrous   extends AppCompatActivity {
     }
 
     private List<Crous> getListData() {
+        Date currentTime= Calendar.getInstance().getTime();
+
+        SimpleDateFormat f = new SimpleDateFormat("HHmmss");
+        String s = f.format(currentTime);
+
+        int i = Integer.parseInt(s);
 
         try {
             conn = DriverManager.getConnection(url, user, psw);
 
-            String sqliD = "SELECT * FROM Crous;";
+            String sqliD = "SELECT * FROM Crous WHERE ouverture<="+i+" AND fermeture>="+i+";";
+            System.out.println(sqliD);
             Statement st = conn.createStatement();
             ResultSet rst = st.executeQuery(sqliD);
 

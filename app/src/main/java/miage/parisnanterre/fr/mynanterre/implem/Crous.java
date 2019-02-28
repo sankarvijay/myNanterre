@@ -8,8 +8,26 @@ public class Crous {
     private String ventes;
     private int frequentation;
     private int id;
+    private int ouverture;
+    private int fermeture;
 
-    public Crous(int id,String batiment, String lieu,int frequentation) {
+    public int getOuverture() {
+        return ouverture;
+    }
+
+    public void setOuverture(int ouverture) {
+        this.ouverture = ouverture;
+    }
+
+    public int getFermeture() {
+        return fermeture;
+    }
+
+    public void setFermeture(int fermeture) {
+        this.fermeture = fermeture;
+    }
+
+    public Crous(int id, String batiment, String lieu, int frequentation) {
         this.batiment = batiment;
         this.id=id;
         this.lieu = lieu;
