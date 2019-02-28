@@ -7,15 +7,32 @@
     tools:context=".implem.TrainRerA"
     tools:layout_editor_absoluteY="81dp">
 
-    <ImageView
-        android:id="@+id/plan2"
-        android:layout_width="50dp"
-        android:layout_height="38dp"
-        android:layout_alignBottom="@+id/refresh"
-        android:layout_marginStart="139dp"
-        android:layout_marginTop="350dp"
-        android:layout_toEndOf="@+id/button2"
-        app:srcCompat="@drawable/map" />
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="5dp"
+        android:text="Prochain départ" />
+
+    <TextView
+        android:id="@+id/direction2"
+        android:layout_width="272dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView9"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="3dp"
+        android:textColor="@color/design_default_color_primary_dark" />
+
+    <TextView
+        android:id="@+id/direction3"
+        android:layout_width="272dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView9"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="31dp"
+        android:textColor="@color/design_default_color_primary_dark" />
 
     <TextView
         android:id="@+id/textView9"
@@ -23,57 +40,48 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_marginStart="100dp"
-        android:layout_marginTop="80dp"
-        android:text="De Nanterre-Universite"
+        android:layout_marginTop="70dp"
+        android:text="Nanterre-Universite"
         android:textColor="@color/black"
         android:textStyle="bold" />
 
     <TextView
-        android:id="@+id/heureT"
-        android:layout_width="54dp"
+        android:id="@+id/heureT2"
+        android:layout_width="49dp"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="false"
         android:layout_marginStart="310dp"
-        android:layout_marginTop="177dp"
+        android:layout_marginTop="187dp"
         android:background="@color/black"
         android:text="heure"
         android:textColor="@color/white"
-        android:textSize="13sp"
+        android:textSize="12sp"
         android:textStyle="bold" />
 
     <TextView
-        android:id="@+id/destination"
-        android:layout_width="285dp"
+        android:id="@+id/destination2"
+        android:layout_width="248dp"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="false"
-        android:layout_marginTop="177dp"
+        android:layout_marginTop="187dp"
         android:text="Destination"
         android:textColor="@color/black"
-        android:textSize="13sp"
+        android:textSize="12sp"
         android:textStyle="bold" />
 
     <TextView
-        android:id="@+id/heure"
+        android:id="@+id/heure2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_marginStart="260dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="70dp"
         android:textColor="@color/black"
         android:textStyle="bold" />
 
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="5dp"
-        android:text="Prochains Départs" />
 
     <TextView
-        android:id="@+id/horaire"
+        android:id="@+id/horaire2"
         android:layout_width="match_parent"
         android:layout_height="176dp"
         android:layout_alignParentStart="false"
@@ -84,8 +92,8 @@
         android:textSize="18dp" />
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="68dp"
+        android:layout_width="597dp"
+        android:layout_height="81dp"
         android:layout_alignEnd="@+id/button"
         android:layout_alignParentTop="true"
         android:layout_marginTop="59dp"
@@ -93,12 +101,22 @@
         android:orientation="vertical">
 
         <ImageView
-            android:id="@+id/ligneL"
+            android:id="@+id/rerA"
             android:layout_width="73dp"
             android:layout_height="match_parent"
             app:srcCompat="@drawable/lignel" />
 
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/editText"
+        android:layout_width="match_parent"
+        android:layout_height="6dp"
+        android:layout_below="@+id/direction"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="140dp"
+        android:background="@color/design_default_color_primary"
+        android:ems="10" />
 
     <LinearLayout
         android:layout_width="400dp"
@@ -118,12 +136,13 @@
             app:srcCompat="@drawable/infos" />
 
         <TextView
-            android:id="@+id/info_message"
-            android:layout_width="282dp"
+            android:id="@+id/info_message2"
+            android:layout_width="289dp"
             android:layout_height="82dp"
             android:layout_alignParentBottom="false"
             android:layout_marginStart="61dp"
             android:layout_marginTop="-50dp"
+            android:layout_marginBottom="7dp"
             android:text="Attentifs ensemble : La sécurité est l'affaire de tous. SI vous constatez une situation anormale, contactez les agents de la STIF. Merci de votre vigilance"
             android:textColor="@color/black"
             android:textSize="14sp"
@@ -132,47 +151,12 @@
 
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/editText"
-        android:layout_width="match_parent"
-        android:layout_height="6dp"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="115dp"
-        android:background="@color/design_default_color_primary"
-        android:ems="10" />
-
     <ImageView
-        android:id="@+id/echange"
-        android:layout_width="34dp"
-        android:layout_height="33dp"
-        android:layout_below="@+id/editText"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="335dp"
-        android:layout_marginTop="8dp"
-        app:srcCompat="@mipmap/star" />
-
-    <Spinner
-        android:id="@+id/gare"
-        android:layout_width="225dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/editText"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="101dp"
-        android:layout_marginTop="14dp" />
-
-    <TextView
-        android:id="@+id/textView12"
+        android:id="@+id/echange2"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/editText"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="false"
-        android:layout_marginStart="0dp"
-        android:layout_marginTop="16dp"
-        android:text="Gare favorite"
-        android:textColor="@color/black"
-        android:textSize="16sp"
-        android:textStyle="bold" />
-
+        android:layout_height="60dp"
+        android:layout_marginLeft="315dp"
+        android:rotation="90"
+        app:srcCompat="@drawable/echange" />
 
 </RelativeLayout>

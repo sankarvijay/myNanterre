@@ -24,6 +24,7 @@
         <activity android:name=".implem.Inscription_sport"></activity>
         <activity android:name=".implem.TrainLigneL"></activity>
         <activity android:name=".implem.TrainPlanLigneL"></activity>
+        <activity android:name=".implem.GareFavoriteLigneL"></activity>
         <activity android:name=".implem.GareFavoriteRerA"></activity>
         <activity android:name=".implem.TrainRerA"></activity>
         <activity android:name=".implem.TrainPlanRerA"></activity>

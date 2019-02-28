@@ -29,6 +29,8 @@ public class TrainLigneL extends AppCompatActivity {
 
     Button clickP;
     ImageView plans;
+    ImageView exchange;
+    Spinner gare;
 
 
     @Override
@@ -41,6 +43,8 @@ public class TrainLigneL extends AppCompatActivity {
         this.heureT = (TextView) findViewById(R.id.heureT);
         this.destination = (TextView) findViewById(R.id.destination);
         this.plans = (ImageView) findViewById(R.id.plan2);
+        this.exchange = (ImageView) findViewById(R.id.echange);
+        this.gare = (Spinner) findViewById(R.id.gare);
 
         clickP = (Button) findViewById(R.id.button2);
         clickP.setOnClickListener(new View.OnClickListener() {
@@ -80,6 +84,50 @@ public class TrainLigneL extends AppCompatActivity {
             }
         };
         t.start();
+
+        exchange.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent myIntent = new Intent(getApplicationContext(), GareFavoriteLigneL.class);
+                Bundle extras = new Bundle();
+                extras.putString("favori", gare.getSelectedItem().toString() + "");
+
+                myIntent.putExtras(extras);
+                startActivity(myIntent);
+            }
+        });
+
+        //Création d'une liste d'élément à mettre dans le Spinner(pour l'exemple)
+        List listeGare = new ArrayList();
+        listeGare.add("GARE ST LAZARE");
+        listeGare.add("PONT CARDINET");
+        listeGare.add("GARE DE CLICHY LEVALLOIS");
+        listeGare.add("GARE D'ASNIERES");
+        listeGare.add("GARE DE BECON LES BRUYERES");
+        listeGare.add("GARE DES VALLEES");
+        listeGare.add("GARE DE LA GARENNE COLOMBES");
+        listeGare.add("GARE DE HOUILLES CARRIERES SUR SEINE");
+        listeGare.add("Gare de Sartrouville");
+        listeGare.add("GARE DE MAISONS LAFFITTE");
+        listeGare.add("GARE D'ACHERES VILLE");
+        listeGare.add("GARE DE CONFLANS FIN D'OISE");
+        listeGare.add("GARE DE NEUVILLE UNIVERSITE");
+        listeGare.add("Gare de Cergy Préfecture");
+        listeGare.add("Gare de Cergy St Christophe");
+        listeGare.add("Gare de Cergy le Haut");
+
+		/*Le Spinner a besoin d'un adapter pour sa presentation alors on lui passe le context(this) et
+                un fichier de presentation par défaut( android.R.layout.simple_spinner_item)
+		Avec la liste des elements (exemple) */
+        ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_spinner_item, listeGare);
+
+
+        /* On definit une présentation du spinner quand il est déroulé         (android.R.layout.simple_spinner_dropdown_item) */
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        //Enfin on passe l'adapter au Spinner et c'est tout
+        gare.setAdapter(adapter);
+
+
 
     }
 }
