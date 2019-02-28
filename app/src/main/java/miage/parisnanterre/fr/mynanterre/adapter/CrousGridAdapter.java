@@ -1,19 +1,25 @@
 package miage.parisnanterre.fr.mynanterre.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
+import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.List;
 
 import miage.parisnanterre.fr.mynanterre.R;
 import miage.parisnanterre.fr.mynanterre.implem.Crous;
+import miage.parisnanterre.fr.mynanterre.implem.ListeProduit;
+import miage.parisnanterre.fr.mynanterre.implem.ListeSport;
+import miage.parisnanterre.fr.mynanterre.implem.TrainLigneL;
 
 
 public class CrousGridAdapter extends BaseAdapter {
@@ -21,6 +27,7 @@ public class CrousGridAdapter extends BaseAdapter {
     private List<Crous> listData;
     private LayoutInflater layoutInflater;
     private Context context;
+    public static final String EXTRA_MESSAGE = "com.example.myfirstapp.MESSAGE";
 
     public CrousGridAdapter(Context aContext, List<Crous> listData) {
         this.context = aContext;
@@ -51,6 +58,7 @@ public class CrousGridAdapter extends BaseAdapter {
             holder = new CrousGridAdapter.ViewHolder();
             holder.batiment = (TextView) convertView.findViewById(R.id.batiment);
             holder.lieu = (TextView) convertView.findViewById(R.id.lieu);
+            holder.sandwich = (ImageView) convertView.findViewById(R.id.buttonSand);
             convertView.setTag(holder);
         } else {
             holder = (CrousGridAdapter.ViewHolder) convertView.getTag();
@@ -62,12 +70,22 @@ public class CrousGridAdapter extends BaseAdapter {
 
         if (crous.getFrequentation() == 1) {
             convertView.setBackgroundColor(Color.rgb(147, 194, 6));
-        } else if (crous.getFrequentation() == 2)  {
-            convertView.setBackgroundColor(Color.rgb(242,178,55));
+        } else if (crous.getFrequentation() == 2) {
+            convertView.setBackgroundColor(Color.rgb(242, 178, 55));
+        } else {
+            convertView.setBackgroundColor(Color.rgb(191, 10, 1));
         }
-        else{
-            convertView.setBackgroundColor(Color.rgb(191,10,1));
-        }
+
+        holder.sandwich.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent myIntent = new Intent(context.getApplicationContext(), ListeProduit.class);
+                Bundle extras = new Bundle();
+                extras.putString(EXTRA_MESSAGE, String.valueOf(crous.getId()));
+                myIntent.putExtras(extras);
+                context.startActivity(myIntent);
+            }
+        });
 
 
         return convertView;
@@ -86,6 +104,7 @@ public class CrousGridAdapter extends BaseAdapter {
     static class ViewHolder {
         private TextView batiment;
         private TextView lieu;
+        private ImageView sandwich;
     }
 
 }

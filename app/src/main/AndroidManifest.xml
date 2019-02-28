@@ -28,6 +28,7 @@
         <activity android:name=".implem.TrainRerA"></activity>
         <activity android:name=".implem.TrainPlanRerA"></activity>
         <activity android:name=".implem.ListeCrous"></activity>
+        <activity android:name=".implem.ListeProduit"></activity>
 
     </application>
 

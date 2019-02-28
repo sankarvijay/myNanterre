@@ -24,7 +24,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.sql.Time;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -45,8 +44,8 @@ public class ListeCrous   extends AppCompatActivity {
     private static final String psw = "9IDCqTm8Lig2";
     private static Connection conn;
     private List<Crous> liste = new ArrayList<>();
+    public static final String EXTRA_MESSAGE = "com.example.myfirstapp.MESSAGE";
 
-    private final static int IDENTIFIANT_BOITE_UN  = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,10 +66,6 @@ public class ListeCrous   extends AppCompatActivity {
         final GridView gridView = (GridView) findViewById(R.id.gridview);
         gridView.setAdapter(new CrousGridAdapter(this, donnees));
 
-
-
-
-
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
@@ -78,7 +73,8 @@ public class ListeCrous   extends AppCompatActivity {
 
 
                 String batiment = ((Crous) o).getBatiment();
-                CharSequence ventes=(CharSequence)((Crous) o).getVentes();
+
+
 
                 //On instancie notre layout en tant que View
                 LayoutInflater factory = LayoutInflater.from(ListeCrous.this);
