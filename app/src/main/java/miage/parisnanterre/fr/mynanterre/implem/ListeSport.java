@@ -50,7 +50,7 @@ public class ListeSport extends AppCompatActivity {
 
         Bundle extras = getIntent().getExtras();
         String stringVariableName = extras.getString(SportFragment.EXTRA_MESSAGE);
-        int idCategorie = Integer.parseInt(stringVariableName);
+        final int idCategorie = Integer.parseInt(stringVariableName);
         System.out.println(" j'ai recupereeee " + idCategorie);
 
         List<Sport> image_details = getListData();
@@ -90,6 +90,8 @@ public class ListeSport extends AppCompatActivity {
         btnRdv.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 Intent myIntent = new Intent(view.getContext(), Plannification.class);
+                //on récupere l'id categorie pour l'utiliser dans l'activité plannification
+                myIntent.putExtra("ID_CATEGORIE",idCategorie);
                 startActivityForResult(myIntent, 0);
             }
         });
@@ -125,6 +127,8 @@ public class ListeSport extends AppCompatActivity {
                 liste.add(sport);
 
             }
+
+
 
         } catch (SQLException e) {
             e.printStackTrace();

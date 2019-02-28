@@ -19,26 +19,36 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="52dp"
+        android:text="Numéro de Séance"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/textView6"
+        app:layout_constraintStart_toStartOf="parent" />
+
     <EditText
         android:id="@+id/numero"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginBottom="12dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="5dp"
         android:ems="10"
         android:inputType="number"
-        android:text="Numéro de Séance"
         app:layout_constraintBottom_toTopOf="@+id/prenom"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView5" />
-
 
 
     <EditText
         android:id="@+id/heureD"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="19dp"
+        android:layout_marginBottom="5dp"
         android:ems="10"
         android:inputType="time"
         app:layout_constraintBottom_toTopOf="@+id/textView7"
@@ -50,7 +60,7 @@
         android:id="@+id/heureF"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="13dp"
+        android:layout_marginBottom="5dp"
         android:ems="10"
         android:inputType="time"
         app:layout_constraintBottom_toTopOf="@+id/sport"
@@ -62,7 +72,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginBottom="1dp"
         android:text="Heure de début"
         android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@+id/heureD"
@@ -74,7 +83,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginBottom="2dp"
         android:text="Heure de fin"
         android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@+id/heureF"
@@ -87,18 +95,18 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginBottom="2dp"
-        android:text="Quels sports ?"
+        android:text="Quel sport ?"
         android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@+id/heureF"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lieu"
-        app:layout_constraintVertical_bias="0.668" />
+        app:layout_constraintVertical_bias="0.582" />
 
     <Spinner
         android:id="@+id/sport"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
+        android:layout_marginStart="120dp"
         android:layout_marginBottom="11dp"
         android:background="@android:drawable/btn_dropdown"
         android:ems="10"
@@ -118,14 +126,14 @@
         app:layout_constraintBottom_toTopOf="@+id/sport"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/planifier"
-        app:layout_constraintVertical_bias="0.668" />
+        app:layout_constraintVertical_bias="0.509" />
 
     <Spinner
         android:id="@+id/lieu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginBottom="12dp"
+        android:layout_marginStart="120dp"
+        android:layout_marginBottom="9dp"
         android:background="@android:drawable/btn_dropdown"
         android:ems="10"
         android:spinnerMode="dropdown"
