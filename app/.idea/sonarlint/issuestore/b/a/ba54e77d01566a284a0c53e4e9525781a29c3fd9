@@ -1,0 +1,12 @@
+
+8squid:S1659"$Declare "prenom" on a separate line.(–Èè
+usquid:S00115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(Šë«ıøÿÿÿÿ
+qsquid:S1450"WRemove the "inscrire" field and declare it as a local variable in the relevant methods.(Ì¥ÄĞúÿÿÿÿ
+dsquid:S2095"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ú€­
+psquid:S00115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(‚»Ü
+psquid:S00115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(™Ë‰Á
+Ksquid:S2696"6Make the enclosing method "static" or remove this set.(úÚÿ½
+8squid:S1659"$Declare "niveau" on a separate line.(–Èè
+csquid:S00101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(Ñ›¡Û
+5squid:S2068" Remove this hard-coded password.(úÚÿ½
+=squid:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
