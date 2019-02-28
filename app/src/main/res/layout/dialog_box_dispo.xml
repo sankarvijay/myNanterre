@@ -13,7 +13,7 @@
         android:layout_height="48dp"
         android:background="@color/white"
         android:gravity="center"
-        android:text="Fréquentation de ce lieu"
+        android:text="Disponibilité de ce produit"
         android:textColor="@color/black"
         android:textSize="@dimen/default_indicator_margin_vertical" />
 
@@ -24,7 +24,7 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/buttonfaible"
+            android:id="@+id/buttonok"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"
@@ -32,22 +32,12 @@
             android:layout_marginBottom="50dp"
             android:layout_weight="1"
             android:background="@android:color/holo_green_light"
-            android:text="Faible"
+            android:text="Disponible"
             android:textColor="@android:color/white" />
 
-        <Button
-            android:id="@+id/buttonmoyenne"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="50dp"
-            android:layout_weight="1"
-            android:background="@android:color/holo_orange_light"
-            android:text="Moyenne"
-            android:textColor="@color/white" />
 
         <Button
-            android:id="@+id/buttonforte"
+            android:id="@+id/buttonko"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
@@ -55,7 +45,7 @@
             android:layout_marginBottom="50dp"
             android:layout_weight="1"
             android:background="@android:color/holo_red_dark"
-            android:text="Forte"
-            android:textColor="@color/white" />
+            android:text="Épuisé"
+            android:textColor="@android:color/white" />
     </LinearLayout>
 </LinearLayout>

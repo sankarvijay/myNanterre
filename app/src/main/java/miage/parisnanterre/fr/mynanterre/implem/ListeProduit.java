@@ -1,48 +1,56 @@
 package miage.parisnanterre.fr.mynanterre.implem;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.regex.Pattern;
+import android.app.AlertDialog;
+import android.content.Context;
 
 import android.content.Intent;
 import android.os.Bundle;
 
 import android.os.StrictMode;
 import android.support.v7.app.AppCompatActivity;
+
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.GridView;
-import android.widget.ListView;
 import android.widget.Toast;
+
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+import java.util.ArrayList;
+
+import java.util.List;
 
 import miage.parisnanterre.fr.mynanterre.R;
 import miage.parisnanterre.fr.mynanterre.adapter.CrousGridAdapter;
+import miage.parisnanterre.fr.mynanterre.adapter.ProduitGridAdapter;
 
 
-/**
- * Created by Sankar Vijay on 28/02/2019.
- */
-public class ListeProduit extends AppCompatActivity {
+public class ListeProduit   extends AppCompatActivity {
+
+    Context context;
+    private Intent intent;
+
     private static final String url = "jdbc:mysql://sql171.main-hosting.eu/u749839367_m1";
     private static final String user = "u749839367_vijay";
     private static final String psw = "9IDCqTm8Lig2";
     private static Connection conn;
     private List<Produit> liste = new ArrayList<>();
+    public static final String EXTRA_MESSAGE = "com.example.myfirstapp.MESSAGE";
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_produit);
-
-        ListView listeV = (ListView) findViewById(R.id.liste);
+        setContentView(R.layout.liste_produit);
 
 
         try {
@@ -53,16 +61,98 @@ public class ListeProduit extends AppCompatActivity {
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
 
-        List<Produit> produit_details = getListData();
-        ArrayAdapter<Produit> adapter = new ArrayAdapter<Produit>(getApplicationContext(), android.R.layout.simple_list_item_1, produit_details);
-        listeV.setAdapter(adapter);
+
+        List<Produit> donnees = getListData();
+        final GridView gridView = (GridView) findViewById(R.id.gridview);
+        gridView.setAdapter(new ProduitGridAdapter(this, donnees));
+
+        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
+                Object o = gridView.getItemAtPosition(position);
+                Bundle extras = getIntent().getExtras();
+                String stringVariableName = extras.getString(CrousGridAdapter.EXTRA_MESSAGE);
+                int idBat = Integer.parseInt(stringVariableName);
+
+
+                String produit = ((Produit) o).getNomProduit();
+
+
+
+                //On instancie notre layout en tant que View
+                LayoutInflater factory = LayoutInflater.from(ListeProduit.this);
+                final View alertDialogView = factory.inflate(R.layout.dialog_box_dispo, null);
+
+
+                AlertDialog.Builder alertDialogBuilder;
+                alertDialogBuilder = new AlertDialog.Builder(ListeProduit.this);
+                alertDialogBuilder.setView(alertDialogView);
+
+
+                Button btn1 = (Button) alertDialogView.findViewById(R.id.buttonok);
+
+                Button btn2 = (Button) alertDialogView.findViewById(R.id.buttonko);
+
+
+                btn1.setOnClickListener(new View.OnClickListener() {
+                    public void onClick(View v) {
+
+                        // btnAdd1 has been clicked
+                        try {
+                            conn = DriverManager.getConnection(url, user, psw);
+                            String sqliD = "UPDATE vente SET dispo = 1 WHERE produit='"+produit+"' AND id_bat="+idBat+";";
+
+                            PreparedStatement preparedStatement = conn.prepareStatement(sqliD);
+
+                            preparedStatement.executeUpdate();
+
+
+                        } catch (SQLException e) {
+                            e.printStackTrace();
+                        }
+                        Toast.makeText(getApplicationContext(), "c'est noté!", Toast.LENGTH_SHORT).show();
+
+
+                        startActivity(new Intent(ListeProduit.this, ListeCrous.class));
+
+                    }
+                });
+
+                btn2.setOnClickListener(new View.OnClickListener() {
+                    public void onClick(View v) {
+
+                        // btnAdd2 has been clicked
+                        try {
+                            conn = DriverManager.getConnection(url, user, psw);
+                            String sqliD = "UPDATE vente SET dispo = 2 WHERE produit='"+produit+"' AND id_bat="+idBat+";";
+                            System.out.println("--------------------------"+sqliD);
+                            PreparedStatement preparedStatement = conn.prepareStatement(sqliD);
+                            preparedStatement.executeUpdate();
+
+
+                        } catch (SQLException e) {
+                            e.printStackTrace();
+                        }
+                        Toast.makeText(getApplicationContext(), "c'est noté!", Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(ListeProduit.this, ListeCrous.class));
+
+                    }
+                });
+
+
+                alertDialogBuilder.create().show();
+            }
+
+
+        });
+
+
+
     }
 
     private List<Produit> getListData() {
 
-
         try {
-
             conn = DriverManager.getConnection(url, user, psw);
             Bundle extras = getIntent().getExtras();
             String stringVariableName = extras.getString(CrousGridAdapter.EXTRA_MESSAGE);
@@ -81,14 +171,19 @@ public class ListeProduit extends AppCompatActivity {
 
             }
 
-
         } catch (SQLException e) {
             e.printStackTrace();
         }
 
+
+
         return liste;
 
+
     }
+
+
+
 
 
 }

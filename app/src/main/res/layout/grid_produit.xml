@@ -8,32 +8,18 @@
     android:background="@drawable/border">
 
     <TextView
-        android:id="@+id/batiment"
+        android:id="@+id/produit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
         android:layout_marginBottom="15dp"
         android:gravity="center"
         android:text="TextView"
-        android:textColor="@color/white"
+        android:textColor="@android:color/white"
         android:textSize="18sp"
         android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/lieu"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="30dp"
-        android:gravity="center"
-        android:text="TextView"
-        android:textColor="@color/white"
-        android:textSize="18sp"
-        android:textStyle="bold" />
 
-    <ImageView
-        android:id="@+id/buttonSand"
-        android:layout_width="43dp"
-        android:layout_height="45dp"
-        app:srcCompat="@drawable/sandwich" />
+
 
 </LinearLayout>
