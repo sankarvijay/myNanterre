@@ -4,12 +4,15 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
 import java.text.DateFormat;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Locale;
 
 import miage.parisnanterre.fr.mynanterre.R;
@@ -27,6 +30,7 @@ public class TrainLigneL extends AppCompatActivity {
     Button clickP;
     ImageView plans;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,7 +46,7 @@ public class TrainLigneL extends AppCompatActivity {
         clickP.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                FetchDataRetourLigneL process = new FetchDataRetourLigneL();
+                FetchDataLigneL process = new FetchDataLigneL();
                 process.execute();
             }
         });
@@ -76,7 +80,6 @@ public class TrainLigneL extends AppCompatActivity {
             }
         };
         t.start();
-
 
     }
 }

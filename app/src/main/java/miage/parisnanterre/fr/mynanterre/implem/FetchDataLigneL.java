@@ -16,7 +16,7 @@ import java.net.URL;
 /**
  * Created by Sankar Vijay on 27/02/2019.
  */
-public class FetchDataRetourLigneL extends AsyncTask<Void, Void, Void> {
+public class FetchDataLigneL extends AsyncTask<Void, Void, Void> {
     String data = "";
     String dataParsed = "";
     String dataParsed2 = "";
@@ -41,7 +41,7 @@ public class FetchDataRetourLigneL extends AsyncTask<Void, Void, Void> {
 
             JSONObject jo = new JSONObject(data);
 
-            for (int i = 0; i < 8; i++) {
+            for (int i = 0; i < 10; i++) {
                 JSONObject ob = (JSONObject) jo.getJSONArray("departures").getJSONObject(i);
 
                 singleParsed = ob.getJSONObject("display_informations").get("direction") + "\n";

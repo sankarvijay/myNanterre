@@ -33,8 +33,8 @@ public class TrainRerA extends AppCompatActivity {
     Button click;
     Button clickP;
     ImageView refresh;
-    ImageView exchange;
     ImageView plans;
+    ImageView exchange;
     Spinner gare;
 
     @Override
@@ -50,8 +50,8 @@ public class TrainRerA extends AppCompatActivity {
         this.info = (TextView) findViewById(R.id.info_message);
         this.title = (TextView) findViewById(R.id.info_titre);
         this.refresh = (ImageView) findViewById(R.id.refresh);
-        this.exchange = (ImageView) findViewById(R.id.echange);
         this.plans = (ImageView) findViewById(R.id.plan);
+        this.exchange = (ImageView) findViewById(R.id.echange);
         this.gare = (Spinner) findViewById(R.id.gare);
 
 
