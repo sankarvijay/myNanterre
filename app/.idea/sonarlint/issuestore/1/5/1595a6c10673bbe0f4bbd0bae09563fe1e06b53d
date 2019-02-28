@@ -1,0 +1,14 @@
+
+6squid:S1643"Use a StringBuilder instead.(º„¸Úúÿÿÿÿ
+6squid:S1643"Use a StringBuilder instead.(ÑĞ§Úşÿÿÿÿ
+6squid:S1643"Use a StringBuilder instead.(áÚ©ıÿÿÿÿ
+0squid:S1643"Use a StringBuilder instead.(î±òm
+R
+squid:S106"9Replace this use of System.out or System.err by a logger.(¥ú‡Îúÿÿÿÿ
+M
+squid:S106"9Replace this use of System.out or System.err by a logger.(Ã¨Œ
+Vsquid:S1479"BReduce the number of non-empty switch cases from 46 to at most 30.(ş¥à
+Zsquid:S2147"ECombine this catch with the one at line 212, which has the same body.(ï­£Ä
+_squid:S2147"ECombine this catch with the one at line 212, which has the same body.(÷¿­¹ÿÿÿÿÿ
+=squid:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
+=squid:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ

@@ -1,0 +1,39 @@
+
+"squid:ClassVariableVisibilityCheck"UMake direction a static final constant or non-public and provide accessors if needed.(ίήΰ8ού–†’-
+Ksquid:S1444"/Make this "public static direction" field final(ίήΰ8ού–†’-
+Rsquid:S1444"1Make this "public static destination" field final(ƒ‰Ωύÿÿÿÿ8ού–†’-
+Qsquid:S2209"5Change this instance-reference to a static reference.(ή»φ8ού–†’-
+Fsquid:S00108")Either remove or fill this block of code.(δ Ή€8ού–†’-
+Wsquid:S2696"6Make the enclosing method "static" or remove this set.(‡μύζψÿÿÿÿ8ού–†’-
+Rsquid:S2696"6Make the enclosing method "static" or remove this set.(ΙΪ΄Ξ8ού–†’-
+Fsquid:S1444"*Make this "public static code" field final(»†Θ8ού–†’-
+Msquid:S1444",Make this "public static title2" field final(Α’µ—ύÿÿÿÿ8ού–†’-
+"squid:ClassVariableVisibilityCheck"RMake title2 a static final constant or non-public and provide accessors if needed.(Α’µ—ύÿÿÿÿ8ού–†’-
+Vsquid:S2209"5Change this instance-reference to a static reference.(¶ΫΙƒϊÿÿÿÿ8ού–†’-
+Rsquid:S2696"6Make the enclosing method "static" or remove this set.(υήλ8ού–†’-
+ƒ"squid:ClassVariableVisibilityCheck"PMake code a static final constant or non-public and provide accessors if needed.(»†Θ8ού–†’-
+Qsquid:S2209"5Change this instance-reference to a static reference.(υήλ8ού–†’-
+Vsquid:S2209"5Change this instance-reference to a static reference.(‡μύζψÿÿÿÿ8ού–†’-
+…"squid:ClassVariableVisibilityCheck"RMake theure a static final constant or non-public and provide accessors if needed.(‹¬Π8ού–†’-
+bsquid:S2142"FEither re-interrupt this method or rethrow the "InterruptedException".(δ Ή€8ού–†’-
+Vsquid:S2209"5Change this instance-reference to a static reference.(ήΰιϋόÿÿÿÿ8ού–†’-
+Qsquid:S1444"0Make this "public static direction2" field final(Χ«¶“ϊÿÿÿÿ8ού–†’-
+Qsquid:S2209"5Change this instance-reference to a static reference.(• 8ού–†’-
+Rsquid:S2696"6Make the enclosing method "static" or remove this set.(Ξ“ωη8ού–†’-
+Wsquid:S2696"6Make the enclosing method "static" or remove this set.(¶ΫΙƒϊÿÿÿÿ8ού–†’-
+Qsquid:S2209"5Change this instance-reference to a static reference.(¶±°8ού–†’-
+‡"squid:ClassVariableVisibilityCheck"TMake horaires a static final constant or non-public and provide accessors if needed.(’™¥™8ού–†’-
+Jsquid:S1444".Make this "public static horaires" field final(’™¥™8ού–†’-
+Hsquid:S1444",Make this "public static theure" field final(‹¬Π8ού–†’-
+Hsquid:S1444",Make this "public static heureT" field final(α¤ΰρ8ού–†’-
+Lsquid:S1444"+Make this "public static info2" field final(ω’ς†όÿÿÿÿ8ού–†’-
+Rsquid:S2696"6Make the enclosing method "static" or remove this set.(¶±°8ού–†’-
+Rsquid:S2696"6Make the enclosing method "static" or remove this set.(ή»φ8ού–†’-
+Rsquid:S2696"6Make the enclosing method "static" or remove this set.(• 8ού–†’-
+Wsquid:S2696"6Make the enclosing method "static" or remove this set.(ήΰιϋόÿÿÿÿ8ού–†’-
+"squid:ClassVariableVisibilityCheck"VMake direction2 a static final constant or non-public and provide accessors if needed.(Χ«¶“ϊÿÿÿÿ8ού–†’-
+"squid:ClassVariableVisibilityCheck"WMake destination a static final constant or non-public and provide accessors if needed.(ƒ‰Ωύÿÿÿÿ8ού–†’-
+…"squid:ClassVariableVisibilityCheck"RMake heureT a static final constant or non-public and provide accessors if needed.(α¤ΰρ8ού–†’-
+‰"squid:ClassVariableVisibilityCheck"QMake info2 a static final constant or non-public and provide accessors if needed.(ω’ς†όÿÿÿÿ8ού–†’-
+Isquid:S1604"(Make this anonymous inner class a lambda(γ―ώÿÿÿÿ8ού–†’-
+Qsquid:S2209"5Change this instance-reference to a static reference.(ΙΪ΄Ξ8ού–†’-

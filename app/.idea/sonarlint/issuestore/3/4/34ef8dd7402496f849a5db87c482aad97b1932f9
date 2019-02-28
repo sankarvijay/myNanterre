@@ -1,0 +1,27 @@
+
+Jsquid:S1444".Make this "public static horaires" field final(’™¥™8à˜´Ÿ“-
+Ksquid:S1444"/Make this "public static direction" field final(ŸßŞà8à˜´Ÿ“-
+Hsquid:S1444",Make this "public static theure" field final(‹¬Ğ8à˜´Ÿ“-
+Rsquid:S1444"1Make this "public static destination" field final(ƒˆ‰Ùıÿÿÿÿ8à˜´Ÿ“-
+Hsquid:S1444",Make this "public static heureT" field final(á¤àñ8à˜´Ÿ“-
+Rsquid:S2696"6Make the enclosing method "static" or remove this set.(–€²´8à˜´Ÿ“-
+Wsquid:S2696"6Make the enclosing method "static" or remove this set.(¢õõµıÿÿÿÿ8à˜´Ÿ“-
+Rsquid:S2696"6Make the enclosing method "static" or remove this set.(çÈíú8à˜´Ÿ“-
+Wsquid:S2696"6Make the enclosing method "static" or remove this set.(€Â¢‰ıÿÿÿÿ8à˜´Ÿ“-
+Rsquid:S2696"6Make the enclosing method "static" or remove this set.(Øÿ¨8à˜´Ÿ“-
+‡"squid:ClassVariableVisibilityCheck"TMake horaires a static final constant or non-public and provide accessors if needed.(’™¥™8à˜´Ÿ“-
+ˆ"squid:ClassVariableVisibilityCheck"UMake direction a static final constant or non-public and provide accessors if needed.(ŸßŞà8à˜´Ÿ“-
+…"squid:ClassVariableVisibilityCheck"RMake theure a static final constant or non-public and provide accessors if needed.(‹¬Ğ8à˜´Ÿ“-
+"squid:ClassVariableVisibilityCheck"WMake destination a static final constant or non-public and provide accessors if needed.(ƒˆ‰Ùıÿÿÿÿ8à˜´Ÿ“-
+…"squid:ClassVariableVisibilityCheck"RMake heureT a static final constant or non-public and provide accessors if needed.(á¤àñ8à˜´Ÿ“-
+Qsquid:S2209"5Change this instance-reference to a static reference.(–€²´8à˜´Ÿ“-
+Vsquid:S2209"5Change this instance-reference to a static reference.(¢õõµıÿÿÿÿ8à˜´Ÿ“-
+Qsquid:S2209"5Change this instance-reference to a static reference.(çÈíú8à˜´Ÿ“-
+Vsquid:S2209"5Change this instance-reference to a static reference.(€Â¢‰ıÿÿÿÿ8à˜´Ÿ“-
+bsquid:S2142"FEither re-interrupt this method or rethrow the "InterruptedException".(ä ¹€8à˜´Ÿ“-
+Fsquid:S00108")Either remove or fill this block of code.(ä ¹€8à˜´Ÿ“-
+Isquid:S1604"(Make this anonymous inner class a lambda(˜ã¯şÿÿÿÿ8à˜´Ÿ“-
+asquid:UselessImportCheck"3Remove this unused import 'android.widget.Spinner'.(¸£ÃØüÿÿÿÿ8à˜´Ÿ“-
+Ysquid:UselessImportCheck"0Remove this unused import 'java.util.ArrayList'.(÷‰îƒ8à˜´Ÿ“-
+fsquid:UselessImportCheck"8Remove this unused import 'android.widget.ArrayAdapter'.( €ŠÑÿÿÿÿÿ8à˜´Ÿ“-
+Ysquid:UselessImportCheck"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ8à˜´Ÿ“-
