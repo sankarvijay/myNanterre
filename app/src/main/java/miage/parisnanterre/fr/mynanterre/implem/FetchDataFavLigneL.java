@@ -107,7 +107,7 @@ public class FetchDataFavLigneL extends AsyncTask<Void, Void, Void> {
             for (int i = 0; i <= 6; i++) {
                 JSONObject jo = (JSONObject) ja.getJSONObject(i);
 
-                singleParsed2 = jo.get("direction") + "\n";
+                singleParsed2 = jo.get("lineDirection") + "\n";
                 dataParsed2 = dataParsed2 + singleParsed2;
 
                 singleParsed3 = jo.get("time") + " min\n";
