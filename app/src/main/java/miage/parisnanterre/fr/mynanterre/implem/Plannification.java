@@ -62,7 +62,7 @@ public class Plannification extends Activity {
         try {
             conn = DriverManager.getConnection(url, user, psw);
 
-            //on récupere l'id de la categorie du sport pour l'utliser dans la requete
+            //on récupere l'id de la categorie du sport issu de ListeSport pour l'utliser dans la requete
             Intent intent =getIntent();
             Integer idCategorie=intent.getIntExtra("ID_CATEGORIE",1);
 
@@ -119,8 +119,8 @@ public class Plannification extends Activity {
                     preparedStatement.setString(5, spinnerLieu.getSelectedItem().toString());
                     preparedStatement.executeUpdate();
                     Toast.makeText(getApplicationContext(), "Votre séance a bien été planifié !", Toast.LENGTH_SHORT).show();
-
-                    startActivity(new Intent(Plannification.this, ListeSport.class));
+                    
+                    startActivity(new Intent(Plannification.this, SportFragment.class));
 
                 } catch (SQLException e) {
                     e.printStackTrace();
