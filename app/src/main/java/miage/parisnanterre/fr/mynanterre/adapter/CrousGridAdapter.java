@@ -59,6 +59,7 @@ public class CrousGridAdapter extends BaseAdapter {
             holder.batiment = (TextView) convertView.findViewById(R.id.batiment);
             holder.lieu = (TextView) convertView.findViewById(R.id.lieu);
             holder.sandwich = (ImageView) convertView.findViewById(R.id.buttonSand);
+            holder.vote=(TextView)convertView.findViewById(R.id.vote);
             convertView.setTag(holder);
         } else {
             holder = (CrousGridAdapter.ViewHolder) convertView.getTag();
@@ -67,6 +68,7 @@ public class CrousGridAdapter extends BaseAdapter {
         Crous crous = this.listData.get(position);
         holder.batiment.setText(crous.getBatiment());
         holder.lieu.setText(crous.getLieu());
+        holder.vote.setText(crous.getVote());
 
         if (crous.getFrequentation() == 1) {
             convertView.setBackgroundColor(Color.rgb(147, 194, 6));
@@ -105,6 +107,7 @@ public class CrousGridAdapter extends BaseAdapter {
         private TextView batiment;
         private TextView lieu;
         private ImageView sandwich;
+        private TextView vote;
     }
 
 }

@@ -96,12 +96,20 @@ public class ListeCrous   extends AppCompatActivity {
 
                         // btnAdd1 has been clicked
                         try {
+                            Date currentTime= Calendar.getInstance().getTime();
+
+                            SimpleDateFormat f = new SimpleDateFormat("h:mm a");
+                            String s = f.format(currentTime);
+
                             conn = DriverManager.getConnection(url, user, psw);
                             String sqliD = "UPDATE Crous SET frequentation = 1 WHERE batiment='"+batiment+"';";
+                            String sqliD2="UPDATE Crous SET vote='"+s+"' WHERE batiment='"+batiment+"';";
 
                             PreparedStatement preparedStatement = conn.prepareStatement(sqliD);
+                            PreparedStatement preparedStatement2 = conn.prepareStatement(sqliD2);
 
                             preparedStatement.executeUpdate();
+                            preparedStatement2.executeUpdate();
 
 
                         } catch (SQLException e) {
@@ -120,15 +128,21 @@ public class ListeCrous   extends AppCompatActivity {
 
                         // btnAdd2 has been clicked
                         try {
+                            Date currentTime= Calendar.getInstance().getTime();
+
+                            SimpleDateFormat f = new SimpleDateFormat("h:mm a");
+                            String s = f.format(currentTime);
+
                             conn = DriverManager.getConnection(url, user, psw);
                             String sqliD = "UPDATE Crous SET frequentation = 2 WHERE batiment='"+batiment+"';";
+                            String sqliD2="UPDATE Crous SET vote='"+s+"' WHERE batiment='"+batiment+"';";
 
                             PreparedStatement preparedStatement = conn.prepareStatement(sqliD);
-
-
+                            PreparedStatement preparedStatement2 = conn.prepareStatement(sqliD2);
 
                             preparedStatement.executeUpdate();
-                            //startActivity(new Intent(ListeCrous.this, ListeCrous.class));
+                            preparedStatement2.executeUpdate();
+
 
                         } catch (SQLException e) {
                             e.printStackTrace();
@@ -144,15 +158,21 @@ public class ListeCrous   extends AppCompatActivity {
 
                         // btnAdd3 has been clicked
                         try {
+                            Date currentTime= Calendar.getInstance().getTime();
+
+                            SimpleDateFormat f = new SimpleDateFormat("h:mm a");
+                            String s = f.format(currentTime);
+
                             conn = DriverManager.getConnection(url, user, psw);
                             String sqliD = "UPDATE Crous SET frequentation = 3 WHERE batiment='"+batiment+"';";
+                            String sqliD2="UPDATE Crous SET vote='"+s+"' WHERE batiment='"+batiment+"';";
 
                             PreparedStatement preparedStatement = conn.prepareStatement(sqliD);
-
-
+                            PreparedStatement preparedStatement2 = conn.prepareStatement(sqliD2);
 
                             preparedStatement.executeUpdate();
-                            //startActivity(new Intent(ListeCrous.this, ListeCrous.class));
+                            preparedStatement2.executeUpdate();
+
 
                         } catch (SQLException e) {
                             e.printStackTrace();
@@ -197,7 +217,9 @@ public class ListeCrous   extends AppCompatActivity {
                 String lieu = rst.getString("lieu");
                 int frequentation=rst.getInt("frequentation");
                 int id=rst.getInt("id_bat");
-                Crous crous = new Crous(id,batiment, lieu,frequentation);
+                String v= rst.getString("vote");
+                String v2= "Dernière information à "+v;
+                Crous crous = new Crous(id,batiment, lieu,frequentation,v2);
                 liste.add(crous);
 
             }

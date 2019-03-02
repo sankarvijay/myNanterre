@@ -10,6 +10,15 @@ public class Crous {
     private int id;
     private int ouverture;
     private int fermeture;
+    private String vote;
+
+    public String getVote() {
+        return vote;
+    }
+
+    public void setVote(String vote) {
+        this.vote = vote;
+    }
 
     public int getOuverture() {
         return ouverture;
@@ -27,11 +36,12 @@ public class Crous {
         this.fermeture = fermeture;
     }
 
-    public Crous(int id, String batiment, String lieu, int frequentation) {
+    public Crous(int id, String batiment, String lieu, int frequentation,String vote) {
         this.batiment = batiment;
         this.id=id;
         this.lieu = lieu;
         this.frequentation=frequentation;
+        this.vote=vote;
     }
 
     public String getBatiment() {
