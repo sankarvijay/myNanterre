@@ -82,11 +82,12 @@ public class SeancesFragment extends Fragment {
                 Integer numero = rst.getInt("numero");
                 Time heured = rst.getTime("heure_d");
                 Time heuref = rst.getTime("heure_f");
+                String dateRdv = rst.getString("dateRdv");
                 String sport = rst.getString("sport");
                 String lieu = rst.getString("lieu");
 
 
-                Seance seance = new Seance(numero, heured, heuref, sport, lieu);
+                Seance seance = new Seance(numero, heured, heuref, sport, lieu, dateRdv);
                 liste.add(seance);
 
             }

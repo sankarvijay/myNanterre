@@ -3,6 +3,7 @@ package miage.parisnanterre.fr.mynanterre.implem;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.widget.DatePicker;
 
 import java.sql.Time;
 
@@ -10,7 +11,7 @@ import miage.parisnanterre.fr.mynanterre.R;
 
 public class Seance extends Activity {
 
-    String sport, lieu;
+    String sport, lieu, dateRdv;
     Time heured, heuref;
     int numero;
 
@@ -18,12 +19,13 @@ public class Seance extends Activity {
 
     }
 
-    public Seance(Integer numero, Time heured, Time heuref, String sport, String lieu) {
+    public Seance(Integer numero, Time heured, Time heuref, String sport, String lieu, String dateRdv) {
         this.numero = numero;
         this.heured = heured;
         this.heuref = heuref;
         this.sport = sport;
         this.lieu = lieu;
+        this.dateRdv = dateRdv;
 
     }
 
@@ -68,6 +70,14 @@ public class Seance extends Activity {
         this.heuref = heuref;
     }
 
+    public String getDateRdv() {
+        return dateRdv;
+    }
+
+    public void setDateRdv(String dateRdv) {
+        this.dateRdv = dateRdv;
+    }
+
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.liste_seances);
@@ -83,6 +93,7 @@ public class Seance extends Activity {
                 ", lieu='" + lieu + '\'' +
                 ", heured=" + heured +
                 ", heuref=" + heuref +
+                ", dateRdv=" + dateRdv +
                 '}';
     }
 }

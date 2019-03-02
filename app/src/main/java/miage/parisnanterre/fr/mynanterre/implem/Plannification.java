@@ -1,16 +1,23 @@
 package miage.parisnanterre.fr.mynanterre.implem;
 
 import android.app.Activity;
+import android.app.DatePickerDialog;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.os.StrictMode;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import java.security.cert.Certificate;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -18,7 +25,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
+import java.util.Random;
 
 import miage.parisnanterre.fr.mynanterre.R;
 import miage.parisnanterre.fr.mynanterre.fragment.SportFragment;
@@ -34,14 +43,25 @@ public class Plannification extends Activity {
     private EditText numero, heureD, heureF;
     private Button planifier;
     private Spinner spinnerSport, spinnerLieu;
+
     private List<String> sports = new ArrayList<>();
     private List <String> batiments = new ArrayList<>();
+
+    private DatePickerDialog.OnDateSetListener mDateSetListnener;
+    private TextView mDisplayDate;
+    private static final String TAG ="Plannification";
+    Calendar c;
+    //on va générer un numéro de séance
+    /*final int minNum = 10000;
+    final int maxNum = 99999;
+    final int num = new Random().nextInt((maxNum - minNum) + 1) + minNum;*/
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.formrdv);
 
         numero = (EditText) findViewById(R.id.numero);
+        //numero.setText(String.valueOf(num));
 
         heureD = (EditText) findViewById(R.id.heureD);
         heureF = (EditText) findViewById(R.id.heureF);
@@ -49,6 +69,34 @@ public class Plannification extends Activity {
 
         spinnerLieu = (Spinner) findViewById(R.id.lieu);
         planifier = (Button) findViewById(R.id.planifier);
+
+        mDisplayDate = (TextView) findViewById(R.id.date);
+
+        mDisplayDate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                c = Calendar.getInstance();
+                int jour = c.get(Calendar.DAY_OF_MONTH);
+                int mois = c.get(Calendar.MONTH);
+                int annee = c.get(Calendar.YEAR);
+
+                DatePickerDialog dialog = new DatePickerDialog(Plannification.this,
+                        android.R.style.Theme_Material_DialogWhenLarge_NoActionBar,
+                        mDateSetListnener,
+                        annee, mois, jour);
+                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.DKGRAY));
+                dialog.show();
+            }
+        });
+                mDateSetListnener = new DatePickerDialog.OnDateSetListener() {
+                    @Override
+                    public void onDateSet(DatePicker datePicker, int annee, int mois, int jour) {
+                        mois=mois+1;
+                        Log.d(TAG,"OndateSet: dd/mm/aaaa" + jour +"/" + mois + "/" + annee);
+                            String date= jour + "/" + mois + "/" + annee;
+                            mDisplayDate.setText(date);
+                    }
+                };
 
         try {
             Class.forName("com.mysql.jdbc.Driver");
@@ -103,20 +151,20 @@ public class Plannification extends Activity {
         planifier.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //faire un select pour le sport selon la categorie ou on est et un select * le lieu pour les 2 spinners
                 try {
                     conn = DriverManager.getConnection(url, user, psw);
-                    String sqliD = "insert into plannification_sport (numero,heured,heuref,sport,lieu) values (?,?,?,?,?) ;";
+                    String sqliD = "insert into plannification_sport (numero,heured,heuref,dateRdv,sport,lieu) values (?,?,?,?,?,?) ;";
                     PreparedStatement preparedStatement = conn.prepareStatement(sqliD);
 
                     preparedStatement.setString(1, numero.getText().toString());
 
                     preparedStatement.setString(2, heureD.getText().toString());
                     preparedStatement.setString(3, heureF.getText().toString());
+                    preparedStatement.setString(4, mDisplayDate.getText().toString());
 
-                    //a changer ici genre getvalue pour avoir id du sport et gettext pour avoir le text du batiment(lieu de rdv)
-                    preparedStatement.setString(4, spinnerSport.getSelectedItem().toString());
-                    preparedStatement.setString(5, spinnerLieu.getSelectedItem().toString());
+
+                    preparedStatement.setString(5, spinnerSport.getSelectedItem().toString());
+                    preparedStatement.setString(6, spinnerLieu.getSelectedItem().toString());
                     preparedStatement.executeUpdate();
                     Toast.makeText(getApplicationContext(), "Votre séance a bien été planifié !", Toast.LENGTH_SHORT).show();
                     

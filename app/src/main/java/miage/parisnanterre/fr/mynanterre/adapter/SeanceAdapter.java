@@ -33,6 +33,8 @@ public class SeanceAdapter extends RecyclerView.Adapter<SeanceAdapter.MyViewHold
         private TextView heure_f;
         public TextView sport;
         public TextView lieu;
+        public TextView dateRdv;
+
 
 
         public MyViewHolder(View view) {
@@ -42,6 +44,9 @@ public class SeanceAdapter extends RecyclerView.Adapter<SeanceAdapter.MyViewHold
             heure_f = (TextView) view.findViewById(R.id.heuref);
             sport = (TextView) view.findViewById(R.id.sport);
             lieu = (TextView) view.findViewById(R.id.lieu);
+            dateRdv = (TextView) view.findViewById(R.id.date);
+
+
 
         }
     }
@@ -101,6 +106,8 @@ public class SeanceAdapter extends RecyclerView.Adapter<SeanceAdapter.MyViewHold
         holder.lieu.setText(seance.getLieu());
         holder.heure_d.setText(seance.getHeured().toString());
         holder.heure_f.setText(seance.getHeuref().toString());
+        holder.dateRdv.setText(seance.getDateRdv());
+
 
     }
 
