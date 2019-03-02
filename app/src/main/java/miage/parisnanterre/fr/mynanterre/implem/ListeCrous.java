@@ -98,7 +98,7 @@ public class ListeCrous   extends AppCompatActivity {
                         try {
                             Date currentTime= Calendar.getInstance().getTime();
 
-                            SimpleDateFormat f = new SimpleDateFormat("h:mm a");
+                            SimpleDateFormat f = new SimpleDateFormat("HH:mm");
                             String s = f.format(currentTime);
 
                             conn = DriverManager.getConnection(url, user, psw);
@@ -130,7 +130,7 @@ public class ListeCrous   extends AppCompatActivity {
                         try {
                             Date currentTime= Calendar.getInstance().getTime();
 
-                            SimpleDateFormat f = new SimpleDateFormat("h:mm a");
+                            SimpleDateFormat f = new SimpleDateFormat("HH:mm");
                             String s = f.format(currentTime);
 
                             conn = DriverManager.getConnection(url, user, psw);
@@ -160,7 +160,7 @@ public class ListeCrous   extends AppCompatActivity {
                         try {
                             Date currentTime= Calendar.getInstance().getTime();
 
-                            SimpleDateFormat f = new SimpleDateFormat("h:mm a");
+                            SimpleDateFormat f = new SimpleDateFormat("HH:mm");
                             String s = f.format(currentTime);
 
                             conn = DriverManager.getConnection(url, user, psw);
