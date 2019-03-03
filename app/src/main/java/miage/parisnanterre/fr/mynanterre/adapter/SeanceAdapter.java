@@ -1,7 +1,6 @@
 package miage.parisnanterre.fr.mynanterre.adapter;
 
 import android.content.Context;
-import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -9,17 +8,17 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.List;
 
 import miage.parisnanterre.fr.mynanterre.R;
-
-import miage.parisnanterre.fr.mynanterre.implem.InscriptionSport;
 import miage.parisnanterre.fr.mynanterre.implem.Seance;
 
 public class SeanceAdapter extends RecyclerView.Adapter<SeanceAdapter.MyViewHolder> {
@@ -34,6 +33,8 @@ public class SeanceAdapter extends RecyclerView.Adapter<SeanceAdapter.MyViewHold
         private TextView sport;
         private TextView lieu;
         private TextView dateRdv;
+        private TextView getsport;
+        private TextView inscrit;
 
         private MyViewHolder(View view) {
             super(view);
@@ -43,8 +44,8 @@ public class SeanceAdapter extends RecyclerView.Adapter<SeanceAdapter.MyViewHold
             this.sport = (TextView) view.findViewById(R.id.sport);
             this.lieu = (TextView) view.findViewById(R.id.lieu);
             this.dateRdv = (TextView) view.findViewById(R.id.dateSeance);
-
-
+            this.getsport = (TextView) view.findViewById(R.id.getsport);
+            this.inscrit=(TextView)view.findViewById(R.id.inscrit);
         }
     }
 
@@ -57,44 +58,15 @@ public class SeanceAdapter extends RecyclerView.Adapter<SeanceAdapter.MyViewHold
     @Override
     @NonNull
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        final String url = "jdbc:mysql://sql171.main-hosting.eu/u749839367_m1";
-        final String user = "u749839367_vijay";
-        final String psw = "9IDCqTm8Lig2";
-        Connection conn;
-
-        View itemView = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.ligne_seance, parent, false);
-
-        Button inscription = (Button) itemView.findViewById(R.id.inscription);
-
-        inscription.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mcon.startActivity(new Intent(mcon, InscriptionSport.class));
-
-            }
-        });
-
-        TextView nbInscrit = (TextView) itemView.findViewById(R.id.inscrit);
-        try {
-
-            conn = DriverManager.getConnection(url, user, psw);
-            String sqliD = "SELECT count(*) AS rowcount FROM plannification_sport ";
-            Statement st = conn.createStatement();
-            ResultSet rst = st.executeQuery(sqliD);
-            rst.next();
-            int count = rst.getInt("rowcount");
-            nbInscrit.setText(String.valueOf(count) + " inscrits");
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+        View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.ligne_seance, parent, false);
         return new MyViewHolder(itemView);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        Seance seance = listeSeances.get(position);
+    public void onBindViewHolder(@NonNull final MyViewHolder holder, int position) {
+
+        Button inscription = (Button) holder.itemView.findViewById(R.id.inscription);
+        final Seance seance = listeSeances.get(position);
 
         holder.numero.setText("Seance n°" + String.valueOf(seance.getNumero()));
         holder.sport.setText(seance.getSport());
@@ -102,12 +74,61 @@ public class SeanceAdapter extends RecyclerView.Adapter<SeanceAdapter.MyViewHold
         holder.heured.setText("Début : " + seance.getHeured().toString());
         holder.heuref.setText("Fin : " + seance.getHeuref().toString());
         holder.dateRdv.setText("Date : " + seance.getDateRdv());
+        holder.getsport.setText(seance.getSport());
+        holder.inscrit.setText(String.valueOf(seance.getNbInscrit()));
+
+        try {
+            final String url = "jdbc:mysql://sql171.main-hosting.eu/u749839367_m1";
+            final String user = "u749839367_vijay";
+            final String psw = "9IDCqTm8Lig2";
+            Connection conn;
+
+            conn = DriverManager.getConnection(url, user, psw);
+            String sqliD2 = "SELECT nbInscrit FROM plannification_sport where sport= '"+seance.getSport()+"' and numero="+seance.getNumero()+"" ;
+            Statement st = conn.createStatement();
+            ResultSet rst = st.executeQuery(sqliD2);
+            rst.next();
+            int countF = rst.getInt("nbInscrit");
+            holder.inscrit.setText(String.valueOf(countF) + " inscrits pour ");
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        inscription.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try {
+                    final String url = "jdbc:mysql://sql171.main-hosting.eu/u749839367_m1";
+                    final String user = "u749839367_vijay";
+                    final String psw = "9IDCqTm8Lig2";
+                    Connection conn;
+
+                    conn = DriverManager.getConnection(url, user, psw);
+                    String sqliD3 = "SELECT nbInscrit FROM plannification_sport where sport= '"+seance.getSport()+"' and numero="+seance.getNumero()+"" ;
+                    Statement st = conn.createStatement();
+                    ResultSet rst = st.executeQuery(sqliD3);
+                    rst.next();
+                    int countF = rst.getInt("nbInscrit");
+                    countF++;
+
+                    conn = DriverManager.getConnection(url, user, psw);
+                    String sqliD = "update plannification_sport set nbInscrit= ? where sport= '"+seance.getSport()+"' and numero="+seance.getNumero()+"" ;
+                    PreparedStatement preparedStatement = conn.prepareStatement(sqliD);
+                    preparedStatement.setInt(1,countF);
+                    preparedStatement.executeUpdate();
+                    holder.inscrit.setText(String.valueOf(countF) + " inscrits pour ");
+                    Toast.makeText(mcon, "Inscription prise en compte!", Toast.LENGTH_SHORT).show();
+
+
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }});
     }
 
     @Override
     public int getItemCount() {
         return listeSeances.size();
     }
-
-
 }

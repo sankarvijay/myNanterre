@@ -9,23 +9,32 @@ import java.sql.Time;
 import miage.parisnanterre.fr.mynanterre.R;
 
 public class Seance extends Activity {
-
     String sport;
     String lieu;
     String dateRdv;
     Time heured;
     Time heuref;
     int numero;
+    int nbInscrit;
 
-    public Seance(int numero, Time heured, Time heuref, String sport, String lieu, String dateRdv) {
+    public Seance(int numero, Time heured, Time heuref, String sport, String lieu, String dateRdv,int nb) {
         this.numero = numero;
         this.heured = heured;
         this.heuref = heuref;
         this.sport = sport;
         this.lieu = lieu;
         this.dateRdv = dateRdv;
+        this.nbInscrit=nb;
+
     }
 
+    public int getNbInscrit() {
+        return nbInscrit;
+    }
+
+    public void setNbInscrit(int nbInscrit) {
+        this.nbInscrit = nbInscrit;
+    }
 
     public int getNumero() {
         return numero;
@@ -74,6 +83,7 @@ public class Seance extends Activity {
     public void setDateRdv(String dateRdv) {
         this.dateRdv = dateRdv;
     }
+    
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

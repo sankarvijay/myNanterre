@@ -1,7 +1,5 @@
 package miage.parisnanterre.fr.mynanterre.fragment;
 
-import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.support.annotation.NonNull;
@@ -64,8 +62,6 @@ public class SeancesFragment extends Fragment {
         StrictMode.setThreadPolicy(policy);
 
         prepareSeanceData();
-
-
     }
 
     private void prepareSeanceData() {
@@ -88,7 +84,8 @@ public class SeancesFragment extends Fragment {
                 String dateRdv = rst.getString("dateRdv");
                 String sport = rst.getString("sport");
                 String lieu = rst.getString("lieu");
-                Seance seance = new Seance(numero, heured, heuref, sport, lieu, dateRdv);
+                int nbInscrit = rst.getInt("nbInscrit");
+                Seance seance = new Seance(numero, heured, heuref, sport, lieu, dateRdv,nbInscrit);
                 liste.add(seance);
 
             }
