@@ -14,13 +14,13 @@
 
 ## Qu'est ce que c'est ?
 
-Une application pour aider les étudiants de Nanterre durant leurs vie étudiante. Développée sur mobile, et plus spécialement sur la plateforme **Android**, MyNanterre est une application sur smartphone.
+Une application pour aider les étudiants de Nanterre durant leurs vies étudiantes. Développée sur mobile, et plus spécialement sur la plateforme **Android**, MyNanterre est une application sur smartphone.
 
 MyNanterre est une application qui vous permettra de :
 
-- programmer vos propres séances de sports et les étudiant pourront s'y inscrire
+- programmer vos propres séances de sports auxquelles les étudiants pourront s'inscrire.
 - de découvrir les sports disponibles à Nanterre et leurs horaires.
-- visualiser l'afflucence sur les différentes points de restauration ouverts à l'Université et les produits disponibles.
+- visualiser l'afflucence sur les différents points de restauration ouverts à l'Université et les produits disponibles.
 - connaitre les prochains départs de train depuis Nanterre-Université, mais aussi personnalisez avec votre gare favorite pour le rer A et la ligne L.
 
 Pour avoir plus d'informations, visitez notre site web : https://sankarvijay.github.io/myNanterre/
@@ -90,6 +90,7 @@ Nous travaillons tous en tant que collaborateur
 - Codacy analyse de code statique, dynamique, sécurité, couverture du code, test de regression
 - APIs (RATP,TRANSILIEN)
 - Méthodes agile SCRUM
+- Cron sous Hostinger : pour remettre tous les produits des points de restauration disponibles à minuit chaque jour.
 
 ## Auteurs
 * **SANKAR Vijay** - [Github](https://github.com/sankarvijay)
