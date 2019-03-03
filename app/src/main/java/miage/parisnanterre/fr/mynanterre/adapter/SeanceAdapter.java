@@ -29,23 +29,21 @@ public class SeanceAdapter extends RecyclerView.Adapter<SeanceAdapter.MyViewHold
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
         public TextView numero;
-        private TextView heure_d;
-        private TextView heure_f;
+        private TextView heured;
+        private TextView heuref;
         public TextView sport;
         public TextView lieu;
         public TextView dateRdv;
 
 
-
         public MyViewHolder(View view) {
             super(view);
-            numero = (TextView) view.findViewById(R.id.numero);
-            heure_d = (TextView) view.findViewById(R.id.heured);
-            heure_f = (TextView) view.findViewById(R.id.heuref);
-            sport = (TextView) view.findViewById(R.id.sport);
-            lieu = (TextView) view.findViewById(R.id.lieu);
-            dateRdv = (TextView) view.findViewById(R.id.date);
-
+            this.numero = (TextView) view.findViewById(R.id.numSeance2);
+            this.heured = (TextView) view.findViewById(R.id.heured);
+            this.heuref = (TextView) view.findViewById(R.id.heuref);
+            this.sport = (TextView) view.findViewById(R.id.sport);
+            this.lieu = (TextView) view.findViewById(R.id.lieu);
+            this.dateRdv = (TextView) view.findViewById(R.id.dateSeance);
 
 
         }
@@ -68,9 +66,9 @@ public class SeanceAdapter extends RecyclerView.Adapter<SeanceAdapter.MyViewHold
         View itemView = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.ligne_seance, parent, false);
 
-        Button insciption = (Button) itemView.findViewById(R.id.inscription);
+        Button inscription = (Button) itemView.findViewById(R.id.inscription);
 
-        insciption.setOnClickListener(new View.OnClickListener() {
+        inscription.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 mcon.startActivity(new Intent(mcon, Inscription_sport.class));
@@ -89,7 +87,7 @@ public class SeanceAdapter extends RecyclerView.Adapter<SeanceAdapter.MyViewHold
             rst.next();
             int count = rst.getInt("rowcount");
             System.out.println("Nb Inscrits : " + count);
-            nbInscrit.setText(String.valueOf(count));
+            nbInscrit.setText(String.valueOf(count) + " inscrits");
 
         } catch (SQLException e) {
             e.printStackTrace();
@@ -100,13 +98,19 @@ public class SeanceAdapter extends RecyclerView.Adapter<SeanceAdapter.MyViewHold
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         Seance seance = listeSeances.get(position);
-        holder.numero.setText(seance.getNumero());
+        System.out.println(seance.getNumero());
+        System.out.println(seance.getSport());
+        System.out.println(seance.getLieu());
+        System.out.println(seance.getHeured().toString());
+        System.out.println(seance.getHeuref().toString());
+        System.out.println(seance.getDateRdv());
 
+        holder.numero.setText("Seance n°" + String.valueOf(seance.getNumero()));
         holder.sport.setText(seance.getSport());
-        holder.lieu.setText(seance.getLieu());
-        holder.heure_d.setText(seance.getHeured().toString());
-        holder.heure_f.setText(seance.getHeuref().toString());
-        holder.dateRdv.setText(seance.getDateRdv());
+        holder.lieu.setText("Lieu : " + seance.getLieu());
+        holder.heured.setText("Début : " + seance.getHeured().toString());
+        holder.heuref.setText("Fin : " + seance.getHeuref().toString());
+        holder.dateRdv.setText("Date : " + seance.getDateRdv());
 
 
     }
@@ -115,4 +119,6 @@ public class SeanceAdapter extends RecyclerView.Adapter<SeanceAdapter.MyViewHold
     public int getItemCount() {
         return listeSeances.size();
     }
+
+
 }

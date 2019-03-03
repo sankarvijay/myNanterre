@@ -17,7 +17,6 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.security.cert.Certificate;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -27,10 +26,8 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
-import java.util.Random;
 
 import miage.parisnanterre.fr.mynanterre.R;
-import miage.parisnanterre.fr.mynanterre.fragment.SportFragment;
 
 /**
  * Created by Sankar Vijay on 01/02/2019.
@@ -45,11 +42,11 @@ public class Plannification extends Activity {
     private Spinner spinnerSport, spinnerLieu;
 
     private List<String> sports = new ArrayList<>();
-    private List <String> batiments = new ArrayList<>();
+    private List<String> batiments = new ArrayList<>();
 
     private DatePickerDialog.OnDateSetListener mDateSetListnener;
     private TextView mDisplayDate;
-    private static final String TAG ="Plannification";
+    private static final String TAG = "Plannification";
     Calendar c;
     //on va générer un numéro de séance
     /*final int minNum = 10000;
@@ -60,7 +57,7 @@ public class Plannification extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.formrdv);
 
-        numero = (EditText) findViewById(R.id.numero);
+        numero = (EditText) findViewById(R.id.numId);
         //numero.setText(String.valueOf(num));
 
         heureD = (EditText) findViewById(R.id.heureD);
@@ -88,15 +85,15 @@ public class Plannification extends Activity {
                 dialog.show();
             }
         });
-                mDateSetListnener = new DatePickerDialog.OnDateSetListener() {
-                    @Override
-                    public void onDateSet(DatePicker datePicker, int annee, int mois, int jour) {
-                        mois=mois+1;
-                        Log.d(TAG,"OndateSet: dd/mm/aaaa" + jour +"/" + mois + "/" + annee);
-                            String date= jour + "/" + mois + "/" + annee;
-                            mDisplayDate.setText(date);
-                    }
-                };
+        mDateSetListnener = new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker datePicker, int annee, int mois, int jour) {
+                mois = mois + 1;
+                Log.d(TAG, "OndateSet: dd/mm/aaaa" + jour + "/" + mois + "/" + annee);
+                String date = jour + "/" + mois + "/" + annee;
+                mDisplayDate.setText(date);
+            }
+        };
 
         try {
             Class.forName("com.mysql.jdbc.Driver");
@@ -111,8 +108,8 @@ public class Plannification extends Activity {
             conn = DriverManager.getConnection(url, user, psw);
 
             //on récupere l'id de la categorie du sport issu de ListeSport pour l'utliser dans la requete
-            Intent intent =getIntent();
-            Integer idCategorie=intent.getIntExtra("ID_CATEGORIE",1);
+            Intent intent = getIntent();
+            Integer idCategorie = intent.getIntExtra("ID_CATEGORIE", 1);
 
             String sqliD = "SELECT * FROM sports where categorie ='" + idCategorie + "';";
             Statement st = conn.createStatement();
@@ -121,7 +118,7 @@ public class Plannification extends Activity {
                 String nomSport = rst.getString("sport");
                 sports.add(nomSport);
             }
-                ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, sports);
+            ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, sports);
             adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
             spinnerSport.setAdapter(adapter);
 
@@ -167,8 +164,8 @@ public class Plannification extends Activity {
                     preparedStatement.setString(6, spinnerLieu.getSelectedItem().toString());
                     preparedStatement.executeUpdate();
                     Toast.makeText(getApplicationContext(), "Votre séance a bien été planifié !", Toast.LENGTH_SHORT).show();
-                    
-                    startActivity(new Intent(Plannification.this, SportFragment.class));
+
+                    startActivity(new Intent(getApplicationContext(), Accueil.class));
 
                 } catch (SQLException e) {
                     e.printStackTrace();

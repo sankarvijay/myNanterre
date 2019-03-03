@@ -14,26 +14,24 @@
     android:theme="@android:style/Theme.Dialog">
 
     <TextView
-        android:id="@+id/nom"
+        android:id="@+id/numSeance2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="false"
         android:layout_marginTop="14dp"
-        android:text="Nom "
+        android:text="Numero Seance"
         android:textColor="@color/white" />
 
     <TextView
-        android:id="@+id/prenom"
-        android:layout_width="66dp"
-        android:layout_height="25dp"
-        android:layout_below="@+id/titre"
+        android:id="@+id/dateSeance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="false"
+        android:layout_alignParentBottom="false"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="40dp"
 
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="23dp"
-        android:layout_marginTop="14dp"
-        android:layout_marginEnd="13dp"
-        android:layout_toEndOf="@+id/nom"
-        android:text="prenom"
+        android:text="Date"
         android:textColor="@color/white" />
 
     <TextView
@@ -43,7 +41,7 @@
         android:layout_alignParentStart="false"
         android:layout_alignParentBottom="false"
         android:layout_marginStart="0dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="60dp"
 
         android:text="Heure début"
         android:textColor="@color/white" />
@@ -53,8 +51,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="false"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginStart="130dp"
+        android:layout_marginTop="60dp"
         android:text="Heure fin"
 
         android:textColor="@color/white" />
@@ -87,10 +85,10 @@
         android:id="@+id/inscription"
         android:layout_width="wrap_content"
         android:layout_height="36dp"
-        android:layout_alignTop="@+id/heured"
+        android:layout_alignTop="@+id/dateSeance"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="60dp"
+        android:layout_marginTop="-12dp"
+        android:layout_marginEnd="12dp"
         android:shadowColor="@android:color/holo_green_dark"
         android:text="S'inscrire"
         android:textColor="@android:color/holo_green_dark" />
@@ -110,8 +108,8 @@
         android:id="@+id/inscrit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/heured"
-        android:layout_marginStart="-320dp"
+        android:layout_below="@+id/dateSeance"
+        android:layout_marginStart="-200dp"
         android:layout_marginTop="22dp"
         android:layout_toEndOf="@+id/inscription"
         android:text="Nb Inscrits : "

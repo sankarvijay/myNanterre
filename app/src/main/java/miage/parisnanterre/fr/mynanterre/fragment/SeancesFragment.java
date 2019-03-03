@@ -73,15 +73,15 @@ public class SeancesFragment extends Fragment {
         try {
 
             conn = DriverManager.getConnection(url, user, psw);
-            String sqliD = "SELECT * FROM plannification_sport ";
+            String sqliD = "SELECT * FROM plannification_sport";
             Statement st = conn.createStatement();
             ResultSet rst = st.executeQuery(sqliD);
 
             while (rst.next()) {
 
-                Integer numero = rst.getInt("numero");
-                Time heured = rst.getTime("heure_d");
-                Time heuref = rst.getTime("heure_f");
+                int numero = rst.getInt("numero");
+                Time heured = rst.getTime("heured");
+                Time heuref = rst.getTime("heuref");
                 String dateRdv = rst.getString("dateRdv");
                 String sport = rst.getString("sport");
                 String lieu = rst.getString("lieu");

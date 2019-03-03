@@ -29,7 +29,7 @@ public class Inscription_sport extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.formulaire_inscription_sport);
 
-        nom = (EditText) findViewById(R.id.nom);
+        nom = (EditText) findViewById(R.id.numSeance);
         prenom = (EditText) findViewById(R.id.prenom);
         niveau = (EditText) findViewById(R.id.niveau);
 
