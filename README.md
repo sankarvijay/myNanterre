@@ -29,10 +29,10 @@ Pour avoir plus d'informations, visitez notre site web : https://sankarvijay.git
 
 L'application peut être téléchargée 
 
-- soit via l'url : 
-* [Dernière version](https://github.com/sankarvijay/myNanterre/releases/download/v0.5/myNanterre_v05.apk)
+- soit via l'url : https://github.com/sankarvijay/myNanterre/releases/download/v0.5/myNanterre_v05.apk
 
 - soit via le QR Code : 
+
 <a rel='nofollow' href='http://www.qrcode-generator.de
         ' border='0' style='cursor:default'></a><img src='https://chart.googleapis.com/chart?cht=qr&chl=https%3A%2F%2Fgithub.com%2Fsankarvijay%2FmyNanterre%2Freleases%2Fdownload%2Fv0.5%2FmyNanterre_v05.apk&chs=180x180&choe=UTF-8&chld=L|2' alt=''>
         
