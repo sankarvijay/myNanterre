@@ -58,7 +58,7 @@ Depuis la fenêtres de bienvenue :
 
 - Télécharger et installer Git : [Télécharger Git](https://gitforwindows.org/)
 
-### Cloner Lexify
+### Cloner MyNanterre
 
 Une fois Git installé, il suffit de suivre les instructions ci-dessous.
 
@@ -67,7 +67,7 @@ Une fois Git installé, il suffit de suivre les instructions ci-dessous.
 Depuis Android studio : 
   File > Settings > Version Control > Git > Dans " path to git Excecutable ", coller le chemin du git.exe > OK
   
-#### Cloner le répertoire Lexify
+#### Cloner le répertoire MyNanterre
 
 Depuis Android studio : 
   VCS > Checkout from version control > Git > Dans " Git Repository URL ", coller https://github.com/sankarvijay/myNanterre.git > OK
