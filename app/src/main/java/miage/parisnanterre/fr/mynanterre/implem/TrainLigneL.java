@@ -38,10 +38,10 @@ public class TrainLigneL extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.train_horaires_ligne_l);
 
-        this.horaires = (TextView) findViewById(R.id.horaire);
-        this.direction = (TextView) findViewById(R.id.direction);
-        this.heureT = (TextView) findViewById(R.id.heureT);
-        this.destination = (TextView) findViewById(R.id.destination);
+        horaires = (TextView) findViewById(R.id.horaire);
+        direction = (TextView) findViewById(R.id.direction);
+        heureT = (TextView) findViewById(R.id.heureT);
+        destination = (TextView) findViewById(R.id.destination);
         this.plans = (ImageView) findViewById(R.id.plan2);
         this.exchange = (ImageView) findViewById(R.id.echange);
         this.gare = (Spinner) findViewById(R.id.gare);
@@ -80,6 +80,7 @@ public class TrainLigneL extends AppCompatActivity {
                         });
                     }
                 } catch (InterruptedException e) {
+                    e.printStackTrace();
                 }
             }
         };
@@ -121,12 +122,10 @@ public class TrainLigneL extends AppCompatActivity {
 		Avec la liste des elements (exemple) */
         ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_spinner_item, listeGare);
 
-
         /* On definit une présentation du spinner quand il est déroulé         (android.R.layout.simple_spinner_dropdown_item) */
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         //Enfin on passe l'adapter au Spinner et c'est tout
         gare.setAdapter(adapter);
-
 
 
     }

@@ -7,7 +7,7 @@ public class Produit {
     private int dispo;
     private String nomProduit;
 
-    public Produit(int dispo, String nomProduit) {
+    Produit(int dispo, String nomProduit) {
         this.dispo = dispo;
         this.nomProduit = nomProduit;
     }

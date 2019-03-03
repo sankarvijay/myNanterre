@@ -11,7 +11,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
 import java.net.URL;
 
 /**
@@ -19,25 +18,23 @@ import java.net.URL;
  */
 
 public class FetchDataFavRerA extends AsyncTask<Void, Void, Void> {
-    String data = "";
-    String dataParsed = "";
-    String dataParsed2 = "";
-    String dataParsed3 = "";
-    String singleParsed = "";
-    String singleParsed2 = "";
-    String singleParsed3 = "";
-    String gareFavori = "";
-    String lien = "";
+    private String data = "";
+    private String dataParsed = "";
+    private String dataParsed2 = "";
+    private String dataParsed3 = "";
+    private String singleParsed = "";
+    private String singleParsed2 = "";
+    private String singleParsed3 = "";
+    private String gareFavori = "";
+    private String lien = "";
 
-    public FetchDataFavRerA(String gare) {
+    FetchDataFavRerA(String gare) {
         this.gareFavori = gare;
     }
 
     @Override
     protected Void doInBackground(Void... voids) {
         try {
-
-            System.out.println("Gaare : " + gareFavori);
             switch (gareFavori) {
                 case "Saint-Germain-en-Laye":
                     lien = "https://api-ratp.pierre-grimaud.fr/v3/schedules/rers/A/saint+germain+en+laye/R";
@@ -176,7 +173,7 @@ public class FetchDataFavRerA extends AsyncTask<Void, Void, Void> {
                     break;
 
                 default:
-                    System.out.println("no match");
+                    System.err.println("no match");
             }
 
             URL url = new URL(lien);
@@ -207,13 +204,7 @@ public class FetchDataFavRerA extends AsyncTask<Void, Void, Void> {
                 dataParsed3 = dataParsed3 + singleParsed3;
 
             }
-
-
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (JSONException e) {
+        } catch (IOException | JSONException e) {
             e.printStackTrace();
         }
 

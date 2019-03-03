@@ -36,12 +36,12 @@ public class Crous {
         this.fermeture = fermeture;
     }
 
-    public Crous(int id, String batiment, String lieu, int frequentation,String vote) {
+    Crous(int id, String batiment, String lieu, int frequentation, String vote) {
         this.batiment = batiment;
-        this.id=id;
+        this.id = id;
         this.lieu = lieu;
-        this.frequentation=frequentation;
-        this.vote=vote;
+        this.frequentation = frequentation;
+        this.vote = vote;
     }
 
     public String getBatiment() {

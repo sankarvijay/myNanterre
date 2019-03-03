@@ -11,20 +11,19 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.net.MalformedURLException;
 import java.net.*;
 
 /**
  * Created by Sankar Vijay on 17/02/2019.
  */
 public class FetchDataRetourRerA extends AsyncTask<Void, Void, Void> {
-    String data = "";
-    String dataParsed = "";
-    String dataParsed2 = "";
-    String dataParsed3 = "";
-    String singleParsed = "";
-    String singleParsed2 = "";
-    String singleParsed3 = "";
+    private String data = "";
+    private String dataParsed = "";
+    private String dataParsed2 = "";
+    private String dataParsed3 = "";
+    private String singleParsed = "";
+    private String singleParsed2 = "";
+    private String singleParsed3 = "";
 
     @Override
     protected Void doInBackground(Void... voids) {
@@ -58,11 +57,7 @@ public class FetchDataRetourRerA extends AsyncTask<Void, Void, Void> {
             }
 
 
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (JSONException e) {
+        } catch (IOException | JSONException e) {
             e.printStackTrace();
         }
 

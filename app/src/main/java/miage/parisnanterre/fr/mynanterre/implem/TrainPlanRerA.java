@@ -22,7 +22,7 @@ public class TrainPlanRerA extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.train_map_rer_a);
 
-        PhotoView photoView = (PhotoView) findViewById(R.id.photo_view);
+        PhotoView photoView = findViewById(R.id.photo_view);
         photoView.setImageResource(R.drawable.plana);
 
         retour = (ImageView) findViewById(R.id.back);

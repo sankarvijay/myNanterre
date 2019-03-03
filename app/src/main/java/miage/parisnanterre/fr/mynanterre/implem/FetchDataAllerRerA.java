@@ -10,21 +10,19 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.net.MalformedURLException;
 import java.net.*;
 
 /**
  * Created by Sankar Vijay on 17/02/2019.
  */
 public class FetchDataAllerRerA extends AsyncTask<Void, Void, Void> {
-    String data = "";
-    String dataParsed = "";
-    String dataParsed2 = "";
-    String dataParsed3 = "";
-
-    String singleParsed = "";
-    String singleParsed2 = "";
-    String singleParsed3 = "";
+    private String data = "";
+    private String dataParsed = "";
+    private String dataParsed2 = "";
+    private String dataParsed3 = "";
+    private String singleParsed = "";
+    private String singleParsed2 = "";
+    private String singleParsed3 = "";
 
 
     @Override
@@ -47,7 +45,6 @@ public class FetchDataAllerRerA extends AsyncTask<Void, Void, Void> {
                 JSONArray arr = (JSONArray) jo.getJSONObject("result").getJSONArray("schedules");
 
                 singleParsed = arr.getJSONObject(i).get("message") + "\n";
-
                 dataParsed = dataParsed + singleParsed;
 
                 singleParsed2 = arr.getJSONObject(i).get("code") + "\n";
@@ -57,13 +54,7 @@ public class FetchDataAllerRerA extends AsyncTask<Void, Void, Void> {
                 dataParsed3 = dataParsed3 + singleParsed3;
 
             }
-
-
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (JSONException e) {
+        } catch (IOException | JSONException e) {
             e.printStackTrace();
         }
 

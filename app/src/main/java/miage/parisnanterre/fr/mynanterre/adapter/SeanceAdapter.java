@@ -19,7 +19,7 @@ import java.util.List;
 
 import miage.parisnanterre.fr.mynanterre.R;
 
-import miage.parisnanterre.fr.mynanterre.implem.Inscription_sport;
+import miage.parisnanterre.fr.mynanterre.implem.InscriptionSport;
 import miage.parisnanterre.fr.mynanterre.implem.Seance;
 
 public class SeanceAdapter extends RecyclerView.Adapter<SeanceAdapter.MyViewHolder> {
@@ -28,15 +28,14 @@ public class SeanceAdapter extends RecyclerView.Adapter<SeanceAdapter.MyViewHold
     private Context mcon;
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
-        public TextView numero;
+        private TextView numero;
         private TextView heured;
         private TextView heuref;
-        public TextView sport;
-        public TextView lieu;
-        public TextView dateRdv;
+        private TextView sport;
+        private TextView lieu;
+        private TextView dateRdv;
 
-
-        public MyViewHolder(View view) {
+        private MyViewHolder(View view) {
             super(view);
             this.numero = (TextView) view.findViewById(R.id.numSeance2);
             this.heured = (TextView) view.findViewById(R.id.heured);
@@ -71,13 +70,12 @@ public class SeanceAdapter extends RecyclerView.Adapter<SeanceAdapter.MyViewHold
         inscription.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mcon.startActivity(new Intent(mcon, Inscription_sport.class));
+                mcon.startActivity(new Intent(mcon, InscriptionSport.class));
 
             }
         });
 
         TextView nbInscrit = (TextView) itemView.findViewById(R.id.inscrit);
-        nbInscrit.setText("ok ");
         try {
 
             conn = DriverManager.getConnection(url, user, psw);
@@ -86,7 +84,6 @@ public class SeanceAdapter extends RecyclerView.Adapter<SeanceAdapter.MyViewHold
             ResultSet rst = st.executeQuery(sqliD);
             rst.next();
             int count = rst.getInt("rowcount");
-            System.out.println("Nb Inscrits : " + count);
             nbInscrit.setText(String.valueOf(count) + " inscrits");
 
         } catch (SQLException e) {
@@ -98,12 +95,6 @@ public class SeanceAdapter extends RecyclerView.Adapter<SeanceAdapter.MyViewHold
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         Seance seance = listeSeances.get(position);
-        System.out.println(seance.getNumero());
-        System.out.println(seance.getSport());
-        System.out.println(seance.getLieu());
-        System.out.println(seance.getHeured().toString());
-        System.out.println(seance.getHeuref().toString());
-        System.out.println(seance.getDateRdv());
 
         holder.numero.setText("Seance n°" + String.valueOf(seance.getNumero()));
         holder.sport.setText(seance.getSport());
@@ -111,8 +102,6 @@ public class SeanceAdapter extends RecyclerView.Adapter<SeanceAdapter.MyViewHold
         holder.heured.setText("Début : " + seance.getHeured().toString());
         holder.heuref.setText("Fin : " + seance.getHeuref().toString());
         holder.dateRdv.setText("Date : " + seance.getDateRdv());
-
-
     }
 
     @Override

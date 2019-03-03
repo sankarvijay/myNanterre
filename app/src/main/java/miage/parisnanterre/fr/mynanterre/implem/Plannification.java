@@ -28,6 +28,7 @@ import java.util.Calendar;
 import java.util.List;
 
 import miage.parisnanterre.fr.mynanterre.R;
+import miage.parisnanterre.fr.mynanterre.fragment.SeancesFragment;
 
 /**
  * Created by Sankar Vijay on 01/02/2019.
@@ -37,9 +38,12 @@ public class Plannification extends Activity {
     private static final String user = "u749839367_vijay";
     private static final String psw = "9IDCqTm8Lig2";
     private static Connection conn;
-    private EditText numero, heureD, heureF;
-    private Button planifier;
-    private Spinner spinnerSport, spinnerLieu;
+    private EditText numero;
+    private EditText heureD;
+    private EditText heureF;
+    Button planifier;
+    private Spinner spinnerSport;
+    private Spinner spinnerLieu;
 
     private List<String> sports = new ArrayList<>();
     private List<String> batiments = new ArrayList<>();
@@ -48,18 +52,12 @@ public class Plannification extends Activity {
     private TextView mDisplayDate;
     private static final String TAG = "Plannification";
     Calendar c;
-    //on va générer un numéro de séance
-    /*final int minNum = 10000;
-    final int maxNum = 99999;
-    final int num = new Random().nextInt((maxNum - minNum) + 1) + minNum;*/
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.formrdv);
 
         numero = (EditText) findViewById(R.id.numId);
-        //numero.setText(String.valueOf(num));
-
         heureD = (EditText) findViewById(R.id.heureD);
         heureF = (EditText) findViewById(R.id.heureF);
         spinnerSport = (Spinner) findViewById(R.id.sport);
@@ -102,14 +100,13 @@ public class Plannification extends Activity {
         }
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
-
+        //on récupere l'id de la categorie du sport issu de ListeSport pour l'utliser dans la requete
+        Intent intent = getIntent();
+        Integer idCategorie = intent.getIntExtra("ID_CATEGORIE", 1);
         //on va recup la liste des sports en fonction de la catégorie choisie pour les placer dans le spinner des sports
         try {
             conn = DriverManager.getConnection(url, user, psw);
 
-            //on récupere l'id de la categorie du sport issu de ListeSport pour l'utliser dans la requete
-            Intent intent = getIntent();
-            Integer idCategorie = intent.getIntExtra("ID_CATEGORIE", 1);
 
             String sqliD = "SELECT * FROM sports where categorie ='" + idCategorie + "';";
             Statement st = conn.createStatement();
@@ -150,22 +147,20 @@ public class Plannification extends Activity {
             public void onClick(View v) {
                 try {
                     conn = DriverManager.getConnection(url, user, psw);
-                    String sqliD = "insert into plannification_sport (numero,heured,heuref,dateRdv,sport,lieu) values (?,?,?,?,?,?) ;";
+                    String sqliD = "insert into plannification_sport (numero,heured,heuref,dateRdv,sport,lieu,categorie) values (?,?,?,?,?,?,?) ;";
                     PreparedStatement preparedStatement = conn.prepareStatement(sqliD);
 
                     preparedStatement.setString(1, numero.getText().toString());
-
                     preparedStatement.setString(2, heureD.getText().toString());
                     preparedStatement.setString(3, heureF.getText().toString());
                     preparedStatement.setString(4, mDisplayDate.getText().toString());
-
-
                     preparedStatement.setString(5, spinnerSport.getSelectedItem().toString());
                     preparedStatement.setString(6, spinnerLieu.getSelectedItem().toString());
+                    preparedStatement.setInt(7, idCategorie);
                     preparedStatement.executeUpdate();
                     Toast.makeText(getApplicationContext(), "Votre séance a bien été planifié !", Toast.LENGTH_SHORT).show();
 
-                    startActivity(new Intent(getApplicationContext(), Accueil.class));
+                    startActivity(new Intent(getApplicationContext(), SeancesFragment.class));
 
                 } catch (SQLException e) {
                     e.printStackTrace();

@@ -3,7 +3,6 @@ package miage.parisnanterre.fr.mynanterre.implem;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.widget.DatePicker;
 
 import java.sql.Time;
 
@@ -11,13 +10,12 @@ import miage.parisnanterre.fr.mynanterre.R;
 
 public class Seance extends Activity {
 
-    String sport, lieu, dateRdv;
-    Time heured, heuref;
+    String sport;
+    String lieu;
+    String dateRdv;
+    Time heured;
+    Time heuref;
     int numero;
-
-    public Seance() {
-
-    }
 
     public Seance(int numero, Time heured, Time heuref, String sport, String lieu, String dateRdv) {
         this.numero = numero;
@@ -80,8 +78,6 @@ public class Seance extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.liste_seances);
-
-
     }
 
     @Override

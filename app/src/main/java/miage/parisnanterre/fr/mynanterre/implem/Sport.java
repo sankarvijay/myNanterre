@@ -8,7 +8,7 @@ public class Sport {
     private int image;
     private String texte;
 
-    public Sport(int image, String texte) {
+    Sport(int image, String texte) {
         this.image = image;
         this.texte = texte;
     }

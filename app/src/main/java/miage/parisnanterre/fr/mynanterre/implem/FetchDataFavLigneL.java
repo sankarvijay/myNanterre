@@ -11,7 +11,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
 import java.net.URL;
 
 /**
@@ -19,17 +18,15 @@ import java.net.URL;
  */
 
 public class FetchDataFavLigneL extends AsyncTask<Void, Void, Void> {
-    String data = "";
-    String dataParsed = "";
-    String dataParsed2 = "";
-    String dataParsed3 = "";
-    String singleParsed = "";
-    String singleParsed2 = "";
-    String singleParsed3 = "";
-    String gareFavori = "";
-    String lien = "";
+    private String data = "";
+    private String dataParsed2 = "";
+    private String dataParsed3 = "";
+    private String singleParsed2 = "";
+    private String singleParsed3 = "";
+    private String gareFavori = "";
+    private String lien = "";
 
-    public FetchDataFavLigneL(String gare) {
+    FetchDataFavLigneL(String gare) {
         this.gareFavori = gare;
     }
 
@@ -87,7 +84,7 @@ public class FetchDataFavLigneL extends AsyncTask<Void, Void, Void> {
                     lien = "https://api-lab-trone-stif.opendata.stif.info/service/tr-vianavigo/departures?line_id=800:L&stop_point_id=8738265:800:L&apikey=9418584454f9adb7d232f4251aaa962477293753d8fd25acb2966fba";
                     break;
                 default:
-                    System.out.println("no match");
+                    System.err.println("no match");
             }
 
             URL url = new URL(lien);
@@ -114,16 +111,9 @@ public class FetchDataFavLigneL extends AsyncTask<Void, Void, Void> {
                 dataParsed3 = dataParsed3 + singleParsed3;
 
             }
-
-
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (JSONException e) {
+        } catch (IOException | JSONException e) {
             e.printStackTrace();
         }
-
         return null;
     }
 

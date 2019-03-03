@@ -68,7 +68,7 @@ public class SportGridAdapter extends BaseAdapter {
     }
 
     // Find Image ID corresponding to the name of the image (in the directory mipmap).
-    public int getMipmapResIdByName(String resName) {
+    private int getMipmapResIdByName(String resName) {
         String pkgName = context.getPackageName();
 
         // Return 0 if not found.

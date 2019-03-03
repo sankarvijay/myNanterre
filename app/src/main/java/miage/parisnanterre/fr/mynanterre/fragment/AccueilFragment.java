@@ -8,20 +8,13 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ImageView;
-
 import com.synnapps.carouselview.CarouselView;
 import com.synnapps.carouselview.ImageListener;
-
 import miage.parisnanterre.fr.mynanterre.R;
-import miage.parisnanterre.fr.mynanterre.implem.Accueil;
 import miage.parisnanterre.fr.mynanterre.implem.Cgu;
-import miage.parisnanterre.fr.mynanterre.implem.ListeCrous;
-import miage.parisnanterre.fr.mynanterre.implem.ListeSport;
-import miage.parisnanterre.fr.mynanterre.implem.TrainLigneL;
-import miage.parisnanterre.fr.mynanterre.implem.TrainRerA;
+
 
 /**
  * Created by Sankar Vijay on 18/01/2019.
@@ -45,7 +38,6 @@ public class AccueilFragment extends Fragment {
             }
         });
         return v;
-
     }
 
     ImageListener imageListener = new ImageListener() {
@@ -61,6 +53,4 @@ public class AccueilFragment extends Fragment {
         carouselView.setImageListener(imageListener);
         carouselView.setPageCount(sampleImages.length);
     }
-
-
 }

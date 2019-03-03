@@ -8,10 +8,8 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Pattern;
-
 import android.content.Intent;
 import android.os.Bundle;
-
 import android.os.StrictMode;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -51,12 +49,10 @@ public class ListeSport extends AppCompatActivity {
         Bundle extras = getIntent().getExtras();
         String stringVariableName = extras.getString(SportFragment.EXTRA_MESSAGE);
         final int idCategorie = Integer.parseInt(stringVariableName);
-        System.out.println(" j'ai recupereeee " + idCategorie);
 
         List<Sport> image_details = getListData();
         final GridView gridView = (GridView) findViewById(R.id.gridview);
         gridView.setAdapter(new SportGridAdapter(this, image_details));
-
 
         // When the user clicks on the GridItem
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -127,8 +123,6 @@ public class ListeSport extends AppCompatActivity {
                 liste.add(sport);
 
             }
-
-
 
         } catch (SQLException e) {
             e.printStackTrace();

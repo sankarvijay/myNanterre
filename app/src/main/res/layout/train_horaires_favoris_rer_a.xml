@@ -51,10 +51,10 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="false"
         android:layout_marginStart="5dp"
-        android:layout_marginTop="190dp"
+        android:layout_marginTop="187dp"
         android:text="Code"
         android:textColor="@color/black"
-        android:textSize="15sp"
+        android:textSize="13sp"
         android:textStyle="bold" />
 
     <TextView
@@ -62,12 +62,12 @@
         android:layout_width="131dp"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="false"
-        android:layout_marginStart="250dp"
+        android:layout_marginStart="230dp"
         android:layout_marginTop="187dp"
         android:background="@color/black"
         android:text="heure"
         android:textColor="@color/white"
-        android:textSize="16sp"
+        android:textSize="13sp"
         android:textStyle="bold" />
 
     <TextView
@@ -79,7 +79,7 @@
         android:layout_marginTop="187dp"
         android:text="Destination"
         android:textColor="@color/black"
-        android:textSize="17sp"
+        android:textSize="13sp"
         android:textStyle="bold" />
 
     <TextView

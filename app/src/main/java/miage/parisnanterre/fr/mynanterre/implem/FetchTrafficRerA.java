@@ -10,22 +10,21 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
 import java.net.URL;
 
 /**
  * Created by Sankar Vijay on 23/02/2019.
  */
 public class FetchTrafficRerA extends AsyncTask<Void, Void, Void> {
-    String data = "";
-    String dataParsed = "";
-    String dataParsed2 = "";
-    String dataParsed3 = "";
-    String dataParsed4 = "";
-    String singleParsed = "";
-    String singleParsed2 = "";
-    String singleParsed3 = "";
-    String singleParsed4 = "";
+    private String data = "";
+    private String dataParsed = "";
+    private String dataParsed2 = "";
+    private String dataParsed3 = "";
+    private String dataParsed4 = "";
+    private String singleParsed = "";
+    private String singleParsed2 = "";
+    private String singleParsed3 = "";
+    private String singleParsed4 = "";
 
 
     @Override
@@ -57,11 +56,7 @@ public class FetchTrafficRerA extends AsyncTask<Void, Void, Void> {
             singleParsed4 = jo2.get("message") + "\n";
             dataParsed4 = dataParsed4 + singleParsed4;
 
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (JSONException e) {
+        } catch (IOException | JSONException e) {
             e.printStackTrace();
         }
 

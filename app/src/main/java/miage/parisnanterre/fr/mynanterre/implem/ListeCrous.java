@@ -1,14 +1,10 @@
 package miage.parisnanterre.fr.mynanterre.implem;
 
 import android.app.AlertDialog;
-import android.app.Dialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-
 import android.os.StrictMode;
-import android.support.v4.app.DialogFragment;
 import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,7 +12,6 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.GridView;
 import android.widget.Toast;
-
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -34,10 +29,7 @@ import miage.parisnanterre.fr.mynanterre.R;
 import miage.parisnanterre.fr.mynanterre.adapter.CrousGridAdapter;
 
 
-public class ListeCrous   extends AppCompatActivity {
-
-    Context context;
-    private Intent intent;
+public class ListeCrous extends AppCompatActivity {
 
     private static final String url = "jdbc:mysql://sql171.main-hosting.eu/u749839367_m1";
     private static final String user = "u749839367_vijay";
@@ -46,12 +38,10 @@ public class ListeCrous   extends AppCompatActivity {
     private List<Crous> liste = new ArrayList<>();
     public static final String EXTRA_MESSAGE = "com.example.myfirstapp.MESSAGE";
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.liste_batiments);
-
 
         try {
             Class.forName("com.mysql.jdbc.Driver");
@@ -70,24 +60,17 @@ public class ListeCrous   extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
                 Object o = gridView.getItemAtPosition(position);
-
-
                 String batiment = ((Crous) o).getBatiment();
-
-
 
                 //On instancie notre layout en tant que View
                 LayoutInflater factory = LayoutInflater.from(ListeCrous.this);
                 final View alertDialogView = factory.inflate(R.layout.dialog_box_frequentation, null);
 
-
                 AlertDialog.Builder alertDialogBuilder;
                 alertDialogBuilder = new AlertDialog.Builder(ListeCrous.this);
                 alertDialogBuilder.setView(alertDialogView);
 
-
                 Button btn1 = (Button) alertDialogView.findViewById(R.id.buttonfaible);
-
                 Button btn2 = (Button) alertDialogView.findViewById(R.id.buttonmoyenne);
                 Button btn3 = (Button) alertDialogView.findViewById(R.id.buttonforte);
 
@@ -96,30 +79,25 @@ public class ListeCrous   extends AppCompatActivity {
 
                         // btnAdd1 has been clicked
                         try {
-                            Date currentTime= Calendar.getInstance().getTime();
+                            Date currentTime = Calendar.getInstance().getTime();
 
                             SimpleDateFormat f = new SimpleDateFormat("HH:mm");
                             String s = f.format(currentTime);
 
                             conn = DriverManager.getConnection(url, user, psw);
-                            String sqliD = "UPDATE Crous SET frequentation = 1 WHERE batiment='"+batiment+"';";
-                            String sqliD2="UPDATE Crous SET vote='"+s+"' WHERE batiment='"+batiment+"';";
+                            String sqliD = "UPDATE Crous SET frequentation = 1 WHERE batiment='" + batiment + "';";
+                            String sqliD2 = "UPDATE Crous SET vote='" + s + "' WHERE batiment='" + batiment + "';";
 
                             PreparedStatement preparedStatement = conn.prepareStatement(sqliD);
                             PreparedStatement preparedStatement2 = conn.prepareStatement(sqliD2);
-
                             preparedStatement.executeUpdate();
                             preparedStatement2.executeUpdate();
-
 
                         } catch (SQLException e) {
                             e.printStackTrace();
                         }
                         Toast.makeText(getApplicationContext(), "c'est noté!", Toast.LENGTH_SHORT).show();
-
-
                         startActivity(new Intent(ListeCrous.this, Accueil.class));
-
                     }
                 });
 
@@ -128,14 +106,14 @@ public class ListeCrous   extends AppCompatActivity {
 
                         // btnAdd2 has been clicked
                         try {
-                            Date currentTime= Calendar.getInstance().getTime();
+                            Date currentTime = Calendar.getInstance().getTime();
 
                             SimpleDateFormat f = new SimpleDateFormat("HH:mm");
                             String s = f.format(currentTime);
 
                             conn = DriverManager.getConnection(url, user, psw);
-                            String sqliD = "UPDATE Crous SET frequentation = 2 WHERE batiment='"+batiment+"';";
-                            String sqliD2="UPDATE Crous SET vote='"+s+"' WHERE batiment='"+batiment+"';";
+                            String sqliD = "UPDATE Crous SET frequentation = 2 WHERE batiment='" + batiment + "';";
+                            String sqliD2 = "UPDATE Crous SET vote='" + s + "' WHERE batiment='" + batiment + "';";
 
                             PreparedStatement preparedStatement = conn.prepareStatement(sqliD);
                             PreparedStatement preparedStatement2 = conn.prepareStatement(sqliD2);
@@ -158,14 +136,14 @@ public class ListeCrous   extends AppCompatActivity {
 
                         // btnAdd3 has been clicked
                         try {
-                            Date currentTime= Calendar.getInstance().getTime();
+                            Date currentTime = Calendar.getInstance().getTime();
 
                             SimpleDateFormat f = new SimpleDateFormat("HH:mm");
                             String s = f.format(currentTime);
 
                             conn = DriverManager.getConnection(url, user, psw);
-                            String sqliD = "UPDATE Crous SET frequentation = 3 WHERE batiment='"+batiment+"';";
-                            String sqliD2="UPDATE Crous SET vote='"+s+"' WHERE batiment='"+batiment+"';";
+                            String sqliD = "UPDATE Crous SET frequentation = 3 WHERE batiment='" + batiment + "';";
+                            String sqliD2 = "UPDATE Crous SET vote='" + s + "' WHERE batiment='" + batiment + "';";
 
                             PreparedStatement preparedStatement = conn.prepareStatement(sqliD);
                             PreparedStatement preparedStatement2 = conn.prepareStatement(sqliD2);
@@ -187,27 +165,20 @@ public class ListeCrous   extends AppCompatActivity {
 
                 alertDialogBuilder.create().show();
             }
-
-
         });
-
-
-
-
     }
 
     private List<Crous> getListData() {
-        Date currentTime= Calendar.getInstance().getTime();
+        Date currentTime = Calendar.getInstance().getTime();
 
         SimpleDateFormat f = new SimpleDateFormat("HHmmss");
         String s = f.format(currentTime);
-
         int i = Integer.parseInt(s);
 
         try {
             conn = DriverManager.getConnection(url, user, psw);
 
-            String sqliD = "SELECT * FROM Crous WHERE ouverture<="+i+" AND fermeture>="+i+";";
+            String sqliD = "SELECT * FROM Crous WHERE ouverture<=" + i + " AND fermeture>=" + i + ";";
             System.out.println(sqliD);
             Statement st = conn.createStatement();
             ResultSet rst = st.executeQuery(sqliD);
@@ -215,11 +186,11 @@ public class ListeCrous   extends AppCompatActivity {
             while (rst.next()) {
                 String batiment = rst.getString("batiment");
                 String lieu = rst.getString("lieu");
-                int frequentation=rst.getInt("frequentation");
-                int id=rst.getInt("id_bat");
-                String v= rst.getString("vote");
-                String v2= "Dernière information à "+v;
-                Crous crous = new Crous(id,batiment, lieu,frequentation,v2);
+                int frequentation = rst.getInt("frequentation");
+                int id = rst.getInt("id_bat");
+                String v = rst.getString("vote");
+                String v2 = "Dernière information à " + v;
+                Crous crous = new Crous(id, batiment, lieu, frequentation, v2);
                 liste.add(crous);
 
             }
@@ -227,24 +198,13 @@ public class ListeCrous   extends AppCompatActivity {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
-
-
         return liste;
-
-
     }
 
     public void customDialog(String title, String message) {
         final android.support.v7.app.AlertDialog.Builder builderSingle = new android.support.v7.app.AlertDialog.Builder(this);
-
         builderSingle.setTitle(title);
         builderSingle.setMessage(message);
-
         builderSingle.show();
     }
-
-
-
-
 }

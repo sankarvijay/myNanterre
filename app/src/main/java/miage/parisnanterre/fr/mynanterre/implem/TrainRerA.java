@@ -42,13 +42,13 @@ public class TrainRerA extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.train_horaires_rer_a);
 
-        this.horaires = (TextView) findViewById(R.id.horaire);
-        this.direction = (TextView) findViewById(R.id.direction);
-        this.code = (TextView) findViewById(R.id.code);
-        this.heureT = (TextView) findViewById(R.id.heureT);
-        this.destination = (TextView) findViewById(R.id.destination);
-        this.info = (TextView) findViewById(R.id.info_message);
-        this.title = (TextView) findViewById(R.id.info_titre);
+        horaires = (TextView) findViewById(R.id.horaire);
+        direction = (TextView) findViewById(R.id.direction);
+        code = (TextView) findViewById(R.id.code);
+        heureT = (TextView) findViewById(R.id.heureT);
+        destination = (TextView) findViewById(R.id.destination);
+        info = (TextView) findViewById(R.id.info_message);
+        title = (TextView) findViewById(R.id.info_titre);
         this.refresh = (ImageView) findViewById(R.id.refresh);
         this.plans = (ImageView) findViewById(R.id.plan);
         this.exchange = (ImageView) findViewById(R.id.echange);
@@ -100,6 +100,7 @@ public class TrainRerA extends AppCompatActivity {
                         });
                     }
                 } catch (InterruptedException e) {
+                    e.printStackTrace();
                 }
             }
         };

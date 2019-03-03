@@ -16,20 +16,22 @@ import java.sql.SQLException;
 
 import miage.parisnanterre.fr.mynanterre.R;
 
-public class Inscription_sport extends Activity {
+public class InscriptionSport extends Activity {
     private static final String url = "jdbc:mysql://sql171.main-hosting.eu/u749839367_m1";
     private static final String user = "u749839367_vijay";
     private static final String psw = "9IDCqTm8Lig2";
     private static Connection conn;
-    private EditText nom, prenom, niveau;
-    private Button inscrire;
+    private EditText nom;
+    private EditText prenom;
+    private EditText niveau;
+    Button inscrire;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.formulaire_inscription_sport);
 
-        nom = (EditText) findViewById(R.id.numSeance);
+        nom = (EditText) findViewById(R.id.nom);
         prenom = (EditText) findViewById(R.id.prenom);
         niveau = (EditText) findViewById(R.id.niveau);
 
@@ -50,15 +52,13 @@ public class Inscription_sport extends Activity {
                     String sqliD = "insert into reservation_sport(nom,prenom,niveau) values (?,?,?) ;";
                     PreparedStatement preparedStatement = conn.prepareStatement(sqliD);
 
-
                     preparedStatement.setString(1, nom.getText().toString());
                     preparedStatement.setString(2, prenom.getText().toString());
                     preparedStatement.setString(3, niveau.getText().toString());
-
                     preparedStatement.executeUpdate();
-                    Toast.makeText(getApplicationContext(), "Votre inscription à la séance à été validée!", Toast.LENGTH_SHORT).show();
 
-                    startActivity(new Intent(Inscription_sport.this, ListeSport.class));
+                    Toast.makeText(getApplicationContext(), "Votre inscription à la séance à été validée!", Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(InscriptionSport.this, Accueil.class));
 
                 } catch (SQLException e) {
                     e.printStackTrace();

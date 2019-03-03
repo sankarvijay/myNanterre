@@ -9,17 +9,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import java.util.List;
-
 import miage.parisnanterre.fr.mynanterre.R;
 import miage.parisnanterre.fr.mynanterre.implem.Crous;
 import miage.parisnanterre.fr.mynanterre.implem.ListeProduit;
-import miage.parisnanterre.fr.mynanterre.implem.ListeSport;
-import miage.parisnanterre.fr.mynanterre.implem.TrainLigneL;
+
 
 
 public class CrousGridAdapter extends BaseAdapter {
@@ -103,7 +99,7 @@ public class CrousGridAdapter extends BaseAdapter {
         return resID;
     }
 
-    static class ViewHolder {
+    private static class ViewHolder {
         private TextView batiment;
         private TextView lieu;
         private ImageView sandwich;

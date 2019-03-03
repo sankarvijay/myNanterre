@@ -96,6 +96,7 @@ public class GareFavoriteRerA extends AppCompatActivity {
                         });
                     }
                 } catch (InterruptedException e) {
+                    e.printStackTrace();
                 }
             }
         };

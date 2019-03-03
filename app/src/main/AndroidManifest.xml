@@ -21,7 +21,6 @@
         <activity android:name=".implem.ListeSport"></activity>
         <activity android:name=".implem.Plannification"></activity>
         <activity android:name=".implem.Seance"></activity>
-        <activity android:name=".implem.Inscription_sport"></activity>
         <activity android:name=".implem.TrainLigneL"></activity>
         <activity android:name=".implem.TrainPlanLigneL"></activity>
         <activity android:name=".implem.GareFavoriteLigneL"></activity>
@@ -31,6 +30,7 @@
         <activity android:name=".implem.ListeCrous"></activity>
         <activity android:name=".implem.ListeProduit"></activity>
         <activity android:name=".implem.Cgu"></activity>
+        <activity android:name=".implem.InscriptionSport"></activity>
 
 
 

@@ -2,13 +2,10 @@ package miage.parisnanterre.fr.mynanterre.implem;
 
 import android.app.AlertDialog;
 import android.content.Context;
-
 import android.content.Intent;
 import android.os.Bundle;
-
 import android.os.StrictMode;
 import android.support.v7.app.AppCompatActivity;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.AdapterView;
@@ -16,17 +13,13 @@ import android.widget.Button;
 import android.widget.GridView;
 import android.widget.Toast;
 
-
 import java.sql.Connection;
 import java.sql.DriverManager;
-
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-
 import java.util.ArrayList;
-
 import java.util.List;
 
 import miage.parisnanterre.fr.mynanterre.R;
@@ -34,10 +27,7 @@ import miage.parisnanterre.fr.mynanterre.adapter.CrousGridAdapter;
 import miage.parisnanterre.fr.mynanterre.adapter.ProduitGridAdapter;
 
 
-public class ListeProduit   extends AppCompatActivity {
-
-    Context context;
-    private Intent intent;
+public class ListeProduit extends AppCompatActivity {
 
     private static final String url = "jdbc:mysql://sql171.main-hosting.eu/u749839367_m1";
     private static final String user = "u749839367_vijay";
@@ -73,26 +63,16 @@ public class ListeProduit   extends AppCompatActivity {
                 Bundle extras = getIntent().getExtras();
                 String stringVariableName = extras.getString(CrousGridAdapter.EXTRA_MESSAGE);
                 int idBat = Integer.parseInt(stringVariableName);
-
-
                 String produit = ((Produit) o).getNomProduit();
-
-
-
                 //On instancie notre layout en tant que View
                 LayoutInflater factory = LayoutInflater.from(ListeProduit.this);
                 final View alertDialogView = factory.inflate(R.layout.dialog_box_dispo, null);
-
-
                 AlertDialog.Builder alertDialogBuilder;
                 alertDialogBuilder = new AlertDialog.Builder(ListeProduit.this);
                 alertDialogBuilder.setView(alertDialogView);
 
-
                 Button btn1 = (Button) alertDialogView.findViewById(R.id.buttonok);
-
                 Button btn2 = (Button) alertDialogView.findViewById(R.id.buttonko);
-
 
                 btn1.setOnClickListener(new View.OnClickListener() {
                     public void onClick(View v) {
@@ -100,21 +80,16 @@ public class ListeProduit   extends AppCompatActivity {
                         // btnAdd1 has been clicked
                         try {
                             conn = DriverManager.getConnection(url, user, psw);
-                            String sqliD = "UPDATE vente SET dispo = 1 WHERE produit='"+produit+"' AND id_bat="+idBat+";";
+                            String sqliD = "UPDATE vente SET dispo = 1 WHERE produit='" + produit + "' AND id_bat=" + idBat + ";";
 
                             PreparedStatement preparedStatement = conn.prepareStatement(sqliD);
-
                             preparedStatement.executeUpdate();
-
 
                         } catch (SQLException e) {
                             e.printStackTrace();
                         }
                         Toast.makeText(getApplicationContext(), "c'est noté!", Toast.LENGTH_SHORT).show();
-
-
                         startActivity(new Intent(ListeProduit.this, ListeCrous.class));
-
                     }
                 });
 
@@ -124,11 +99,10 @@ public class ListeProduit   extends AppCompatActivity {
                         // btnAdd2 has been clicked
                         try {
                             conn = DriverManager.getConnection(url, user, psw);
-                            String sqliD = "UPDATE vente SET dispo = 2 WHERE produit='"+produit+"' AND id_bat="+idBat+";";
-                            System.out.println("--------------------------"+sqliD);
+                            String sqliD = "UPDATE vente SET dispo = 2 WHERE produit='" + produit + "' AND id_bat=" + idBat + ";";
+                            System.out.println("--------------------------" + sqliD);
                             PreparedStatement preparedStatement = conn.prepareStatement(sqliD);
                             preparedStatement.executeUpdate();
-
 
                         } catch (SQLException e) {
                             e.printStackTrace();
@@ -142,12 +116,7 @@ public class ListeProduit   extends AppCompatActivity {
 
                 alertDialogBuilder.create().show();
             }
-
-
         });
-
-
-
     }
 
     private List<Produit> getListData() {
@@ -168,22 +137,11 @@ public class ListeProduit   extends AppCompatActivity {
 
                 Produit produits = new Produit(dispo, produit);
                 liste.add(produits);
-
             }
 
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
-
-
         return liste;
-
-
     }
-
-
-
-
-
 }

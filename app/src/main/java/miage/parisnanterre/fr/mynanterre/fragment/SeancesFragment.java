@@ -40,9 +40,7 @@ public class SeancesFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         super.onCreateView(inflater, container, savedInstanceState);
-        View view = inflater.inflate(R.layout.liste_seances, container, false);
-        return view;
-
+        return inflater.inflate(R.layout.liste_seances, container, false);
     }
 
     @Override
@@ -69,11 +67,10 @@ public class SeancesFragment extends Fragment {
     }
 
     private void prepareSeanceData() {
-
         try {
 
             conn = DriverManager.getConnection(url, user, psw);
-            String sqliD = "SELECT * FROM plannification_sport";
+            String sqliD = "SELECT * FROM plannification_sport ";
             Statement st = conn.createStatement();
             ResultSet rst = st.executeQuery(sqliD);
 
@@ -85,14 +82,10 @@ public class SeancesFragment extends Fragment {
                 String dateRdv = rst.getString("dateRdv");
                 String sport = rst.getString("sport");
                 String lieu = rst.getString("lieu");
-
-
                 Seance seance = new Seance(numero, heured, heuref, sport, lieu, dateRdv);
                 liste.add(seance);
 
             }
-
-
             sAdapter.notifyDataSetChanged();
 
         } catch (SQLException e) {

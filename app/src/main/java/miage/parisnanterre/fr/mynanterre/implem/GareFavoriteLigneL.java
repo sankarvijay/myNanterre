@@ -85,11 +85,10 @@ public class GareFavoriteLigneL extends AppCompatActivity {
                         });
                     }
                 } catch (InterruptedException e) {
+                    e.printStackTrace();
                 }
             }
         };
         t.start();
-
-
     }
 }

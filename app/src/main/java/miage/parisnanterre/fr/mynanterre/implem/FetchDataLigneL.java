@@ -10,19 +10,17 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
 import java.net.URL;
 
 /**
  * Created by Sankar Vijay on 27/02/2019.
  */
 public class FetchDataLigneL extends AsyncTask<Void, Void, Void> {
-    String data = "";
-    String dataParsed = "";
-    String dataParsed2 = "";
-
-    String singleParsed = "";
-    String singleParsed2 = "";
+    private String data = "";
+    private String dataParsed = "";
+    private String dataParsed2 = "";
+    private String singleParsed = "";
+    private String singleParsed2 = "";
 
 
     @Override
@@ -55,18 +53,13 @@ public class FetchDataLigneL extends AsyncTask<Void, Void, Void> {
 
                 String dashedString = s1 + ":" + s2 + "\n";
 
-
                 dataParsed = dataParsed + singleParsed;
                 dataParsed2 = dataParsed2 + dashedString;
 
             }
 
 
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (JSONException e) {
+        } catch (IOException | JSONException e) {
             e.printStackTrace();
         }
 
