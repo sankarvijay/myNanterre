@@ -14,6 +14,8 @@ import com.synnapps.carouselview.CarouselView;
 import com.synnapps.carouselview.ImageListener;
 import miage.parisnanterre.fr.mynanterre.R;
 import miage.parisnanterre.fr.mynanterre.implem.Cgu;
+import miage.parisnanterre.fr.mynanterre.implem.PlanBatiments;
+import miage.parisnanterre.fr.mynanterre.implem.TrainPlanRerA;
 
 
 /**
@@ -21,11 +23,13 @@ import miage.parisnanterre.fr.mynanterre.implem.Cgu;
  */
 public class AccueilFragment extends Fragment {
     CarouselView carouselView;
+
     int[] sampleImages = {R.drawable.photo3, R.drawable.photo1, R.drawable.photo2, R.drawable.photo4};
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v =inflater.inflate(R.layout.accueil, container, false);
+
 
         Button mButton = (Button) v.findViewById(R.id.cgu);
         mButton.setOnClickListener(new View.OnClickListener() {
@@ -35,6 +39,15 @@ public class AccueilFragment extends Fragment {
                 Intent intent = new Intent(v.getContext(), Cgu.class);
                 //Start details activity
                 startActivity(intent);
+            }
+        });
+
+        ImageView planBat = (ImageView) v.findViewById(R.id.planBat);
+        planBat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent myIntent = new Intent(v.getContext(), PlanBatiments.class);
+                startActivity(myIntent);
             }
         });
         return v;
@@ -52,5 +65,6 @@ public class AccueilFragment extends Fragment {
         carouselView = getView().findViewById(R.id.carouselView);
         carouselView.setImageListener(imageListener);
         carouselView.setPageCount(sampleImages.length);
+
     }
 }
