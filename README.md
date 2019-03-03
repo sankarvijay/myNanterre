@@ -7,17 +7,23 @@
 [![License](https://img.shields.io/github/license/sankarvijay/myNanterre.svg?style=flat-square)](LICENSE)
 [![Version](https://img.shields.io/github/tag/sankarvijay/MyNanterre.svg?label=version&style=flat-square)](build.gradle)
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
-[![Coverage Status](https://coveralls.io/repos/github/sankarvijay/myNanterre/badge.svg?branch=master)](https://coveralls.io/github/sankarvijay/myNanterre?branch=master)
-
 
 # MyNanterre
 
-**MyNanterre**, l'application avec laquelle tu vas reussir tes études tout en te divertissant. 
+**MyNanterre**, l'application pour une meilleure vie étudiante à Nanterre. 
 
 ## Qu'est ce que c'est ?
 
-Une application pour mettre en relation les étudiants de Nanterre en proposant des activités intra et extra-scolaires.
-Développé sur mobile, et plus spécialement sur la plateforme **Android**, MyNanterre est donc une application sur smartphone.
+Une application pour aider les étudiants de Nanterre durant leurs vie étudiante. Développée sur mobile, et plus spécialement sur la plateforme **Android**, MyNanterre est une application sur smartphone.
+
+MyNanterre est une application qui vous permettra de :
+
+- programmer vos propres séances de sports et les étudiant pourront s'y inscrire
+- de découvrir les sports disponibles à Nanterre et leurs horaires.
+- visualiser l'afflucence sur les différentes points de restauration ouverts à l'Université et les produits disponibles.
+- connaitre les prochains départs de train depuis Nanterre-Université, mais aussi personnalisez avec votre gare favorite pour le rer A et la ligne L.
+
+Pour avoir plus d'informations, visitez notre site web : https://sankarvijay.github.io/myNanterre/
 
 ## Système de Build
 * [Gradle](https://gradle.org/)
@@ -28,6 +34,39 @@ Développé sur mobile, et plus spécialement sur la plateforme **Android**, MyN
 
 Avant de pouvoir utiliser notre projet, il faut installer certains outils.
 
+#### Installer Android Studio et le SDK
+
+- Télécharger Android studio et l'installer : [Télécharger Android Studio](https://developer.android.com/studio/index.html)
+
+- Télécharger le SDK : 
+
+Depuis la fenêtres de bienvenue : 
+  Configure > SDK Manager > SDK TOOLS > Cocher Android SDK Tools > OK
+  
+#### Installer Git
+
+- Télécharger et installer Git : [Télécharger Git](https://gitforwindows.org/)
+
+### Cloner Lexify
+
+Une fois Git installé, il suffit de suivre les instructions ci-dessous.
+
+#### Lier Git à Android Studio 
+
+Depuis Android studio : 
+  File > Settings > Version Control > Git > Dans " path to git Excecutable ", coller le chemin du git.exe > OK
+  
+#### Cloner le répertoire Lexify
+
+Depuis Android studio : 
+  VCS > Checkout from version control > Git > Dans " Git Repository URL ", coller https://github.com/sankarvijay/myNanterre.git > OK
+  
+### Installation et lancement du avd manager 
+
+Suivre ce tuto : [Tutoriel AVD Manager](http://vogella.developpez.com/tutoriels/android/installation-outils-developpement/#L5)
+
+Et voila ! le projet est prêt pour utilisation.
+
 Nous travaillons tous en tant que collaborateur
 
 #### Nos outils et langages
@@ -35,11 +74,10 @@ Nous travaillons tous en tant que collaborateur
 - Espresso : effectuer des tests unitaires sur notre application Android
 - Commitizen: norme de messages pout commit
 - Taiga : Répartition des tâches et priorisation 
-- SonarCloud : analyser la qualité du code, redondance, bugs etc...
 - Waffle : Répartition des tâches, TODO, workflow etc...
 - Java sous Andoid studio : langages de développement
 - Codacy analyse de code statique, dynamique, sécurité, couverture du code, test de regression
-- APIs
+- APIs (RATP,TRANSILIEN)
 - Méthodes agile SCRUM
 
 ## Auteurs
