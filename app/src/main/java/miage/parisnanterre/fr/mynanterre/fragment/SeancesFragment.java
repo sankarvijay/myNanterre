@@ -1,5 +1,7 @@
 package miage.parisnanterre.fr.mynanterre.fragment;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.support.annotation.NonNull;
@@ -68,9 +70,13 @@ public class SeancesFragment extends Fragment {
 
     private void prepareSeanceData() {
         try {
+            //on recupere l'idcategorie du sport selectionné pour trouver les séances associées
+            Bundle extras = getActivity().getIntent().getExtras();
+            String stringVariableName = extras.getString(SportFragment.EXTRA_MESSAGE);
+            final int idCategorie = Integer.parseInt(stringVariableName);
 
             conn = DriverManager.getConnection(url, user, psw);
-            String sqliD = "SELECT * FROM plannification_sport ";
+            String sqliD = "SELECT * FROM plannification_sport where categorie=" + idCategorie ;
             Statement st = conn.createStatement();
             ResultSet rst = st.executeQuery(sqliD);
 

@@ -29,6 +29,7 @@ import java.util.List;
 
 import miage.parisnanterre.fr.mynanterre.R;
 import miage.parisnanterre.fr.mynanterre.fragment.SeancesFragment;
+import miage.parisnanterre.fr.mynanterre.fragment.SportFragment;
 
 /**
  * Created by Sankar Vijay on 01/02/2019.
@@ -102,7 +103,7 @@ public class Plannification extends Activity {
         StrictMode.setThreadPolicy(policy);
         //on récupere l'id de la categorie du sport issu de ListeSport pour l'utliser dans la requete
         Intent intent = getIntent();
-        Integer idCategorie = intent.getIntExtra("ID_CATEGORIE", 1);
+        final Integer idCategorie = intent.getIntExtra("ID_CATEGORIE", 1);
         //on va recup la liste des sports en fonction de la catégorie choisie pour les placer dans le spinner des sports
         try {
             conn = DriverManager.getConnection(url, user, psw);
@@ -160,7 +161,7 @@ public class Plannification extends Activity {
                     preparedStatement.executeUpdate();
                     Toast.makeText(getApplicationContext(), "Votre séance a bien été planifié !", Toast.LENGTH_SHORT).show();
 
-                    startActivity(new Intent(getApplicationContext(), SeancesFragment.class));
+                    startActivity(new Intent(getApplicationContext(), SportFragment.class));
 
                 } catch (SQLException e) {
                     e.printStackTrace();
