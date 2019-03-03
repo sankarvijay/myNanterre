@@ -1,3 +1,4 @@
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/408baf45a04b4876b2ac65ba313057d8)](https://app.codacy.com/app/sankarvijay/myNanterre?utm_source=github.com&utm_medium=referral&utm_content=sankarvijay/myNanterre&utm_campaign=Badge_Grade_Settings)
 [![Build Status](https://travis-ci.com/sankarvijay/myNanterre.svg?branch=master)](https://travis-ci.org/sankarvijay/myNanterre)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/86d12dbdeda94a9193f592d34d71574f)](https://app.codacy.com/app/sankarvijay/myNanterre?utm_source=github.com&utm_medium=referral&utm_content=sankarvijay/myNanterre&utm_campaign=Badge_Grade_Dashboard)
 [![SonarCloud Quality Gate](https://sonarcloud.io/api/project_badges/measure?project=sankarvijay_myNanterre&metric=alert_status)](https://sonarcloud.io/dashboard?id=sankarvijay_myNanterre)
