@@ -88,9 +88,9 @@ Nous travaillons tous en tant que collaborateur
 - Waffle : Répartition des tâches, TODO, workflow etc...
 - Java sous Andoid studio : langages de développement
 - Codacy analyse de code statique, dynamique, sécurité, couverture du code, test de regression
-- APIs (RATP,TRANSILIEN)
+- APIs (RATP, TRANSILIEN)
 - Méthodes agile SCRUM
-- Cron sous Hostinger : pour remettre tous les produits des points de restauration disponibles à minuit chaque jour.
+- Cron sous Hostinger : pour remettre tous les produits des points de restauration disponibles chaque jour à minuit.
 
 ## Auteurs
 * **SANKAR Vijay** - [Github](https://github.com/sankarvijay)
