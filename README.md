@@ -31,6 +31,7 @@ Avant de pouvoir utiliser notre projet, il faut installer certains outils.
 Nous travaillons tous en tant que collaborateur
 
 #### Nos outils et langages
+
 - Android studio : pour la création de l'application mobile
 - Espresso : effectuer des tests unitaires sur notre application Android
 - Commitizen: norme de messages pout commit
