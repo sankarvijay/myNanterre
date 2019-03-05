@@ -44,7 +44,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
 
-    <EditText
+    <TextView
         android:id="@+id/heureD"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -52,19 +52,23 @@
         android:layout_marginBottom="5dp"
         android:ems="10"
         android:inputType="time"
+        android:text="clic ici"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/textView7"
         app:layout_constraintEnd_toEndOf="@+id/textView6"
-        app:layout_constraintHorizontal_bias="0.558"
+        app:layout_constraintHorizontal_bias="0.216"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
-    <EditText
+    <TextView
         android:id="@+id/heureF"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="5dp"
         android:ems="10"
         android:inputType="time"
+        android:text="clic ici"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/sport"
         app:layout_constraintStart_toStartOf="@+id/textView7"
         app:layout_constraintTop_toBottomOf="@+id/textView7" />
@@ -74,7 +78,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:text="Heure de début (hh:mm:ss)"
+        android:text="Heure de début"
         android:textSize="16sp"
         android:textStyle="bold|italic"
         app:layout_constraintBottom_toTopOf="@+id/heureD"
@@ -87,7 +91,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:text="Heure de fin (hh:mm:ss)"
+        android:text="Heure de fin"
         android:textSize="16sp"
         android:textStyle="bold|italic"
         app:layout_constraintBottom_toTopOf="@+id/heureF"
@@ -107,6 +111,21 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/heureD"
         app:layout_constraintVertical_bias="0.568" />
+
+
+    <TextView
+        android:id="@+id/date2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="175dp"
+        android:text="Clic ici !"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/textView6"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/heureD"
+        app:layout_constraintVertical_bias="0.568"
+        android:visibility="invisible"/>
 
     <TextView
         android:id="@+id/textView8"
