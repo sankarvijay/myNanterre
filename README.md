@@ -37,20 +37,20 @@ L'application peut être téléchargée
 ## Système de Build
 * [Gradle](https://gradle.org/)
 
+- Pour exécuter une commande Gradle, vous pouvez simplement utiliser le script gradlew qui se trouve à la racine de votre projet (ou gradlew.bat sous Windows) suivi du nom de la tâche que vous voulez exécuter. 
+
+- Par exemple, pour construire une version de débogage de votre application Android, vous pouvez exécuter ./gradlew assembleDebug à la racine de votre référentiel. Dans une configuration de projet par défaut, l'apk résultante peut alors être trouvée dans app/build/outputs/apk/app-debug.apk.
+
 ## Installation
 
 ### Prérequis
 
 Avant de pouvoir utiliser notre projet, il faut installer certains outils.
 
-#### Installer Android Studio et le SDK
+#### Installer le SDK
 
-- Télécharger Android studio et l'installer : [Télécharger Android Studio](https://developer.android.com/studio/index.html)
+- Télécharger le SDK : http://www.oracle.com/technetwork/java/javase/downloads/index.html
 
-- Télécharger le SDK : 
-
-Depuis la fenêtres de bienvenue : 
-  Configure > SDK Manager > SDK TOOLS > Cocher Android SDK Tools > OK
   
 #### Installer Git
 
@@ -78,19 +78,8 @@ Et voila ! le projet est prêt pour utilisation.
 
 Nous travaillons tous en tant que collaborateur
 
-#### Nos outils et langages
-- Android studio : pour la création de l'application mobile
-- Espresso : effectuer des tests unitaires sur notre application Android
-- Commitizen: norme de messages pout commit
-- Taiga : Répartition des tâches et priorisation 
-- Waffle : Répartition des tâches, TODO, workflow etc...
-- Java sous Andoid studio : langages de développement
-- Codacy analyse de code statique, dynamique, sécurité, couverture du code, test de regression
-- APIs (RATP, ViaNavigo)
-- Méthodes agile SCRUM
-- Cron sous Hostinger : pour remettre tous les produits des points de restauration disponibles chaque jour à minuit.
 
 ## Auteurs
 * **SANKAR Vijay** - [Github](https://github.com/sankarvijay)
 * **VIEIRA Dorian** - [Github](https://github.com/dorianvieira)
-* **VOUILLOT Marie** - [Github](https://github.com/marievllt)
+* **VOUILLOT Marie** - [Github](https://github.com/marievouillot12)
