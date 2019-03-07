@@ -178,7 +178,7 @@ public class ListeCrous extends AppCompatActivity {
         try {
             conn = DriverManager.getConnection(url, user, psw);
 
-            String sqliD = "SELECT * FROM Crous ORDER BY frequentation ASC;";
+            String sqliD = "SELECT * FROM Crous WHERE ouverture<=" + i + " AND fermeture>=" + i + " ORDER BY frequentation ASC;";
             System.out.println(sqliD);
             Statement st = conn.createStatement();
             ResultSet rst = st.executeQuery(sqliD);
