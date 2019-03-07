@@ -30,8 +30,8 @@
         <activity android:name=".implem.ListeCrous"></activity>
         <activity android:name=".implem.ListeProduit"></activity>
         <activity android:name=".implem.Cgu"></activity>
-        <activity android:name=".implem.InscriptionSport"></activity>
         <activity android:name=".implem.PlanBatiments"></activity>
+        <activity android:name=".implem.ListeTrain"></activity>
 
 
 
