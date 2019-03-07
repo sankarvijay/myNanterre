@@ -55,7 +55,7 @@ public class SportFragment extends ListFragment implements AdapterView.OnItemCli
         try {
             conn = DriverManager.getConnection(url, user, psw);
 
-            String sqliD = "SELECT * FROM categorie_sport;";
+            String sqliD = "SELECT * FROM categorie_sport order by categorie asc ;";
             Statement st = conn.createStatement();
             ResultSet rst = st.executeQuery(sqliD);
 
