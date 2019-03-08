@@ -36,6 +36,7 @@ public class SeanceAdapter extends RecyclerView.Adapter<SeanceAdapter.MyViewHold
         private TextView getsport;
         private TextView inscrit;
 
+
         private MyViewHolder(View view) {
             super(view);
             this.numero = (TextView) view.findViewById(R.id.numSeance2);
@@ -46,6 +47,7 @@ public class SeanceAdapter extends RecyclerView.Adapter<SeanceAdapter.MyViewHold
             this.dateRdv = (TextView) view.findViewById(R.id.dateSeance);
             this.getsport = (TextView) view.findViewById(R.id.getsport);
             this.inscrit=(TextView)view.findViewById(R.id.inscrit);
+
         }
     }
 
@@ -125,6 +127,41 @@ public class SeanceAdapter extends RecyclerView.Adapter<SeanceAdapter.MyViewHold
                     e.printStackTrace();
                 }
             }});
+
+        Button desinscription = (Button) holder.itemView.findViewById(R.id.desinscription);
+
+        desinscription.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try {
+                    final String url = "jdbc:mysql://sql171.main-hosting.eu/u749839367_m1";
+                    final String user = "u749839367_vijay";
+                    final String psw = "9IDCqTm8Lig2";
+                    Connection conn;
+
+                    conn = DriverManager.getConnection(url, user, psw);
+                    String sqliD3 = "SELECT nbInscrit FROM plannification_sport where sport= '"+seance.getSport()+"' and numero="+seance.getNumero()+"" ;
+                    Statement st = conn.createStatement();
+                    ResultSet rst = st.executeQuery(sqliD3);
+                    rst.next();
+                    int countF = rst.getInt("nbInscrit");
+                    countF--;
+
+                    conn = DriverManager.getConnection(url, user, psw);
+                    String sqliD = "update plannification_sport set nbInscrit= ? where sport= '"+seance.getSport()+"' and numero="+seance.getNumero()+"" ;
+                    PreparedStatement preparedStatement = conn.prepareStatement(sqliD);
+                    preparedStatement.setInt(1,countF);
+                    preparedStatement.executeUpdate();
+                    holder.inscrit.setText(String.valueOf(countF) + " inscrits pour ");
+                    Toast.makeText(mcon, "Désinscription prise en compte!", Toast.LENGTH_SHORT).show();
+
+
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }});
+
+
     }
 
     @Override
