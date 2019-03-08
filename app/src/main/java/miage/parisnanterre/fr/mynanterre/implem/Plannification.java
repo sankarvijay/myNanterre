@@ -2,6 +2,7 @@ package miage.parisnanterre.fr.mynanterre.implem;
 
 import android.app.Activity;
 import android.app.DatePickerDialog;
+import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
@@ -15,6 +16,7 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.TimePicker;
 import android.widget.Toast;
 
 import java.sql.Connection;
@@ -28,7 +30,6 @@ import java.util.Calendar;
 import java.util.List;
 
 import miage.parisnanterre.fr.mynanterre.R;
-import miage.parisnanterre.fr.mynanterre.fragment.SeancesFragment;
 import miage.parisnanterre.fr.mynanterre.fragment.SportFragment;
 
 /**
@@ -40,8 +41,8 @@ public class Plannification extends Activity {
     private static final String psw = "9IDCqTm8Lig2";
     private static Connection conn;
     private EditText numero;
-    private EditText heureD;
-    private EditText heureF;
+    private TextView heureD;
+    private TextView heureF;
     Button planifier;
     private Spinner spinnerSport;
     private Spinner spinnerLieu;
@@ -50,23 +51,28 @@ public class Plannification extends Activity {
     private List<String> batiments = new ArrayList<>();
 
     private DatePickerDialog.OnDateSetListener mDateSetListnener;
-    private TextView mDisplayDate;
+
+    private TextView mDisplayDate, mDisplayDate2;
     private static final String TAG = "Plannification";
     Calendar c;
+
+    int currentHour;
+    int currentMinute;
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.formrdv);
 
         numero = (EditText) findViewById(R.id.numId);
-        heureD = (EditText) findViewById(R.id.heureD);
-        heureF = (EditText) findViewById(R.id.heureF);
+        heureD = (TextView) findViewById(R.id.heureD);
+        heureF = (TextView) findViewById(R.id.heureF);
         spinnerSport = (Spinner) findViewById(R.id.sport);
 
         spinnerLieu = (Spinner) findViewById(R.id.lieu);
         planifier = (Button) findViewById(R.id.planifier);
 
         mDisplayDate = (TextView) findViewById(R.id.date);
+
 
         mDisplayDate.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -75,6 +81,7 @@ public class Plannification extends Activity {
                 int jour = c.get(Calendar.DAY_OF_MONTH);
                 int mois = c.get(Calendar.MONTH);
                 int annee = c.get(Calendar.YEAR);
+
 
                 DatePickerDialog dialog = new DatePickerDialog(Plannification.this,
                         android.R.style.Theme_Material_DialogWhenLarge_NoActionBar,
@@ -88,11 +95,57 @@ public class Plannification extends Activity {
             @Override
             public void onDateSet(DatePicker datePicker, int annee, int mois, int jour) {
                 mois = mois + 1;
+                if (jour<10) {
+                    String jourString = ""+jour;
+                    jourString = "0"+jourString;
+                }
+                if (mois<10) {
+                    String.format("%02d", jour);
+                }
                 Log.d(TAG, "OndateSet: dd/mm/aaaa" + jour + "/" + mois + "/" + annee);
+
                 String date = jour + "/" + mois + "/" + annee;
                 mDisplayDate.setText(date);
+
+
             }
         };
+
+        heureD.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                c = Calendar.getInstance();
+                  currentHour = c.get(Calendar.HOUR_OF_DAY);
+                 currentMinute = c.get(Calendar.MINUTE);
+
+                TimePickerDialog dialog2 = new TimePickerDialog(Plannification.this, new TimePickerDialog.OnTimeSetListener() {
+                    @Override
+                    public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+                        heureD.setText(String.format("%02d:%02d:00", hourOfDay, minute));
+                    }
+                }, currentHour, currentMinute, true);
+
+                dialog2.show();
+            }
+        });
+
+        heureF.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                c = Calendar.getInstance();
+                currentHour = c.get(Calendar.HOUR_OF_DAY);
+                currentMinute = c.get(Calendar.MINUTE);
+
+                TimePickerDialog dialog2 = new TimePickerDialog(Plannification.this, new TimePickerDialog.OnTimeSetListener() {
+                    @Override
+                    public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+                        heureF.setText(String.format("%02d:%02d:00", hourOfDay, minute));
+                    }
+                }, currentHour, currentMinute, true);
+
+                dialog2.show();
+            }
+        });
 
         try {
             Class.forName("com.mysql.jdbc.Driver");
@@ -154,7 +207,7 @@ public class Plannification extends Activity {
                     preparedStatement.setString(1, numero.getText().toString());
                     preparedStatement.setString(2, heureD.getText().toString());
                     preparedStatement.setString(3, heureF.getText().toString());
-                    preparedStatement.setString(4, mDisplayDate.getText().toString());
+                    preparedStatement.setString(4, mDisplayDate2.getText().toString());
                     preparedStatement.setString(5, spinnerSport.getSelectedItem().toString());
                     preparedStatement.setString(6, spinnerLieu.getSelectedItem().toString());
                     preparedStatement.setInt(7, idCategorie);
