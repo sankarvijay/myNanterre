@@ -321,7 +321,7 @@ a:hover {
 /////////////////////////////////////////////////////////////////////*/
 
 #banner {
-    background: #000;
+    background: #d64b45;
     background-size: cover;
     padding-top: 80px;
     background-attachment: fixed;
@@ -379,7 +379,7 @@ a:hover {
     margin: 0 auto;
 }
 .feature-box i {
-    font-size: 7em;
+    /*font-size: 7em;*/
     line-height: 0 !important;
     margin: 0;
     padding: 0;
@@ -621,17 +621,20 @@ p.client-name {
 
 .address {
     width: 30%;
-    float: left;
+    
     background: url(../img/gmap-bg.jpg);
     height: 640px;
 }
 .mailbox {
-    width: 70%;
+    width: 100%;
     float: left;
     background-image: url(../img/map-image.png);
     background-color: #222;
     padding-bottom: 111px;
     height: 640px;
+}
+.icon{
+width:10%;
 }
 .address .container {
     max-width: 100%;
@@ -642,7 +645,6 @@ p.client-name {
 .address-list {
     list-style: none;
     padding: 160px 0px 70px 0px;
-    width: 100%;
     max-width: 350px;
     margin: 0 auto;
     display: table;
