@@ -46,7 +46,7 @@ public class SeanceAdapter extends RecyclerView.Adapter<SeanceAdapter.MyViewHold
             this.lieu = (TextView) view.findViewById(R.id.lieu);
             this.dateRdv = (TextView) view.findViewById(R.id.dateSeance);
             this.getsport = (TextView) view.findViewById(R.id.getsport);
-            this.inscrit=(TextView)view.findViewById(R.id.inscrit);
+            this.inscrit = (TextView) view.findViewById(R.id.inscrit);
 
         }
     }
@@ -86,7 +86,7 @@ public class SeanceAdapter extends RecyclerView.Adapter<SeanceAdapter.MyViewHold
             Connection conn;
 
             conn = DriverManager.getConnection(url, user, psw);
-            String sqliD2 = "SELECT nbInscrit FROM plannification_sport where sport= '"+seance.getSport()+"' and numero="+seance.getNumero()+"" ;
+            String sqliD2 = "SELECT nbInscrit FROM plannification_sport where sport= '" + seance.getSport() + "' and numero=" + seance.getNumero() + "";
             Statement st = conn.createStatement();
             ResultSet rst = st.executeQuery(sqliD2);
             rst.next();
@@ -107,7 +107,7 @@ public class SeanceAdapter extends RecyclerView.Adapter<SeanceAdapter.MyViewHold
                     Connection conn;
 
                     conn = DriverManager.getConnection(url, user, psw);
-                    String sqliD3 = "SELECT nbInscrit FROM plannification_sport where sport= '"+seance.getSport()+"' and numero="+seance.getNumero()+"" ;
+                    String sqliD3 = "SELECT nbInscrit FROM plannification_sport where sport= '" + seance.getSport() + "' and numero=" + seance.getNumero() + "";
                     Statement st = conn.createStatement();
                     ResultSet rst = st.executeQuery(sqliD3);
                     rst.next();
@@ -115,18 +115,20 @@ public class SeanceAdapter extends RecyclerView.Adapter<SeanceAdapter.MyViewHold
                     countF++;
 
                     conn = DriverManager.getConnection(url, user, psw);
-                    String sqliD = "update plannification_sport set nbInscrit= ? where sport= '"+seance.getSport()+"' and numero="+seance.getNumero()+"" ;
+                    String sqliD = "update plannification_sport set nbInscrit= ? where sport= '" + seance.getSport() + "' and numero=" + seance.getNumero() + "";
                     PreparedStatement preparedStatement = conn.prepareStatement(sqliD);
-                    preparedStatement.setInt(1,countF);
+                    preparedStatement.setInt(1, countF);
                     preparedStatement.executeUpdate();
                     holder.inscrit.setText(String.valueOf(countF) + " inscrits pour ");
                     Toast.makeText(mcon, "Inscription prise en compte!", Toast.LENGTH_SHORT).show();
+                    inscription.setEnabled(false);
 
 
                 } catch (SQLException e) {
                     e.printStackTrace();
                 }
-            }});
+            }
+        });
 
         Button desinscription = (Button) holder.itemView.findViewById(R.id.desinscription);
 
@@ -140,7 +142,7 @@ public class SeanceAdapter extends RecyclerView.Adapter<SeanceAdapter.MyViewHold
                     Connection conn;
 
                     conn = DriverManager.getConnection(url, user, psw);
-                    String sqliD3 = "SELECT nbInscrit FROM plannification_sport where sport= '"+seance.getSport()+"' and numero="+seance.getNumero()+"" ;
+                    String sqliD3 = "SELECT nbInscrit FROM plannification_sport where sport= '" + seance.getSport() + "' and numero=" + seance.getNumero() + "";
                     Statement st = conn.createStatement();
                     ResultSet rst = st.executeQuery(sqliD3);
                     rst.next();
@@ -148,18 +150,20 @@ public class SeanceAdapter extends RecyclerView.Adapter<SeanceAdapter.MyViewHold
                     countF--;
 
                     conn = DriverManager.getConnection(url, user, psw);
-                    String sqliD = "update plannification_sport set nbInscrit= ? where sport= '"+seance.getSport()+"' and numero="+seance.getNumero()+"" ;
+                    String sqliD = "update plannification_sport set nbInscrit= ? where sport= '" + seance.getSport() + "' and numero=" + seance.getNumero() + "";
                     PreparedStatement preparedStatement = conn.prepareStatement(sqliD);
-                    preparedStatement.setInt(1,countF);
+                    preparedStatement.setInt(1, countF);
                     preparedStatement.executeUpdate();
                     holder.inscrit.setText(String.valueOf(countF) + " inscrits pour ");
                     Toast.makeText(mcon, "Désinscription prise en compte!", Toast.LENGTH_SHORT).show();
+                    desinscription.setEnabled(false);
 
 
                 } catch (SQLException e) {
                     e.printStackTrace();
                 }
-            }});
+            }
+        });
 
 
     }
