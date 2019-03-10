@@ -95,19 +95,27 @@ public class Plannification extends Activity {
             @Override
             public void onDateSet(DatePicker datePicker, int annee, int mois, int jour) {
                 mois = mois + 1;
-                if (jour<10) {
-                    String jourString = ""+jour;
-                    jourString = "0"+jourString;
-                }
-                if (mois<10) {
-                    String.format("%02d", jour);
-                }
+
                 Log.d(TAG, "OndateSet: dd/mm/aaaa" + jour + "/" + mois + "/" + annee);
 
-                String date = jour + "/" + mois + "/" + annee;
-                mDisplayDate.setText(date);
+               if(jour>=10 && mois >=10) {
+                   String date = jour + "/" + mois + "/" + annee;
+                   mDisplayDate.setText(date);
+               }
+               else if (jour<10 && mois<10) {
+                    String date = "0"+jour + "/" + "0"+mois + "/" + annee;
+                    mDisplayDate.setText(date);
+                }
 
+                else if (jour>=10 && mois<10) {
+                     String date = jour + "/" + "0"+mois + "/" + annee;
+                     mDisplayDate.setText(date);
+                }
 
+                else if (jour<10 && mois>=10) {
+                    String date = "0"+jour + "/" + mois + "/" + annee;
+                    mDisplayDate.setText(date);
+                }
             }
         };
 
