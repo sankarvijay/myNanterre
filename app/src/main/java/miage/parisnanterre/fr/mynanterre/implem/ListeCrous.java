@@ -36,7 +36,6 @@ public class ListeCrous extends AppCompatActivity {
     private static final String psw = "9IDCqTm8Lig2";
     private static Connection conn;
     private List<Crous> liste = new ArrayList<>();
-    public static final String EXTRA_MESSAGE = "com.example.myfirstapp.MESSAGE";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
