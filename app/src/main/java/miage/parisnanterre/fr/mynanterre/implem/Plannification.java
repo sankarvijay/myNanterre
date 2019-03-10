@@ -72,7 +72,6 @@ public class Plannification extends Activity {
         planifier = (Button) findViewById(R.id.planifier);
 
         mDisplayDate = (TextView) findViewById(R.id.date);
-        mDisplayDate2 = (TextView) findViewById(R.id.date2);
 
 
         mDisplayDate.setOnClickListener(new View.OnClickListener() {
@@ -82,6 +81,7 @@ public class Plannification extends Activity {
                 int jour = c.get(Calendar.DAY_OF_MONTH);
                 int mois = c.get(Calendar.MONTH);
                 int annee = c.get(Calendar.YEAR);
+
 
                 DatePickerDialog dialog = new DatePickerDialog(Plannification.this,
                         android.R.style.Theme_Material_DialogWhenLarge_NoActionBar,
@@ -95,13 +95,27 @@ public class Plannification extends Activity {
             @Override
             public void onDateSet(DatePicker datePicker, int annee, int mois, int jour) {
                 mois = mois + 1;
+
                 Log.d(TAG, "OndateSet: dd/mm/aaaa" + jour + "/" + mois + "/" + annee);
-                String date = jour + "/" + mois + "/" + annee;
-                mDisplayDate.setText(date);
-                String date2 = annee + "-" + mois + "-" + jour;
-                mDisplayDate2.setText(date2);
 
+               if(jour>=10 && mois >=10) {
+                   String date = jour + "/" + mois + "/" + annee;
+                   mDisplayDate.setText(date);
+               }
+               else if (jour<10 && mois<10) {
+                    String date = "0"+jour + "/" + "0"+mois + "/" + annee;
+                    mDisplayDate.setText(date);
+                }
 
+                else if (jour>=10 && mois<10) {
+                     String date = jour + "/" + "0"+mois + "/" + annee;
+                     mDisplayDate.setText(date);
+                }
+
+                else if (jour<10 && mois>=10) {
+                    String date = "0"+jour + "/" + mois + "/" + annee;
+                    mDisplayDate.setText(date);
+                }
             }
         };
 

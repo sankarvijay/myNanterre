@@ -8,6 +8,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Pattern;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.StrictMode;
@@ -74,7 +75,13 @@ public class ListeSport extends AppCompatActivity {
                         ArrayList<String> liste = new ArrayList<>();
                         liste.add(horaire);
 
-                        customDialog("Horaires", liste.toString());
+                        StringBuilder builder = new StringBuilder();
+                        for (String value : liste) {
+                            builder.append(value);
+                        }
+                        String text = builder.toString();
+
+                        customDialog("Horaires", text);
                     }
                 } catch (SQLException e) {
                     e.printStackTrace();
@@ -87,7 +94,7 @@ public class ListeSport extends AppCompatActivity {
             public void onClick(View view) {
                 Intent myIntent = new Intent(view.getContext(), Plannification.class);
                 //on récupere l'id categorie pour l'utiliser dans l'activité plannification
-                myIntent.putExtra("ID_CATEGORIE",idCategorie);
+                myIntent.putExtra("ID_CATEGORIE", idCategorie);
                 startActivityForResult(myIntent, 0);
             }
         });
@@ -135,7 +142,7 @@ public class ListeSport extends AppCompatActivity {
 
     public void customDialog(String title, String message) {
         final android.support.v7.app.AlertDialog.Builder builderSingle = new android.support.v7.app.AlertDialog.Builder(this);
-        builderSingle.setIcon(R.drawable.common_google_signin_btn_icon_light);
+        builderSingle.setIcon(R.drawable.horaires);
         builderSingle.setTitle(title);
         builderSingle.setMessage(message);
         builderSingle.show();
