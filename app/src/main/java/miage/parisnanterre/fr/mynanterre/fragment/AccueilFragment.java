@@ -62,9 +62,6 @@ public class AccueilFragment extends Fragment {
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
-        carouselView = getView().findViewById(R.id.carouselView);
-        carouselView.setImageListener(imageListener);
-        carouselView.setPageCount(sampleImages.length);
 
     }
 }
