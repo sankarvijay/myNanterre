@@ -10,12 +10,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
-import com.synnapps.carouselview.CarouselView;
-import com.synnapps.carouselview.ImageListener;
+
 import miage.parisnanterre.fr.mynanterre.R;
 import miage.parisnanterre.fr.mynanterre.implem.Cgu;
 import miage.parisnanterre.fr.mynanterre.implem.PlanBatiments;
-import miage.parisnanterre.fr.mynanterre.implem.TrainPlanRerA;
 
 
 /**
@@ -25,7 +23,7 @@ public class AccueilFragment extends Fragment {
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View v =inflater.inflate(R.layout.accueil, container, false);
+        View v = inflater.inflate(R.layout.accueil, container, false);
 
 
         Button mButton = (Button) v.findViewById(R.id.cgu);
@@ -48,10 +46,5 @@ public class AccueilFragment extends Fragment {
             }
         });
         return v;
-    }
-
-    @Override
-    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
-
     }
 }

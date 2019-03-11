@@ -18,7 +18,6 @@ import miage.parisnanterre.fr.mynanterre.fragment.TrainFragment;
 
 public class Accueil extends AppCompatActivity {
 
-    private CountDownTimer timer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +25,7 @@ public class Accueil extends AppCompatActivity {
         setContentView(R.layout.main);
 
         //display the logo during 5 seconds,
-        timer = new CountDownTimer(4000, 1000) {
+        new CountDownTimer(4000, 1000) {
             @Override
             public void onTick(long millisUntilFinished) {
 
@@ -74,8 +73,6 @@ public class Accueil extends AppCompatActivity {
                 });
             }
         }.start();
-
-
     }
 }
 

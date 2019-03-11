@@ -37,8 +37,6 @@ public class ListeTrain extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent,
                                     View v, int position, long id) {
                 CallFunc(position);
-
-
             }
         });
 
