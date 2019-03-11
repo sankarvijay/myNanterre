@@ -28,19 +28,33 @@ Pour avoir plus d'informations, visitez notre site web : https://sankarvijay.git
 
 L'application peut être téléchargée 
 
-- soit via l'url : https://github.com/sankarvijay/myNanterre/releases/download/v1.0-alpha/myNanterre_v1.0-alpha.apk
+- soit via l'url : https://github.com/sankarvijay/myNanterre/releases/download/v1.0-beta/myNanterre_v1.0-beta.apk
 
 - soit via le QR Code : 
 
 <a rel='nofollow' href='http://www.qrcode-generator.de
-        ' border='0' style='cursor:default'></a><img src='https://chart.googleapis.com/chart?cht=qr&chl=https%3A%2F%2Fgithub.com%2Fsankarvijay%2FmyNanterre%2Freleases%2Fdownload%2Fv1.0-alpha%2FmyNanterre_v1.0-alpha.apk&chs=180x180&choe=UTF-8&chld=L|2' alt=''>
-        
+        ' border='0' style='cursor:default'><img src='https://chart.googleapis.com/chart?cht=qr&chl=https%3A%2F%2Fgithub.com%2Fsankarvijay%2FmyNanterre%2Freleases%2Fdownload%2Fv1.0-beta%2FmyNanterre_v1.0-beta.apk&chs=180x180&choe=UTF-8&chld=L|2' alt=''></a>
+
+## Librairies
+-   [RATP](https://github.com/pgrimaud/horaires-ratp-api)
+-   [STIF](https://opendata.stif.info/page/licences/)
+
 ## Système de Build
 * [Gradle](https://gradle.org/)
 
 - Pour exécuter une commande Gradle, vous pouvez simplement utiliser le script gradlew qui se trouve à la racine de votre projet (ou gradlew.bat sous Windows) suivi du nom de la tâche que vous voulez exécuter. 
 
 - Par exemple, pour construire une version de débogage de votre application Android, vous pouvez exécuter ./gradlew assembleDebug à la racine de votre référentiel. Dans une configuration de projet par défaut, l'apk résultante peut alors être trouvée dans app/build/outputs/apk/app-debug.apk.
+
+### Builder l'apk
+cd myNanterre/
+./gradlew
+ou sur windows :
+./gradlew.bat
+
+et enfin :
+
+adb install -r myNanterre.apk
 
 ## Installation
 
