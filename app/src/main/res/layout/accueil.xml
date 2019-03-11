@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fragment.AccueilFragment">
 
     <LinearLayout
@@ -17,7 +17,6 @@
             android:id="@+id/textView13"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
             android:layout_marginBottom="20dp"
             android:text="myNanterre"
             android:textAlignment="center"
@@ -32,7 +31,6 @@
             android:layout_below="@+id/direction"
             android:layout_alignParentStart="true"
             android:layout_marginStart="0dp"
-            android:layout_marginTop="9dp"
             android:layout_marginBottom="10dp"
             android:background="@android:color/holo_red_dark"
             android:ems="10" />
@@ -81,7 +79,7 @@
                 android:layout_marginRight="20dp"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="Envie de papoter avant de rentrer ? Pas de soucis, jette un coup d'oeil aux horaires du prochain train sur MyNanterre" />
+                android:text="Envie de papoter avant de rentrer ? Pas de soucis, jette un coup d'oeil aux horaires du prochain train sur myNanterre" />
         </LinearLayout>
 
         <LinearLayout
@@ -94,7 +92,7 @@
                 android:layout_width="67dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                app:srcCompat="@drawable/ballon" />
+                app:srcCompat="@drawable/training" />
 
             <TextView
                 android:id="@+id/textView17"
@@ -114,7 +112,7 @@
             android:layout_below="@+id/direction"
             android:layout_alignParentStart="true"
             android:layout_marginStart="0dp"
-            android:layout_marginTop="25dp"
+            android:layout_marginTop="20dp"
             android:layout_marginBottom="10dp"
             android:background="@android:color/holo_red_dark"
             android:ems="10" />
@@ -124,8 +122,8 @@
             android:id="@+id/cgu"
             android:layout_width="75dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="290dp"
-            android:layout_marginTop="17dp"
+            android:layout_marginLeft="280dp"
+            android:layout_marginTop="10dp"
             android:background="@android:color/holo_red_dark"
             android:text="Licences"
             android:textColor="@color/white" />

@@ -32,9 +32,6 @@ import java.util.List;
 import miage.parisnanterre.fr.mynanterre.R;
 import miage.parisnanterre.fr.mynanterre.fragment.SportFragment;
 
-/**
- * Created by Sankar Vijay on 01/02/2019.
- */
 public class Plannification extends Activity {
     private static final String url = "jdbc:mysql://sql171.main-hosting.eu/u749839367_m1";
     private static final String user = "u749839367_vijay";
@@ -52,7 +49,7 @@ public class Plannification extends Activity {
 
     private DatePickerDialog.OnDateSetListener mDateSetListnener;
 
-    private TextView mDisplayDate, mDisplayDate2;
+    private TextView mDisplayDate;
     private static final String TAG = "Plannification";
     Calendar c;
 
@@ -98,22 +95,17 @@ public class Plannification extends Activity {
 
                 Log.d(TAG, "OndateSet: dd/mm/aaaa" + jour + "/" + mois + "/" + annee);
 
-               if(jour>=10 && mois >=10) {
-                   String date = jour + "/" + mois + "/" + annee;
-                   mDisplayDate.setText(date);
-               }
-               else if (jour<10 && mois<10) {
-                    String date = "0"+jour + "/" + "0"+mois + "/" + annee;
+                if (jour >= 10 && mois >= 10) {
+                    String date = jour + "/" + mois + "/" + annee;
                     mDisplayDate.setText(date);
-                }
-
-                else if (jour>=10 && mois<10) {
-                     String date = jour + "/" + "0"+mois + "/" + annee;
-                     mDisplayDate.setText(date);
-                }
-
-                else if (jour<10 && mois>=10) {
-                    String date = "0"+jour + "/" + mois + "/" + annee;
+                } else if (jour < 10 && mois < 10) {
+                    String date = "0" + jour + "/" + "0" + mois + "/" + annee;
+                    mDisplayDate.setText(date);
+                } else if (jour >= 10 && mois < 10) {
+                    String date = jour + "/" + "0" + mois + "/" + annee;
+                    mDisplayDate.setText(date);
+                } else if (jour < 10 && mois >= 10) {
+                    String date = "0" + jour + "/" + mois + "/" + annee;
                     mDisplayDate.setText(date);
                 }
             }
@@ -123,8 +115,8 @@ public class Plannification extends Activity {
             @Override
             public void onClick(View v) {
                 c = Calendar.getInstance();
-                  currentHour = c.get(Calendar.HOUR_OF_DAY);
-                 currentMinute = c.get(Calendar.MINUTE);
+                currentHour = c.get(Calendar.HOUR_OF_DAY);
+                currentMinute = c.get(Calendar.MINUTE);
 
                 TimePickerDialog dialog2 = new TimePickerDialog(Plannification.this, new TimePickerDialog.OnTimeSetListener() {
                     @Override
@@ -215,7 +207,7 @@ public class Plannification extends Activity {
                     preparedStatement.setString(1, numero.getText().toString());
                     preparedStatement.setString(2, heureD.getText().toString());
                     preparedStatement.setString(3, heureF.getText().toString());
-                    preparedStatement.setString(4, mDisplayDate2.getText().toString());
+                    preparedStatement.setString(4, mDisplayDate.getText().toString());
                     preparedStatement.setString(5, spinnerSport.getSelectedItem().toString());
                     preparedStatement.setString(6, spinnerLieu.getSelectedItem().toString());
                     preparedStatement.setInt(7, idCategorie);

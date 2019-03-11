@@ -29,6 +29,7 @@ public class Accueil extends AppCompatActivity {
         timer = new CountDownTimer(4000, 1000) {
             @Override
             public void onTick(long millisUntilFinished) {
+
             }
 
             @Override
