@@ -19,7 +19,10 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 import miage.parisnanterre.fr.mynanterre.R;
@@ -34,6 +37,7 @@ public class ListeProduit extends AppCompatActivity {
     private static final String psw = "9IDCqTm8Lig2";
     private static Connection conn;
     private List<Produit> liste = new ArrayList<>();
+    int burger;
     public static final String EXTRA_MESSAGE = "com.example.myfirstapp.MESSAGE";
 
 
@@ -79,11 +83,21 @@ public class ListeProduit extends AppCompatActivity {
 
                         // btnAdd1 has been clicked
                         try {
+
+                            Date currentTime = Calendar.getInstance().getTime();
+
+                            SimpleDateFormat f = new SimpleDateFormat("HH:mm");
+                            String s = f.format(currentTime);
+
+
+
                             conn = DriverManager.getConnection(url, user, psw);
                             String sqliD = "UPDATE vente SET dispo = 1 WHERE produit='" + produit + "' AND id_bat=" + idBat + ";";
-
+                            String sqliD2 = "UPDATE vente SET vote='" + s + "'  WHERE produit='" + produit + "' AND id_bat=" + idBat + ";";
                             PreparedStatement preparedStatement = conn.prepareStatement(sqliD);
+                            PreparedStatement preparedStatement2 = conn.prepareStatement(sqliD2);
                             preparedStatement.executeUpdate();
+                            preparedStatement2.executeUpdate();
 
                         } catch (SQLException e) {
                             e.printStackTrace();
@@ -98,11 +112,19 @@ public class ListeProduit extends AppCompatActivity {
 
                         // btnAdd2 has been clicked
                         try {
+                            Date currentTime = Calendar.getInstance().getTime();
+
+                            SimpleDateFormat f = new SimpleDateFormat("HH:mm");
+                            String s = f.format(currentTime);
+
                             conn = DriverManager.getConnection(url, user, psw);
                             String sqliD = "UPDATE vente SET dispo = 2 WHERE produit='" + produit + "' AND id_bat=" + idBat + ";";
-                            System.out.println("--------------------------" + sqliD);
+                            String sqliD2 = "UPDATE vente SET vote='" + s + "'  WHERE produit='" + produit + "' AND id_bat=" + idBat + ";";
+
                             PreparedStatement preparedStatement = conn.prepareStatement(sqliD);
+                            PreparedStatement preparedStatement2 = conn.prepareStatement(sqliD2);
                             preparedStatement.executeUpdate();
+                            preparedStatement2.executeUpdate();
 
                         } catch (SQLException e) {
                             e.printStackTrace();
@@ -119,6 +141,7 @@ public class ListeProduit extends AppCompatActivity {
         });
     }
 
+
     private List<Produit> getListData() {
 
         try {
@@ -127,7 +150,7 @@ public class ListeProduit extends AppCompatActivity {
             String stringVariableName = extras.getString(CrousGridAdapter.EXTRA_MESSAGE);
             int idBat = Integer.parseInt(stringVariableName);
 
-            String sqliD = "SELECT * FROM vente where id_bat ='" + idBat + "';";
+            String sqliD = "SELECT * FROM vente where id_bat ='" + idBat + "'ORDER BY dispo ASC;;";
             Statement st = conn.createStatement();
             ResultSet rst = st.executeQuery(sqliD);
 
@@ -135,7 +158,10 @@ public class ListeProduit extends AppCompatActivity {
                 String produit = rst.getString("produit");
                 int dispo = rst.getInt("dispo");
 
-                Produit produits = new Produit(dispo, produit);
+                String v = rst.getString("vote");
+                String v2 = "Dernière information à " + v;
+
+                Produit produits = new Produit(dispo, produit,v2);
                 liste.add(produits);
             }
 

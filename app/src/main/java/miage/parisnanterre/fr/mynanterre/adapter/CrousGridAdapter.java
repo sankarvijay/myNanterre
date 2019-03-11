@@ -11,6 +11,8 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import java.util.List;
 import miage.parisnanterre.fr.mynanterre.R;
 import miage.parisnanterre.fr.mynanterre.implem.Crous;
@@ -74,16 +76,20 @@ public class CrousGridAdapter extends BaseAdapter {
             convertView.setBackgroundColor(Color.rgb(191, 10, 1));
         }
 
-        holder.sandwich.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent myIntent = new Intent(context.getApplicationContext(), ListeProduit.class);
-                Bundle extras = new Bundle();
-                extras.putString(EXTRA_MESSAGE, String.valueOf(crous.getId()));
-                myIntent.putExtras(extras);
-                context.startActivity(myIntent);
-            }
-        });
+
+            holder.sandwich.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent myIntent = new Intent(context.getApplicationContext(), ListeProduit.class);
+                    Bundle extras = new Bundle();
+                    extras.putString(EXTRA_MESSAGE, String.valueOf(crous.getId()));
+                    myIntent.putExtras(extras);
+                    context.startActivity(myIntent);
+                }
+            });
+
+
+
 
 
         return convertView;

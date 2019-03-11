@@ -12,6 +12,16 @@ public class Crous {
     private int fermeture;
     private String vote;
 
+    public int getBurger() {
+        return burger;
+    }
+
+    public void setBurger(int burger) {
+        this.burger = burger;
+    }
+
+    private int burger;
+
     public String getVote() {
         return vote;
     }
