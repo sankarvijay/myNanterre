@@ -11,11 +11,12 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+
 import java.util.List;
+
 import miage.parisnanterre.fr.mynanterre.R;
 import miage.parisnanterre.fr.mynanterre.implem.Crous;
 import miage.parisnanterre.fr.mynanterre.implem.ListeProduit;
-
 
 
 public class CrousGridAdapter extends BaseAdapter {
@@ -55,7 +56,7 @@ public class CrousGridAdapter extends BaseAdapter {
             holder.batiment = (TextView) convertView.findViewById(R.id.batiment);
             holder.lieu = (TextView) convertView.findViewById(R.id.lieu);
             holder.sandwich = (ImageView) convertView.findViewById(R.id.buttonSand);
-            holder.vote=(TextView)convertView.findViewById(R.id.vote);
+            holder.vote = (TextView) convertView.findViewById(R.id.vote);
             convertView.setTag(holder);
         } else {
             holder = (CrousGridAdapter.ViewHolder) convertView.getTag();
@@ -74,6 +75,7 @@ public class CrousGridAdapter extends BaseAdapter {
             convertView.setBackgroundColor(Color.rgb(191, 10, 1));
         }
 
+
         holder.sandwich.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -84,8 +86,6 @@ public class CrousGridAdapter extends BaseAdapter {
                 context.startActivity(myIntent);
             }
         });
-
-
         return convertView;
     }
 

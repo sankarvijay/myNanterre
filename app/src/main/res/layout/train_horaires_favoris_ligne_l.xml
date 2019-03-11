@@ -123,7 +123,7 @@
         android:layout_height="113dp"
         android:layout_alignEnd="@+id/button"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="398dp"
+        android:layout_marginTop="454dp"
         android:layout_marginEnd="-209dp"
         android:background="#FF8FABE6"
         android:orientation="vertical">

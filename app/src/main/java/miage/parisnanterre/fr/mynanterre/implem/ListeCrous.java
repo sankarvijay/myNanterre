@@ -36,7 +36,6 @@ public class ListeCrous extends AppCompatActivity {
     private static final String psw = "9IDCqTm8Lig2";
     private static Connection conn;
     private List<Crous> liste = new ArrayList<>();
-    public static final String EXTRA_MESSAGE = "com.example.myfirstapp.MESSAGE";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -97,7 +96,7 @@ public class ListeCrous extends AppCompatActivity {
                             e.printStackTrace();
                         }
                         Toast.makeText(getApplicationContext(), "c'est noté!", Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(ListeCrous.this, Accueil.class));
+                        startActivity(new Intent(ListeCrous.this, ListeCrous.class));
                     }
                 });
 
@@ -126,7 +125,7 @@ public class ListeCrous extends AppCompatActivity {
                             e.printStackTrace();
                         }
                         Toast.makeText(getApplicationContext(), "c'est noté!", Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(ListeCrous.this, Accueil.class));
+                        startActivity(new Intent(ListeCrous.this, ListeCrous.class));
 
                     }
                 });
@@ -158,7 +157,7 @@ public class ListeCrous extends AppCompatActivity {
 
                         Toast.makeText(getApplicationContext(), "c'est noté!", Toast.LENGTH_SHORT).show();
 
-                        startActivity(new Intent(ListeCrous.this, Accueil.class));
+                        startActivity(new Intent(ListeCrous.this, ListeCrous.class));
 
                     }
                 });
@@ -178,7 +177,7 @@ public class ListeCrous extends AppCompatActivity {
         try {
             conn = DriverManager.getConnection(url, user, psw);
 
-            String sqliD = "SELECT * FROM Crous WHERE ouverture<=" + i + " AND fermeture>=" + i + ";";
+            String sqliD = "SELECT * FROM Crous WHERE ouverture<=" + i + " AND fermeture>=" + i + " ORDER BY frequentation ASC;";
             System.out.println(sqliD);
             Statement st = conn.createStatement();
             ResultSet rst = st.executeQuery(sqliD);

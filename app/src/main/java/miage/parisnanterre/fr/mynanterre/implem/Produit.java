@@ -6,10 +6,20 @@ package miage.parisnanterre.fr.mynanterre.implem;
 public class Produit {
     private int dispo;
     private String nomProduit;
+    private String vote;
 
-    Produit(int dispo, String nomProduit) {
+    public String getVote() {
+        return vote;
+    }
+
+    public void setVote(String vote) {
+        this.vote = vote;
+    }
+
+    Produit(int dispo, String nomProduit,String vote) {
         this.dispo = dispo;
         this.nomProduit = nomProduit;
+        this.vote=vote;
     }
 
     public int getDispo() {
