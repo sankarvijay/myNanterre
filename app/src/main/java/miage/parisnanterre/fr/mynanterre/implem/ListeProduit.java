@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.GridView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.sql.Connection;
@@ -57,7 +58,7 @@ public class ListeProduit extends AppCompatActivity {
 
 
         List<Produit> donnees = getListData();
-        final GridView gridView = (GridView) findViewById(R.id.gridview);
+        final GridView gridView = (GridView) findViewById(R.id.gridView);
         gridView.setAdapter(new ProduitGridAdapter(this, donnees));
 
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -153,17 +154,23 @@ public class ListeProduit extends AppCompatActivity {
             String sqliD = "SELECT * FROM vente where id_bat ='" + idBat + "'ORDER BY dispo ASC;;";
             Statement st = conn.createStatement();
             ResultSet rst = st.executeQuery(sqliD);
-
-            while (rst.next()) {
-                String produit = rst.getString("produit");
-                int dispo = rst.getInt("dispo");
-
-                String v = rst.getString("vote");
-                String v2 = "Dernière information à " + v;
-
-                Produit produits = new Produit(dispo, produit,v2);
-                liste.add(produits);
+            
+            if(!rst.isBeforeFirst()) {
+                TextView nothing = (TextView) findViewById(R.id.nothing);
+                nothing.setText("Ce resto/cafet ne propose pas de produits à vendre ;)");
             }
+            else {
+                while (rst.next()) {
+                    String produit = rst.getString("produit");
+                    int dispo = rst.getInt("dispo");
+                    String v = rst.getString("vote");
+                    String v2 = "Dernière information à " + v;
+
+                    Produit produits = new Produit(dispo, produit, v2);
+                    liste.add(produits);
+                }
+            }
+
 
         } catch (SQLException e) {
             e.printStackTrace();
