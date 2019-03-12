@@ -54,7 +54,6 @@ et enfin :
 adb install -r myNanterre.apk
 
 ```
-
 ## Installation
 
 ### Prérequis
@@ -70,12 +69,15 @@ Avant de pouvoir utiliser notre projet, il faut installer certains outils.
 
 - Télécharger et installer Git : [Télécharger Git](https://gitforwindows.org/)
 
+#### Installer Android Studio
+
+- Télécharger et installer Git : [Télécharger Android Studio](https://developer.android.com/studio/install)
+
 ## Deux manières de lancer l'application
 
 ### Via l'émulateur d'Android Studio
 
 Suivre ce tuto : [Tutoriel AVD Manager](http://vogella.developpez.com/tutoriels/android/installation-outils-developpement/#L5)
-
 
 #### Cloner MyNanterre
 
