@@ -35,8 +35,8 @@ L'application peut être téléchargée
         ' border='0' style='cursor:default'><img src='https://chart.googleapis.com/chart?cht=qr&chl=https%3A%2F%2Fgithub.com%2Fsankarvijay%2FmyNanterre%2Freleases%2Fdownload%2Fv1.0-beta%2FmyNanterre_v1.0-beta.apk&chs=180x180&choe=UTF-8&chld=L|2' alt=''></a>
 
 ## Librairies
--   Données Open data : [RATP](https://github.com/pgrimaud/horaires-ratp-api) sous licences
--   Données Open data : [STIF](https://opendata.stif.info/page/licences/) sous licences
+-   Données Open data : [RATP](https://github.com/pgrimaud/horaires-ratp-api) sous [(licences)](https://github.com/pgrimaud/horaires-ratp-api/blob/master/LICENSE)
+-   Données Open data : [STIF](https://opendata.stif.info/page/licences/) sous [(licences)](https://opendata.stif.info/page/licences/)
 
 ## Système de Build
 * [Gradle](https://gradle.org/)
