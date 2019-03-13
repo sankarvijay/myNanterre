@@ -2,7 +2,7 @@ language: android
 env:
   global:
     - COVERALLS_REPO_TOKEN=G9z0eVAj79N9vFqPEJGS3XBeStsTrWzqG
-    - CODECOV_TOKEN="8942fd6b-2782-45b7-8842-aa97ca17d230"
+    - CODECOV_TOKEN=8942fd6b-2782-45b7-8842-aa97ca17d230
 android:
   components:
     - tools
@@ -19,7 +19,7 @@ addons:
   sonarcloud:
     organization: "sankarvijay-github"
     token:
-      secure: "CDodRcKaV1mK6MdR5GwUHheyOfrXzA6XWHcQYK6RNUwAR+GZjPcteTFfJns5+nEKla03NsD4fTm1a6yj2CnDwXS899hKGmD5EMJoLY75TRcJIJc4prHInfk/TQhMHDKhwagaJgnWbhGUXwA/w9Gar+y+lGyjeaHZZtnkQteX2TnylcbjR6MkMBk83uEkSTcmIp1zoCCeSakHhlp61Oeb8WsbYE5gmtBrCc6EivrcLnILyHEnZOnlaQBpPOWBA+vZpjqJNyMK3PpJRDCuybtgHSu+HgpzCjF32BclZodCLMx4w0RtBWtmQJJRwVoduG3QH8K12A0uYCVGxffEWWHGwmEBgyCHOo3wR75pRypQ9KEF2BvzMGh/iOTLOxXbeXxiLGS4gHXYYoF6PuxLxY46d6/g50hqu+2oqWw3AJq4iBATSjhZ9K9fv9eFfvVpKhB+zTEtdB0hI65K8HZz2TtqNfMdBIiI+5aJGSKw5+ne5VdgIOtr7hFepURxbyXs5/kUwukyLvumm0CUYeknFYyFypBY4+1bGtWaoZo5TRzROchX67oNrS3MmSJ2nogy8kpqlMH8uc0Uiv/BcevfZC8DDSRCo2B9TZ7cwuXQM8vcCI7Df0UWXfhRZhQuk/MpRfdpahoDMMnMqsVF0aez91bV2lY8ZqtpE23Xxuvzn1uMLN8="
+    	secure: "SngpDXOr61ETer+XEwOL6UgIuahXJa3Ll9BjQpP2sckQxhLculFvrVS7dDJ9FW02/esw91SYNIaHgM3CfCBZ9einApow2o1NhaL5Tflbuy6da20uMfu1TG+QIsPGlAVPzDbZbT7/FZPMyflQQN1WpDp3rz1aVc+G52sPI6tEsIt3DTcXdhiqJDJNk2X8VL7ly4UcvNzJjx9I5TLmg58kjEj4OlXdNP5XeXUujq+nEFLG6ZUkOAqGxs+Nj5MRpXKZRl49aFVtCbgc715W+/Pyu1spuuiI5XZ3NkTZrFeh2Iv2vjNysiK/ZdW8Z1e1cM8pW9scMd0QQrZVXqWS7tLc+ghZqgTceCOn2xsi1H+nmfZDVqvUxX/nOiSoAYNryDdhRrDZl3Jh5O0uNZ41sc1594VN/N3kZonmxdHYZ03cD1CghIfGlSC5oLZSdhh0k1sT5r2l8g4UGUX8HUbIX7DXEy1TuUELeb1vobfWvG3/SiFyLpZPaeZCmGpgJB1/xGck2lPWx7QgkwryO5JuLvVzeI4BeAOoaC1FOXULW2EuKN+nWylUX2x2PZWlMJ05sSXJQw1eMNs04NKc0zvfmziGjVnkoKxDU2htK2+fosAY7Fnbn8gyciwy9O1osIoGnCNh77oxvqjYrR75afs2/+rgPffjpo1xm7kGQdU2RC3LBRw="
 
 sudo: false
 
@@ -34,7 +34,8 @@ before_script:
 script:
   - ./gradlew check
   - ./gradlew build jacocoTestReport coveralls cobertura
-
+  - sonar-scanner
+	
 cache:
   directories:
     $HOME/.m2/repository

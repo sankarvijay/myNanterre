@@ -1,6 +1,5 @@
 [![Build Status](https://travis-ci.com/sankarvijay/myNanterre.svg?branch=master)](https://travis-ci.org/sankarvijay/myNanterre)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/86d12dbdeda94a9193f592d34d71574f)](https://app.codacy.com/app/sankarvijay/myNanterre?utm_source=github.com&utm_medium=referral&utm_content=sankarvijay/myNanterre&utm_campaign=Badge_Grade_Dashboard)
-[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=sankarvijay_myNanterre&metric=coverage)](https://sonarcloud.io/dashboard?id=sankarvijay_myNanterre)
 [![Waffle.io - Columns and their card count](https://badge.waffle.io/sankarvijay/myNanterre.svg?columns=all)](https://waffle.io/sankarvijay/myNanterre)
 [![GitHub issues](https://img.shields.io/github/issues/sankarvijay/myNanterre.svg)](https://github.com/sankarvijay/myNanterre/issues)
 [![License](https://img.shields.io/github/license/sankarvijay/myNanterre.svg?style=flat-square)](LICENSE)
@@ -28,20 +27,33 @@ Pour avoir plus d'informations, visitez notre site web : https://sankarvijay.git
 
 L'application peut être téléchargée 
 
-- soit via l'url : https://github.com/sankarvijay/myNanterre/releases/download/v1.0-alpha/myNanterre_v1.0-alpha.apk
+- soit via l'url : <a href="https://github.com/sankarvijay/myNanterre/releases/download/v1.0-beta/myNanterre_v1.0-beta.apk">/releases/download/v1.0-beta/myNanterre_v1.0-beta.apk</a> 
 
 - soit via le QR Code : 
 
 <a rel='nofollow' href='http://www.qrcode-generator.de
-        ' border='0' style='cursor:default'></a><img src='https://chart.googleapis.com/chart?cht=qr&chl=https%3A%2F%2Fgithub.com%2Fsankarvijay%2FmyNanterre%2Freleases%2Fdownload%2Fv1.0-alpha%2FmyNanterre_v1.0-alpha.apk&chs=180x180&choe=UTF-8&chld=L|2' alt=''>
-        
+        ' border='0' style='cursor:default'><img src='https://chart.googleapis.com/chart?cht=qr&chl=https%3A%2F%2Fgithub.com%2Fsankarvijay%2FmyNanterre%2Freleases%2Fdownload%2Fv1.0-beta%2FmyNanterre_v1.0-beta.apk&chs=180x180&choe=UTF-8&chld=L|2' alt=''></a>
+
+## Librairies
+-   Données Open data : [RATP](https://github.com/pgrimaud/horaires-ratp-api) sous [(licences)](https://github.com/pgrimaud/horaires-ratp-api/blob/master/LICENSE)
+-   Données Open data : [STIF](https://opendata.stif.info/page/licences/) sous [(licences)](https://opendata.stif.info/page/licences/)
+
 ## Système de Build
 * [Gradle](https://gradle.org/)
 
-- Pour exécuter une commande Gradle, vous pouvez simplement utiliser le script gradlew qui se trouve à la racine de votre projet (ou gradlew.bat sous Windows) suivi du nom de la tâche que vous voulez exécuter. 
+### Compiling
 
-- Par exemple, pour construire une version de débogage de votre application Android, vous pouvez exécuter ./gradlew assembleDebug à la racine de votre référentiel. Dans une configuration de projet par défaut, l'apk résultante peut alors être trouvée dans app/build/outputs/apk/app-debug.apk.
+```shell
+cd myNanterre/
+./gradlew
+ou sur windows :
+./gradlew.bat
 
+et enfin :
+
+adb install -r myNanterre.apk
+
+```
 ## Installation
 
 ### Prérequis
@@ -50,35 +62,34 @@ Avant de pouvoir utiliser notre projet, il faut installer certains outils.
 
 #### Installer le SDK
 
-- Télécharger le SDK : http://www.oracle.com/technetwork/java/javase/downloads/index.html
+- Télécharger et installer le SDK : http://www.oracle.com/technetwork/java/javase/downloads/index.html
 
   
 #### Installer Git
 
 - Télécharger et installer Git : [Télécharger Git](https://gitforwindows.org/)
 
-### Cloner MyNanterre
+#### Installer Android Studio
 
-Une fois Git installé, il suffit de suivre les instructions ci-dessous.
+- Télécharger et installer Git : [Télécharger Android Studio](https://developer.android.com/studio/install)
 
-#### Lier Git à Android Studio 
+## Deux manières de lancer l'application
 
-Depuis Android studio : 
-  File > Settings > Version Control > Git > Dans " path to git Excecutable ", coller le chemin du git.exe > OK
-  
-#### Cloner le répertoire MyNanterre
-
-Depuis Android studio : 
-  VCS > Checkout from version control > Git > Dans " Git Repository URL ", coller https://github.com/sankarvijay/myNanterre.git > OK
-  
-### Installation et lancement du avd manager 
+### Via l'émulateur d'Android Studio
 
 Suivre ce tuto : [Tutoriel AVD Manager](http://vogella.developpez.com/tutoriels/android/installation-outils-developpement/#L5)
 
+#### Cloner MyNanterre
+
+Une fois Git installé, il suffit de suivre les instructions ci-dessous.
+
+git clone https://github.com/sankarvijay/myNanterre.git
+
+### Via votre mobile
+
+Depuis votre mobile Android, récupérez l'apk sur notre site web https://sankarvijay.github.io/myNanterre/. Puis, autorisez l'installation. Une fois installé, vous verrez dans votre menu, l'application myNanterre.
+
 Et voila ! le projet est prêt pour utilisation.
-
-Nous travaillons tous en tant que collaborateur
-
 
 ## Auteurs
 * **SANKAR Vijay** - [Github](https://github.com/sankarvijay)
