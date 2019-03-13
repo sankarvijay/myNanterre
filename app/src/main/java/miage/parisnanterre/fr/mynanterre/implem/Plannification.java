@@ -14,6 +14,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.TimePicker;
@@ -70,6 +71,13 @@ public class Plannification extends Activity {
 
         mDisplayDate = (TextView) findViewById(R.id.date);
 
+        ImageView back = (ImageView) findViewById(R.id.back);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), ListeSport.class));
+            }
+        });
 
         mDisplayDate.setOnClickListener(new View.OnClickListener() {
             @Override
