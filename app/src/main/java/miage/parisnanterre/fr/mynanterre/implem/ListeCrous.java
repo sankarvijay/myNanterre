@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.GridView;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import java.sql.Connection;
@@ -49,6 +50,14 @@ public class ListeCrous extends AppCompatActivity {
         }
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
+
+        ImageView back = (ImageView) findViewById(R.id.back);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), Accueil.class));
+            }
+        });
 
 
         List<Crous> donnees = getListData();
@@ -188,7 +197,7 @@ public class ListeCrous extends AppCompatActivity {
                 int frequentation = rst.getInt("frequentation");
                 int id = rst.getInt("id_bat");
                 String v = rst.getString("vote");
-                String v2 = "Dernière information à " + v;
+                String v2 = "Dernière information : " + v;
                 Crous crous = new Crous(id, batiment, lieu, frequentation, v2);
                 liste.add(crous);
 

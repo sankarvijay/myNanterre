@@ -229,4 +229,13 @@
         android:layout_toEndOf="@+id/button2"
         app:srcCompat="@drawable/map" />
 
+    <ImageView
+        android:id="@+id/back"
+        android:layout_width="35dp"
+        android:layout_height="26dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="13dp"
+        android:layout_toEndOf="@+id/echange"
+        app:srcCompat="@drawable/back" />
+
 </RelativeLayout>

@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.GridView;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import java.sql.Connection;
@@ -37,8 +38,6 @@ public class ListeProduit extends AppCompatActivity {
     private static Connection conn;
     private List<Produit> liste = new ArrayList<>();
     int burger;
-    public static final String EXTRA_MESSAGE = "com.example.myfirstapp.MESSAGE";
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,6 +53,13 @@ public class ListeProduit extends AppCompatActivity {
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
 
+        ImageView back = (ImageView) findViewById(R.id.back);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(),ListeCrous.class));
+            }
+        });
 
         List<Produit> donnees = getListData();
         final GridView gridView = (GridView) findViewById(R.id.gridview);
@@ -158,7 +164,7 @@ public class ListeProduit extends AppCompatActivity {
                 int dispo = rst.getInt("dispo");
 
                 String v = rst.getString("vote");
-                String v2 = "Dernière information à " + v;
+                String v2 = "Dernière information : " + v;
 
                 Produit produits = new Produit(dispo, produit,v2);
                 liste.add(produits);

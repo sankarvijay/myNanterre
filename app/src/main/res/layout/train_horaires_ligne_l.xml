@@ -174,5 +174,15 @@
         android:textSize="16sp"
         android:textStyle="bold" />
 
+    <ImageView
+        android:id="@+id/back"
+        android:layout_width="36dp"
+        android:layout_height="47dp"
+        android:layout_alignStart="@+id/button2"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="1dp"
+        android:layout_marginBottom="133dp"
+        app:srcCompat="@drawable/back" />
+
 
 </RelativeLayout>
