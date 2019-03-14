@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".implem.ListeCrous">
 
 
@@ -18,9 +19,11 @@
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/alice"
             android:text="Lieux de Restauration"
-            android:textColor="@android:color/black"
-            android:textSize="18sp" />
+            android:textColor="#E40E1F"
+            android:textSize="30sp" />
 
     </RelativeLayout>
 
@@ -28,7 +31,8 @@
         android:id="@+id/gridview"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="70dp"
+        android:background="@color/white"
         android:columnWidth="150dp"
         android:gravity="center"
         android:horizontalSpacing="0dp"
@@ -43,9 +47,11 @@
         android:id="@+id/back"
         android:layout_width="29dp"
         android:layout_height="33dp"
-        app:srcCompat="@drawable/back"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="0dp" />
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/back" />
 
 
 </android.support.constraint.ConstraintLayout>

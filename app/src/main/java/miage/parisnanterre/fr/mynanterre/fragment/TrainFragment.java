@@ -6,10 +6,6 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ListFragment;
 import android.view.View;
-<<<<<<< HEAD
-=======
-
->>>>>>> 0d5c426045cdbfac39d06e35793ca00708fe819b
 import miage.parisnanterre.fr.mynanterre.implem.ListeTrain;
 
 /**

@@ -3,9 +3,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_marginTop="5dp"
+    android:background="@color/white"
     android:orientation="vertical"
-    android:padding="5dp"
-    android:background="@drawable/border">
+    android:padding="5dp">
 
     <TextView
         android:id="@+id/produit"
@@ -17,6 +17,7 @@
         android:text="TextView"
         android:textColor="@android:color/white"
         android:textSize="18sp"
+        android:fontFamily="@font/alice"
         android:textStyle="bold" />
 
     <TextView
@@ -29,7 +30,8 @@
         android:text="TextView"
         android:textColor="@android:color/white"
         android:textSize="14sp"
-        android:textStyle="bold"/>
+        android:fontFamily="@font/alice"
+        android:textStyle="bold" />
 
 
 </LinearLayout>
