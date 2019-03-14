@@ -50,7 +50,7 @@ public class Plannification extends Activity {
 
     private DatePickerDialog.OnDateSetListener mDateSetListnener;
 
-    private TextView mDisplayDate;
+    private TextView mDisplayDate, mDisplayDate2;
     private static final String TAG = "Plannification";
     Calendar c;
 
@@ -70,6 +70,8 @@ public class Plannification extends Activity {
         planifier = (Button) findViewById(R.id.planifier);
 
         mDisplayDate = (TextView) findViewById(R.id.date);
+        mDisplayDate2 = (TextView) findViewById(R.id.date2);
+
 
         ImageView back = (ImageView) findViewById(R.id.back);
         back.setOnClickListener(new View.OnClickListener() {
@@ -101,20 +103,29 @@ public class Plannification extends Activity {
             public void onDateSet(DatePicker datePicker, int annee, int mois, int jour) {
                 mois = mois + 1;
 
-                Log.d(TAG, "OndateSet: dd/mm/aaaa" + jour + "/" + mois + "/" + annee);
+                Log.d(TAG, "OndateSet: dd/mm/aaaa" + jour + "-" + mois + "-" + annee);
 
                 if (jour >= 10 && mois >= 10) {
-                    String date = jour + "/" + mois + "/" + annee;
+                    String date = jour + "-" + mois + "-" + annee;
                     mDisplayDate.setText(date);
+                    String date2 = annee + "-" + mois + "-" + jour;
+                    mDisplayDate2.setText(date2);
                 } else if (jour < 10 && mois < 10) {
-                    String date = "0" + jour + "/" + "0" + mois + "/" + annee;
+                    String date = "0" + jour + "-" + "0" + mois + "-" + annee;
+                    String date2 = annee + "-" + "0" + mois + "-" + "0" + jour;
                     mDisplayDate.setText(date);
+                    mDisplayDate2.setText(date2);
                 } else if (jour >= 10 && mois < 10) {
-                    String date = jour + "/" + "0" + mois + "/" + annee;
+                    String date = jour + "-" + "0" + mois + "-" + annee;
+                    String date2 = annee + "-" + "0" + mois + "-" + "0" + jour;
                     mDisplayDate.setText(date);
+                    mDisplayDate2.setText(date2);
                 } else if (jour < 10 && mois >= 10) {
-                    String date = "0" + jour + "/" + mois + "/" + annee;
+                    String date = "0" + jour + "-" + mois + "-" + annee;
+                    String date2 = annee + "-" + "0" + mois + "-" + "0" + jour;
                     mDisplayDate.setText(date);
+                    mDisplayDate2.setText(date2);
+
                 }
             }
         };
@@ -215,7 +226,7 @@ public class Plannification extends Activity {
                     preparedStatement.setString(1, numero.getText().toString());
                     preparedStatement.setString(2, heureD.getText().toString());
                     preparedStatement.setString(3, heureF.getText().toString());
-                    preparedStatement.setString(4, mDisplayDate.getText().toString());
+                    preparedStatement.setString(4, mDisplayDate2.getText().toString());
                     preparedStatement.setString(5, spinnerSport.getSelectedItem().toString());
                     preparedStatement.setString(6, spinnerLieu.getSelectedItem().toString());
                     preparedStatement.setInt(7, idCategorie);
