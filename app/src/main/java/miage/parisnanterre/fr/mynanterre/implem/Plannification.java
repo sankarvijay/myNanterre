@@ -117,12 +117,12 @@ public class Plannification extends Activity {
                     mDisplayDate2.setText(date2);
                 } else if (jour >= 10 && mois < 10) {
                     String date = jour + "-" + "0" + mois + "-" + annee;
-                    String date2 = annee + "-" + "0" + mois + "-" + "0" + jour;
+                    String date2 = annee + "-" + "0" + mois + "-" + jour;
                     mDisplayDate.setText(date);
                     mDisplayDate2.setText(date2);
                 } else if (jour < 10 && mois >= 10) {
                     String date = "0" + jour + "-" + mois + "-" + annee;
-                    String date2 = annee + "-" + "0" + mois + "-" + "0" + jour;
+                    String date2 = annee + "-" +  mois + "-" + "0" + jour;
                     mDisplayDate.setText(date);
                     mDisplayDate2.setText(date2);
 
