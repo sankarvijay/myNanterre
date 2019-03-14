@@ -17,6 +17,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.GridView;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import miage.parisnanterre.fr.mynanterre.R;
@@ -54,6 +55,14 @@ public class ListeSport extends AppCompatActivity {
         List<Sport> image_details = getListData();
         final GridView gridView = (GridView) findViewById(R.id.gridview);
         gridView.setAdapter(new SportGridAdapter(this, image_details));
+
+        ImageView back = (ImageView) findViewById(R.id.back);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), Accueil.class));
+            }
+        });
 
         // When the user clicks on the GridItem
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {

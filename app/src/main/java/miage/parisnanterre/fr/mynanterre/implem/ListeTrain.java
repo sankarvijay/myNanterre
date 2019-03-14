@@ -37,8 +37,14 @@ public class ListeTrain extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent,
                                     View v, int position, long id) {
                 CallFunc(position);
+            }
+        });
 
-
+        ImageView back = (ImageView) findViewById(R.id.back);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), Accueil.class));
             }
         });
 

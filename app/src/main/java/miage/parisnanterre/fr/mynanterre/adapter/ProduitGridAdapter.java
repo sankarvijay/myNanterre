@@ -47,6 +47,7 @@ public class ProduitGridAdapter extends BaseAdapter {
             convertView = layoutInflater.inflate(R.layout.grid_produit, null);
             holder = new ProduitGridAdapter.ViewHolder();
             holder.produit = (TextView) convertView.findViewById(R.id.produit);
+            holder.vote=(TextView)convertView.findViewById(R.id.vote);
             convertView.setTag(holder);
         } else {
             holder = (ProduitGridAdapter.ViewHolder) convertView.getTag();
@@ -54,6 +55,7 @@ public class ProduitGridAdapter extends BaseAdapter {
 
         Produit produit = this.listData.get(position);
         holder.produit.setText(produit.getNomProduit());
+        holder.vote.setText(produit.getVote());
 
 
         if (produit.getDispo() == 1) {
@@ -67,6 +69,7 @@ public class ProduitGridAdapter extends BaseAdapter {
 
     private static class ViewHolder {
         private TextView produit;
+        private TextView vote;
 
     }
 

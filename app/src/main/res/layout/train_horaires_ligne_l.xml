@@ -105,7 +105,7 @@
         android:layout_height="113dp"
         android:layout_alignEnd="@+id/button"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="398dp"
+        android:layout_marginTop="454dp"
         android:layout_marginEnd="-209dp"
         android:background="#FF8FABE6"
         android:orientation="vertical">
@@ -173,6 +173,16 @@
         android:textColor="@color/black"
         android:textSize="16sp"
         android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/back"
+        android:layout_width="36dp"
+        android:layout_height="47dp"
+        android:layout_alignStart="@+id/button2"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="1dp"
+        android:layout_marginBottom="133dp"
+        app:srcCompat="@drawable/back" />
 
 
 </RelativeLayout>

@@ -48,7 +48,11 @@ dependencies {
     implementation 'com.synnapps:carouselview:0.1.4'
     androidTestImplementation 'com.android.support.test:rules:1.0.2'
     implementation 'com.github.chrisbanes:PhotoView:2.1.2'
+<<<<<<< HEAD
 
+=======
+    implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.16'
+>>>>>>> 0d5c426045cdbfac39d06e35793ca00708fe819b
 }
 repositories {
     mavenCentral()

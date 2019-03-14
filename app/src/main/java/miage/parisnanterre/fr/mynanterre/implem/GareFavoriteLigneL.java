@@ -46,6 +46,13 @@ public class GareFavoriteLigneL extends AppCompatActivity {
         this.exchange = (ImageView) findViewById(R.id.echange2);
         this.click = (Button) findViewById(R.id.button2);
 
+        ImageView back = (ImageView) findViewById(R.id.back);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(),TrainLigneL.class));
+            }
+        });
 
         Bundle extras = getIntent().getExtras();
         gareFavori = extras.getString("favori");

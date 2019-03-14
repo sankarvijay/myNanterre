@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.GridView;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import java.sql.Connection;
@@ -49,6 +50,14 @@ public class ListeCrous extends AppCompatActivity {
         }
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
+
+        ImageView back = (ImageView) findViewById(R.id.back);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), Accueil.class));
+            }
+        });
 
 
         List<Crous> donnees = getListData();
@@ -96,7 +105,7 @@ public class ListeCrous extends AppCompatActivity {
                             e.printStackTrace();
                         }
                         Toast.makeText(getApplicationContext(), "c'est noté!", Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(ListeCrous.this, Accueil.class));
+                        startActivity(new Intent(ListeCrous.this, ListeCrous.class));
                     }
                 });
 
@@ -125,7 +134,7 @@ public class ListeCrous extends AppCompatActivity {
                             e.printStackTrace();
                         }
                         Toast.makeText(getApplicationContext(), "c'est noté!", Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(ListeCrous.this, Accueil.class));
+                        startActivity(new Intent(ListeCrous.this, ListeCrous.class));
 
                     }
                 });
@@ -157,7 +166,7 @@ public class ListeCrous extends AppCompatActivity {
 
                         Toast.makeText(getApplicationContext(), "c'est noté!", Toast.LENGTH_SHORT).show();
 
-                        startActivity(new Intent(ListeCrous.this, Accueil.class));
+                        startActivity(new Intent(ListeCrous.this, ListeCrous.class));
 
                     }
                 });
@@ -177,7 +186,7 @@ public class ListeCrous extends AppCompatActivity {
         try {
             conn = DriverManager.getConnection(url, user, psw);
 
-            String sqliD = "SELECT * FROM Crous WHERE ouverture<=" + i + " AND fermeture>=" + i + ";";
+            String sqliD = "SELECT * FROM Crous WHERE ouverture<=" + i + " AND fermeture>=" + i + " ORDER BY frequentation ASC;";
             System.out.println(sqliD);
             Statement st = conn.createStatement();
             ResultSet rst = st.executeQuery(sqliD);
@@ -188,7 +197,7 @@ public class ListeCrous extends AppCompatActivity {
                 int frequentation = rst.getInt("frequentation");
                 int id = rst.getInt("id_bat");
                 String v = rst.getString("vote");
-                String v2 = "Dernière information à " + v;
+                String v2 = "Dernière information : " + v;
                 Crous crous = new Crous(id, batiment, lieu, frequentation, v2);
                 liste.add(crous);
 

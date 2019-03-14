@@ -1,7 +1,6 @@
 package miage.parisnanterre.fr.mynanterre.implem;
 
 import android.app.AlertDialog;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.StrictMode;
@@ -11,6 +10,8 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.GridView;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.sql.Connection;
@@ -19,7 +20,10 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 import miage.parisnanterre.fr.mynanterre.R;
@@ -34,8 +38,7 @@ public class ListeProduit extends AppCompatActivity {
     private static final String psw = "9IDCqTm8Lig2";
     private static Connection conn;
     private List<Produit> liste = new ArrayList<>();
-    public static final String EXTRA_MESSAGE = "com.example.myfirstapp.MESSAGE";
-
+    int burger;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +54,13 @@ public class ListeProduit extends AppCompatActivity {
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
 
+        ImageView back = (ImageView) findViewById(R.id.back);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(),ListeCrous.class));
+            }
+        });
 
         List<Produit> donnees = getListData();
         final GridView gridView = (GridView) findViewById(R.id.gridview);
@@ -79,11 +89,21 @@ public class ListeProduit extends AppCompatActivity {
 
                         // btnAdd1 has been clicked
                         try {
+
+                            Date currentTime = Calendar.getInstance().getTime();
+
+                            SimpleDateFormat f = new SimpleDateFormat("HH:mm");
+                            String s = f.format(currentTime);
+
+
+
                             conn = DriverManager.getConnection(url, user, psw);
                             String sqliD = "UPDATE vente SET dispo = 1 WHERE produit='" + produit + "' AND id_bat=" + idBat + ";";
-
+                            String sqliD2 = "UPDATE vente SET vote='" + s + "'  WHERE produit='" + produit + "' AND id_bat=" + idBat + ";";
                             PreparedStatement preparedStatement = conn.prepareStatement(sqliD);
+                            PreparedStatement preparedStatement2 = conn.prepareStatement(sqliD2);
                             preparedStatement.executeUpdate();
+                            preparedStatement2.executeUpdate();
 
                         } catch (SQLException e) {
                             e.printStackTrace();
@@ -98,11 +118,19 @@ public class ListeProduit extends AppCompatActivity {
 
                         // btnAdd2 has been clicked
                         try {
+                            Date currentTime = Calendar.getInstance().getTime();
+
+                            SimpleDateFormat f = new SimpleDateFormat("HH:mm");
+                            String s = f.format(currentTime);
+
                             conn = DriverManager.getConnection(url, user, psw);
                             String sqliD = "UPDATE vente SET dispo = 2 WHERE produit='" + produit + "' AND id_bat=" + idBat + ";";
-                            System.out.println("--------------------------" + sqliD);
+                            String sqliD2 = "UPDATE vente SET vote='" + s + "'  WHERE produit='" + produit + "' AND id_bat=" + idBat + ";";
+
                             PreparedStatement preparedStatement = conn.prepareStatement(sqliD);
+                            PreparedStatement preparedStatement2 = conn.prepareStatement(sqliD2);
                             preparedStatement.executeUpdate();
+                            preparedStatement2.executeUpdate();
 
                         } catch (SQLException e) {
                             e.printStackTrace();
@@ -119,6 +147,7 @@ public class ListeProduit extends AppCompatActivity {
         });
     }
 
+
     private List<Produit> getListData() {
 
         try {
@@ -127,16 +156,25 @@ public class ListeProduit extends AppCompatActivity {
             String stringVariableName = extras.getString(CrousGridAdapter.EXTRA_MESSAGE);
             int idBat = Integer.parseInt(stringVariableName);
 
-            String sqliD = "SELECT * FROM vente where id_bat ='" + idBat + "';";
+            String sqliD = "SELECT * FROM vente where id_bat ='" + idBat + "'ORDER BY dispo ASC;;";
             Statement st = conn.createStatement();
             ResultSet rst = st.executeQuery(sqliD);
 
-            while (rst.next()) {
-                String produit = rst.getString("produit");
-                int dispo = rst.getInt("dispo");
+            if(!rst.isBeforeFirst()) {
+                TextView nothing = (TextView) findViewById(R.id.nothing);
+                nothing.setText("Ce resto/cafet ne propose pas de produits à vendre ;)");
+            }
+            else {
+                while (rst.next()) {
+                    String produit = rst.getString("produit");
+                    int dispo = rst.getInt("dispo");
 
-                Produit produits = new Produit(dispo, produit);
-                liste.add(produits);
+                    String v = rst.getString("vote");
+                    String v2 = "Dernière information : " + v;
+
+                    Produit produits = new Produit(dispo, produit, v2);
+                    liste.add(produits);
+                }
             }
 
         } catch (SQLException e) {

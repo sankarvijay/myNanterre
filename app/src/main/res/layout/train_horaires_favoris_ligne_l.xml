@@ -123,7 +123,7 @@
         android:layout_height="113dp"
         android:layout_alignEnd="@+id/button"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="398dp"
+        android:layout_marginTop="454dp"
         android:layout_marginEnd="-209dp"
         android:background="#FF8FABE6"
         android:orientation="vertical">
@@ -158,5 +158,15 @@
         android:layout_marginLeft="315dp"
         android:rotation="90"
         app:srcCompat="@drawable/echange" />
+
+    <ImageView
+        android:id="@+id/back"
+        android:layout_width="51dp"
+        android:layout_height="43dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="147dp"
+        app:srcCompat="@drawable/back" />
 
 </RelativeLayout>

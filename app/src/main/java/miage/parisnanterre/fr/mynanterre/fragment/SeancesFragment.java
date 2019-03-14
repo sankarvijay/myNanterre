@@ -72,7 +72,7 @@ public class SeancesFragment extends Fragment {
             final int idCategorie = Integer.parseInt(stringVariableName);
 
             conn = DriverManager.getConnection(url, user, psw);
-            String sqliD = "SELECT * FROM plannification_sport where categorie=" + idCategorie+" ORDER by dateRdv ASC" ;
+            String sqliD = "SELECT * FROM plannification_sport where categorie=" + idCategorie + " ORDER by dateRdv ASC";
             Statement st = conn.createStatement();
             ResultSet rst = st.executeQuery(sqliD);
 
@@ -85,7 +85,7 @@ public class SeancesFragment extends Fragment {
                 String sport = rst.getString("sport");
                 String lieu = rst.getString("lieu");
                 int nbInscrit = rst.getInt("nbInscrit");
-                Seance seance = new Seance(numero, heured, heuref, sport, lieu, dateRdv,nbInscrit);
+                Seance seance = new Seance(numero, heured, heuref, sport, lieu, dateRdv, nbInscrit);
                 liste.add(seance);
 
             }
