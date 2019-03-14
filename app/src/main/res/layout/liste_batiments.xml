@@ -23,7 +23,7 @@
             android:fontFamily="@font/alice"
             android:text="Lieux de Restauration"
             android:textColor="#E40E1F"
-            android:textSize="30sp" />
+            android:textSize="25sp" />
 
     </RelativeLayout>
 

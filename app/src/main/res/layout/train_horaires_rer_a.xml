@@ -144,12 +144,12 @@
         android:ems="10" />
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="400dp"
+        android:layout_height="113dp"
+        android:layout_alignEnd="@+id/button"
         android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="612dp"
-        android:layout_marginEnd="0dp"
+        android:layout_marginTop="454dp"
+        android:layout_marginEnd="-209dp"
         android:background="#FF8FABE6"
         android:orientation="vertical">
 
@@ -167,8 +167,8 @@
             android:layout_alignParentBottom="false"
             android:layout_marginStart="61dp"
             android:layout_marginTop="-65dp"
-            android:textColor="@color/black"
             android:fontFamily="@font/alice"
+            android:textColor="@color/black"
             android:textSize="14sp"
             android:textStyle="bold" />
 
