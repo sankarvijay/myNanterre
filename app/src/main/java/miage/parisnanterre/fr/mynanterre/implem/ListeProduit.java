@@ -170,7 +170,7 @@ public class ListeProduit extends AppCompatActivity {
                     int dispo = rst.getInt("dispo");
 
                     String v = rst.getString("vote");
-                    String v2 = "Dernière information : " + v;
+                    String v2 = "Dernière info : " + v;
 
                     Produit produits = new Produit(dispo, produit, v2);
                     liste.add(produits);

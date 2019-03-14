@@ -12,6 +12,7 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.GridView;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.sql.Connection;
@@ -191,16 +192,22 @@ public class ListeCrous extends AppCompatActivity {
             Statement st = conn.createStatement();
             ResultSet rst = st.executeQuery(sqliD);
 
-            while (rst.next()) {
-                String batiment = rst.getString("batiment");
-                String lieu = rst.getString("lieu");
-                int frequentation = rst.getInt("frequentation");
-                int id = rst.getInt("id_bat");
-                String v = rst.getString("vote");
-                String v2 = "Dernière information : " + v;
-                Crous crous = new Crous(id, batiment, lieu, frequentation, v2);
-                liste.add(crous);
+            if(!rst.isBeforeFirst()) {
+                TextView nothing = (TextView) findViewById(R.id.nothing);
+                nothing.setText("Il n'y a actuellement aucun restaurant/cafet ouvert ;)");
+            }
+            else {
+                while (rst.next()) {
+                    String batiment = rst.getString("batiment");
+                    String lieu = rst.getString("lieu");
+                    int frequentation = rst.getInt("frequentation");
+                    int id = rst.getInt("id_bat");
+                    String v = rst.getString("vote");
+                    String v2 = "Dernière info : " + v;
+                    Crous crous = new Crous(id, batiment, lieu, frequentation, v2);
+                    liste.add(crous);
 
+                }
             }
 
         } catch (SQLException e) {
