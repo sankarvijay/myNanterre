@@ -57,9 +57,9 @@
         android:layout_marginBottom="11dp"
         android:background="@drawable/circle"
         android:drawableTop="@android:drawable/ic_menu_my_calendar"
+        android:fontFamily="@font/alice"
         android:paddingTop="10dp"
         android:text="RDV"
-        android:fontFamily="@font/alice"
         android:textAlignment="center"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -76,9 +76,9 @@
         android:layout_marginEnd="28dp"
         android:background="@drawable/circle"
         android:drawableTop="@android:drawable/ic_menu_my_calendar"
+        android:fontFamily="@font/alice"
         android:paddingTop="10dp"
         android:text="Seances"
-        android:fontFamily="@font/alice"
         android:textAlignment="center"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="@+id/buttonRdv"
@@ -101,10 +101,11 @@
         android:id="@+id/back"
         android:layout_width="29dp"
         android:layout_height="33dp"
+        android:layout_marginStart="26dp"
         android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/back"
-        tools:layout_editor_absoluteX="26dp" />
+        app:srcCompat="@drawable/back" />
 
 
 </android.support.constraint.ConstraintLayout>

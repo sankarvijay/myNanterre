@@ -21,7 +21,7 @@
 
             <TextView
                 android:id="@+id/textView13"
-                android:layout_width="312dp"
+                android:layout_width="273dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="20dp"
@@ -142,7 +142,6 @@
             android:layout_width="75dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="280dp"
-            android:layout_marginTop="10dp"
             android:background="#E40E1F"
             android:fontFamily="@font/alice"
             android:text="Licences"
