@@ -52,10 +52,10 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="97dp"
         android:layout_marginBottom="429dp"
+        android:fontFamily="@font/alice"
         android:textAlignment="center"
         android:textSize="18sp"
         android:textStyle="bold"
-        android:fontFamily="@font/alice"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/gridView"
@@ -65,9 +65,9 @@
         android:id="@+id/back"
         android:layout_width="83dp"
         android:layout_height="27dp"
-        app:srcCompat="@drawable/back"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="16dp" />
+        app:layout_constraintBottom_toTopOf="@+id/gridview"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/back" />
 
 
 </android.support.constraint.ConstraintLayout>

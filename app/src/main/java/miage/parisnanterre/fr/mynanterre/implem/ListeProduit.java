@@ -58,7 +58,7 @@ public class ListeProduit extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(),ListeCrous.class));
+                startActivity(new Intent(getApplicationContext(), ListeCrous.class));
             }
         });
 
@@ -94,7 +94,6 @@ public class ListeProduit extends AppCompatActivity {
 
                             SimpleDateFormat f = new SimpleDateFormat("HH:mm");
                             String s = f.format(currentTime);
-
 
 
                             conn = DriverManager.getConnection(url, user, psw);
@@ -160,17 +159,16 @@ public class ListeProduit extends AppCompatActivity {
             Statement st = conn.createStatement();
             ResultSet rst = st.executeQuery(sqliD);
 
-            if(!rst.isBeforeFirst()) {
+            if (!rst.isBeforeFirst()) {
                 TextView nothing = (TextView) findViewById(R.id.nothing);
                 nothing.setText("Ce resto/cafet ne propose pas de produits à vendre ;)");
-            }
-            else {
+            } else {
                 while (rst.next()) {
                     String produit = rst.getString("produit");
                     int dispo = rst.getInt("dispo");
 
                     String v = rst.getString("vote");
-                    String v2 = "Dernière info : " + v;
+                    String v2 = "Dernière information : " + v;
 
                     Produit produits = new Produit(dispo, produit, v2);
                     liste.add(produits);
