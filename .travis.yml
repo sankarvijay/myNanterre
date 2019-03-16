@@ -15,14 +15,6 @@ android:
     - '.+'
 language: java
 
-addons:
-  sonarcloud:
-    organization: "sankarvijay-github"
-    token:
-    	secure: "SngpDXOr61ETer+XEwOL6UgIuahXJa3Ll9BjQpP2sckQxhLculFvrVS7dDJ9FW02/esw91SYNIaHgM3CfCBZ9einApow2o1NhaL5Tflbuy6da20uMfu1TG+QIsPGlAVPzDbZbT7/FZPMyflQQN1WpDp3rz1aVc+G52sPI6tEsIt3DTcXdhiqJDJNk2X8VL7ly4UcvNzJjx9I5TLmg58kjEj4OlXdNP5XeXUujq+nEFLG6ZUkOAqGxs+Nj5MRpXKZRl49aFVtCbgc715W+/Pyu1spuuiI5XZ3NkTZrFeh2Iv2vjNysiK/ZdW8Z1e1cM8pW9scMd0QQrZVXqWS7tLc+ghZqgTceCOn2xsi1H+nmfZDVqvUxX/nOiSoAYNryDdhRrDZl3Jh5O0uNZ41sc1594VN/N3kZonmxdHYZ03cD1CghIfGlSC5oLZSdhh0k1sT5r2l8g4UGUX8HUbIX7DXEy1TuUELeb1vobfWvG3/SiFyLpZPaeZCmGpgJB1/xGck2lPWx7QgkwryO5JuLvVzeI4BeAOoaC1FOXULW2EuKN+nWylUX2x2PZWlMJ05sSXJQw1eMNs04NKc0zvfmziGjVnkoKxDU2htK2+fosAY7Fnbn8gyciwy9O1osIoGnCNh77oxvqjYrR75afs2/+rgPffjpo1xm7kGQdU2RC3LBRw="
-
-sudo: false
-
 jdk:
   - oraclejdk8
 
@@ -34,7 +26,6 @@ before_script:
 script:
   - ./gradlew check
   - ./gradlew build jacocoTestReport coveralls cobertura
-  - sonar-scanner
 	
 cache:
   directories:
@@ -46,6 +37,3 @@ cache:
 after_success:
   - bash <(curl -s https://codecov.io/bash)
   - ./gradlew cobertura coveralls
-
-notifications:
-email: sankar.vijay@hotmail.com
