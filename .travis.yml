@@ -45,6 +45,7 @@ cache:
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
+  - ./gradlew cobertura coveralls
 
 notifications:
 email: sankar.vijay@hotmail.com

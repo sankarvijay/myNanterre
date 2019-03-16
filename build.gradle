@@ -1,63 +1,75 @@
-buildscript {
-    repositories {
-        google()
-        jcenter()
-        mavenCentral()
-        maven {
-          url "https://oss.sonatype.org/content/repositories/snapshots"
-        }
-    }
-    dependencies {
-        classpath 'com.android.tools.build:gradle:3.2.1'
-        classpath "org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:2.7"
-        classpath 'com.vanniktech:gradle-android-junit-jacoco-plugin:0.6.0'
-        classpath "org.kt3k.gradle.plugin:coveralls-gradle-plugin:2.8.2"
-        classpath 'net.saliman:gradle-cobertura-plugin:2.6.0'
-
-        // NOTE: Do not place your application dependencies here; they belong
-        // in the individual module build.gradle files
-    }
-
+plugins {
+    id "groovy"
+    id "maven"
+    id "eclipse"
+    id "idea"
+    id "signing"
+    id "maven-publish"
+    id "jacoco"
+    id "com.jfrog.bintray" version "1.4"
+    id 'net.saliman.cobertura' version '2.3.1'
+    id 'com.github.kt3k.coveralls' version '2.8.2'
 }
+cobertura.coverageFormats = ['html', 'xml'] // coveralls plugin depends on xml format report
 
-ext {
-  configCompileSdkVersion = 23
-  configTargetSdkVersion = 23
-  configBuildToolsVersion = '23.0.3'
+group 'org.kt3k.gradle.plugin'
+version '2.8.2'
 
-  supportVersion = '23.1.1'
-  support = [annotations: "com.android.support:support-annotations:$supportVersion",
-             appCompat  : "com.android.support:appcompat-v7:$supportVersion"]
-
-  assertJCore = 'org.assertj:assertj-core:1.7.1'
-  junit = 'junit:junit:4.12'
-
-  supportTest = [espressoCore: 'com.android.support.test.espresso:espresso-core:2.2.2',
-                 rules       : 'com.android.support.test:rules:0.5']
-}
-
-apply plugin: 'com.vanniktech.android.junit.jacoco'
-apply plugin: "org.sonarqube"
-apply plugin: "com.github.kt3k.coveralls"
-apply plugin: 'java'
-apply plugin: 'net.saliman.cobertura'
-
-
-allprojects {
-    repositories {
-        google()
-        jcenter()
-    }
-}
-group 'fr.uparis10.myNanterre'
-
-// Added to send coverage information to codacy
-// see https://github.com/codacy/codacy-coverage-reporter
-configurations { codacy }
 repositories {
-    maven { url "https://jitpack.io" }
-    maven { url "http://dl.bintray.com/typesafe/maven-releases" }
+    mavenCentral()
 }
+
 dependencies {
-    codacy 'com.github.codacy:codacy-coverage-reporter:-SNAPSHOT'
+    compile localGroovy()
+    compile gradleApi()
+
+    compile 'org.codehaus.groovy.modules.http-builder:http-builder:0.7.1'
+    compile 'org.apache.httpcomponents:httpmime:4.3'
+    compile 'org.eclipse.jgit:org.eclipse.jgit:3.6.0.201412230720-r'
+
+    testCompile 'junit:junit:4.11'
+    testCompile 'org.mockito:mockito-all:1.9.5'
+    testCompile 'com.github.tomakehurst:wiremock:1.18'
+}
+
+tasks.withType(JavaCompile) {
+    sourceCompatibility = 1.7
+    targetCompatibility = 1.7
+}
+
+tasks.withType(GroovyCompile) {
+    sourceCompatibility = 1.7
+    targetCompatibility = 1.7
+}
+
+jacocoTestReport {
+    reports {
+        xml.enabled true
+    }
+}
+
+task groovydocJar(type: Jar, dependsOn: groovydoc) {
+    classifier = 'javadoc'
+    from 'build/docs/groovydoc'
+}
+
+task sourcesJar(type: Jar) {
+    classifier = 'sources'
+    from sourceSets.main.allSource
+}
+
+artifacts {
+    archives jar
+
+    archives groovydocJar
+    archives sourcesJar
+}
+
+// sign archives if signatory exists
+if (signing.signatory) {
+
+    signing {
+        sign configurations.archives
+    }
+
 }
