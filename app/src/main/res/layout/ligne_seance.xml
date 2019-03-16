@@ -20,6 +20,7 @@
         android:layout_alignParentStart="false"
         android:layout_marginTop="14dp"
         android:text="Numero Seance"
+        android:fontFamily="@font/alice"
         android:textColor="@color/white" />
 
     <TextView
@@ -30,6 +31,7 @@
         android:layout_alignParentBottom="false"
         android:layout_marginStart="0dp"
         android:layout_marginTop="40dp"
+        android:fontFamily="@font/alice"
 
         android:text="Date"
         android:textColor="@color/white" />
@@ -42,6 +44,7 @@
         android:layout_alignParentBottom="false"
         android:layout_marginStart="0dp"
         android:layout_marginTop="60dp"
+        android:fontFamily="@font/alice"
 
         android:text="Heure début"
         android:textColor="@color/white" />
@@ -54,6 +57,7 @@
         android:layout_marginStart="130dp"
         android:layout_marginTop="60dp"
         android:text="Heure fin"
+        android:fontFamily="@font/alice"
 
         android:textColor="@color/white" />
 
@@ -65,6 +69,7 @@
         android:layout_alignParentTop="false"
         android:text="Sport"
         android:textColor="@color/white"
+        android:fontFamily="@font/alice"
 
         android:textStyle="bold" />
 
@@ -76,6 +81,7 @@
         android:layout_alignParentBottom="false"
         android:layout_marginTop="80dp"
         android:ellipsize="end"
+        android:fontFamily="@font/alice"
 
         android:maxLines="4"
         android:text="Lieu"
@@ -89,6 +95,7 @@
         android:layout_alignParentEnd="true"
         android:layout_marginTop="-38dp"
         android:layout_marginEnd="10dp"
+        android:fontFamily="@font/alice"
         android:shadowColor="@android:color/holo_green_dark"
         android:text="S'inscrire"
         android:textColor="@android:color/holo_green_dark" />
@@ -101,6 +108,7 @@
         android:layout_alignParentEnd="true"
         android:layout_marginTop="-5dp"
         android:layout_marginEnd="0dp"
+        android:fontFamily="@font/alice"
         android:shadowColor="@android:color/holo_green_dark"
         android:text="Se désinscrire"
         android:textColor="@android:color/holo_green_dark" />
@@ -113,6 +121,7 @@
         android:layout_alignParentBottom="false"
         android:layout_marginStart="0dp"
         android:layout_marginTop="100dp"
+        android:fontFamily="@font/alice"
         android:layout_marginBottom="0dp"
         android:text="Button" />
 
@@ -125,6 +134,7 @@
         android:layout_marginTop="24dp"
         android:layout_toEndOf="@+id/inscription"
         android:text="Nb Inscrits"
+        android:fontFamily="@font/alice"
         android:textColor="@color/white" />
 
     <TextView
@@ -136,6 +146,7 @@
         android:layout_marginTop="24dp"
         android:layout_toEndOf="@+id/inscription"
         android:text=""
+        android:fontFamily="@font/alice"
         android:textColor="@color/white"
         android:textStyle="bold" />
 

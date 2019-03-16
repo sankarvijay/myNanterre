@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:layout_editor_absoluteY="81dp">
 
     <TextView
@@ -14,6 +15,7 @@
         android:layout_marginBottom="1dp"
         android:text="Planifier une seance"
         android:textSize="20dp"
+        android:fontFamily="@font/alice"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
@@ -25,6 +27,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginBottom="52dp"
+        android:fontFamily="@font/alice"
         android:text="Indique ton numéro de séance"
         android:textSize="18sp"
         android:textStyle="bold|italic"
@@ -51,9 +54,10 @@
         android:layout_marginStart="4dp"
         android:ems="10"
         android:inputType="time"
-        android:text="Clic ici !"
+        android:text="Cliques ici !"
         android:textSize="16sp"
         android:textStyle="bold"
+        android:fontFamily="@font/alice"
         app:layout_constraintBottom_toTopOf="@+id/textView7"
         app:layout_constraintStart_toStartOf="@+id/textView6"
         app:layout_constraintTop_toBottomOf="@+id/textView6" />
@@ -65,8 +69,9 @@
         android:layout_marginStart="4dp"
         android:layout_marginBottom="5dp"
         android:ems="10"
+        android:fontFamily="@font/alice"
         android:inputType="time"
-        android:text="Clic ici !"
+        android:text="Cliques ici !"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/sport"
@@ -80,6 +85,7 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="10dp"
         android:text="Heure de début"
+        android:fontFamily="@font/alice"
         android:textSize="18sp"
         android:textStyle="bold|italic"
         app:layout_constraintBottom_toTopOf="@+id/heureD"
@@ -93,6 +99,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:text="Heure de fin"
+        android:fontFamily="@font/alice"
         android:textSize="18sp"
         android:textStyle="bold|italic"
         app:layout_constraintBottom_toTopOf="@+id/heureF"
@@ -105,13 +112,28 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="252dp"
-        android:text="Clic ici !"
+        android:text="Cliques ici !"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:fontFamily="@font/alice"
+        app:layout_constraintBottom_toTopOf="@+id/textView6"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/heureD"
+        app:layout_constraintVertical_bias="0.423" />
+		
+		<TextView
+        android:id="@+id/date2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="228dp"
+        android:text=""
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/textView6"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/heureD"
-        app:layout_constraintVertical_bias="0.423" />
+        app:layout_constraintVertical_bias="0.0"
+        android:visibility="invisible"/>
 
 
     <TextView
@@ -123,6 +145,7 @@
         android:text="Quel sport ?"
         android:textSize="18sp"
         android:textStyle="bold|italic"
+        android:fontFamily="@font/alice"
         app:layout_constraintBottom_toTopOf="@+id/heureF"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lieu"
@@ -149,6 +172,7 @@
         android:layout_marginEnd="2dp"
         android:layout_marginBottom="24dp"
         android:text="Lieu du RDV ?"
+        android:fontFamily="@font/alice"
         android:textSize="18sp"
         android:textStyle="bold|italic"
         app:layout_constraintBottom_toTopOf="@+id/planifier"
@@ -177,6 +201,7 @@
         android:layout_marginStart="244dp"
         android:layout_marginBottom="2dp"
         android:text="Date du rdv"
+        android:fontFamily="@font/alice"
         android:textSize="18sp"
         android:textStyle="bold|italic"
         app:layout_constraintBottom_toTopOf="@+id/textView6"
@@ -195,6 +220,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lieu"
         app:layout_constraintVertical_bias="0.842" />
+
+    <ImageView
+        android:id="@+id/back"
+        android:layout_width="29dp"
+        android:layout_height="33dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="53dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/textView11"
+        app:layout_constraintEnd_toStartOf="@+id/textView5"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/back" />
 
 
 </android.support.constraint.ConstraintLayout>

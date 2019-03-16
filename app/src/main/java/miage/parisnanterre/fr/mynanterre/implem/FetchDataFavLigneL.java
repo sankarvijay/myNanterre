@@ -113,6 +113,7 @@ public class FetchDataFavLigneL extends AsyncTask<Void, Void, Void> {
             }
         } catch (IOException | JSONException e) {
             e.printStackTrace();
+
         }
         return null;
     }

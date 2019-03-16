@@ -10,6 +10,8 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.GridView;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.sql.Connection;
@@ -37,8 +39,6 @@ public class ListeProduit extends AppCompatActivity {
     private static Connection conn;
     private List<Produit> liste = new ArrayList<>();
     int burger;
-    public static final String EXTRA_MESSAGE = "com.example.myfirstapp.MESSAGE";
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,6 +54,13 @@ public class ListeProduit extends AppCompatActivity {
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
 
+        ImageView back = (ImageView) findViewById(R.id.back);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(),ListeCrous.class));
+            }
+        });
 
         List<Produit> donnees = getListData();
         final GridView gridView = (GridView) findViewById(R.id.gridview);
@@ -153,15 +160,21 @@ public class ListeProduit extends AppCompatActivity {
             Statement st = conn.createStatement();
             ResultSet rst = st.executeQuery(sqliD);
 
-            while (rst.next()) {
-                String produit = rst.getString("produit");
-                int dispo = rst.getInt("dispo");
+            if(!rst.isBeforeFirst()) {
+                TextView nothing = (TextView) findViewById(R.id.nothing);
+                nothing.setText("Ce resto/cafet ne propose pas de produits à vendre ;)");
+            }
+            else {
+                while (rst.next()) {
+                    String produit = rst.getString("produit");
+                    int dispo = rst.getInt("dispo");
 
-                String v = rst.getString("vote");
-                String v2 = "Dernière information à " + v;
+                    String v = rst.getString("vote");
+                    String v2 = "Dernière info : " + v;
 
-                Produit produits = new Produit(dispo, produit,v2);
-                liste.add(produits);
+                    Produit produits = new Produit(dispo, produit, v2);
+                    liste.add(produits);
+                }
             }
 
         } catch (SQLException e) {

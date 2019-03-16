@@ -48,6 +48,7 @@ public class FetchTrafficFavRerA extends AsyncTask<Void, Void, Void> {
 
         } catch (IOException | JSONException e) {
             e.printStackTrace();
+
         }
 
         return null;

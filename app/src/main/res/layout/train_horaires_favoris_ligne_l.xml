@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".implem.TrainRerA"
     tools:layout_editor_absoluteY="81dp">
 
@@ -22,6 +23,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView9"
         android:layout_marginStart="100dp"
+        android:fontFamily="@font/alice"
         android:layout_marginTop="3dp"
         android:textColor="@color/design_default_color_primary_dark" />
 
@@ -31,6 +33,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView9"
         android:layout_marginStart="100dp"
+        android:fontFamily="@font/alice"
         android:layout_marginTop="31dp"
         android:textColor="@color/design_default_color_primary_dark" />
 
@@ -42,6 +45,7 @@
         android:layout_marginStart="100dp"
         android:layout_marginTop="70dp"
         android:text="Nanterre-Universite"
+        android:fontFamily="@font/alice"
         android:textColor="@color/black"
         android:textStyle="bold" />
 
@@ -54,6 +58,7 @@
         android:layout_marginTop="187dp"
         android:background="@color/black"
         android:text="heure"
+        android:fontFamily="@font/alice"
         android:textColor="@color/white"
         android:textSize="12sp"
         android:textStyle="bold" />
@@ -65,6 +70,7 @@
         android:layout_alignParentTop="false"
         android:layout_marginTop="187dp"
         android:text="Destination"
+        android:fontFamily="@font/alice"
         android:textColor="@color/black"
         android:textSize="12sp"
         android:textStyle="bold" />
@@ -77,6 +83,7 @@
         android:layout_marginStart="260dp"
         android:layout_marginTop="70dp"
         android:textColor="@color/black"
+        android:fontFamily="@font/alice"
         android:textStyle="bold" />
 
 
@@ -88,6 +95,7 @@
         android:layout_alignParentTop="false"
         android:layout_marginTop="170dp"
         android:padding="5dp"
+        android:fontFamily="@font/alice"
         android:textColor="@android:color/black"
         android:textSize="18dp" />
 
@@ -114,6 +122,7 @@
         android:layout_height="6dp"
         android:layout_below="@+id/direction"
         android:layout_alignParentStart="true"
+        android:fontFamily="@font/alice"
         android:layout_marginTop="140dp"
         android:background="@color/design_default_color_primary"
         android:ems="10" />
@@ -143,6 +152,7 @@
             android:layout_marginStart="61dp"
             android:layout_marginTop="-50dp"
             android:layout_marginBottom="7dp"
+            android:fontFamily="@font/alice"
             android:text="Attentifs ensemble : La sécurité est l'affaire de tous. SI vous constatez une situation anormale, contactez les agents de la STIF. Merci de votre vigilance"
             android:textColor="@color/black"
             android:textSize="14sp"
@@ -158,5 +168,15 @@
         android:layout_marginLeft="315dp"
         android:rotation="90"
         app:srcCompat="@drawable/echange" />
+
+    <ImageView
+        android:id="@+id/back"
+        android:layout_width="51dp"
+        android:layout_height="43dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="147dp"
+        app:srcCompat="@drawable/back" />
 
 </RelativeLayout>

@@ -46,6 +46,14 @@ public class TrainLigneL extends AppCompatActivity {
         this.exchange = (ImageView) findViewById(R.id.echange);
         this.gare = (Spinner) findViewById(R.id.gare);
 
+        ImageView back = (ImageView) findViewById(R.id.back);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(),ListeTrain.class));
+            }
+        });
+
         clickP = (Button) findViewById(R.id.button2);
         clickP.setOnClickListener(new View.OnClickListener() {
             @Override

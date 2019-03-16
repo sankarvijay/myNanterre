@@ -24,8 +24,8 @@ public class Accueil extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
 
-        //display the logo during 5 seconds,
-        new CountDownTimer(4000, 1000) {
+        //display the logomynanterre during 5 seconds,
+        new CountDownTimer(1000, 1000) {
             @Override
             public void onTick(long millisUntilFinished) {
 

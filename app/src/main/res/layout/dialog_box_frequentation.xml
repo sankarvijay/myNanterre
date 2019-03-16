@@ -11,11 +11,13 @@
         android:id="@+id/textView10"
         android:layout_width="match_parent"
         android:layout_height="48dp"
+        android:layout_marginTop="15dp"
         android:background="@color/white"
+        android:fontFamily="@font/alice"
         android:gravity="center"
         android:text="Fréquentation de ce lieu"
-        android:textColor="@color/black"
-        android:textSize="@dimen/default_indicator_margin_vertical" />
+        android:textColor="#E40E1F"
+        android:textSize="20sp" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -31,6 +33,7 @@
             android:layout_marginTop="20dp"
             android:layout_marginBottom="50dp"
             android:layout_weight="1"
+            android:fontFamily="@font/alice"
             android:background="@android:color/holo_green_light"
             android:text="Faible"
             android:textColor="@android:color/white" />
@@ -42,6 +45,7 @@
             android:layout_marginTop="20dp"
             android:layout_marginBottom="50dp"
             android:layout_weight="1"
+            android:fontFamily="@font/alice"
             android:background="@android:color/holo_orange_light"
             android:text="Moyenne"
             android:textColor="@color/white" />
@@ -54,8 +58,10 @@
             android:layout_marginRight="30dp"
             android:layout_marginBottom="50dp"
             android:layout_weight="1"
+            android:fontFamily="@font/alice"
             android:background="@android:color/holo_red_dark"
             android:text="Forte"
-            android:textColor="@color/white" />
+            android:textColor="@color/white"
+            />
     </LinearLayout>
 </LinearLayout>

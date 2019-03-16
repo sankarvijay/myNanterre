@@ -32,7 +32,9 @@
         <activity android:name=".implem.PlanBatiments"></activity>
         <activity android:name=".implem.ListeTrain"></activity>
 
-
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
 
 
     </application>
