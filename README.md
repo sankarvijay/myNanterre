@@ -1,5 +1,4 @@
 [![Build Status](https://travis-ci.com/sankarvijay/myNanterre.svg?branch=master)](https://travis-ci.org/sankarvijay/myNanterre)
-[![CircleCI](https://circleci.com/gh/sankarvijay/myNanterre/tree/master.svg?style=svg)](https://circleci.com/gh/sankarvijay/myNanterre/tree/master)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/86d12dbdeda94a9193f592d34d71574f)](https://app.codacy.com/app/sankarvijay/myNanterre?utm_source=github.com&utm_medium=referral&utm_content=sankarvijay/myNanterre&utm_campaign=Badge_Grade_Dashboard)
 [![Waffle.io - Columns and their card count](https://badge.waffle.io/sankarvijay/myNanterre.svg?columns=all)](https://waffle.io/sankarvijay/myNanterre)
 [![GitHub issues](https://img.shields.io/github/issues/sankarvijay/myNanterre.svg)](https://github.com/sankarvijay/myNanterre/issues)
