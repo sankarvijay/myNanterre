@@ -28,12 +28,12 @@ Pour avoir plus d'informations, visitez notre site web : https://sankarvijay.git
 
 L'application peut être téléchargée 
 
-- soit via l'url : <a href="https://github.com/sankarvijay/myNanterre/releases/download/v1.0-beta/myNanterre_v1.0-beta.apk">/releases/download/v1.0-beta/myNanterre_v1.0-beta.apk</a> 
+- soit via l'url : <a href="https://github.com/sankarvijay/myNanterre/releases/download/v1.0/myNanterre_v1.0.apk">/releases/download/v1.0/myNanterre_v1.0.apk</a> 
 
 - soit via le QR Code : 
 
 <a rel='nofollow' href='http://www.qrcode-generator.de
-        ' border='0' style='cursor:default'><img src='https://chart.googleapis.com/chart?cht=qr&chl=https%3A%2F%2Fgithub.com%2Fsankarvijay%2FmyNanterre%2Freleases%2Fdownload%2Fv1.0-beta%2FmyNanterre_v1.0-beta.apk&chs=180x180&choe=UTF-8&chld=L|2' alt=''></a>
+        ' border='0' style='cursor:default'><img src='https://chart.googleapis.com/chart?cht=qr&chl=https%3A%2F%2Fgithub.com%2Fsankarvijay%2FmyNanterre%2Freleases%2Fdownload%2Fv1.0%2FmyNanterre_v1.0.apk&chs=180x180&choe=UTF-8&chld=L|2' alt=''></a>
 
 ## Librairies
 -   Données Open data : [RATP](https://github.com/pgrimaud/horaires-ratp-api) sous [(licences)](https://github.com/pgrimaud/horaires-ratp-api/blob/master/LICENSE)
