@@ -122,8 +122,6 @@ public class SeanceAdapter extends RecyclerView.Adapter<SeanceAdapter.MyViewHold
                     holder.inscrit.setText(String.valueOf(countF) + " inscrits pour ");
                     Toast.makeText(mcon, "Inscription prise en compte!", Toast.LENGTH_SHORT).show();
                     inscription.setEnabled(false);
-
-
                 } catch (SQLException e) {
                     e.printStackTrace();
                 }

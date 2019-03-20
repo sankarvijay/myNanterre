@@ -47,7 +47,7 @@ public class ProduitGridAdapter extends BaseAdapter {
             convertView = layoutInflater.inflate(R.layout.grid_produit, null);
             holder = new ProduitGridAdapter.ViewHolder();
             holder.produit = (TextView) convertView.findViewById(R.id.produit);
-            holder.vote=(TextView)convertView.findViewById(R.id.vote);
+            holder.vote = (TextView) convertView.findViewById(R.id.vote);
             convertView.setTag(holder);
         } else {
             holder = (ProduitGridAdapter.ViewHolder) convertView.getTag();
